@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Reto 1 para Chapter 2. Wrangling the File System | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Reto 1 para Chapter 2. Wrangling the File System" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Reto 1 para Chapter 2. Wrangling the File System" />
+<script type="application/ld+json">
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020","headline":"Reto 1 para Chapter 2. Wrangling the File System","url":"/tema1-introduccion/practicas/p2-t1-c3-file-system/reto.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1d0041411a16e7bda0dd61fcb02fd1df8d59dcbb">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io">Rep</a></li>
+            
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+
+            <li><a href="/index.html">DMSI</a></li>
+            <li><a href="/tema0-presentacion/">0</a></li>
+            <li><a href="/tema1-introduccion/">1</a></li>
+            <li><a href="/tema2-design/">2</a></li>
+            <li><a href="/tema3-modelos-emergentes/">3</a></li>
+            <li><a href="/tema4-bases-de-datos/">4</a></li>
+            <li><a href="/tema5-mantenimiento/">5</a></li>
+            <li><a href="/tema6-calidad/" title="tema6: Calidad">6</a></li>
+            
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">ULL-ESIT-DMSI-1920</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusvirtual.ull.es/1920/course/view.php?id=201911084" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher/117245/530/" target="_blank">Casiano</a></span>
+            </div>
+
+            <h1 id="reto-1-para-chapter-2-wrangling-the-file-system">Reto 1 para Chapter 2. Wrangling the File System</h1>
+
+<p>Cuando al comando  <code class="language-plaintext highlighter-rouge">ssh</code> se le pasa además del destino un argumento adicional lo interpreta como un comando y lo ejecuta en la máquina de destino:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/local/src/CA/sol-nodejs-the-right-way/filesystem-chapter-2(master)]$ ssh dsi ls
+labs
+snap
+</code></pre></div></div>
+
+<p>Escriba  un programa en Node.js
+que ejecute en remoto usando <code class="language-plaintext highlighter-rouge">ssh</code> el programa Node.js pasado como argumento en línea de comandos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/local/src/CA/sol-nodejs-the-right-way/filesystem-chapter-2(master)]$ ./remote-node.js 'console.log(4*5)'
+child stdout:
+20
+child process exited with code 0 and signal null
+</code></pre></div></div>
+
+<p>Aquí las comillas simples <code class="language-plaintext highlighter-rouge">'console.log(4*5)'</code> son esenciales 
+para proteger la cadena de su interpretación  por la bash shell.</p>
+
+<p>Este programa se conecta vía <code class="language-plaintext highlighter-rouge">ssh</code> a la máquina virtual de <code class="language-plaintext highlighter-rouge">iaas.ull.es</code> del pool de la asignatura y ejecuta <code class="language-plaintext highlighter-rouge">node -e 'console.log(4*5)'</code>.
+Esto es, es equivalente a el siguiente comando:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/local/src/CA/sol-nodejs-the-right-way/filesystem-chapter-2(master)]$ ssh dsi "node -e 'console.log(4*5)'"
+20
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">sol-nodejs-the-right-way/filesystem-chapter-2º</code></p>
+
+<h2 id="sugerencias">Sugerencias:</h2>
+
+<ol>
+  <li>Cuando al intérprete de Node.js se le pasa la opción <code class="language-plaintext highlighter-rouge">-e</code>  interpreta que el programa es la cadena que sigue a la opción <code class="language-plaintext highlighter-rouge">-e</code>. Ejemplo:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [~/campus-virtual/1819/dsi1819/introduccion(master)]$ node -e 'console.log(2+3)'
+ 5
+</code></pre></div>    </div>
+  </li>
+  <li>Use spawn para crear un proceso que ejecuta <code class="language-plaintext highlighter-rouge">ssh</code></li>
+  <li>Pase como argumentos a <code class="language-plaintext highlighter-rouge">ssh</code> el comando <code class="language-plaintext highlighter-rouge">node</code> con el argumento <code class="language-plaintext highlighter-rouge">-e</code> y el programa proveido en línea de comandos</li>
+  <li>Ponga manejadores/callbacks <code class="language-plaintext highlighter-rouge">on('data')</code> para los streams <code class="language-plaintext highlighter-rouge">stdout</code> y <code class="language-plaintext highlighter-rouge">stderr</code> del proceso ejecutando la <code class="language-plaintext highlighter-rouge">ssh</code> de manera 
+que vuelquen en la consola los chunks que van llegando</li>
+</ol>
+
+<p>NOTA (para el profesor):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/local/src/CA/sol-nodejs-the-right-way/filesystem-chapter-2(master)]$ pwd -P
+/Users/casiano/local/src/CA/sol-nodejs-the-right-way/filesystem-chapter-2
+[~/local/src/CA/sol-nodejs-the-right-way/filesystem-chapter-2(master)]$ ls -l remote-node.js 
+-rwxr-xr-x  1 casiano  staff  701 16 feb 12:29 remote-node.js
+</code></pre></div></div>
+
+<h1 id="reto-2-para-chapter-2-wrangling-the-file-system">Reto 2 para Chapter 2. Wrangling the File System</h1>
+
+<p>Escriba  un programa en Node.js
+que ejecute en remoto usando <code class="language-plaintext highlighter-rouge">ssh</code> el programa Node.js cuyo nombre es pasado como argumento en línea de comandos.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/local/src/CA/sol-nodejs-the-right-way/filesystem-chapter-2(master)]$ node dsi-node.js program.js
+child stdout:
+5
+child process exited with code 0 and signal null
+</code></pre></div></div>
+
+<p>El fichero <code class="language-plaintext highlighter-rouge">program.js</code> se supone que está en la máquina local. Deberá transferirlo a la máquina remota (use <code class="language-plaintext highlighter-rouge">scp</code>) para su posterior ejecución. El comando <code class="language-plaintext highlighter-rouge">scp</code> permite transferir ficheros entre máquinas usando ssh:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/local/src/CA/sol-nodejs-the-right-way/filesystem-chapter-2(master)]$ scp watcher.js dsi:/tmp/w.js
+watcher.js                                                                       100% 1229     8.8KB/s   00:00    
+[~/local/src/CA/sol-nodejs-the-right-way/filesystem-chapter-2(master)]$ ssh dsi ls '/tmp/w*' 
+/tmp/w.js
+</code></pre></div></div>
+
+
+
+        </section>
+    </div>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Trabajo Fin de Asignatura PL | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Trabajo Fin de Asignatura PL" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Trabajo Fin de Asignatura PL" />
+<script type="application/ld+json">
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020","headline":"Trabajo Fin de Asignatura PL","url":"/tfa/","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1d0041411a16e7bda0dd61fcb02fd1df8d59dcbb">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io">Rep</a></li>
+            
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+
+            <li><a href="/index.html">DMSI</a></li>
+            <li><a href="/tema0-presentacion/">0</a></li>
+            <li><a href="/tema1-introduccion/">1</a></li>
+            <li><a href="/tema2-design/">2</a></li>
+            <li><a href="/tema3-modelos-emergentes/">3</a></li>
+            <li><a href="/tema4-bases-de-datos/">4</a></li>
+            <li><a href="/tema5-mantenimiento/">5</a></li>
+            <li><a href="/tema6-calidad/" title="tema6: Calidad">6</a></li>
+            
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">ULL-ESIT-DMSI-1920</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusvirtual.ull.es/1920/course/view.php?id=201911084" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher/117245/530/" target="_blank">Casiano</a></span>
+            </div>
+
+            <h1 id="trabajo-fin-de-asignatura-pl">Trabajo Fin de Asignatura PL</h1>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="#introducci%C3%B3n">Introducción</a></li>
+  <li><a href="#ideas">Ideas</a>
+    <ul>
+      <li><a href="#a%C3%B1adir-herencia-entre-objetos-a-egg">Añadir Herencia entre objetos a Egg</a></li>
+      <li><a href="#extensi%C3%B3n-de-egg-con-use">Extensión de Egg con <code class="language-plaintext highlighter-rouge">use</code></a></li>
+      <li><a href="#ejemplo-egg-para-facilitar-el-manejo-de-github">Ejemplo: Egg para facilitar el manejo de GitHub</a></li>
+      <li><a href="#ejemplo-egg-para-calculo-cient%C3%ADfico">Ejemplo: Egg para Calculo Científico</a></li>
+      <li><a href="#ejemplo-egg-para-describir-tareas">Ejemplo: Egg para Describir Tareas</a></li>
+      <li><a href="#ejemplo-command-line-processing">Ejemplo: Command line processing</a></li>
+    </ul>
+  </li>
+  <li><a href="#entrega">Entrega</a></li>
+  <li><a href="#recursos">Recursos</a></li>
+</ul>
+
+<h2 id="introducción">Introducción</h2>
+
+<ul>
+  <li>Cualquier propuesta relacionada con lo visto en la asignatura es bienvenida.</li>
+  <li>Las ideas que se proponen aquí son las de extender el lenguaje <a href="https://github.com/ULL-ESIT-PL-1819/egg">Egg</a>
+pero puede proponer un TFA con otro tópico relacionado con PL.
+    <ul>
+      <li>Especial interés puede ser en extender Egg  con un DSL con funcionalidades para 
+facilitar la resolución de problemas en un contexto específico que sea del interés del alumno</li>
+      <li>En cada caso busque en npm librerías que le den apoyo para que la tarea resulte mas fácil</li>
+      <li>Estas extensiones debería estar en módulos separados que extienden Egg usando el patrón <a href="https://youtu.be/9nMK2yuln_I">registry-strategy</a></li>
+    </ul>
+  </li>
+  <li>Todo lo que se dice aquí sobre Egg se puede hacer con cualquiera de los lenguajes Infijo desarrollados en la asignatura</li>
+  <li>Si necesita publicar un módulo npm use el nuevo (Mayo 2019) <a href="https://help.github.com/en/articles/about-github-package-registry">GitHub registry</a> en vez de npm.js y publique el paquete como privado.</li>
+</ul>
+
+<h2 id="ideas">Ideas</h2>
+
+<h3 id="añadir-herencia-entre-objetos-a-egg">Añadir Herencia entre objetos a Egg</h3>
+
+<p>Podría ser mediante un método <code class="language-plaintext highlighter-rouge">child</code> como este:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">do</span><span class="p">(</span>
+  <span class="nx">def</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">object</span> <span class="p">(</span> 
+    <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">gc</span><span class="dl">"</span><span class="p">,</span> <span class="o">-&gt;</span><span class="p">{</span><span class="nx">element</span><span class="p">[</span><span class="k">this</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">]},</span>
+    <span class="dl">"</span><span class="s2">sc</span><span class="dl">"</span><span class="p">,</span> <span class="o">-&gt;</span><span class="p">{</span><span class="nx">value</span><span class="p">,</span> <span class="o">=</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">,</span> <span class="nx">value</span><span class="p">)},</span>
+    <span class="dl">"</span><span class="s2">inc</span><span class="dl">"</span><span class="p">,</span> <span class="o">-&gt;</span><span class="p">{</span><span class="o">=</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">,</span> <span class="o">+</span><span class="p">(</span><span class="nx">element</span><span class="p">[</span><span class="k">this</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">],</span><span class="mi">1</span><span class="p">))}</span>
+  <span class="p">)),</span>
+  <span class="nx">def</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="nx">child</span><span class="p">(</span><span class="nx">x</span><span class="p">)),</span>
+  <span class="nx">print</span><span class="p">(</span><span class="nx">y</span><span class="p">.</span><span class="nx">sc</span><span class="p">(</span><span class="mi">5</span><span class="p">)),</span>
+  <span class="nx">print</span><span class="p">(</span><span class="nx">y</span><span class="p">.</span><span class="nx">c</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></div>
+<p>La declaración <code class="language-plaintext highlighter-rouge">def(y, child(x))</code> hace que el objeto <code class="language-plaintext highlighter-rouge">y</code> herede las propiedades y métodos del objeto <code class="language-plaintext highlighter-rouge">x</code></p>
+
+<h3 id="extensión-de-egg-con-use">Extensión de Egg con <code class="language-plaintext highlighter-rouge">use</code></h3>
+
+<p>La idea es introducir una función <code class="language-plaintext highlighter-rouge">use</code> que es parecida a <code class="language-plaintext highlighter-rouge">require</code> 
+pero con la diferencia de que extiende el lenguaje <code class="language-plaintext highlighter-rouge">Egg-aluXX</code>
+mediante una librería escrita en JavaScript.</p>
+
+<p>Esto es, alguien del mundo mundial, un programador llamado Y entusiasmado por tu lenguaje <code class="language-plaintext highlighter-rouge">Egg-aluXX</code> 
+extiende el lenguaje <code class="language-plaintext highlighter-rouge">egg-aluXX</code> con una librería llamada <code class="language-plaintext highlighter-rouge">egg-aluXX-tutu</code> que publica en <a href="http://npmjs.com">npm</a>.<br />
+Y lo ha hecho añadiendo en <code class="language-plaintext highlighter-rouge">specialForms</code> y <code class="language-plaintext highlighter-rouge">topEnv</code> nuevas funcionalidades. Puede hacerlo porque importa tu módulo en el que tu exportas los hashes <code class="language-plaintext highlighter-rouge">specialForms</code> y <code class="language-plaintext highlighter-rouge">topEnv</code>.</p>
+
+<p>Una sentencia como <code class="language-plaintext highlighter-rouge">use('tutu')</code> debe hacer que el intérprete <code class="language-plaintext highlighter-rouge">egg</code> haga un <code class="language-plaintext highlighter-rouge">require</code> de <code class="language-plaintext highlighter-rouge">egg-aluXX-tutu</code> (que se supone ha sido previamente instalada en <code class="language-plaintext highlighter-rouge">node_modules/</code>) y que las funcionalidades exportadas por <code class="language-plaintext highlighter-rouge">egg-aluXX-tutu</code> estén disponibles al programa Egg.</p>
+
+<p>Como ejemplos de uso, véanse las siguientes 
+secciones</p>
+
+<h3 id="ejemplo-egg-para-facilitar-el-manejo-de-github">Ejemplo: Egg para facilitar el manejo de GitHub</h3>
+
+<p>La idea general es extender el lenguaje <a href="https://github.com/ULL-ESIT-PL-1819/egg">Egg</a> con funcionalidades para la 
+manipulación de GitHub</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">do</span> <span class="p">{</span>
+  <span class="nx">use</span><span class="p">(</span><span class="dl">'</span><span class="s1">github</span><span class="dl">'</span><span class="p">),</span>
+  <span class="p">:</span><span class="o">=</span><span class="p">(</span><span class="nx">pl</span><span class="p">,</span> <span class="nx">org</span><span class="p">(</span><span class="dl">"</span><span class="s2">ULL-ESIT-PL-1819</span><span class="dl">"</span><span class="p">)),</span> <span class="err">#</span> <span class="nb">Object</span> <span class="nx">describing</span> <span class="nx">the</span> <span class="na">org</span>
+  <span class="p">:</span><span class="o">=</span><span class="p">(</span><span class="nx">peoplePL</span><span class="p">,</span> <span class="nx">people</span><span class="p">(</span><span class="nx">pl</span><span class="p">)),</span> <span class="err">#</span> <span class="nb">Array</span> <span class="k">of</span> <span class="nx">objects</span> <span class="kd">with</span> <span class="nx">the</span> <span class="nx">people</span> <span class="k">in</span> <span class="nx">the</span> <span class="na">org</span>
+  <span class="p">:</span><span class="o">=</span><span class="p">(</span><span class="nx">alus</span><span class="p">,</span> <span class="sr">/alu</span><span class="se">\d</span><span class="sr">+/</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">peoplePL</span><span class="p">.</span><span class="nx">names</span><span class="p">())),</span> <span class="err">#</span> <span class="nb">Array</span> <span class="k">of</span> <span class="nx">strings</span> 
+  <span class="nx">print</span><span class="p">(</span><span class="nx">alus</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Un problema con el que se encontrará a la hora de extender Egg es la asincronía de la mayor parte de las librerías JavaScript
+que va a usar, que casan mal con la naturaleza síncrona de Egg.</p>
+
+<p>Por ejemplo, para implementar la extensión <code class="language-plaintext highlighter-rouge">github</code> deberá de hacer uso de una librería asíncrona
+como <a href="https://www.npmjs.com/package/octokit">octokit.js</a> o similar.</p>
+
+<h3 id="ejemplo-egg-para-calculo-científico">Ejemplo: Egg para Calculo Científico</h3>
+
+<p>La idea general es extender el lenguaje <a href="https://github.com/ULL-ESIT-PL-1819/egg">Egg</a> con funcionalidades para el cálculo científico</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">do</span> <span class="p">{</span>
+  <span class="nx">use</span><span class="p">(</span><span class="dl">'</span><span class="s1">science</span><span class="dl">'</span><span class="p">),</span>
+  <span class="p">:</span><span class="o">=</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span> <span class="nx">arr</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">)),</span>
+  <span class="p">:</span><span class="o">=</span><span class="p">(</span><span class="nx">v2</span><span class="p">,</span> <span class="nx">arr</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span> 
+  <span class="p">:</span><span class="o">=</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="o">+</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span> <span class="nx">v2</span><span class="p">)),</span>
+  <span class="nx">print</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="ejemplo-egg-para-describir-tareas">Ejemplo: Egg para Describir Tareas</h3>
+
+<p>La idea general es extender el lenguaje <a href="https://github.com/ULL-ESIT-PL-1819/egg">Egg</a> con funcionalidades para la descripción de tareas. Este código sería el contenido de un fichero <code class="language-plaintext highlighter-rouge">eggfile.egg</code>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">tasks</span> <span class="p">{</span>
+  <span class="nx">use</span><span class="p">(</span><span class="dl">'</span><span class="s1">tasks</span><span class="dl">'</span><span class="p">),</span>
+  <span class="nx">task</span><span class="p">(</span><span class="nx">compile</span><span class="p">:</span> <span class="nx">sh</span><span class="p">(</span><span class="dl">"</span><span class="s2">gcc hello.c</span><span class="dl">"</span><span class="p">),</span> <span class="nx">depends</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mylib</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">task</span><span class="p">(</span><span class="nx">mylib</span><span class="p">:</span> <span class="nx">sh</span><span class="p">(</span><span class="dl">"</span><span class="s2">gcc -c -o mylib.o mylib.c</span><span class="dl">"</span><span class="p">)),</span>
+  <span class="nx">task</span><span class="p">(</span><span class="k">default</span><span class="p">:</span> <span class="dl">"</span><span class="s2">compile</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="ejemplo-command-line-processing">Ejemplo: Command line processing</h3>
+
+<p>La idea general es extender el lenguaje <a href="https://github.com/ULL-ESIT-PL-1819/egg">Egg</a> con funcionalidades para procesar los argumentos dados en línea de comandos (similar a lo que es <a href="https://www.npmjs.com/package/commander">commander</a> para Node.js):</p>
+
+<p>Por ejemplo para una ejecución como esta:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ example.egg -vt 1000 one.js two.js
+</code></pre></div></div>
+
+<p>Tendríamos que escribir <code class="language-plaintext highlighter-rouge">example-egg</code> siguiendo un patrón como este:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">do</span> <span class="p">{</span>
+  <span class="nx">use</span><span class="p">(</span><span class="dl">'</span><span class="s1">command-line</span><span class="dl">'</span><span class="p">),</span>
+  <span class="p">:</span><span class="o">=</span><span class="p">(</span><span class="nx">optionDefinition</span><span class="p">,</span> <span class="nx">arr</span> <span class="p">[</span>
+    <span class="nx">map</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">verbose</span><span class="dl">'</span><span class="p">,</span> <span class="na">alias</span><span class="p">:</span> <span class="dl">'</span><span class="s1">v</span><span class="dl">'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+    <span class="nx">map</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">src</span><span class="dl">'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="na">multiple</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">defaultOption</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+    <span class="nx">map</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">timeout</span><span class="dl">'</span><span class="p">,</span> <span class="na">alias</span><span class="p">:</span> <span class="dl">'</span><span class="s1">t</span><span class="dl">'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="nb">Number</span> <span class="p">},</span>
+    <span class="nx">map</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">help</span><span class="dl">'</span><span class="p">,</span> <span class="na">alias</span><span class="p">:</span> <span class="dl">'</span><span class="s1">h</span><span class="dl">'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="p">},</span>
+  <span class="p">]),</span>
+  <span class="p">:</span><span class="o">=</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="nx">parseArgs</span><span class="p">(</span><span class="nx">optionDefinitions</span><span class="p">)),</span>
+  <span class="nx">print</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+    <span class="cm">/* options es un map como este:
+        {
+          src: [
+            'one.js',
+            'two.js'
+          ],
+          verbose: true,
+          timeout: 1000
+        }
+    */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="entrega">Entrega</h2>
+
+<p>Añada como submódulos del repo de entrega todos los repos adicionales que haya tenido que crear 
+para la realización de esta tarea</p>
+
+<h2 id="recursos">Recursos</h2>
+
+<ul>
+  <li><a href="https://javascript.info/async">Book <em>The Modern Javascript Tutorial</em>. Chapter Promises, async/await</a></li>
+  <li>Vídeo <a href="https://youtu.be/u2axmPnxUoo">Cómo funciona Async/Await en menos de 15 minutos</a> YouTube Vídeo por Appdelante</li>
+</ul>
+
+<h2 id="table-of-contents-1">Table of Contents</h2>
+
+<ul>
+  <li><a href="#introducci%C3%B3n">Introducción</a></li>
+  <li><a href="#ideas">Ideas</a>
+    <ul>
+      <li><a href="#a%C3%B1adir-herencia-entre-objetos-a-egg">Añadir Herencia entre objetos a Egg</a></li>
+      <li><a href="#extensi%C3%B3n-de-egg-con-use">Extensión de Egg con <code class="language-plaintext highlighter-rouge">use</code></a></li>
+      <li><a href="#ejemplo-egg-para-facilitar-el-manejo-de-github">Ejemplo: Egg para facilitar el manejo de GitHub</a></li>
+      <li><a href="#ejemplo-egg-para-calculo-cient%C3%ADfico">Ejemplo: Egg para Calculo Científico</a></li>
+      <li><a href="#ejemplo-egg-para-describir-tareas">Ejemplo: Egg para Describir Tareas</a></li>
+      <li><a href="#ejemplo-command-line-processing">Ejemplo: Command line processing</a></li>
+    </ul>
+  </li>
+  <li><a href="#entrega">Entrega</a></li>
+  <li><a href="#recursos">Recursos</a></li>
+</ul>
+
+
+
+        </section>
+    </div>
+
+    
+</body>
+
+</html>

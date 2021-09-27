@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Reto para la práctica p4-t2-networking | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Reto para la práctica p4-t2-networking" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Reto para la práctica p4-t2-networking" />
+<script type="application/ld+json">
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020","headline":"Reto para la práctica p4-t2-networking","url":"/tema1-introduccion/practicas/p4-t2-networking/reto.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1d0041411a16e7bda0dd61fcb02fd1df8d59dcbb">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io">Rep</a></li>
+            
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+
+            <li><a href="/index.html">DMSI</a></li>
+            <li><a href="/tema0-presentacion/">0</a></li>
+            <li><a href="/tema1-introduccion/">1</a></li>
+            <li><a href="/tema2-design/">2</a></li>
+            <li><a href="/tema3-modelos-emergentes/">3</a></li>
+            <li><a href="/tema4-bases-de-datos/">4</a></li>
+            <li><a href="/tema5-mantenimiento/">5</a></li>
+            <li><a href="/tema6-calidad/" title="tema6: Calidad">6</a></li>
+            
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">ULL-ESIT-DMSI-1920</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusvirtual.ull.es/1920/course/view.php?id=201911084" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher/117245/530/" target="_blank">Casiano</a></span>
+            </div>
+
+            <h1 id="reto-para-la-práctica-p4-t2-networking">Reto para la práctica p4-t2-networking</h1>
+
+<p>Escriba un servidor que permita un <em>chat</em>  donde los clientes se conectan
+via <code class="language-plaintext highlighter-rouge">telnet</code> o <code class="language-plaintext highlighter-rouge">netcat</code>.</p>
+
+<p>Cuando se arranca el sevidor debe decir algo como esto:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server$ node chat-server.js 
+Server listening at http://localhost:8000
+</code></pre></div></div>
+
+<p>Después si se conecta un cliente, debe recibir un mensaje de bienvenida:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1$ nc localhost 8000
+Welcome to telnet chat!
+</code></pre></div></div>
+
+<p>En la consola del server debe reflejarse que un cliente se ha conectado:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server$ node chat-server.js 
+Server listening at http://localhost:8000
+Guest1 joined this chat.
+</code></pre></div></div>
+
+<p>Si desde otra terminal se conecta otro cliente …</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2$ nc localhost 8000
+Welcome to telnet chat!
+</code></pre></div></div>
+
+<p>y un cliente escribe algo …</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1$ nc localhost 8000
+Welcome to telnet chat!
+Guest2 joined this chat.
+hello all!
+</code></pre></div></div>
+
+<p>debe reflejarse en el resto de los clientes:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2$ nc localhost 8000
+Welcome to telnet chat!
+Guest1&gt; hello all!
+</code></pre></div></div>
+
+<p>así como en la consola del server:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server$ node chat-server.js 
+Server listening at http://localhost:8000
+Guest1 joined this chat.
+Guest2 joined this chat.
+Guest1&gt; hello all!
+</code></pre></div></div>
+
+<h2 id="tips">Tips</h2>
+
+<ul>
+  <li>
+    <p>Es conveniente tener un array <code class="language-plaintext highlighter-rouge">sockets</code> en el que se guarden los sockets 
+creados para los clientes que están conectados</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sockets</span> <span class="o">=</span> <span class="p">[];</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Le será de ayuda una función <code class="language-plaintext highlighter-rouge">broadcast</code> que envía un <code class="language-plaintext highlighter-rouge">message</code>que acaba 
+de llegar de un cliente al resto de los clientes:</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">broadcast</span><span class="p">(</span><span class="k">from</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// If there are no sockets, then don't broadcast any messages</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// If there are clients remaining then broadcast message</span>
+    <span class="nx">sockets</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">// Dont send any messages to the sender</span>
+      <span class="p">...</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Documentación de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/forEach">forEach</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Cada vez que un cliente se desconecta deberemos eliminar el socket de dicho cliente
+del array <code class="language-plaintext highlighter-rouge">sockets</code></p>
+    <ul>
+      <li>Documentación de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/splice">splice</a></li>
+      <li>Documentación de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/indexOf">indexOf</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="recursos-para-el-profesor">Recursos para el profesor</h2>
+
+<ul>
+  <li><a href="https://github.com/ULL-MII-CA-1819/nodejs-the-right-way/blob/master/networking-with-sockets-chapter-3/chat-server.js">sol c</a></li>
+  <li>Path: <code class="language-plaintext highlighter-rouge">/Users/casiano/local/src/CA/sol-nodejs-the-right-way/networking-with-sockets-chapter-3</code></li>
+</ul>
+
+
+        </section>
+    </div>
+
+    
+</body>
+
+</html>

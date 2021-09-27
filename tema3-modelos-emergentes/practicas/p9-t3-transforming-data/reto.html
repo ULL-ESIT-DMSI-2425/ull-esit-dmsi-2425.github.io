@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Reto p9-t3-transfoming-data | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Reto p9-t3-transfoming-data" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Reto p9-t3-transfoming-data" />
+<script type="application/ld+json">
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020","headline":"Reto p9-t3-transfoming-data","url":"/tema3-modelos-emergentes/practicas/p9-t3-transforming-data/reto.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1d0041411a16e7bda0dd61fcb02fd1df8d59dcbb">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io">Rep</a></li>
+            
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+
+            <li><a href="/index.html">DMSI</a></li>
+            <li><a href="/tema0-presentacion/">0</a></li>
+            <li><a href="/tema1-introduccion/">1</a></li>
+            <li><a href="/tema2-design/">2</a></li>
+            <li><a href="/tema3-modelos-emergentes/">3</a></li>
+            <li><a href="/tema4-bases-de-datos/">4</a></li>
+            <li><a href="/tema5-mantenimiento/">5</a></li>
+            <li><a href="/tema6-calidad/" title="tema6: Calidad">6</a></li>
+            
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">ULL-ESIT-DMSI-1920</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusvirtual.ull.es/1920/course/view.php?id=201911084" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher/117245/530/" target="_blank">Casiano</a></span>
+            </div>
+
+            <h1 id="reto-p9-t3-transfoming-data">Reto p9-t3-transfoming-data</h1>
+
+<p>Usando los módulos</p>
+
+<ul>
+  <li><a href="https://www.npmjs.com/package/request">request</a>  o <a href="https://www.npmjs.com/package/request-promise">request-promise</a> y</li>
+  <li><a href="https://www.npmjs.com/package/cheerio">cheerio</a>,</li>
+</ul>
+
+<p>Escriba un programa Node.js  al que se le pasa como argumento en línea de comandos una categoría de alimento 
+y que muestre una lista de objetos JSON con las descripciones de 
+los productos y precios de los productos en Hiperdino que caen en dicha categoría.</p>
+
+<p>Algo similar a esto:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./hiperdino.js cacao-y-cafe
+{ "precio": "1,04 €", "descripcion": "Candelaria baxcao cacao 250 gr"}
+{ "precio": "2,72 €", "descripcion": "Cola Cao avenacao cacao soluble 350 gr"}
+{ "precio": "2,42 €", "descripcion": "Cola Cao cacao 0% fibra 300 gr"}
+{ "precio": "13,94 €", "descripcion": "Cola Cao cacao 3 kg"}
+{ "precio": "22,52 €", "descripcion": "Cola Cao cacao caja 5 kg"}
+{ "precio": "2,62 €", "descripcion": "Cola Cao cacao complet 360 gr"}
+{ "precio": "5,46 €", "descripcion": "Cola Cao cacao ecobolsa 1,2 kg"}
+{ "precio": "6,59 €", "descripcion": "Cola Cao cacao en polvo instantáneo 0% 700 gr"}
+{ "precio": "2,96 €", "descripcion": "Cola Cao cacao light 325 gr"}
+{ "precio": "3,29 €", "descripcion": "Cola Cao cacao noir300 gr"}
+{ "precio": "2,70 €", "descripcion": "Cola Cao cacao original 400 gr"}
+{ "precio": "4,41 €", "descripcion": "Cola Cao cacao original 800 gr"}
+...
+
+</code></pre></div></div>
+
+<p>La idea es que en la web  de Hiperdino para obtener la información sobre una categoría de productos como <code class="language-plaintext highlighter-rouge">arroz</code> debemos hacer un request a una ruta como esta:</p>
+
+<p><a href="https://online.hiperdino.es/c9495/alimentacion/arroz.html">https://online.hiperdino.es/c9495/alimentacion/arroz.html</a></p>
+
+<p>En general para una <code class="language-plaintext highlighter-rouge">:categoria-de-alimento</code> 
+la ruta será <code class="language-plaintext highlighter-rouge">https://online.hiperdino.es/c9495/alimentacion/:categoria-de-alimento.html</code></p>
+
+<h2 id="categorías-de-alimentos-de-hiperdino">Categorías de Alimentos de Hiperdino</h2>
+
+<p>Estas son algunas categorías de alimentos reconocidas por Hiperdino:</p>
+
+<ul>
+  <li><a href="https://online.hiperdino.es/c9495/alimentacion/arroz">arroz</a></li>
+  <li><a href="https://online.hiperdino.es/c9495/alimentacion/aceites">aceites</a></li>
+  <li><a href="https://online.hiperdino.es/c9495/alimentacion/azucar-y-edulcorantes">azucar-y-edulcorantes</a></li>
+  <li><a href="https://online.hiperdino.es/c9495/alimentacion/cacao-y-cafe">cacao-y-cafe</a></li>
+  <li><a href="https://online.hiperdino.es/c9495/alimentacion/conservas-fruta-y-dulces">conservas-fruta-y-dulces</a></li>
+</ul>
+
+<p>En general, se puede saber que categorías de alimentos están disponibles visitando la página
+<a href="https://www.hiperdino.es/">https://www.hiperdino.es/</a>. En la izquierda aparece un menu navgable con los categorías de alimentos. Cuando visite esta página,
+pulse en el menú de contexto <code class="language-plaintext highlighter-rouge">inspeccionar</code> estando en el panel izquierdo 
+sobre la categoría de alimento deseada y así podrá saber el nombre la página HTML:</p>
+
+<p><img src="hiperdino-alimento-categoria.png" alt="Categorías de Alimentos en Hiperdino" /></p>
+
+<p>De hecho si nos descargamos 
+<a href="/tema3-modelos-emergentes/practicas/p9-t3-transforming-data/hiperdino.html">la página html de https://www.hiperdino.es/</a> 
+y hacemos una búsqueda con <code class="language-plaintext highlighter-rouge">grep</code> 
+como esta:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ grep 'https://www.hiperdino.es/c9495/alimentacion/' hiperdino.md 
+</code></pre></div></div>
+
+<p>obtenemos la lista de páginas HTML para las categorías de alimentos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"https://www.hiperdino.es/c9495/alimentacion/aceites.html" rel=
+"noreferrer noopener"&gt;https://www.hiperdino.es/c9495/alimentacion/aceites.html&lt;/a&gt;"
+"https://www.hiperdino.es/c9495/alimentacion/aperitivo.html" rel=
+"noreferrer noopener"&gt;https://www.hiperdino.es/c9495/alimentacion/aperitivo.html&lt;/a&gt;"
+"https://www.hiperdino.es/c9495/alimentacion/arroz.html" rel=
+"noreferrer noopener"&gt;https://www.hiperdino.es/c9495/alimentacion/arroz.html&lt;/a&gt;"
+"https://www.hiperdino.es/c9495/alimentacion/azucar-y-edulcorantes.html"
+"noreferrer noopener"&gt;https://www.hiperdino.es/c9495/alimentacion/azucar-y-edulcorantes.html&lt;/a&gt;"
+"https://www.hiperdino.es/c9495/alimentacion/cacao-y-cafe.html"
+rel="noreferrer noopener"&gt;https://www.hiperdino.es/c9495/alimentacion/cacao-y-cafe.html&lt;/a&gt;"
+"https://www.hiperdino.es/c9495/alimentacion/caldos-sopas-y-cremas.html"
+"noreferrer noopener"&gt;https://www.hiperdino.es/c9495/alimentacion/caldos-sopas-y-cremas.html&lt;/a&gt;"
+"https://www.hiperdino.es/c9495/alimentacion/cereales.html" rel=
+"noreferrer noopener"&gt;https://www.hiperdino.es/c9495/alimentacion/cereales.html&lt;/a&gt;"
+"https://www.hiperdino.es/c9495/alimentacion/chocolate.html" rel=
+"noreferrer noopener"&gt;https://www.hiperdino.es/c9495/alimentacion/chocolate.html&lt;/a&gt;"
+"https://www.hiperdino.es/c9495/alimentacion/comida-internacional.html"
+"noreferrer noopener"&gt;https://www.hiperdino.es/c9495/alimentacion/comida-internacional.html&lt;/a&gt;"
+"https://www.hiperdino.es/c9495/alimentacion/condimentos.html" rel=
+"noreferrer noopener"&gt;https://www.hiperdino.es/c9495/alimentacion/condimentos.html&lt;/a&gt;"
+"https://www.hiperdino.es/c9495/alimentacion/conservas-carne.html"
+...
+</code></pre></div></div>
+
+<h2 id="sugerencias-para-buscar-la-descripción-y-precio-de-un-item-de-una-categoría-de-producto">Sugerencias para Buscar la Descripción y Precio de un Item de una Categoría de Producto</h2>
+
+<p>A fecha de Mayo de 2019 la página de Hiperdino para una categoría de producto
+<code class="language-plaintext highlighter-rouge">https://online.hiperdino.es/c9495/alimentacion/categoria-de-alimento.html</code>
+tiene una estructura como sigue:</p>
+
+<ul>
+  <li>
+    <p>Cada producto se describe en un elemento <code class="language-plaintext highlighter-rouge">div</code> con la clase <code class="language-plaintext highlighter-rouge">.product-list-item</code></p>
+
+    <p><img src="item.png" alt="item" /></p>
+  </li>
+  <li>
+    <p>La descripción del producto está en un <code class="language-plaintext highlighter-rouge">div</code> con la clase <code class="language-plaintext highlighter-rouge">.description__text</code></p>
+
+    <p><img src="description.png" alt="item" /></p>
+  </li>
+  <li>
+    <p>El precio aparece en un elemento <code class="language-plaintext highlighter-rouge">div</code>con la clase <code class="language-plaintext highlighter-rouge">.price__left</code> y dentro del mismo en un <code class="language-plaintext highlighter-rouge">div</code> con la clase
+<code class="language-plaintext highlighter-rouge">.price__text</code></p>
+
+    <p><img src="precio.png" alt="precio" /></p>
+  </li>
+</ul>
+
+<h2 id="recursos-páginas-completas">Recursos. Páginas Completas</h2>
+
+<ul>
+  <li><a href="/tema3-modelos-emergentes/practicas/p9-t3-transforming-data/arroz.html">Página Completa de la categoría <em>arroz</em>: https://www.hiperdino.es/c9495/alimentacion/arroz.html</a> (Mayo 2019)</li>
+  <li><a href="/tema3-modelos-emergentes/practicas/p9-t3-transforming-data/hiperdino.html">Página Completa https://www.hiperdino.es/c9495/</a> (Mayo 2019)</li>
+</ul>
+
+
+        </section>
+    </div>
+
+    
+</body>
+
+</html>

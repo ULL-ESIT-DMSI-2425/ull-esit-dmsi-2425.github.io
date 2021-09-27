@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Capítulo: Authentication | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Capítulo: Authentication" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Capítulo: Authentication" />
+<script type="application/ld+json">
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020","headline":"Capítulo: Authentication","url":"/tema3-modelos-emergentes/authentication.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1d0041411a16e7bda0dd61fcb02fd1df8d59dcbb">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io">Rep</a></li>
+            
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+
+            <li><a href="/index.html">DMSI</a></li>
+            <li><a href="/tema0-presentacion/">0</a></li>
+            <li><a href="/tema1-introduccion/">1</a></li>
+            <li><a href="/tema2-design/">2</a></li>
+            <li><a href="/tema3-modelos-emergentes/">3</a></li>
+            <li><a href="/tema4-bases-de-datos/">4</a></li>
+            <li><a href="/tema5-mantenimiento/">5</a></li>
+            <li><a href="/tema6-calidad/" title="tema6: Calidad">6</a></li>
+            
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">ULL-ESIT-DMSI-1920</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusvirtual.ull.es/1920/course/view.php?id=201911084" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher/117245/530/" target="_blank">Casiano</a></span>
+            </div>
+
+            <h2 id="capítulo-authentication">Capítulo: Authentication</h2>
+
+<p><strong>Sessions y Authentication</strong></p>
+
+<p>Véase la sección <a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/cookies/">Cookies y Autenticación</a>
+en los apuntes del profesor</p>
+
+<p><strong>OAuth</strong></p>
+
+<ul>
+  <li><a href="http://nereida.deioc.ull.es/~lpp/perlexamples/node773.html">Introducción a OAuth</a> (Apuntes del profesor)</li>
+</ul>
+
+<p><strong>Passport: Introducción</strong></p>
+
+<ul>
+  <li><a href="http://passportjs.org/">Passport</a> is authentication middleware for Node.js.</li>
+  <li>Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application.</li>
+  <li>A comprehensive set of strategies support authentication using
+    <ul>
+      <li>a <a href="http://passportjs.org/docs/username-password">username and password</a>,</li>
+      <li><a href="http://passportjs.org/docs/facebook">Facebook</a>,</li>
+      <li><a href="http://passportjs.org/docs/twitter">Twitter</a>,</li>
+      <li><a href="https://github.com/cfsghost/passport-github">GitHub</a>,</li>
+      <li>and <a href="http://passportjs.org/docs/providers">more</a>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Passport: Tutoriales</strong></p>
+
+<ul>
+  <li><a href="https://github.com/ULL-ESIT-SYTW-1617/express-4.x-github-example">Example of how to use Express 4.x and Passport to authenticate users using GitHub</a></li>
+  <li><a href="https://github.com/ULL-ESIT-DSI-1617/express-4.x-facebook-example">GitHub repo demonstrating how to use Express 4.x and Passport to authenticate users using Facebook</a></li>
+  <li><a href="https://github.com/ULL-ESIT-SYTW-1617/express-4.x-local-example">Example of how to use Express 4.x and Passport for authentication with username and password</a></li>
+  <li><a href="https://scotch.io/tutorials/easy-node-authentication-setup-and-local">Easy Node Authentication: Setup and Local</a></li>
+  <li><a href="http://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619">Authenticating Node.js Applications With Passport</a>
+    <ul>
+      <li><a href="https://github.com/tutsplus/passport-mongo">Repositorio con el código del tutorial</a></li>
+    </ul>
+  </li>
+  <li><a href="https://youtu.be/Z1ktxiqyiLA">Node.js Login System With Passport</a> YouTube video
+    <ul>
+      <li><a href="https://youtu.be/Z1ktxiqyiLA">Part 1</a>
+        <ul>
+          <li><a href="http://download.oracle.com/oll/tutorials/SQLInjection/html/lesson1/les01_tm_ovw3.htm">What Is Input Validation and Sanitization?</a></li>
+          <li><a href="https://gist.github.com/brianmacarthur/a4e3e0093d368aa8e423">Flash Messages</a>: A flash message is used in order to keep a message in session through one or several requests of the same user. By default, it is removed from session after it has been displayed to the user. Flash messages are usually used in combination with HTTP redirections, because in this case there is no view, so messages can only be displayed in the request that follows redirection.</li>
+        </ul>
+      </li>
+      <li><a href="https://youtu.be/OnuC3VtEQks">Part 2</a></li>
+      <li><a href="https://youtu.be/iX8UhDOmkPE">Part 3</a>
+        <ul>
+          <li><a href="https://github.com/jaredhanson/passport-local">Passport-local</a> (GitHub module repo)</li>
+          <li><a href="http://www.passportjs.org/docs/username-password/">Passport Docs: Username &amp; Password</a></li>
+          <li><a href="http://www.passportjs.org/docs/downloads/html/#flash-messages">Passport Docs: Flash Messages</a></li>
+          <li><a href="https://github.com/dcodeIO/bcrypt.js">Bcryptjs</a> at GitHub</li>
+          <li><a href="http://www.passportjs.org/docs/configure/#sessions">Passport: sessions</a> (serialize/deserialize)</li>
+        </ul>
+      </li>
+      <li><a href="https://github.com/bradtraversy/loginapp">GitHub repo</a></li>
+      <li><a href="https://github.com/ULL-ESIT-MII-CA-1718/loginapp">Fork at ULL-ESIT-CA-1718</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Passport: Notas sobre como Configurar una WebApp en Facebook</strong></p>
+
+<ul>
+  <li><a href="https://developers.facebook.com/docs/apps/">Facebook App Development Guide</a>
+    <ul>
+      <li><a href="https://developers.facebook.com/docs/apps/register">Facebook: Register and Configure an App</a></li>
+    </ul>
+  </li>
+  <li>StackOverflow: <a href="http://stackoverflow.com/questions/2459728/how-to-test-facebook-connect-locally">How to Test Facebook Connect Locally</a>
+    <ul>
+      <li>
+        <p>Facebook → Settings → Basic:</p>
+
+        <p>write “localhost” in the “App Domains” field then click on “+Add Platform” choose “Web Site”.</p>
+
+        <p>After that, in the “Site Url” field write your localhost url 
+(e.g.: <code class="language-plaintext highlighter-rouge">http://localhost:3000/login/facebook/return</code>).
+This will allow you to test your facebook plugins locally.</p>
+      </li>
+    </ul>
+  </li>
+  <li>StackOverflow: <a href="http://stackoverflow.com/questions/8107911/facebook-site-url">Facebook Site URL?</a></li>
+</ul>
+
+<h3 id="prácticas">Prácticas</h3>
+
+<ul>
+  <li><a href="practicas/p8-t3-sessions-and-modules">Práctica: Cookies, Sesiones, Autenticación y Módulos npm (p8-t3-sessions-and-modules)</a></li>
+</ul>
+
+
+        </section>
+    </div>
+
+    
+</body>
+
+</html>

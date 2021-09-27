@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Capítulo: WebSockets | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Capítulo: WebSockets" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Capítulo: WebSockets" />
+<script type="application/ld+json">
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020","headline":"Capítulo: WebSockets","url":"/tema3-modelos-emergentes/websockets.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1d0041411a16e7bda0dd61fcb02fd1df8d59dcbb">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io">Rep</a></li>
+            
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+
+            <li><a href="/index.html">DMSI</a></li>
+            <li><a href="/tema0-presentacion/">0</a></li>
+            <li><a href="/tema1-introduccion/">1</a></li>
+            <li><a href="/tema2-design/">2</a></li>
+            <li><a href="/tema3-modelos-emergentes/">3</a></li>
+            <li><a href="/tema4-bases-de-datos/">4</a></li>
+            <li><a href="/tema5-mantenimiento/">5</a></li>
+            <li><a href="/tema6-calidad/" title="tema6: Calidad">6</a></li>
+            
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">ULL-ESIT-DMSI-1920</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusvirtual.ull.es/1920/course/view.php?id=201911084" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher/117245/530/" target="_blank">Casiano</a></span>
+            </div>
+
+            <h1 id="capítulo-websockets">Capítulo: WebSockets</h1>
+
+<p>Lea:</p>
+
+<ul>
+  <li>Capítulo <a href="https://javascript.info/websocket">WebSocket</a> del libro <a href="https://javascript.info/">The Modern JavaScript Tutorial</a></li>
+  <li><a href="https://socket.io/get-started/chat/">Socket.io Official Guide: a chat</a>
+    <ul>
+      <li><a href="https://github.com/socketio/chat-example">Associated Repo</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="bibliografía-complementaria">Bibliografía Complementaria</h2>
+
+<h3 id="build-a-simple-chat-app-with-nodejs-and-socketio-mediumcom">Build a simple chat app with node.js and socket.io Medium.com</h3>
+
+<ul>
+  <li><a href="https://medium.com/@noufel.gouirhate/build-a-simple-chat-app-with-node-js-and-socket-io-ea716c093088">Build a simple chat app with node.js and socket.io</a> By Noufel Gouirhate Dec 24, 2017 Medium.com
+    <ul>
+      <li><a href="https://github.com/ULL-ESIT-DSI-1819/simpleChatApp">Repo ULL-ESIT-DSI-1819/simpleChatApp</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="real-time-presentation-slides">Real Time Presentation Slides</h3>
+
+<ul>
+  <li><a href="https://medium.com/@nafeunasir/real-time-presentation-slides-with-socket-io-express-node-js-and-javascript-cf08a95ff098">Real-time Presentation Slides with Socket.io, Node.js and Javascript</a> by Nafeu Nasir at Medium.com
+    <ul>
+      <li><a href="https://github.com/ULL-ESIT-DSI-1819/realtime-slides-tut.git">Repo ULL-ESIT-DSI-1819/realtime-slides-tut.git</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="web-sockets-tutorial-nodejs-and-socketio-chat-app-in-the-net-ninja-youtube-channel-5-videos"><a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9i4V-_ZVwLmOusj8YAUhj_9">Web Sockets Tutorial (Node.js and Socket.io Chat App)</a> in the Net Ninja Youtube Channel (5 videos)</h3>
+
+<ul>
+  <li><a href="https://github.com/ULL-ESIT-DSI-1819/websockets-playlist">Repo ULL-ESIT-DSI-1819/websockets-playlist</a></li>
+  <li><a href="https://youtu.be/vQjiN8Qgs3c">WebSockets (using Socket.io) Tutorial #1 - What Are WebSockets?</a>
+    <ul>
+      <li><a href="https://github.com/ULL-ESIT-DSI-1819/websockets-playlist/tree/lesson-1">Branch lesson 1</a></li>
+    </ul>
+  </li>
+  <li><a href="https://youtu.be/ggVsXljT0MI">WebSockets (using Socket.io) Tutorial #2 - Creating an Express App</a>
+    <ul>
+      <li><a href="https://github.com/ULL-ESIT-DSI-1819/websockets-playlist/tree/lesson-2">Branch lesson 2</a></li>
+    </ul>
+  </li>
+  <li><a href="https://youtu.be/UwS3wJoi7fY">WebSockets (using Socket.io) Tutorial #3 - Using Socket.io</a>
+    <ul>
+      <li><a href="https://github.com/ULL-ESIT-DSI-1819/websockets-playlist/tree/lesson-3">Branch lesson 3</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="yet-another-chat-socketio--express-nodejs-tutorial-to-build-a-realtime-chat-app-youtube-2-videos">Yet Another Chat: <a href="https://youtu.be/tzNOqcoupWQ">Socket.io &amp; Express NodeJS Tutorial to build a Realtime Chat App</a> Youtube (2 videos)</h3>
+<ul>
+  <li><a href="https://youtu.be/tzNOqcoupWQ">Socket.io &amp; Express NodeJS Tutorial to build a Realtime Chat App - Part 1</a></li>
+  <li><a href="https://youtu.be/emnlFamYx7Y">Socket.io &amp; Express NodeJS Tutorial to build a Realtime Chat App - Part 2</a></li>
+  <li><a href="https://github.com/ULL-ESIT-DSI-1819/Socket_io_Chat_Room">Corresponding repo at GitHub</a></li>
+</ul>
+
+<h3 id="un-artículo-cortito-para-los-que-tienen-prisa">Un artículo cortito para los que tienen prisa</h3>
+
+<ul>
+  <li>Article <a href="https://medium.com/@chathuranga94/introduction-to-socket-io-600025322cd2">Introduction to Socket.io</a> by Udara Bibile at Medium.com</li>
+</ul>
+
+<h3 id="un-chat-con-mas-funcionalidades-aunque-usando-versiones-algo-obsoletas">Un chat con mas funcionalidades aunque usando versiones algo obsoletas</h3>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=pNKNYLv2BpQ&amp;list=PLicY6aYZ8ilpmHfJ8jP1lt7ihPpRWBJ9P">Node.js &amp; Socket.io Chat video list</a> by Smitha Milli (4 videos. Includes private messaging and MongoDB. Versiones viejas de express, socket.io y mongodb)
+    <ul>
+      <li><a href="https://github.com/smilli/nodejs-chat-complete">code: nodejs-chat-complete</a></li>
+      <li><a href="https://github.com/smilli/nodejs-chat">Skeleton code for 2014 Hackers@Berkeley Node.js workshop</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="bibliografía">Bibliografía</h2>
+
+<ul>
+  <li>Libro: <a href="https://proquest-safaribooksonline-com.accedys2.bbtk.ull.es/9781782160786">Socket.IO Real-time Web Application Development By: Rohit Rai</a> book at PuntoQ ULL</li>
+</ul>
+
+<h2 id="prácticas">Prácticas</h2>
+
+<ul>
+  <li><a href="practicas/p5-t3-websockets">Descripción de la práctica p5-t3-websockets</a></li>
+</ul>
+
+
+        </section>
+    </div>
+
+    
+</body>
+
+</html>

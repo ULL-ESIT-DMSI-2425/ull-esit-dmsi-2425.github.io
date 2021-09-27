@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Challenge 1: Content negotiation | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Challenge 1: Content negotiation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Challenge 1: Content negotiation" />
+<script type="application/ld+json">
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020","headline":"Challenge 1: Content negotiation","url":"/tema1-introduccion/practicas/p3-t1-c3-http/reto.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1d0041411a16e7bda0dd61fcb02fd1df8d59dcbb">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io">Rep</a></li>
+            
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+
+            <li><a href="/index.html">DMSI</a></li>
+            <li><a href="/tema0-presentacion/">0</a></li>
+            <li><a href="/tema1-introduccion/">1</a></li>
+            <li><a href="/tema2-design/">2</a></li>
+            <li><a href="/tema3-modelos-emergentes/">3</a></li>
+            <li><a href="/tema4-bases-de-datos/">4</a></li>
+            <li><a href="/tema5-mantenimiento/">5</a></li>
+            <li><a href="/tema6-calidad/" title="tema6: Calidad">6</a></li>
+            
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">ULL-ESIT-DMSI-1920</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusvirtual.ull.es/1920/course/view.php?id=201911084" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher/117245/530/" target="_blank">Casiano</a></span>
+            </div>
+
+            <h1 id="challenge-1-content-negotiation">Challenge 1: Content negotiation</h1>
+
+<p>One of the things that HTTP can do, is called <em>content negotiation</em>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Accept</code> header for a request can be used to tell the server what type of document the client would like to get.</p>
+
+<p>Some servers ignore this header, but when a server knows of various ways to encode a resource, 
+it can look at this header and send the one that the client prefers.</p>
+
+<p>The URL <a href="http://eloquentjavascript.net/author">http://eloquentjavascript.net/author</a> is configured to respond with either</p>
+
+<ul>
+  <li>plaintext,</li>
+  <li>HTML, or</li>
+  <li>JSON,</li>
+</ul>
+
+<p>depending on what the client asks for.</p>
+
+<p>These formats are identified by the standardized media types <code class="language-plaintext highlighter-rouge">text/plain</code>, <code class="language-plaintext highlighter-rouge">text/html</code>, and <code class="language-plaintext highlighter-rouge">application/json</code>.</p>
+
+<p><strong>Write a Node.js client that send requests to fetch all three formats of this resource</strong>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="dl">"</span><span class="s2">text/plain</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text/html</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">http</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span>
+    <span class="na">hostname</span><span class="p">:</span> <span class="dl">"</span><span class="s2">eloquentjavascript.net</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/author</span><span class="dl">"</span><span class="p">,</span> 
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="na">Accept</span><span class="p">:</span> <span class="nx">type</span><span class="p">}</span> 
+  <span class="p">},</span>  <span class="p">...</span>
+</code></pre></div></div>
+
+<p>Use Node’s <a href="https://nodejs.org/api/http.html#http_http_request_options_callback">http.request</a> function. 
+The headers of a request can be given as an object, in the <code class="language-plaintext highlighter-rouge">headers</code> property of <code class="language-plaintext highlighter-rouge">http.request</code>’s first argument.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">http</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span>
+    <span class="na">hostname</span><span class="p">:</span> <span class="dl">"</span><span class="s2">eloquentjavascript.net</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/author</span><span class="dl">"</span><span class="p">,</span> 
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="na">Accept</span><span class="p">:</span> <span class="nx">type</span><span class="p">}</span> 
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Write out the content of the responses to each request.</p>
+
+<p>Don’t forget to call the <code class="language-plaintext highlighter-rouge">end</code> method on the object returned by <code class="language-plaintext highlighter-rouge">http.request</code> in order to actually fire off the request.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="dl">"</span><span class="s2">text/plain</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text/html</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">http</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span>
+    <span class="na">hostname</span><span class="p">:</span> <span class="dl">"</span><span class="s2">eloquentjavascript.net</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/author</span><span class="dl">"</span><span class="p">,</span> 
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="na">Accept</span><span class="p">:</span> <span class="nx">type</span><span class="p">}</span> 
+  <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">}).</span><span class="nx">end</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">response</code> object passed to <code class="language-plaintext highlighter-rouge">http.request</code>’s callback is a <a href="https://nodejs.org/api/stream.html#stream_readable_streams">readable stream</a>.</p>
+
+<p>This means that you must collect the chunks to  get the whole response body from it.</p>
+
+<p>The following utility function reads a whole stream and calls a callback function with the result, 
+using the usual pattern of passing any errors it encounters as the first argument to the callback:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">readStreamAsString</span><span class="p">(</span><span class="nx">stream</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="nx">stream</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">data</span> <span class="o">+=</span> <span class="nx">chunk</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+  <span class="p">});</span>
+  <span class="nx">stream</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">end</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">stream</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">callback</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Make use this of this utility function inside your request callback  to read  the response and dump it
+to the console.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/EJS/chapter20-node-js/chapter20-node-js-crguezl/exercises/content-negotiation-again(master)]$ ls -l
+total 8
+-rw-r--r--  1 casiano  staff  817 25 feb 13:10 index.js
+[~/EJS/chapter20-node-js/chapter20-node-js-crguezl/exercises/content-negotiation-again(master)]$ pwd -P
+/Users/casiano/local/src/javascript/eloquent-javascript/chapter20-node-js/chapter20-node-js-crguezl/exercises/content-negotiation-again
+</code></pre></div></div>
+
+<h1 id="reto-2-fixing-a-leak">Reto 2: Fixing a leak</h1>
+
+<p>For easy remote access to some files, I might get into the habit
+of having the file server defined in this chapter running on my
+machine, in the <code class="language-plaintext highlighter-rouge">/home/marijn/public</code> directory. Then, one day, I
+find that someone has gained access to all the passwords I stored
+in my browser.</p>
+
+<h2 id="what-happened">What happened?</h2>
+
+<p>If it isn’t clear to you yet, think back to the urlToPath function, defined like this:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">urlToPath</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">).</span><span class="nx">parse</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">pathname</span><span class="p">;</span>
+  <span class="k">return</span> <span class="dl">"</span><span class="s2">.</span><span class="dl">"</span> <span class="o">+</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Now consider the fact that paths passed to the <code class="language-plaintext highlighter-rouge">fs</code> functions can
+be relative—they may contain <code class="language-plaintext highlighter-rouge">../</code> to go up a directory. What happens
+when a client sends requests to URLs like the ones shown here?</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://myhostname:8000/../.config/config/google-chrome/Default/Web%20Data
+http://myhostname:8000/../.ssh/id_dsa
+http://myhostname:8000/../../../etc/passwd
+</code></pre></div></div>
+
+<ol>
+  <li>Change <code class="language-plaintext highlighter-rouge">urlToPath</code> to fix this problem. Take into account the fact
+that Node on Windows allows both forward slashes and backslashes
+to separate directories.</li>
+  <li>It is enough to strip out all occurrences of two dots that have a
+slash, a backslash, or the end of the string on both sides.</li>
+  <li>Using the <code class="language-plaintext highlighter-rouge">replace</code> method with a regular expression is the easiest way to
+do this.</li>
+  <li>But since such instances may overlap (as in <code class="language-plaintext highlighter-rouge">/../../f</code>),
+you may have to apply replace multiple times, until the string no
+longer changes.</li>
+  <li>Also make sure you do the replace after decoding
+the string, or it would be possible to foil the check by encoding
+a dot or a slash.</li>
+</ol>
+
+<p>Another potentially worrying case is when paths start with a slash,
+which are interpreted as absolute paths.</p>
+
+<p>But because <code class="language-plaintext highlighter-rouge">urlToPath</code> puts
+a dot character in front of the path, it is impossible to create
+requests that result in such a path.</p>
+
+<p>Multiple slashes in a row,
+inside the path, are odd but will be treated as a single slash by
+the file system.</p>
+
+<p>Here is a <a href="https://github.com/ULL-ESIT-MII-CA-1718/ejs-chapter20-node-js">Solution</a></p>
+
+
+        </section>
+    </div>
+
+    
+</body>
+
+</html>

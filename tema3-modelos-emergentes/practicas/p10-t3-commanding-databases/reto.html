@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Reto 1: Commanding Databases with yargs (p10-t3-commanding-databases) | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Reto 1: Commanding Databases with yargs (p10-t3-commanding-databases)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Reto 1: Commanding Databases with yargs (p10-t3-commanding-databases)" />
+<script type="application/ld+json">
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020","headline":"Reto 1: Commanding Databases with yargs (p10-t3-commanding-databases)","url":"/tema3-modelos-emergentes/practicas/p10-t3-commanding-databases/reto.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1d0041411a16e7bda0dd61fcb02fd1df8d59dcbb">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io">Rep</a></li>
+            
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+
+            <li><a href="/index.html">DMSI</a></li>
+            <li><a href="/tema0-presentacion/">0</a></li>
+            <li><a href="/tema1-introduccion/">1</a></li>
+            <li><a href="/tema2-design/">2</a></li>
+            <li><a href="/tema3-modelos-emergentes/">3</a></li>
+            <li><a href="/tema4-bases-de-datos/">4</a></li>
+            <li><a href="/tema5-mantenimiento/">5</a></li>
+            <li><a href="/tema6-calidad/" title="tema6: Calidad">6</a></li>
+            
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">ULL-ESIT-DMSI-1920</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusvirtual.ull.es/1920/course/view.php?id=201911084" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher/117245/530/" target="_blank">Casiano</a></span>
+            </div>
+
+            <h1 id="reto-1-commanding-databases-with-yargs-p10-t3-commanding-databases">Reto 1: Commanding Databases with yargs (p10-t3-commanding-databases)</h1>
+
+<p>Reescriba el programa de línea de comandos <code class="language-plaintext highlighter-rouge">esclu</code> usando <code class="language-plaintext highlighter-rouge">yargs</code> en vez de <code class="language-plaintext highlighter-rouge">commander</code></p>
+
+<h2 id="yargs">yargs</h2>
+
+<ul>
+  <li><a href="https://www.npmjs.com/package/yargs">yargs en npm</a></li>
+  <li><a href="https://yargs.js.org/">yargs home page</a></li>
+  <li><a href="https://github.com/yargs/yargs/blob/master//docs/api.md">Yargs’ API</a></li>
+  <li><a href="https://github.com/yargs/yargs/blob/master//docs/examples.md">Examples</a></li>
+  <li><a href="https://github.com/yargs/yargs/blob/master//docs/tricks.md">Parsing Tricks</a>
+    <ul>
+      <li><a href="https://github.com/yargs/yargs/blob/master//docs/tricks.md#stop">Stop the Parser</a></li>
+      <li><a href="https://github.com/yargs/yargs/blob/master//docs/tricks.md#negate">Negating Boolean Arguments</a></li>
+      <li><a href="https://github.com/yargs/yargs/blob/master//docs/tricks.md#numbers">Numbers</a></li>
+      <li><a href="https://github.com/yargs/yargs/blob/master//docs/tricks.md#arrays">Arrays</a></li>
+      <li><a href="https://github.com/yargs/yargs/blob/master//docs/tricks.md#objects">Objects</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/yargs/yargs/blob/master//docs/advanced.md">Advanced Topics</a>
+    <ul>
+      <li><a href="https://github.com/yargs/yargs/blob/master//docs/advanced.md#commands">Composing Your App Using Commands</a></li>
+      <li><a href="https://github.com/yargs/yargs/blob/master//docs/advanced.md#configuration">Building Configurable CLI Apps</a></li>
+      <li><a href="https://github.com/yargs/yargs/blob/master//docs/advanced.md#customizing">Customizing Yargs’ Parser</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="reto-2-commanding-databases-with-node-fetch-p10-t3-commanding-databases">Reto 2: Commanding Databases with node-fetch (p10-t3-commanding-databases)</h1>
+
+<p>Re-escriba <code class="language-plaintext highlighter-rouge">esclu</code> usando <code class="language-plaintext highlighter-rouge">node-fetch</code>en vez de <code class="language-plaintext highlighter-rouge">request</code></p>
+
+<ul>
+  <li><a href="https://www.npmjs.com/package/node-fetch">node-fetch</a></li>
+  <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#motivation">Motivation</a></li>
+  <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#features">Features</a></li>
+  <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#difference-from-client-side-fetch">Difference from client-side fetch</a></li>
+  <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#installation">Installation</a></li>
+  <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#loading-and-configuring-the-module">Loading and configuring the module</a></li>
+  <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#common-usage">Common Usage</a>
+    <ul>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#plain-text-or-html">Plain text or HTML</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#json">JSON</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#simple-post">Simple Post</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#post-with-json">Post with JSON</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#post-with-form-parameters">Post with form parameters</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#handling-exceptions">Handling exceptions</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#handling-client-and-server-errors">Handling client and server errors</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#advanced-usage">Advanced Usage</a>
+    <ul>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#streams">Streams</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#buffer">Buffer</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#accessing-headers-and-other-meta-data">Accessing Headers and other Meta data</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#post-data-using-a-file-stream">Post data using a file stream</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#post-with-form-data-detect-multipart">Post with form-data (https://github.com/bitinn/node-fetch/blob/master/README.mddetect multipart)</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#request-cancellation-with-abortsignal">Request cancellation with AbortSignal</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#api">API</a>
+    <ul>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#fetchurl-options">fetch(url[, options])</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#options">Options</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#class-request">Class: Request</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#class-response">Class: Response</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#class-headers">Class: Headers</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#interface-body">Interface: Body</a></li>
+      <li><a href="https://github.com/bitinn/node-fetch/blob/master/README.md#class-fetcherror">Class: FetchError</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+        </section>
+    </div>
+
+    
+</body>
+
+</html>

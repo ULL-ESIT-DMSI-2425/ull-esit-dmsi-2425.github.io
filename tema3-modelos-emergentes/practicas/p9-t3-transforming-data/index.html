@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Práctica Transforming Data and Testing Continuously (p9-t3-transfoming-data) | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Práctica Transforming Data and Testing Continuously (p9-t3-transfoming-data)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Práctica Transforming Data and Testing Continuously (p9-t3-transfoming-data)" />
+<script type="application/ld+json">
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020","headline":"Práctica Transforming Data and Testing Continuously (p9-t3-transfoming-data)","url":"/tema3-modelos-emergentes/practicas/p9-t3-transforming-data/","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1d0041411a16e7bda0dd61fcb02fd1df8d59dcbb">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io">Rep</a></li>
+            
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+
+            <li><a href="/index.html">DMSI</a></li>
+            <li><a href="/tema0-presentacion/">0</a></li>
+            <li><a href="/tema1-introduccion/">1</a></li>
+            <li><a href="/tema2-design/">2</a></li>
+            <li><a href="/tema3-modelos-emergentes/">3</a></li>
+            <li><a href="/tema4-bases-de-datos/">4</a></li>
+            <li><a href="/tema5-mantenimiento/">5</a></li>
+            <li><a href="/tema6-calidad/" title="tema6: Calidad">6</a></li>
+            
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL. Curso 2019/2020</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">ULL-ESIT-DMSI-1920</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusvirtual.ull.es/1920/course/view.php?id=201911084" target="_blank">DMSI 19/20</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher/117245/530/" target="_blank">Casiano</a></span>
+            </div>
+
+            <h1 id="práctica-transforming-data-and-testing-continuously-p9-t3-transfoming-data">Práctica Transforming Data and Testing Continuously (p9-t3-transfoming-data)</h1>
+
+<ul>
+  <li>Lea el 
+<a href="https://proquest-safaribooksonline-com.accedys2.bbtk.ull.es/book/web-development/9781680505344/part-iidot-working-with-data/chp_transforming_data_html">Capítulo 5 “Transforming Data and Testing Continuously” de <em>Node.JS The Right Way</em></a>
+y resuelva los problemas en la secciónes 
+<a href="https://proquest-safaribooksonline-com.accedys2.bbtk.ull.es/book/web-development/9781680505344/part-iidot-working-with-data/chp_databases_html#X2ludGVybmFsX0h0bWxWaWV3P3htbGlkPTk3ODE2ODA1MDUzNDQlMkZkMjRlMTQ3NDZfaHRtbCZxdWVyeT0="><em>Extracting Classification Codes</em> y <em>Extracting Sources</em></a></li>
+</ul>
+
+<h2 id="extracting-classification-codes">Extracting Classification Codes</h2>
+
+<ul>
+  <li>When extracting fields from the Project Gutenberg RDF (XML) files,
+in Traversing the Document, we specifically selected the Library
+of Congress Subject Headings (LCSH) and stored them in an array
+called subjects.</li>
+  <li>At that time, we carefully avoided the Library of
+Congress Classification (LCC) single-letter codes. Recall that the
+LCC portion of an RDF file looks like this:</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dcterms:subject&gt;</span>
+  <span class="nt">&lt;rdf:Description</span> <span class="na">rdf:nodeID=</span><span class="s">"Nfb797557d91f44c9b0cb80a0d207eaa5"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dcam:memberOf</span> <span class="na">rdf:resource=</span><span class="s">"http://purl.org/dc/terms/LCC"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;rdf:value&gt;</span>U<span class="nt">&lt;/rdf:value&gt;</span>
+  <span class="nt">&lt;/rdf:Description&gt;</span>
+<span class="nt">&lt;/dcterms:subject&gt;</span>
+</code></pre></div></div>
+
+<p>Using your BDD infrastructure built on Mocha and Chai, implement the following:</p>
+
+<ul>
+  <li>Add a new assertion to <code class="language-plaintext highlighter-rouge">parse-rdf-test.js</code> that checks for <code class="language-plaintext highlighter-rouge">book.lcc</code>.</li>
+  <li>It should be of type <code class="language-plaintext highlighter-rouge">string</code> and it should be at least one character long.</li>
+  <li>It should start with an uppercase letter of the English alphabet, but not I, O, W, X, or Y.</li>
+</ul>
+
+<ol>
+  <li>Run the tests to see that they fail.</li>
+  <li>Add code to your exported module function in <code class="language-plaintext highlighter-rouge">parse-rdf.js</code> to make the tests pass.</li>
+</ol>
+
+<h2 id="extracting-sources">Extracting Sources</h2>
+
+<p>Most of the metadata in the Project Gutenberg RDF files describes
+where each book can be downloaded in various formats.</p>
+
+<p>For example,
+here’s the part that shows where to download the plain text of The
+Art of War:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dcterms:hasFormat&gt;</span>
+  <span class="nt">&lt;pgterms:file</span> <span class="na">rdf:about=</span><span class="s">"http://www.gutenberg.org/ebooks/132.txt.utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dcterms:isFormatOf</span> <span class="na">rdf:resource=</span><span class="s">"ebooks/132"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;dcterms:modified</span> <span class="na">rdf:datatype=</span><span class="s">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="nt">&gt;</span>
+    2016-09-01T01:20:00.437616<span class="nt">&lt;/dcterms:modified&gt;</span>
+    <span class="nt">&lt;dcterms:format&gt;</span>
+      <span class="nt">&lt;rdf:Description</span> <span class="na">rdf:nodeID=</span><span class="s">"N2293d0caa918475e922a48041b06a3bd"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;dcam:memberOf</span> <span class="na">rdf:resource=</span><span class="s">"http://purl.org/dc/terms/IMT"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;rdf:value</span>
+        <span class="na">rdf:datatype=</span><span class="s">"http://purl.org/dc/terms/IMT"</span><span class="nt">&gt;</span>text/plain<span class="nt">&lt;/rdf:value&gt;</span>
+      <span class="nt">&lt;/rdf:Description&gt;</span>
+    <span class="nt">&lt;/dcterms:format&gt;</span>
+    <span class="nt">&lt;dcterms:extent</span> <span class="na">rdf:datatype=</span><span class="s">"http://www.w3.org/2001/XMLSchema#integer"</span><span class="nt">&gt;</span>
+    343691<span class="nt">&lt;/dcterms:extent&gt;</span>
+  <span class="nt">&lt;/pgterms:file&gt;</span>
+<span class="nt">&lt;/dcterms:hasFormat&gt;</span>
+
+        ...
+
+<span class="nt">&lt;dcterms:hasFormat&gt;</span>
+      <span class="nt">&lt;pgterms:file</span> <span class="na">rdf:about=</span><span class="s">"http://www.gutenberg.org/ebooks/132.kindle.noimages"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;dcterms:isFormatOf</span> <span class="na">rdf:resource=</span><span class="s">"ebooks/132"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;dcterms:modified</span> <span class="na">rdf:datatype=</span><span class="s">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="nt">&gt;</span>2015-08-01T01:24:38.440052<span class="nt">&lt;/dcterms:modified&gt;</span>
+        <span class="nt">&lt;dcterms:extent</span> <span class="na">rdf:datatype=</span><span class="s">"http://www.w3.org/2001/XMLSchema#integer"</span><span class="nt">&gt;</span>598678<span class="nt">&lt;/dcterms:extent&gt;</span>
+        <span class="nt">&lt;dcterms:format&gt;</span>
+          <span class="nt">&lt;rdf:Description</span> <span class="na">rdf:nodeID=</span><span class="s">"N90d807c6b2a042078ac4e05e8e265dd7"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;rdf:value</span> <span class="na">rdf:datatype=</span><span class="s">"http://purl.org/dc/terms/IMT"</span><span class="nt">&gt;</span>application/x-mobipocket-ebook<span class="nt">&lt;/rdf:value&gt;</span>
+            <span class="nt">&lt;dcam:memberOf</span> <span class="na">rdf:resource=</span><span class="s">"http://purl.org/dc/terms/IMT"</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/rdf:Description&gt;</span>
+        <span class="nt">&lt;/dcterms:format&gt;</span>
+      <span class="nt">&lt;/pgterms:file&gt;</span>
+<span class="nt">&lt;/dcterms:hasFormat&gt;</span>
+</code></pre></div></div>
+
+<p>Suppose we wanted to include a list of download sources in each
+JSON object we create from an RDF file.</p>
+
+<p>To get an idea of what data
+you might want, take a look at the <a href="http://www.gutenberg.org/ebooks/132">Project Gutenberg page for The
+Art of War</a>.</p>
+
+<p>Consider these questions:</p>
+
+<ul>
+  <li>Which fields in the raw data would we want to capture, and which could we discard?</li>
+  <li>What structure would make the most sense for this data?</li>
+  <li>What information would you need to be able to produce a table that looked like the one on the Project Gutenberg site?</li>
+</ul>
+
+<p>Once you have an idea of what data you’ll want to extract, try
+creating a JSON object by hand for this one download source. When
+you’re happy with your data representation, use your existing
+continuous testing infrastructure and add a test that checks for
+this new information.</p>
+
+<p>Finally, extend the book object produced in <code class="language-plaintext highlighter-rouge">parse-rdf.js</code> to include
+this data to make the test pass.</p>
+
+<h2 id="descripción-del-reto"><a href="reto">Descripción del Reto</a></h2>
+
+<h2 id="recursos">Recursos</h2>
+
+<ul>
+  <li><a href="https://github.com/ULL-MII-CA-1819/nodejs-the-right-way">GitHub repo ULL-MII-CA-1819/nodejs-the-right-way</a></li>
+  <li><a href="https://www.ull.es/servicios/biblioteca/servicios/puntoq/">BULL PuntoQ</a></li>
+  <li><a href="https://proquest-safaribooksonline-com.accedys2.bbtk.ull.es/book/web-development/9781680505344/part-iidot-working-with-data/chp_databases_html#X2ludGVybmFsX0h0bWxWaWV3P3htbGlkPTk3ODE2ODA1MDUzNDQlMkZjaHBfdHJhbnNmb3JtaW5nX2RhdGFfaHRtbCZxdWVyeT0=">Safari. Chapter 5
+Transforming Data and Testing Continuously</a></li>
+  <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/">Sección Pruebas en los Apuntes del curso 16/17</a>
+    <ul>
+      <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/mocha.html">Mocha</a></li>
+      <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/mocha.html#should">Should</a></li>
+      <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/travis.html">Travis</a></li>
+      <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/chai.html">Chai</a></li>
+      <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/sinon.html">Sinon</a></li>
+      <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/karma.html">Karma</a></li>
+      <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/covering.html">Covering</a></li>
+      <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/blanket.html">Blanket</a></li>
+      <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/istanbul.html">Istanbul</a></li>
+      <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/browsersync.html">BrowserSync</a></li>
+    </ul>
+  </li>
+  <li>Pruebas en el Navegador/Browser
+    <ul>
+      <li><a href="https://www.sitepoint.com/learning-javascript-test-driven-development-by-example/">Learning JavaScript Test-Driven Development by Example</a> SitePoint Tutorial</li>
+      <li><a href="https://casianorodriguezleon.gitbooks.io/pl1516/content/practicas/mochachaisinon.html">Mocha y Chai en el navegador. Apuntes del curso 15/16</a></li>
+      <li><a href="https://nicolas.perriault.net/code/2013/testing-frontend-javascript-code-using-mocha-chai-and-sinon/">Testing your frontend JavaScript code using mocha, chai, and sinon. Nicolas Perriault</a>
+ <a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/covering.html">Covering</a>
+        <ul>
+          <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/blanket.html">Blanket</a></li>
+          <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/istanbul.html">Istanbul</a></li>
+          <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/pruebas/browsersync.html">BrowserSync</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+    </div>
+
+    
+</body>
+
+</html>
