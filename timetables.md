@@ -54,6 +54,7 @@ En una primera publicación de calificaciones aparecerá una lista con los alumn
 
 Los exámenes de convocatoria incluyen una serie de apartados especiales para los alumnos que no tienen las prácticas aptas en el momento de la convocatoria.
 
+<!--
 ## Q&A
 
 ## Instrucciones para los exámenes de Convocatoria
@@ -71,3 +72,4 @@ Los exámenes de convocatoria incluyen una serie de apartados especiales para lo
 
 
 
+-->
