@@ -48,13 +48,14 @@
 
 ## Cierre de actas 
 
+
+<!--
 ## Sobre las Calificaciones de Prácticas 
 
 En una primera publicación de calificaciones aparecerá una lista con los alumnos que tienen las prácticas **APTAS** o **NO APTAS**.
 
 Los exámenes de convocatoria incluyen una serie de apartados especiales para los alumnos que no tienen las prácticas aptas en el momento de la convocatoria.
 
-<!--
 ## Q&A
 
 ## Instrucciones para los exámenes de Convocatoria
