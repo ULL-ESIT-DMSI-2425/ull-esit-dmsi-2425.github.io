@@ -6,5 +6,5 @@ cd ../website && \
 #touch .nojekyll && \
 git add . && \
 git ci -am 'new build' && \
-git push --force sytws master
+git push --force origin master
 #git push --force sytws2021 master
