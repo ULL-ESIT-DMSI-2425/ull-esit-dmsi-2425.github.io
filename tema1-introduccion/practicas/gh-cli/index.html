@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Desarrollo y Mantenimiento de Sistemas Informáticos | 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</title>
+<title>Descripción de la Práctica gh-cli | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="og:title" content="Descripción de la Práctica gh-cli" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="twitter:title" content="Descripción de la Práctica gh-cli" />
 <script type="application/ld+json">
-{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/tema3-modelos-emergentes/webassembly.html","headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/tema1-introduccion/practicas/gh-cli/","headline":"Descripción de la Práctica gh-cli","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=b5650454831a1f3d5e8d304cf7144c000c525820">
@@ -64,9 +64,41 @@
                 <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher/117245/530/" target="_blank">Casiano</a></span>
             </div>
 
-            <ul>
-  <li><a href="https://webassembly.org/">webassembly.org/</a></li>
+            <h1 id="descripción-de-la-práctica-gh-cli">Descripción de la Práctica gh-cli</h1>
+
+<h2 id="gh-alias">gh alias</h2>
+
+<h3 id="gh-create-repo">gh create-repo</h3>
+
+<p>Using <code class="language-plaintext highlighter-rouge">gh api</code> and <code class="language-plaintext highlighter-rouge">gh alias --shell</code> add to <code class="language-plaintext highlighter-rouge">gh</code> 
+an extension <code class="language-plaintext highlighter-rouge">gh create-repo</code> that creates the repo inside the given organization:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gh create-repo tuturepo ULL-ESIT-PL-2021
+$ gh repo view ULL-ESIT-PL-2021/tuturepo -w
+</code></pre></div></div>
+
+<p><img src="/assets/images/create-repo.png" alt="" /></p>
+
+<p>Use the GitHub REST API</p>
+
+<h3 id="gh-delete-repo">gh delete-repo</h3>
+
+<p>The same but with delete:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gh delete-repo tuturepo ULL-ESIT-PL-2021
+</code></pre></div></div>
+
+<p>Then, after issuing the command and refreshing the former page we get:</p>
+
+<p><img src="/assets/images/delete-repo.png" alt="" /></p>
+
+<ul>
+  <li>GitHub API doc for <a href="https://docs.github.com/es/rest/reference/repos#delete-a-repository">Delete repository</a></li>
 </ul>
+
+<h2 id="extension">Extension</h2>
+
+<p>Write and publish a gh extension <code class="language-plaintext highlighter-rouge">gh-repo-delete [org/repo]</code> that deletes the specified remote repo.</p>
 
 
         </section>
