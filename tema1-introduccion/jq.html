@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Mantenimiento y Reingeniería | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>JQ | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Mantenimiento y Reingeniería" />
+<meta property="og:title" content="JQ" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Mantenimiento y Reingeniería" />
+<meta property="twitter:title" content="JQ" />
 <script type="application/ld+json">
-{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/tema5-mantenimiento/","headline":"Mantenimiento y Reingeniería","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/tema1-introduccion/jq.html","headline":"JQ","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=9ede6dde3125cc8e8cb4e425c0e21005527f8eba">
@@ -63,21 +63,53 @@
                 <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher/117245/530/" target="_blank">Casiano</a></span>
             </div>
 
-            <h1 id="mantenimiento-y-reingeniería">Mantenimiento y Reingeniería</h1>
-
-<h3 id="práctica-introducción-al-mantenimiento-y-reingeniería">Práctica Introducción al Mantenimiento y Reingeniería</h3>
-
-<p>Lea el capítulo <a href="https://puntoq.ull.es/permalink/f/15vbjs7/ullsfx2550000001351302">Maintenance and Evaluation</a> del libro <em>Developing Information Systems : Practical guidance for IT professionals</em> por James Cadle, Tahir Ahmed, Julian Cox, Lynda Girvan, Alan Paul, Debra Paul, and Pete Thompsony. Elabore un informe en el repo asociado a esta práctica</p>
-
-<h3 id="práctica-mantenimiento-y-reingeniería-en-nodejs">Práctica Mantenimiento y Reingeniería en Node.js</h3>
-
-<p>Lea el artículo:</p>
+            <h1 id="jq">JQ</h1>
 
 <ul>
-  <li><a href="https://www.netguru.com/blog/challenges-with-node.js-application-maintenance">Challenges with Node.js Application Maintenance</a></li>
+  <li><a href="https://stedolan.github.io/jq/manual/">jq manual</a></li>
+  <li><a href="https://shapeshed.com/jq-json/">JSON on the command line with jq</a></li>
+  <li>YouTube vídeo <a href="https://youtu.be/_ZTibHotSew">JSON: Like a Boss</a>. Bob Tiernay explores the fascinating world of jq, “the JSON Processor”. Starting with a motivation, he then covers the language, provides helpful tips, showcases a real world example, cautions some things to avoid and finishes with a discussion of the ecosystem.</li>
+  <li><a href="https://remysharp.com/drafts/jq-recipes">jq recipes</a></li>
 </ul>
 
-<p>Elabore un informe en el repo asociado a esta práctica</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/local/src/CA/sol-nodejs-the-right-way/commanding-databases-chapter-6/esclu(master)]$ jq -V
+jq-1.5
+[~/local/src/CA/sol-nodejs-the-right-way/commanding-databases-chapter-6/esclu(master)]$ jq --help
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jq - commandline JSON processor [version 1.5]
+Usage: jq [options] &lt;jq filter&gt; [file...]
+
+	jq is a tool for processing JSON inputs, applying the
+	given filter to its JSON text inputs and producing the
+	filter's results as JSON on standard output.
+	The simplest filter is ., which is the identity filter,
+	copying jq's input to its output unmodified (except for
+	formatting).
+	For more advanced filters see the jq(1) manpage ("man jq")
+	and/or https://stedolan.github.io/jq
+
+	Some of the options include:
+	 -c		compact instead of pretty-printed output;
+	 -n		use `null` as the single input value;
+	 -e		set the exit status code based on the output;
+	 -s		read (slurp) all inputs into an array; apply filter to it;
+	 -r		output raw strings, not JSON texts;
+	 -R		read raw strings, not JSON texts;
+	 -C		colorize JSON;
+	 -M		monochrome (don't colorize JSON);
+	 -S		sort keys of objects on output;
+	 --tab	use tabs for indentation;
+	 --arg a v	set variable $a to value &lt;v&gt;;
+	 --argjson a v	set variable $a to JSON value &lt;v&gt;;
+	 --slurpfile a f	set variable $a to an array of JSON texts read from &lt;f&gt;;
+	See the manpage for more options.
+</code></pre></div></div>
+
+<p>See also the man pages:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/local/src/CA/sol-nodejs-the-right-way/commanding-databases-chapter-6/esclu(master)]$ man jq
+</code></pre></div></div>
+
 
 
         </section>
