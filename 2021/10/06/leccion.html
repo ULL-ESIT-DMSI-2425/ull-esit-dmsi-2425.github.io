@@ -20,7 +20,7 @@
 {"description":"Las máquinas del iaas están listas Como usar gitpod Introduccion a Markdown Mastering Markdown","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/10/06/leccion.html"},"url":"/2021/10/06/leccion.html","headline":"Clase del Lunes 2021/10/06","dateModified":"2021-10-06T00:00:00+01:00","datePublished":"2021-10-06T00:00:00+01:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=7912110bf09a8d2b40d3f8aa883974d7698ac969">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f5e7588606e55bbdcea3a372b3983b0815014a58">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -38,7 +38,7 @@
         <nav>
         <ul>
             <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io">Rep</a></li>
-            <li><a href="/search.html">Search</a></li>
+            <li><a href="/search">Search</a></li>
             <li><a href="/resources.html">Rec</a></li>
             <li><a href="/timetables.html">Hor</a></li>
             <li><a href="/references.html">Refs</a></li>
@@ -79,7 +79,10 @@
 </ul>
 
 
-<br/>
+
+
+<!--
+            <br/>
 <hr/>
 <h2>
     Prácticas Propuestas
@@ -97,6 +100,7 @@
   <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli</a></li>
 
 </ol>
+
 
 
 <br/>
@@ -119,6 +123,42 @@
   
 </ol>
 
+
+<br/>
+<hr/>
+-->
+
+<h2>
+    Buscar en los apuntes
+</h2>
+
+
+<form id="search-form" action="">
+  <label class="label" for="search">Search term (accepts a regex):</label>
+  <br/>
+  <input class="input" id="search" type="text" name="search" autofocus placeholder="e.g. Promise" autocomplete="off">
+  
+  <ul class="list  list--results" id="list">
+  </ul>
+</form>
+
+<script type="text/javascript" src="/assets/src/fetch.js"></script>
+<script type="text/javascript" src="/assets/src/search.js"></script>
+
+
+<script type="text/javascript">
+
+  const search = new JekyllSearch(
+    '/assets/src/search.json',
+    '#search',
+    '#list',
+    ''
+  );
+  search.init(); 
+  
+</script>
+
+<noscript>Please enable JavaScript to use the search form.</noscript>
 
 
 

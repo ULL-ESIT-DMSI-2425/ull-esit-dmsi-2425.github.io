@@ -18,7 +18,7 @@
 {"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/tema3-modelos-emergentes/learning-react.html","headline":"Learning React by Eve Porcello, Alex Banks. O’Reilly 2017","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=7912110bf09a8d2b40d3f8aa883974d7698ac969">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f5e7588606e55bbdcea3a372b3983b0815014a58">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -36,7 +36,7 @@
         <nav>
         <ul>
             <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io">Rep</a></li>
-            <li><a href="/search.html">Search</a></li>
+            <li><a href="/search">Search</a></li>
             <li><a href="/resources.html">Rec</a></li>
             <li><a href="/timetables.html">Hor</a></li>
             <li><a href="/references.html">Refs</a></li>
@@ -224,6 +224,87 @@
 <li class="toc-level-3 t-toc-level-3 js-content-uri" data-content-uri="/api/v1/book/9781491954614/chapter/ch12.html"><a href="https://learning.oreilly.com/library/view/learning-react/9781491954614/ch12.html#idm140276888646768" class="t-chapter" tabindex="183">Actions with Redux Thunks</a></li></ol></li></ol></li>
 <li class="toc-level-1 t-toc-level-1 js-content-uri" data-content-uri="/api/v1/book/9781491954614/chapter/ix01.html"><a href="https://learning.oreilly.com/library/view/learning-react/9781491954614/ix01.html#idm140276887260512" class="t-chapter" tabindex="184">Index</a></li>
 </ol>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Miércoles 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+<h2>
+    Buscar en los apuntes
+</h2>
+
+
+<form id="search-form" action="">
+  <label class="label" for="search">Search term (accepts a regex):</label>
+  <br/>
+  <input class="input" id="search" type="text" name="search" autofocus placeholder="e.g. Promise" autocomplete="off">
+  
+  <ul class="list  list--results" id="list">
+  </ul>
+</form>
+
+<script type="text/javascript" src="/assets/src/fetch.js"></script>
+<script type="text/javascript" src="/assets/src/search.js"></script>
+
+
+<script type="text/javascript">
+
+  const search = new JekyllSearch(
+    '/assets/src/search.json',
+    '#search',
+    '#list',
+    ''
+  );
+  search.init(); 
+  
+</script>
+
+<noscript>Please enable JavaScript to use the search form.</noscript>
+
 
 
         </section>
