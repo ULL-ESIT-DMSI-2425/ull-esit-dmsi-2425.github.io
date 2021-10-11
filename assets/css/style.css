@@ -300,8 +300,8 @@ section #title .credits.right { float: right; }
 
 ul { list-style-image: none; }
 
-#header { z-index: 100; left: 0; top: 0px; height: 60px; width: 100%; position: fixed; background: #5c068c; border-bottom: 4px solid 5c068c; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25); }
-#header nav { max-width: 650px; margin: 0 auto; padding: 0 10px; background: #5c068c; margin: 6px auto; }
+#header { z-index: 100; left: 0; top: 0px; height: 60px; width: 100%; position: fixed; background: white; border-bottom: 4px solid 5c068c; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25); }
+#header nav { max-width: 650px; margin: 0 auto; padding: 0 10px; background: white; margin: 6px auto; }
 #header nav ul { list-style-type: none; margin: 0; padding: 0; }
 #header nav ul li { font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; list-style: none; display: inline; color: #5f3030; line-height: 50px; text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2); font-size: 14px; }
 #header nav ul li a { color: white; border: 1px solid #5d910b; background: linear-gradient(#bd20bd, #25109e); border-radius: 2px; box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7); background-color: #93bd20; padding: 10px 12px; margin-top: 6px; line-height: 14px; font-size: 14px; display: inline-block; text-align: center; }
