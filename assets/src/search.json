@@ -67,7 +67,7 @@
   {
     "title": "Search",
     "excerpt": "\n",
-    "content": "\n",
+    "content": "{% include search.md %}\n",
     "url": "/search/"
   },
   
