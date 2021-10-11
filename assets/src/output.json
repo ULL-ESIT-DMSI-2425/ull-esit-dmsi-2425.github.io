@@ -6,14 +6,18 @@
 
       "excerpt": "<ul>
   <li>Las máquinas del <a href="/tema1-introduccion/practicas/p1-t1-iaas/">iaas</a> están listas</li>
-  <li>Como usar <a href="/tema1-introduccion/gitpod.html">gitpod</a></li>
+  <li>Como usar <a href="/tema1-introduccion/gitpod.html">gitpod</a>
+    <ul>
+      <li><a href="https://www.gitpod.io/docs/quickstart/docker-compose">Docker Compose Quickstart</a></li>
+      <li><a href="/tema1-introduccion/svelte">Svelte</a></li>
+    </ul>
+  </li>
   <li>Introduccion a <a href="https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#relative-links">Markdown</a>
     <ul>
       <li><a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a></li>
     </ul>
   </li>
   <li><a href="/tema1-introduccion/gh">GitHub Command Line Interface</a></li>
-  <li><a href="/tema1-introduccion/svelte">Svelte</a></li>
 </ul>
 ",
        "categories"  : [
