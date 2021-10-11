@@ -35,8 +35,8 @@
     
       {
         "title": "Clase del Miércoles 2021/10/06",
-        "excerpt": "\n  Las máquinas del iaas están listas\n  Como usar gitpod\n  Introduccion a Markdown\n    \n      Mastering Markdown\n    \n  \n  GitHub Command Line Interface\n\n",
-        "content": "\n  Las máquinas del iaas están listas\n  Como usar gitpod\n  Introduccion a Markdown\n    \n      Mastering Markdown\n    \n  \n  GitHub Command Line Interface\n\n",
+        "excerpt": "\n  Las máquinas del iaas están listas\n  Como usar gitpod\n  Introduccion a Markdown\n    \n      Mastering Markdown\n    \n  \n  GitHub Command Line Interface\n  Svelte/tema1-introduccion/svelte)\n\n",
+        "content": "\n  Las máquinas del iaas están listas\n  Como usar gitpod\n  Introduccion a Markdown\n    \n      Mastering Markdown\n    \n  \n  GitHub Command Line Interface\n  Svelte/tema1-introduccion/svelte)\n\n",
         "url": "/2021/10/11/leccion.html"
       },
     
@@ -62,6 +62,13 @@
     "excerpt": "\n",
     "content": "\n",
     "url": "/search/"
+  },
+  
+  {
+    "title": "Svelte",
+    "excerpt": "\n",
+    "content": "Svelte  tutorial\n",
+    "url": "/tema1-introduccion/svelte.html"
   },
   
   {
