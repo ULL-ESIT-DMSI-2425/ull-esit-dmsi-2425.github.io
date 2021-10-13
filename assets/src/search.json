@@ -35,9 +35,16 @@
     
       {
         "title": "Clase del Lunes 2021/10/11",
-        "excerpt": "\n  Las máquinas del iaas están listas\n  Como usar gitpod\n    \n      Docker Compose Quickstart\n      Svelte\n    \n  \n  Introduccion a Markdown\n    \n      Mastering Markdown\n    \n  \n  GitHub Command Line Interface\n\n",
-        "content": "\n  Las máquinas del iaas están listas\n  Como usar gitpod\n    \n      Docker Compose Quickstart\n      Svelte\n    \n  \n  Introduccion a Markdown\n    \n      Mastering Markdown\n    \n  \n  GitHub Command Line Interface\n\n",
+        "excerpt": "\n  Las máquinas del iaas están listas\n    \n      Como configurar la SSH usando claves privada y pública\n    \n  \n  Introduccion a Markdown\n    \n      Mastering Markdown\n    \n  \n\n",
+        "content": "\n  Las máquinas del iaas están listas\n    \n      Como configurar la SSH usando claves privada y pública\n    \n  \n  Introduccion a Markdown\n    \n      Mastering Markdown\n    \n  \n\n",
         "url": "/2021/10/11/leccion.html"
+      },
+    
+      {
+        "title": "Clase del Miércoles 2021/10/13",
+        "excerpt": "\n  Las máquinas del iaas están listas\n  Como usar gitpod\n    \n      Docker Compose Quickstart\n      Svelte\n    \n  \n  Introduccion a Markdown\n  GitHub Command Line Interface\n\n",
+        "content": "\n  Las máquinas del iaas están listas\n  Como usar gitpod\n    \n      Docker Compose Quickstart\n      Svelte\n    \n  \n  Introduccion a Markdown\n  GitHub Command Line Interface\n\n",
+        "url": "/2021/10/13/leccion.html"
       },
     
   
