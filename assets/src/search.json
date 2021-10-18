@@ -49,9 +49,16 @@
     
       {
         "title": "Clase del Lunes 2021/10/18",
-        "excerpt": "\n  Las máquinas del iaas están listas\n  Como usar gitpod\n    \n      Docker Compose Quickstart\n      Svelte\n    \n  \n\n\n",
-        "content": "\n  Las máquinas del iaas están listas\n  Como usar gitpod\n    \n      Docker Compose Quickstart\n      Svelte\n    \n  \n  GitHub Command Line Interface\n\n",
+        "excerpt": "\n  Como usar gitpod\n    \n      Docker Compose Quickstart\n      Svelte\n    \n  \n\n\n",
+        "content": "\n  Como usar gitpod\n    \n      Docker Compose Quickstart\n      Svelte\n    \n  \n  GitHub Command Line Interface\n\n",
         "url": "/2021/10/18/leccion.html"
+      },
+    
+      {
+        "title": "Clase del Miércoles 2021/10/20",
+        "excerpt": "\n  Como usar gitpod\n    \n      Docker Compose Quickstart\n      Svelte\n    \n  \n\n\n",
+        "content": "\n  Como usar gitpod\n    \n      Docker Compose Quickstart\n      Svelte\n    \n  \n  GitHub Command Line Interface\n  Descripción de la Práctica gh-cli\n\n",
+        "url": "/2021/10/20/leccion.html"
       },
     
   
