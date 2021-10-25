@@ -18,7 +18,7 @@
 {"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/tema1-introduccion/practicas/gh-cli/","headline":"Descripción de la Práctica gh-cli","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=690cf46439fe02a78b0109623ecf1b8d2f85346c">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f09b4ffc58682c6166b3f412b3390dfefc78de98">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -94,6 +94,25 @@ $ gh repo view ULL-ESIT-PL-2021/tuturepo -w
 
 <ul>
   <li>GitHub API doc for <a href="https://docs.github.com/es/rest/reference/repos#delete-a-repository">Delete repository</a></li>
+</ul>
+
+<h3 id="gh-org-list-names">gh org-list-names</h3>
+
+<p>Escriba un alias que liste todas los nombres y las urls de las organizaciones a las que el usuario pertenece:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  async-await-crguezl git:(main) gh orgs-list | grep -i 'dmsi'
+ULL-ESIT-DMSI-1920
+https://api.github.com/orgs/ULL-ESIT-DMSI-1920
+ULL-ESIT-DMSI-2021
+https://api.github.com/orgs/ULL-ESIT-DMSI-2021
+ULL-ESIT-DMSI-2121
+https://api.github.com/orgs/ULL-ESIT-DMSI-2121
+</code></pre></div></div>
+
+<ul>
+  <li>Busque en la sección de la GH API <a href="https://docs.github.com/en/rest/overview/endpoints-available-for-github-apps">Endpoints available for GitHub Apps</a> cual puede serle útil</li>
+  <li>Recuerde hacer uso de <code class="language-plaintext highlighter-rouge">--paginate</code>`</li>
+  <li>Aprenda a usar <a href="/http://tema1-introduccion/jq.html">jq</a> para seleccionar los campos del JSON resultante</li>
 </ul>
 
 <h2 id="extension">Extension</h2>
