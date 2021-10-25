@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>npm Module | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="npm Module" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="npm Module" />
+<script type="application/ld+json">
+{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/tema1-introduccion/practicas/npm-module/","headline":"npm Module","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=7ed9ec541aa3f95a0461328d3e8a92871fe0e7c1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+            </div>
+
+            <h2 id="objetivos">Objetivos</h2>
+
+<p>Partiendo de la gh extension escrita en la práctica <a href="/tema1-introduccion/practicas/gh-cli/">gh-cli</a> construya un paquete npm y 
+publíquelo en <a href="https://www.npmjs.com/">npmjs</a> con ámbito <code class="language-plaintext highlighter-rouge">@aluXXX</code>.</p>
+
+<p>El módulo además de exportar las funciones que sean necesarias deberá proveer un ejecutable</p>
+
+<p>La mayor parte de los conceptos y habilidades a adquirir con esta práctica se explican en la sección <a href="/tema1-introduccion/creating-and-publishing-npm-module">Creating and publishing a node.js module en GitHub y en NPM</a>. Léala con detenimiento antes de hacer esta práctica.</p>
+
+<h2 id="ámbitos">Ámbitos</h2>
+
+<p>Deberá publicar el paquete en <a href="https://www.npmjs.com/">npmjs</a> con ámbito <code class="language-plaintext highlighter-rouge">@aluXXX</code> y con nombre <code class="language-plaintext highlighter-rouge">addlogging</code>.</p>
+
+<p>Para saber sobre ámbitos, vea la sección <a href="/assets/temas/introduccion-a-javascript/creating-and-publishing-npm-module#scopes-and-registries">Scopes and Registries</a>.</p>
+
+<h2 id="pruebas">Pruebas</h2>
+
+<p>Deberá añadir pruebas usando <a href="/assets/temas/introduccion-a-javascript/creating-and-publishing-npm-module#testing-with-mocha-and-chai">Mocha y Chai</a> o <a href="/assets/temas/introduccion-a-javascript/jest">Jest</a>.
+Repase las secciones <a href="/assets/temas/introduccion-a-javascript/#testing-with-mocha-and-chai">Testing with Mocha and Chai</a> y <a href="/assets/temas/introduccion-a-javascript/jest">Jest</a>.</p>
+
+<h2 id="documentación">Documentación</h2>
+
+<p><a href="/assets/temas/introduccion-a-javascript/documentation">Documente</a>
+el módulo incorporando un <code class="language-plaintext highlighter-rouge">README.md</code> y la documentación de la función exportada.
+Repase la sección <a href="/assets/temas/introduccion-a-javascript/creating-and-publishing-npm-module#documenting-the-javascript-sources">Documenting the JavaScript Sources</a></p>
+
+<h2 id="pruebas-de-producción">Pruebas de Producción</h2>
+
+<p>En el repo asignado <code class="language-plaintext highlighter-rouge">testing-addlogging-aluXXX</code> añada las pruebas necesarias
+para comprobar que la última versión del paquete publicado se instala y puede ser usado.
+Repase la sección <a href="/assets/temas/introduccion-a-javascript/creating-and-publishing-npm-module#testing-in-production">Testing in Production</a></p>
+
+<h2 id="superproject-with-git-submodule">Superproject with Git Submodule</h2>
+
+<p>Usando <code class="language-plaintext highlighter-rouge">git submodule</code> configure como super-project el repo asignado <code class="language-plaintext highlighter-rouge">super-addloggin-aluXXX</code> para que contenga
+a a los dos repos: en el que ha desarrollado el módulo npm <code class="language-plaintext highlighter-rouge">addlogging-aluXXX</code> y el repo para las pruebas en tiempo de producción <code class="language-plaintext highlighter-rouge">testing-addlogging-aluXXX</code>.</p>
+
+<p>Repase la sección <a href="//assets/temas/introduccion-a-javascript/creating-and-publishing-npm-module#making-a-project-with-the-two-repos-git-submodule">Making a Project with the two repos: git submodule</a></p>
+
+<h2 id="semantic-versioning">Semantic Versioning</h2>
+
+<p>Publique alguna mejora en la funcionalidad del módulo.<br />
+Por poner algunos ejemplos</p>
+<ul>
+  <li>puede hacer que el ejecutable <code class="language-plaintext highlighter-rouge">add-logging</code> admita como especificación de patrón  una expresión regular,</li>
+  <li>que admita mas de un fichero de entrada,</li>
+  <li>que admita un directorio (en cuyo caso procesaría todos los ficheros <code class="language-plaintext highlighter-rouge">*.js</code> en el directorio),</li>
+  <li>etc.</li>
+</ul>
+
+<p>¿Como debe en tales casos cambiar el nº de versión?</p>
+
+<p>Repase la sección <a href="/assets/temas/introduccion-a-javascript/creating-and-publishing-npm-module#semantic-versioning">Semantic Versioning</a></p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="/assets/temas/introduccion-a-javascript/creating-and-publishing-npm-module">Creating and Publishing a node.js Module in GitHub and NPM Registries</a></li>
+  <li><a href="/assets/temas/introduccion-a-javascript/jest">Jest</a></li>
+  <li><a href="/assets/temas/introduccion-a-javascript/modulos">Módulos</a></li>
+  <li><a href="/assets/temas/introduccion-a-javascript/nodejspackages">Node.js Packages</a></li>
+  <li><a href="/assets/temas/introduccion-a-javascript/documentation">Documentation</a></li>
+  <li><a href="/assets/temas/introduccion-a-javascript/nodejspackages.html#instalaci%C3%B3n-desde-github">Instalación de Módulos desde GitHub</a></li>
+  <li><a href="https://lenguajejs.com/automatizadores/introduccion/commonjs-vs-es-modules/">Introducción a los Módulos en JS</a> por Manz</li>
+  <li><a href="https://www.npmjs.com/package/@ull-esit-dsi-1617/scapegoat">@ull-esit-dsi-1617/scapegoat</a> en npm</li>
+  <li><a href="https://stackoverflow.com/questions/17509669/how-to-install-an-npm-package-from-github-directly">How to install an npm package from GitHub directly?</a> in StackOverflow</li>
+  <li><a href="https://docs.npmjs.com/getting-started/scoped-packages">Working with scoped packages</a></li>
+  <li><a href="https://docs.npmjs.com/misc/scope#publishing-public-scoped-packages-to-the-public-npm-registry">npm-scope manual: Scoped packages</a></li>
+  <li><a href="https://docs.npmjs.com/files/package.json">Package.json documentation en npm site</a></li>
+  <li>Semantic versioning and npm
+    <ul>
+      <li><a href="https://docs.npmjs.com/getting-started/semantic-versioning">Semantic versioning and npm</a></li>
+      <li><a href="https://www.sitepoint.com/semantic-versioning-why-you-should-using/">Semantic Versioning: Why You Should Be Using it</a> SitePoint</li>
+      <li><a href="https://youtu.be/kK4Meix58R4">YouTube Video: Semantic versioning and npm</a></li>
+      <li><a href="https://docs.npmjs.com/cli/version">El comando npm version</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

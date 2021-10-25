@@ -1,6 +1,36 @@
 
     
     {
+      "title": "Clase del Lunes 2021/10/25",
+      "date": "October 25, 2021",
+
+      "excerpt": "<ul>
+  <li>Como usar <a href="/tema1-introduccion/gitpod.html">gitpod</a>
+    <ul>
+      <li><a href="https://www.gitpod.io/docs/quickstart/docker-compose">Docker Compose Quickstart</a></li>
+      <li><a href="/tema1-introduccion/svelte">Svelte</a></li>
+    </ul>
+  </li>
+</ul>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2021/10/25/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2021/10/20",
       "date": "October 20, 2021",
 
