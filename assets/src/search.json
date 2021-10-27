@@ -68,6 +68,13 @@
         "url": "/2021/10/25/leccion.html"
       },
     
+      {
+        "title": "Clase del Miércoles 2021/10/27",
+        "excerpt": "Hemos estudiado los comandos git submodule y el uso de submodulos.\n\n",
+        "content": "Hemos estudiado los comandos git submodule y el uso de submodulos.\n\nEstamos estudiando las extensiones en GitHub Cli:\n\n\n  Práctica gh-cli\n\n\nReferencias\n\n\n  Como usar gitpod\n    \n      Docker Compose Quickstart\n      Svelte\n    \n  \n  Getting started with the REST API\n  GitHub Command Line Interface\n\n",
+        "url": "/2021/10/27/leccion.html"
+      },
+    
   
   
   
