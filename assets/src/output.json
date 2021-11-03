@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Miércoles 2021/11/03",
+      "date": "November 03, 2021",
+
+      "excerpt": "<p>Estamos estudiando las extensiones en GitHub Cli:</p>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2021/11/03/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2021/10/27",
       "date": "October 27, 2021",
 
@@ -253,30 +276,6 @@
       
       
       "url": "/2021/09/29/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2021/09/27",
-      "date": "September 27, 2021",
-
-      "excerpt": "<ul>
-  <li><a href="/tema0-presentacion/">Presentación de la asignatura</a></li>
-</ul>
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2021/09/27/leccion.html",
        "tags"  : [
         
         ]

@@ -5,17 +5,19 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>JQ | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Clase del Miércoles 2021/11/03 | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="JQ" />
+<meta property="og:title" content="Clase del Miércoles 2021/11/03" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
-<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta name="description" content="Estamos estudiando las extensiones en GitHub Cli:" />
+<meta property="og:description" content="Estamos estudiando las extensiones en GitHub Cli:" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-03T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="JQ" />
+<meta property="twitter:title" content="Clase del Miércoles 2021/11/03" />
 <script type="application/ld+json">
-{"description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/tema1-introduccion/jq.html","headline":"JQ","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Estamos estudiando las extensiones en GitHub Cli:","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/11/03/leccion.html"},"url":"/2021/11/03/leccion.html","headline":"Clase del Miércoles 2021/11/03","dateModified":"2021-11-03T00:00:00+00:00","datePublished":"2021-11-03T00:00:00+00:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=356339b3d4529b47b657a6a044ccecc150271c84">
@@ -66,52 +68,38 @@
 
             </div>
 
-            <h1 id="jq">JQ</h1>
+            <h1>Clase del Miércoles 2021/11/03</h1>
+
+<p>Estamos estudiando las extensiones en GitHub Cli:</p>
 
 <ul>
-  <li><a href="https://stedolan.github.io/jq/manual/">jq manual</a></li>
-  <li><a href="https://shapeshed.com/jq-json/">JSON on the command line with jq</a></li>
-  <li>YouTube vídeo <a href="https://youtu.be/_ZTibHotSew">JSON: Like a Boss</a>. Bob Tiernay explores the fascinating world of jq, “the JSON Processor”. Starting with a motivation, he then covers the language, provides helpful tips, showcases a real world example, cautions some things to avoid and finishes with a discussion of the ecosystem.</li>
-  <li><a href="https://remysharp.com/drafts/jq-recipes">jq recipes</a></li>
+  <li><a href="/tema1-introduccion/practicas/gh-cli/#extension">Práctica gh-cli</a></li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/local/src/CA/sol-nodejs-the-right-way/commanding-databases-chapter-6/esclu(master)]$ jq -V
-jq-1.5
-[~/local/src/CA/sol-nodejs-the-right-way/commanding-databases-chapter-6/esclu(master)]$ jq --help
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jq - commandline JSON processor [version 1.5]
-Usage: jq [options] &lt;jq filter&gt; [file...]
+<p>Véase <a href="https://github.com/crguezl/gh-submodule-add">crguezl/gh-submodule-add</a> como ejemplo</p>
 
-	jq is a tool for processing JSON inputs, applying the
-	given filter to its JSON text inputs and producing the
-	filter's results as JSON on standard output.
-	The simplest filter is ., which is the identity filter,
-	copying jq's input to its output unmodified (except for
-	formatting).
-	For more advanced filters see the jq(1) manpage ("man jq")
-	and/or https://stedolan.github.io/jq
+<h2 id="referencias">Referencias</h2>
 
-	Some of the options include:
-	 -c		compact instead of pretty-printed output;
-	 -n		use `null` as the single input value;
-	 -e		set the exit status code based on the output;
-	 -s		read (slurp) all inputs into an array; apply filter to it;
-	 -r		output raw strings, not JSON texts;
-	 -R		read raw strings, not JSON texts;
-	 -C		colorize JSON;
-	 -M		monochrome (don't colorize JSON);
-	 -S		sort keys of objects on output;
-	 --tab	use tabs for indentation;
-	 --arg a v	set variable $a to value &lt;v&gt;;
-	 --argjson a v	set variable $a to JSON value &lt;v&gt;;
-	 --slurpfile a f	set variable $a to an array of JSON texts read from &lt;f&gt;;
-	See the manpage for more options.
-</code></pre></div></div>
+<ul>
+  <li>Como usar <a href="/tema1-introduccion/gitpod.html">gitpod</a>
+    <ul>
+      <li><a href="https://www.gitpod.io/docs/quickstart/docker-compose">Docker Compose Quickstart</a></li>
+      <li><a href="/tema1-introduccion/svelte">Svelte</a></li>
+    </ul>
+  </li>
+  <li><a href="https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api">Getting started with the REST API</a></li>
+  <li><a href="/tema1-introduccion/gh">GitHub Command Line Interface</a></li>
+  <li><a href="https://proquest-safaribooksonline-com.accedys2.bbtk.ull.es/9781680505344">Node.js 8 the Right Way</a>. Jim Wilson. 2018 (Debes estar autenticado via PuntoQ BULL)</li>
+  <li><a href="https://books.google.es/books?id=oA9QDwAAQBAJ&amp;lpg=PT96&amp;ots=-mLQPlvsSj&amp;dq=should%20ldjclient%20emit%20a%20close%20event&amp;hl=es&amp;pg=PP1#v=onepage&amp;q=should%20ldjclient%20emit%20a%20close%20event&amp;f=false">Node.js 8 the Right Way</a> Google Books</li>
+  <li>
+    <p><a href="https://github.com/iMarcoGovea/books/blob/master/nodejs/Node.js%20the%20Right%20Way.pdf">Node.js 8 the Right Way</a> GitHub. versión de 2013.</p>
+  </li>
+  <li>
+    <p><a href="https://proquest-safaribooksonline-com.accedys2.bbtk.ull.es/book/programming/javascript/9781617292576" target="_blank"> Node.js in Action, Second Edition by: Bradley Meck Alex Young and Mike Cantelon</a>. Acceda por medio del <a href="https://www.ull.es/servicios/biblioteca/servicios/puntoq/" target="_blank">PuntoQ</a> de la ULL</p>
+  </li>
+  <li><a href="https://proquest-safaribooksonline-com.accedys2.bbtk.ull.es/9781785888960" target="_blank"> Mastering Node.js - Second Edition by: Sandro Pasquali; Kevin Faaborg</a>. Acceda por medio del <a href="https://www.ull.es/servicios/biblioteca/servicios/puntoq/" target="_blank">PuntoQ</a> de la ULL</li>
+</ul>
 
-<p>See also the man pages:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/local/src/CA/sol-nodejs-the-right-way/commanding-databases-chapter-6/esclu(master)]$ man jq
-</code></pre></div></div>
 
 
 
