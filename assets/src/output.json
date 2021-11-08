@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2021/11/08",
+      "date": "November 08, 2021",
+
+      "excerpt": "<p>Estamos estudiando las extensiones en GitHub Cli:</p>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2021/11/08/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2021/11/03",
       "date": "November 03, 2021",
 
@@ -251,31 +274,6 @@
       
       
       "url": "/2021/10/04/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2021/09/29",
-      "date": "September 29, 2021",
-
-      "excerpt": "<ul>
-  <li>Como usar <a href="/tema1-introduccion/gitpod">gitpod</a></li>
-  <li>Introduccion a <a href="https://guides.github.com/features/mastering-markdown/">Markdown</a></li>
-</ul>
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2021/09/29/leccion.html",
        "tags"  : [
         
         ]
