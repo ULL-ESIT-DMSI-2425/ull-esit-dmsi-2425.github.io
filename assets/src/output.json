@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Miércoles 2021/11/10",
+      "date": "November 10, 2021",
+
+      "excerpt": "<p>Estamos estudiando las extensiones en GitHub Cli:</p>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2021/11/10/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Lunes 2021/11/08",
       "date": "November 08, 2021",
 
@@ -242,38 +265,6 @@
       
       
       "url": "/2021/10/06/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2021/10/04",
-      "date": "October 04, 2021",
-
-      "excerpt": "<ul>
-  <li>El botón <a href="https://classroom.github.com/online_ide?assignment_repo_id=5791750&amp;assignment_repo_type=AssignmentRepo"><img src="https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg" alt="Open in Visual Studio Code" /></a>
-(See for instance Markdown assignment) les abre un Visual Studio Code en su máquina con los contenidos del repo</li>
-  <li>Las máquinas del <a href="/tema1-introduccion/practicas/p1-t1-iaas/">iaas</a> están listas</li>
-  <li>Como usar <a href="/tema1-introduccion/gitpod.html">gitpod</a></li>
-  <li>Introduccion a <a href="https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#relative-links">Markdown</a>
-    <ul>
-      <li><a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a></li>
-    </ul>
-  </li>
-</ul>
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2021/10/04/leccion.html",
        "tags"  : [
         
         ]
