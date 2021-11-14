@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2021/11/15",
+      "date": "November 15, 2021",
+
+      "excerpt": "<p>Estamos estudiando las extensiones en GitHub Cli:</p>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2021/11/15/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2021/11/10",
       "date": "November 10, 2021",
 
@@ -235,36 +258,6 @@
       
       
       "url": "/2021/10/11/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2021/10/06",
-      "date": "October 06, 2021",
-
-      "excerpt": "<ul>
-  <li>Las máquinas del <a href="/tema1-introduccion/practicas/p1-t1-iaas/">iaas</a> están listas</li>
-  <li>Como usar <a href="/tema1-introduccion/gitpod.html">gitpod</a></li>
-  <li>Introduccion a <a href="https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#relative-links">Markdown</a>
-    <ul>
-      <li><a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a></li>
-    </ul>
-  </li>
-</ul>
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2021/10/06/leccion.html",
        "tags"  : [
         
         ]
