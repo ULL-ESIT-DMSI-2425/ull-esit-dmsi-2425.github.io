@@ -410,7 +410,7 @@
   {
     "title": "Descripción de la Práctica gh-cli (GraphQL)",
     "excerpt": "\n",
-    "content": "Descripción de la Práctica gh-cli (GraphQL)\n\nExtension\n\nUsing the GitHub GraphQL API write and publish a gh extension using preferably Node.JS. Choose your own idea.\nChoose the functionality you want to implement.\n\nReferences\n\n\n  Apuntes de gh\n  GitHub GraphQL Playground\n  An Introduction to GraphQL via the GitHub API  by Derek Haynes\n  GitHub API doc for Delete repository\n  See an example of extension at crguezl/gh-clone-org\n  GitHub docs for Creating GitHub CLI extensions\n  Here is a list of repos with the topic gh-extension: gh-extension list\n\n\n",
+    "content": "Descripción de la Práctica gh-cli (GraphQL)\n\nExtension\n\nThis lab is a group assignment. When choosing the name of the group, please follow the format name-surname-aluXXX. \nFor instance:\n\n\n\nUsing the GitHub GraphQL API write and publish a gh extension using preferably Node.JS. Choose your own idea.\nChoose the functionality you want to implement.\n\nReferences\n\n\n  Apuntes de gh\n  GitHub GraphQL Playground\n  An Introduction to GraphQL via the GitHub API  by Derek Haynes\n  GitHub API doc for Delete repository\n  See an example of extension at crguezl/gh-clone-org\n  GitHub docs for Creating GitHub CLI extensions\n  Here is a list of repos with the topic gh-extension: gh-extension list\n\n\n",
     "url": "/tema1-introduccion/practicas/gh-cli-graphql/"
   },
   
