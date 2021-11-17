@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Miércoles 2021/11/17",
+      "date": "November 17, 2021",
+
+      "excerpt": "<h2 id="práctica-gh-cli">Práctica gh-cli</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2021/11/17/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Lunes 2021/11/15",
       "date": "November 15, 2021",
 
@@ -225,39 +248,6 @@
       
       
       "url": "/2021/10/13/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2021/10/11",
-      "date": "October 11, 2021",
-
-      "excerpt": "<ul>
-  <li>Las máquinas del <a href="/tema1-introduccion/practicas/p1-t1-iaas/">iaas</a> están listas
-    <ul>
-      <li>Como configurar la SSH usando claves privada y pública</li>
-    </ul>
-  </li>
-  <li>Introduccion a <a href="https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#relative-links">Markdown</a>
-    <ul>
-      <li><a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a></li>
-    </ul>
-  </li>
-</ul>
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2021/10/11/leccion.html",
        "tags"  : [
         
         ]
