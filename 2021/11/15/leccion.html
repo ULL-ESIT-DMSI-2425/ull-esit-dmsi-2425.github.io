@@ -20,7 +20,7 @@
 {"description":"Estamos estudiando las extensiones en GitHub Cli:","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/11/15/leccion.html"},"url":"/2021/11/15/leccion.html","headline":"Clase del Lunes 2021/11/15","dateModified":"2021-11-15T00:00:00+00:00","datePublished":"2021-11-15T00:00:00+00:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=0ef48402dd3087d376fb3dc60d2c7e9789c3a668">
+    <link rel="stylesheet" href="/assets/css/style.css?v=46672882415c604ba10fb3a1c69c5624a9f6cd52">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -79,32 +79,6 @@
 <p><strong>Instructions about the  delivery</strong>:</p>
 
 <p>Create a repo for your extension in a repo <code class="language-plaintext highlighter-rouge">org/gh-my-extension-name</code>  inside the classroom organization. Add that repo as a <code class="language-plaintext highlighter-rouge">git submodule</code> to the repo associated to this lab assignment. Just leave the link to the assignment and extensions repos in the campus virtual</p>
-
-<h2 id="github-graphql-explorer">GitHub GraphQL Explorer</h2>
-
-<ul>
-  <li><a href="https://docs.github.com/es/graphql/overview/explorer">Explorer</a></li>
-</ul>
-
-<h2 id="graphql">GraphQL</h2>
-
-<pre><code class="language-gql">
- query getrepoid {
-    repository(owner: "crguezl", name: "prueba") {
-      url
-      id
-    }  
-  }
-  
-  mutation renameRepo($repoId: String!) {
-    updateRepository(input: {name: "prueba2", repositoryId: $repoId}) {
-      clientMutationId      
-      repository {
-        name
-      }
-    }  
-  }  
-</code></pre>
 
 <h2 id="ejemplos">Ejemplos</h2>
 
