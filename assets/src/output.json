@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2021/11/22",
+      "date": "November 22, 2021",
+
+      "excerpt": "<h2 id="práctica-gh-cli-graphql">Práctica gh-cli-graphql</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2021/11/22/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2021/11/17",
       "date": "November 17, 2021",
 
@@ -218,36 +241,6 @@
       
       
       "url": "/2021/10/18/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2021/10/13",
-      "date": "October 13, 2021",
-
-      "excerpt": "<ul>
-  <li>Las máquinas del <a href="/tema1-introduccion/practicas/p1-t1-iaas/">iaas</a> están listas</li>
-  <li>Como usar <a href="/tema1-introduccion/gitpod.html">gitpod</a>
-    <ul>
-      <li><a href="https://www.gitpod.io/docs/quickstart/docker-compose">Docker Compose Quickstart</a></li>
-    </ul>
-  </li>
-  <li>Introduccion a <a href="https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#relative-links">Markdown</a></li>
-</ul>
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2021/10/13/leccion.html",
        "tags"  : [
         
         ]

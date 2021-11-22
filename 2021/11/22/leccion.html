@@ -5,19 +5,19 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Clase del Miércoles 2021/11/17 | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Clase del Lunes 2021/11/22 | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Clase del Miércoles 2021/11/17" />
+<meta property="og:title" content="Clase del Lunes 2021/11/22" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Práctica gh-cli" />
-<meta property="og:description" content="Práctica gh-cli" />
+<meta name="description" content="Práctica gh-cli-graphql" />
+<meta property="og:description" content="Práctica gh-cli-graphql" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-11-17T00:00:00+00:00" />
+<meta property="article:published_time" content="2021-11-22T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Clase del Miércoles 2021/11/17" />
+<meta property="twitter:title" content="Clase del Lunes 2021/11/22" />
 <script type="application/ld+json">
-{"description":"Práctica gh-cli","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/11/17/leccion.html"},"url":"/2021/11/17/leccion.html","headline":"Clase del Miércoles 2021/11/17","dateModified":"2021-11-17T00:00:00+00:00","datePublished":"2021-11-17T00:00:00+00:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"description":"Práctica gh-cli-graphql","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/11/22/leccion.html"},"url":"/2021/11/22/leccion.html","headline":"Clase del Lunes 2021/11/22","dateModified":"2021-11-22T00:00:00+00:00","datePublished":"2021-11-22T00:00:00+00:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=7beda6816f48ebd8ff1414dfe330afc0155d3cfc">
@@ -68,14 +68,14 @@
 
             </div>
 
-            <h1>Clase del Miércoles 2021/11/17</h1>
+            <h1>Clase del Lunes 2021/11/22</h1>
 
-<h2 id="práctica-gh-cli">Práctica gh-cli</h2>
+<h2 id="práctica-gh-cli-graphql">Práctica gh-cli-graphql</h2>
 
 <p>Estamos estudiando las extensiones en GitHub Cli:</p>
 
 <ul>
-  <li><a href="/tema1-introduccion/practicas/gh-cli/#extension">Práctica gh-cli</a></li>
+  <li><a href="/tema1-introduccion/practicas/gh-cli-graphql">Práctica gh-cli</a></li>
 </ul>
 
 <h3 id="gh-repo-rename-alu0101227610js">gh-repo-rename-alu0101227610.js</h3>
@@ -147,6 +147,40 @@
   <span class="p">},</span>
   <span class="dl">"</span><span class="s2">homepage</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/alu0101227610/gh-repo-rename-alu0101227610#readme</span><span class="dl">"</span>
 <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="bash-script">bash script</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="c"># Determine if an executable is in the PATH</span>
+<span class="k">if</span> <span class="o">!</span> <span class="nb">type</span> <span class="nt">-p</span> node <span class="o">&gt;</span>/dev/null<span class="p">;</span> <span class="k">then
+   </span><span class="nb">echo</span> <span class="s2">"Node not found on the system. Can't work"</span> <span class="o">&gt;</span>&amp;2
+   <span class="nb">exit </span>1
+<span class="k">fi</span>
+
+<span class="c"># ${BASH_SOURCE[0]} (or, more simply, $BASH_SOURCE[1] ) contains the (potentially relative) path of the containing </span>
+<span class="c"># script in all invocation scenarios, notably also when the script is sourced, which is not true for $0.</span>
+<span class="nv">SCRIPT_DIR</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span> <span class="nb">cd</span> <span class="nt">--</span> <span class="s2">"</span><span class="si">$(</span> <span class="nb">dirname</span> <span class="nt">--</span> <span class="s2">"</span><span class="k">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="k">}</span><span class="s2">"</span> <span class="si">)</span><span class="s2">"</span> &amp;&gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">pwd</span> <span class="si">)</span><span class="s2">"</span>
+
+node <span class="k">${</span><span class="nv">SCRIPT_DIR</span><span class="k">}</span>/gh-repo-rename-alu0101227610.js <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &amp;&gt; /dev/null &amp;&amp; pwd )"</span>
+<span class="nv">SCRIPT_DIR</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span> <span class="nb">dirname</span> <span class="nt">--</span> <span class="s2">"</span><span class="k">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="k">}</span><span class="s2">"</span> <span class="si">)</span><span class="s2">"</span>
+<span class="nv">SCRIPT_DIR</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span> <span class="nb">dirname</span> <span class="nt">--</span> <span class="s2">"</span><span class="k">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="k">}</span><span class="s2">"</span> <span class="si">)</span><span class="s2">"</span>
+<span class="nv">WITH0</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span> <span class="nb">dirname</span> <span class="nt">--</span> <span class="s2">"</span><span class="nv">$0</span><span class="s2">"</span><span class="si">)</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="nv">$WITH0</span> <span class="nv">$SCRIPT_DIR</span>
+</code></pre></div></div>
+
+<p>Ejecuciones:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/campus-virtual/1920/dmsi1920/apuntes(master)]$ bash /tmp/bash_source 
+/tmp/bash_source /tmp
+[~/campus-virtual/1920/dmsi1920/apuntes(master)]$ bash /tmp/bash_source 
+/tmp /tmp
+[~/campus-virtual/1920/dmsi1920/apuntes(master)]$ . /tmp/bash_source 
+. /tmp
 </code></pre></div></div>
 
 <h2 id="empezamos-con-graphql">Empezamos con GraphQL.</h2>
