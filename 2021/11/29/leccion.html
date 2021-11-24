@@ -20,7 +20,7 @@
 {"description":"Práctica gh-cli-graphql","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/11/29/leccion.html"},"url":"/2021/11/29/leccion.html","headline":"Clase del Lunes 2021/11/29","dateModified":"2021-11-29T00:00:00+00:00","datePublished":"2021-11-29T00:00:00+00:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=43ddcdf212dcb3f5b386a3c6ee8013d44dec3bdc">
+    <link rel="stylesheet" href="/assets/css/style.css?v=19deb136208f0db3a239bc670db67cdfe5eed3cd">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -146,10 +146,10 @@ mutation {
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">stdout</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  gh-cli-graphql-casiano-rodriguez-leon-alumnoudv5 git:(main) ✗ ./gh-repo-rename-alu0101227610 -o ULL-ESIT-DMSI-1922 -r prueba-funciona  -n prueba
-➜  gh-cli-graphql-casiano-rodriguez-leon-alumnoudv5 git:(main) ✗ ./gh-repo-rename-alu0101227610 -o ULL-ESIT-DMSI-1922 -r prueba-funciona  -n prueba
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  gh-cli-graphql-casiano-rodriguez-leon-alumnoudv5 git:(main) ✗ ./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1922 -r prueba-funciona  -n prueba
+➜  gh-cli-graphql-casiano-rodriguez-leon-alumnoudv5 git:(main) ✗ ./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1922 -r prueba-funciona  -n prueba
 gh: Could not resolve to a Repository with the name 'ULL-ESIT-DMSI-1922/prueba-funciona'.
-➜  gh-cli-graphql-casiano-rodriguez-leon-alumnoudv5 git:(main) ✗ ./gh-repo-rename-alu0101227610 -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-antonella
+➜  gh-cli-graphql-casiano-rodriguez-leon-alumnoudv5 git:(main) ✗ ./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-antonella
 gh: Name already exists on this account
 </code></pre></div></div>
 
@@ -161,28 +161,28 @@ gh: Name already exists on this account
     <span class="dl">"</span><span class="s2">commander</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^8.3.0</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">shelljs</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^0.8.4</span><span class="dl">"</span>
   <span class="p">},</span>
-  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh-repo-rename-alu0101227610</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh-repo-rename-aluXXXX</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1.1.0</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">main</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh-repo-rename-alu0101227610.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">main</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh-repo-rename-aluXXXX.js</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">debug</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node --inspect-brk gh-repo-rename-alu0101227610.js -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">debug</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node --inspect-brk gh-repo-rename-aluXXXX.js -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">create-prueba</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh create-repo prueba ULL-ESIT-DMSI-1920</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">list-prueba</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh submodule-add -s prueba -o ULL-ESIT-DMSI-1920 -n</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./gh-repo-rename-alu0101227610 -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-funciona; npm run list-prueba</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">back</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./gh-repo-rename-alu0101227610 -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba; npm run list-prueba</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node gh-repo-rename-alu0101227610.js</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-funciona; npm run list-prueba</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">back</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba; npm run list-prueba</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node gh-repo-rename-aluXXXX.js</span><span class="dl">"</span>
   <span class="p">},</span>
   <span class="dl">"</span><span class="s2">repository</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
     <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">git</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">git+https://github.com/alu0101227610/gh-repo-rename-alu0101227610.git</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">git+https://github.com/aluXXXX/gh-repo-rename-aluXXXX.git</span><span class="dl">"</span>
   <span class="p">},</span>
   <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">license</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ISC</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">bugs</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/alu0101227610/gh-repo-rename-alu0101227610/issues</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/aluXXXX/gh-repo-rename-aluXXXX/issues</span><span class="dl">"</span>
   <span class="p">},</span>
-  <span class="dl">"</span><span class="s2">homepage</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/alu0101227610/gh-repo-rename-alu0101227610#readme</span><span class="dl">"</span>
+  <span class="dl">"</span><span class="s2">homepage</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/aluXXXX/gh-repo-rename-aluXXXX#readme</span><span class="dl">"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -200,7 +200,7 @@ gh: Name already exists on this account
 <span class="c"># script in all invocation scenarios, notably also when the script is sourced, which is not true for $0.</span>
 <span class="nv">SCRIPT_DIR</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span> <span class="nb">cd</span> <span class="nt">--</span> <span class="s2">"</span><span class="si">$(</span> <span class="nb">dirname</span> <span class="nt">--</span> <span class="s2">"</span><span class="k">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="k">}</span><span class="s2">"</span> <span class="si">)</span><span class="s2">"</span> &amp;&gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">pwd</span> <span class="si">)</span><span class="s2">"</span>
 
-node <span class="k">${</span><span class="nv">SCRIPT_DIR</span><span class="k">}</span>/gh-repo-rename-alu0101227610.js <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+node <span class="k">${</span><span class="nv">SCRIPT_DIR</span><span class="k">}</span>/gh-repo-rename-aluXXXX.js <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
 </code></pre></div></div>
 
 <p>Entendiendo el script:</p>
