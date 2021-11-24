@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Building Promise.all | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Building Promise.all" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Building Promise.all" />
+<script type="application/ld+json">
+{"headline":"Building Promise.all","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/event-loop/exercises/promises/promise-all/","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <h1 id="building-promiseall">Building Promise.all</h1>
+
+<p>See <a href="https://eloquentjavascript.net/11_async.html">https://eloquentjavascript.net/11_async.html</a>.</p>
+
+<p>The <a href="https://ull-mii-sytws-1920.github.io/tema2-async/exercises/promises/promise-all/">Github page is here: https://ull-mii-sytws-1920.github.io/tema2-async/exercises/promises/promise-all/</a>.</p>
+
+<p>Given an array of promises, <code class="language-plaintext highlighter-rouge">Promise.all</code> returns a promise that waits for all of the promises in the array to finish. 
+It then succeeds, yielding an array of result values. 
+If a promise in the array fails, the promise returned by all fails too, with the failure reason from the failing promise.</p>
+
+<p>Implement something like this yourself as a regular function called <code class="language-plaintext highlighter-rouge">Promise_all</code>.</p>
+
+<p>Remember that after a promise has succeeded or failed, 
+it can’t succeed or fail again, and further calls to the functions that resolve it are ignored. 
+This can simplify the way you handle failure of your promise.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"ie=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Promise.all<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Open the Developer tools<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="kd">function</span> <span class="nx">Promise_all</span><span class="p">(</span><span class="nx">promises</span><span class="p">)</span> <span class="p">{</span>
+           <span class="c1">// Fill the code</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Test code.</span>
+        <span class="nx">Promise_all</span><span class="p">([]).</span><span class="nx">then</span><span class="p">(</span><span class="nx">array</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">This should be []:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">array</span><span class="p">);</span>
+        <span class="p">});</span>
+
+        <span class="kd">function</span> <span class="nx">soon</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">val</span><span class="p">),</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">500</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+
+        <span class="nx">Promise_all</span><span class="p">([</span><span class="nx">soon</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="nx">soon</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="nx">soon</span><span class="p">(</span><span class="mi">3</span><span class="p">)]).</span><span class="nx">then</span><span class="p">(</span><span class="nx">array</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">This should be [1, 2, 3]:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">array</span><span class="p">);</span>
+        <span class="p">});</span>
+
+        <span class="nx">Promise_all</span><span class="p">([</span><span class="nx">soon</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="nx">soon</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="nx">soon</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">)]).</span><span class="nx">then</span><span class="p">(</span><span class="nx">array</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">This should be [5, 2, "a"]:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">array</span><span class="p">);</span>
+        <span class="p">});</span>
+
+        <span class="nx">Promise_all</span><span class="p">([</span><span class="nx">soon</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="dl">'</span><span class="s1">X</span><span class="dl">'</span><span class="p">),</span> <span class="nx">soon</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">array</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">We should not get here</span><span class="dl">'</span><span class="p">);</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">error</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">X</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Rejection correctly managed!</span><span class="dl">'</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">else</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Unexpected failure:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+            <span class="p">});</span>
+
+        <span class="nx">Promise_all</span><span class="p">([</span>
+            <span class="nx">soon</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+            <span class="k">new</span> <span class="nb">Promise</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">throw</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Muerto!</span><span class="dl">'</span><span class="p">))</span> <span class="p">}),</span>
+            <span class="nx">soon</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="p">])</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">array</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">We should not get here</span><span class="dl">'</span><span class="p">);</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="sr">/Muerto!/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Exception correctly managed!:</span><span class="dl">'</span><span class="p">);</span>
+            <span class="p">});</span>        
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<h2 id="hints">Hints</h2>
+
+<p>The function passed to the <code class="language-plaintext highlighter-rouge">Promise</code> constructor will have to call then on each of the promises in the given array. 
+When one of them succeeds, two things need to happen. 
+The resulting value needs to be stored in the correct position of a result array, and 
+we must check whether this was the last pending promise and finish our own promise if it was.</p>
+
+<p>The latter can be done with a counter that is initialized to the length of the input array and from which we subtract 1 every time a promise succeeds. 
+When it reaches 0, we are done. 
+Make sure you take into account the situation where the input array is empty (and thus no promise will ever resolve).</p>
+
+<p>Handling failure requires some thought but turns out to be extremely simple. Just pass the reject function of the wrapping promise to each of the promises in the array as a catch handler or as a second argument to then so that a failure in one of them triggers the rejection of the whole wrapper promise.</p>
+
+<h2 id="solution"><a href="https://ull-mii-sytws-1920.github.io/tema2-async/exercises/promises/promise-all/solution.html">Solution</a></h2>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

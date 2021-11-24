@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>CommonJS Modules. Importación y Exportación | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="CommonJS Modules. Importación y Exportación" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CommonJS Modules. Importación y Exportación" />
+<script type="application/ld+json">
+{"headline":"CommonJS Modules. Importación y Exportación","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/nodejspackages.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <ul>
+  <li><a href="https://lenguajejs.com/automatizadores/introduccion/commonjs-vs-es-modules/">Introducción a los Módulos en JS</a> por Manz</li>
+  <li>Talk <a href="https://darrenderidder.github.io/talks/ModulePatterns">NODE.JS module patterns using simple examples</a>. Trasparencias. Muestra ejemplos/patrones de exportación-importación (Reveal Slides)</li>
+  <li><a href="http://know.cujojs.com/tutorials/modules/authoring-cjs-modules">Authoring CommonJS modules</a>  (CommonJS modules were conceived during the early days of server-side JavaScript environments such as node.js and Narwhal. As a result, CommonJS modules are optimized for these environments, not browser environments)</li>
+</ul>
+
+<h1 id="el-comando-npm">El comando npm</h1>
+
+<ul>
+  <li><a href="https://www.sitepoint.com/beginners-guide-node-package-manager/">A Beginner’s Guide to npm — the Node Package Manager</a></li>
+  <li><a href="npm.html">npm</a></li>
+  <li><a href="https://www.sitepoint.com/10-npm-tips-and-tricks/">10 Tips and Tricks That Will Make You an npm Ninja</a></li>
+</ul>
+
+<h1 id="ejercicio-darse-de-alta-en-npm">Ejercicio: Darse de alta en NPM</h1>
+
+<p>Para comenzar, crearemos una cuenta de usuario en el repositorio de NPM mediante la cual publicar nuestros propios paquetes:</p>
+
+<ol>
+  <li>Abrir el navegador.</li>
+  <li>Ir a <a href="https://npmjs.org">https://npmjs.org</a></li>
+  <li>Hacer clic en el enlace <a href="https://www.npmjs.com/login">sign up</a></li>
+  <li>Rellenar el formulario de alta:
+    <ul>
+      <li><img src="/assets/temas/introduccion-a-javascript/crearcuentanpm.png" alt="Formulario para crear la cuenta en npmjs.org" /></li>
+    </ul>
+  </li>
+  <li>Aceptar los términos de licencia.</li>
+  <li>Hacer clic en el botón Create an Account para crear la cuenta.</li>
+  <li>Una vez creada la cuenta, hay que abrir sesión con el servidor NPM para poder publicar paquetes en él. Abrir una consola.</li>
+  <li>Conectar al repositorio:
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">$ npm login</code></li>
+      <li>Rellene los datos que le solicita.</li>
+      <li>Consultar la cuenta con la que tenemos abierta la sesión:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ npm whoami
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p><strong>Otra forma de darse de alta desde línea de comandos:</strong></p>
+
+<ul>
+  <li>
+    <p>Ejecuta en la terminal estos comandos:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          npm <span class="nb">set </span>init.author.name <span class="s2">"Casiano Rodriguez-Leon"</span>
+          npm <span class="nb">set </span>init.author.email <span class="s2">"whatever@gmail.com"</span>
+          npm <span class="nb">set </span>init.author.url <span class="s2">"https://github.com/crguezl"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>El siguiente comando nos perdirá un email y una  password, creando o verificando 
+un usuario en el <a href="https://docs.npmjs.com/misc/registry">npm registry</a>, y 
+guardará el token en el fichero 
+<code class="language-plaintext highlighter-rouge">~/.npmrc</code>:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          npm adduser
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="creación-de-paquetes-y-módulos-en-nodejs">Creación de Paquetes y Módulos en NodeJS</h1>
+
+<ul>
+  <li><a href="creating-and-publishing-npm-module">Creating and Publishing a Node.js Module</a></li>
+  <li>El paquete de ejemplo usado en este tutorial <a href="https://www.npmjs.com/package/@ull-esit-dsi-1617/scapegoat">@ull-esit-dsi-1617/scapegoat</a> en npm</li>
+  <li>El paquete de ejemplo usado en este tutorial <a href="https://github.com/ULL-ESIT-DSI-1617/scapegoat">@ull-esit-dsi-1617/scapegoat</a> en GitHub</li>
+</ul>
+
+<h1 id="instalación-desde-github">Instalación desde GitHub</h1>
+
+<p>You can install packages directly from Github, and even specify a tag, sha, or branch if you want.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install https://github.com/ULL-ESIT-DSI-1617/scapegoat.git
+npm install https://github.com/ULL-ESIT-DSI-1617/scapegoat.git#branch
+</code></pre></div></div>
+
+<p>must be https or git+ssh.</p>
+
+<p>See <a href="https://stackoverflow.com/questions/17509669/how-to-install-an-npm-package-from-github-directly">How to install an npm package from GitHub directly?</a> in StackOverflow</p>
+
+<h1 id="publicación-con-ámbito-en-una-organización">Publicación con ámbito en una organización:</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[/tmp/scapegoat(master)]$ npm publish --access public
++ @ull-esit-dsi-1617/scapegoat@1.0.2
+</code></pre></div></div>
+
+<h2 id="scoped-packages">Scoped Packages</h2>
+
+<blockquote>
+  <p>There are only two hard things in Computer Science: cache invalidation and naming things.</p>
+</blockquote>
+
+<blockquote>
+  <p>—Phil Karlton</p>
+</blockquote>
+
+<p>Naming things is hard. It’s even harder when there are tens of thousands of other people who want to use the same names that you do. With hundred of thousands of modules on npm, it has been getting hard to find a name that isn’t taken.</p>
+
+<p>Naming things just got a little bit easier for npm users with the introduction of scopes.</p>
+
+<p>What are scopes?: Scopes are like namespaces for npm packages. Each npm user has their own scope.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@username/project-name
+</code></pre></div></div>
+<p>This means that you don’t have to worry about someone else taking your package name. Only you can add packages in your scope.</p>
+
+<p>Scoped modules also make it possible to put your private code on npm when you sign up for <a href="https://www.npmjs.com/features">private modules</a>. With private modules, you have control over who can see and collaborate on any of the modules in your scope.</p>
+
+<p>Public scoped packages are free. To create a scoped package, all you need to do is add your scope to the front of the name property in <code class="language-plaintext highlighter-rouge">package.json</code> and run <code class="language-plaintext highlighter-rouge">npm</code> with the access option:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm publish --access=public
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.npmjs.com/getting-started/scoped-packages">Working with scoped packages</a></li>
+  <li><a href="https://docs.npmjs.com/misc/scope#publishing-public-scoped-packages-to-the-public-npm-registry">npm-scope manual: Scoped packages</a></li>
+  <li><a href="https://youtu.be/O6JoXGnHK_Y">Working with npm private modules. YouTube Video</a></li>
+</ul>
+
+<h1 id="packagejson">Package.json</h1>
+
+<ul>
+  <li><a href="https://docs.npmjs.com/files/package.json">Package.json documentation en npm site</a></li>
+</ul>
+
+<h2 id="ejemplo-de-packagejson">Ejemplo de package.json</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	[~/javascript/evalua-module/scapegoat(master)]$ pwd -P
+	/Users/casiano/local/src/javascript/evalua-module/scapegoat
+	[~/javascript/evalua-module/scapegoat(master)]$ tree -I 'node_modules|docs'
+	.
+	├── LICENSE-MIT
+	├── README.md
+	├── index.js
+	├── package.json
+	└── test
+			└── index.js
+
+	1 directory, 5 files
+	[~/javascript/evalua-module/scapegoat(master)]$ cat package.json
+</code></pre></div></div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="p">{</span>
+		<span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">@ull-esit-dsi-1617/scapegoat</span><span class="dl">"</span><span class="p">,</span>
+		<span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1.0.4</span><span class="dl">"</span><span class="p">,</span>
+		<span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">A small library providing utility methods to escape and unescape HTML entities</span><span class="dl">"</span><span class="p">,</span>
+		<span class="dl">"</span><span class="s2">main</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index.js</span><span class="dl">"</span><span class="p">,</span>
+		<span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+			<span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./node_modules/.bin/mocha --reporter spec</span><span class="dl">"</span><span class="p">,</span>
+			<span class="dl">"</span><span class="s2">doc</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">documentation build index.js -f html -o docs</span><span class="dl">"</span>
+		<span class="p">},</span>
+		<span class="dl">"</span><span class="s2">repository</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+			<span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">git</span><span class="dl">"</span><span class="p">,</span>
+			<span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">git@github.com:ULL-ESIT-DSI-1617/scapegoat.git</span><span class="dl">"</span>
+		<span class="p">},</span>
+		<span class="dl">"</span><span class="s2">keywords</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+			<span class="dl">"</span><span class="s2">escape</span><span class="dl">"</span><span class="p">,</span>
+			<span class="dl">"</span><span class="s2">unescape</span><span class="dl">"</span><span class="p">,</span>
+			<span class="dl">"</span><span class="s2">html</span><span class="dl">"</span>
+		<span class="p">],</span>
+		<span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Casiano Rodriguez &lt;casiano.rodriguez.leon@gmail.com&gt;</span><span class="dl">"</span><span class="p">,</span>
+		<span class="dl">"</span><span class="s2">licenses</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+			<span class="p">{</span>
+				<span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MIT</span><span class="dl">"</span><span class="p">,</span>
+				<span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/ULL-ESIT-DSI-1617/scapegoat/blob/master/LICENSE-MIT</span><span class="dl">"</span>
+			<span class="p">}</span>
+		<span class="p">],</span>
+		<span class="dl">"</span><span class="s2">bugs</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+			<span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/ULL-ESIT-DSI-1617/scapegoat/issues</span><span class="dl">"</span>
+		<span class="p">},</span>
+		<span class="dl">"</span><span class="s2">devDependencies</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+			<span class="dl">"</span><span class="s2">mocha</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">,</span>
+			<span class="dl">"</span><span class="s2">chai</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="semantic-versioning-and-npm">Semantic versioning and npm</h1>
+
+<ul>
+  <li><a href="https://docs.npmjs.com/getting-started/semantic-versioning">Semantic versioning and npm</a></li>
+  <li><a href="https://www.sitepoint.com/semantic-versioning-why-you-should-using/">Semantic Versioning: Why You Should Be Using it</a> SitePoint</li>
+  <li><a href="https://youtu.be/kK4Meix58R4">YouTube Video: Semantic versioning and npm</a></li>
+  <li><a href="https://docs.npmjs.com/cli/version">El comando npm version</a></li>
+</ul>
+
+<h1 id="npm-organizations-npm-organizaciones">npm Organizations /npm Organizaciones</h1>
+
+<ul>
+  <li><a href="https://www.npmjs.com/docs/orgs/./">Introduction</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/getting-started.html">Getting Started</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/roles-and-privileges.html">Roles and Privileges</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/managing-members.html">Managing Members</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/the-developers-team.html">The Developers Team</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/managing-teams.html">Managing Teams</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/publishing-an-org-scoped-package.html">Publishing an Org Scoped Package</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/configuring-npm-for-your-org.html">Configuring npm for your Org</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/managing-package-access.html">Managing Package Access</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/migrating-a-user-account.html">Migrating a User Account</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/managing-billing.html">Managing Billing</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/upgrading-and-downgrading.html">Upgrading and Downgrading</a></li>
+  <li><a href="https://www.npmjs.com/docs/orgs/renaming-and-or-deleting-an-org.html">Renaming and/or Deleting an Org</a></li>
+</ul>
+
+<p>Members of an Organization are immediately added to a Developers team that automatically has Read/Write access to all packages published under an Organization scope</p>
+
+<ul>
+  <li><a href="https://www.npmjs.com/docs/orgs/publishing-an-org-scoped-package.html">Publishing an Org Scoped Package</a>
+    <ul>
+      <li>
+        <p>To create a new scoped package for your Organization scope, create a directory with the name of the package you would like to create. Navigate into that directory and use this command:</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            npm init --scope=&lt;org_scope&gt;
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>By default all scoped packages are published privately. To publish a scoped package publicly, pass the access flag with the value public:</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            npm publish --access public
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://www.npmjs.com/docs/orgs/the-developers-team.html">The developers team</a>
+    <ul>
+      <li>The Developers Team is a special Team that is automatically created when you create an Organization.</li>
+      <li>Members are automatically added to the Developers team:
+        <ul>
+          <li>The user who created the Organization is added to this team automatically.</li>
+          <li>Any member added to the Organization is also added to this team automatically.</li>
+          <li>If an Owner adds a new Member to an Organization and does not want that Member to be on the Developers team, an Owner can remove them. (<a href="https://www.npmjs.com/docs/orgs/managing-teams.html">Learn more about managing teams</a>).</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://docs.npmjs.com/cli/team">npm-team: Manage organization teams and team memberships</a></li>
+  <li><a href="https://docs.npmjs.com/cli/access">npm-access: Set access level on published packages</a></li>
+</ul>
+
+<h1 id="npm-herramientas-de-ayuda-release-it">NPM: Herramientas de ayuda: release-it</h1>
+
+<ul>
+  <li><a href="https://github.com/webpro/release-it">release-it: Interactive release tool for Git repositories</a></li>
+  <li><a href="https://webpro.github.io/release-it/">release-it: GitHub Page</a></li>
+</ul>
+
+<p>Release a new patch (increments from e.g. <code class="language-plaintext highlighter-rouge">1.0.4</code> to <code class="language-plaintext highlighter-rouge">1.0.5</code>):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>release-it
+</code></pre></div></div>
+
+<p>Release a patch, minor, major, or specific version:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>release-it minor
+release-it 0.8.3
+</code></pre></div></div>
+
+<p>You can also do a “dry run”, which won’t write/touch anything, but does output the commands it would execute, and show the interactivity:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>release-it <span class="nt">--dry-run</span>
+</code></pre></div></div>
+
+<h1 id="references-tutorials">References: Tutorials</h1>
+
+<ul>
+  <li><a href="https://nodesource.com/blog/your-first-nodejs-package/">Your first Node.js package  por Elijah Insua</a></li>
+</ul>
+
+<h2 id="npm-video-tutoriales">NPM: Video Tutoriales</h2>
+
+<ul>
+  <li><a href="https://youtu.be/3I78ELjTzlQ">Creating NodeJS modules</a></li>
+  <li><a href="https://youtu.be/BkotrAFtBM0">Publishing npm Packages</a></li>
+  <li><a href="https://youtu.be/sELoj6e1ffM">Node js Tutorial: How to create NPM package?</a></li>
+</ul>
+
+<h2 id="links-to-npm-docs-getting-started">Links to NPM docs: Getting Started</h2>
+
+<ol>
+  <li><a href="https://docs.npmjs.com/getting-started/what-is-npm">What is npm?</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/installing-node">Installing Node.js and updating npm</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">Fixing npm permissions</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/installing-npm-packages-locally">Installing npm packages locally</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/using-a-package.json">Using a package.json</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/updating-local-packages">Updating local packages</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/uninstalling-local-packages">Uninstalling local packages</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/installing-npm-packages-globally">Installing npm packages globally</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/updating-global-packages">Updating global packages</a>
+<a href="https://docs.npmjs.com/getting-started/uninstalling-global-packages">Uninstalling global packages</a>11.  <a href="https://docs.npmjs.com/getting-started/getting-started/creating-node-modules">Creating Node.js modules</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/publishing-npm-packages">Publishing npm packages</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/semantic-versioning">Semantic versioning and npm</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/scoped-packages">Working with scoped packages</a></li>
+  <li><a href="https://docs.npmjs.com/getting-started/using-tags">Using tags</a></li>
+</ol>
+
+<!-- * [Publishing npm packages tutorial](https://docs.npmjs.com/getting-started/publishing-npm-packages) * [npm documentation: Creating Node.js modules](https://docs.npmjs.com/getting-started/creating-node-modules) -->
+
+<h1 id="yarn">Yarn</h1>
+
+<ul>
+  <li><a href="https://code.facebook.com/posts/1840075619545360">yarn</a></li>
+</ul>
+
+<h1 id="creación-de-paquetes-en-el-navegadorcliente">Creación de Paquetes en el Navegador/Cliente</h1>
+
+<ul>
+  <li><a href="http://webpack.github.io/docs/motivation.html">webpack</a>
+    <ul>
+      <li><a href="https://youtu.be/9kJVYpOqcVU">Webpack Tutorial - Replace Gulp/Grunt plugins with a single tool. LearnCode.academy</a> YouTube</li>
+    </ul>
+  </li>
+  <li><a href="https://bower.io/">bower</a></li>
+  <li><a href="http://browserify.org/">browserify</a></li>
+</ul>
+
+<h1 id="documentation"><a href="documentation">Documentation</a></h1>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

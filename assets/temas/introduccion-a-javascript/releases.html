@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>GitHub Releases | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="GitHub Releases" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="GitHub Releases" />
+<script type="application/ld+json">
+{"headline":"GitHub Releases","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/releases.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <p>GitHub Releases is a way to create a release to package software, along with release notes and links to binary files, for other people to use.</p>
+
+<p>Releases are based on <a href="https://git-scm.com/book/en/Git-Basics-Tagging">Git tags</a>, which mark a specific point in your repository’s history. A tag date may be different than a release date since they can be created at different times. For more information about viewing your existing tags, see “<a href="https://help.github.com/en/github/administering-a-repository/viewing-your-repositorys-releases-and-tags">Viewing your repository’s releases and tags</a>.</p>
+
+<p>Releases are ordered by a tag’s date in the following way:</p>
+
+<ul>
+  <li>If it’s an <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging#_annotated_tags" target="_blank">annotated tag, the tag object’s date is used</a>.</li>
+  <li>If it’s a <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging#_lightweight_tags" target="_blank">lightweight tag</a>, then the commit object’s date is used.</li>
+</ul>
+
+<h2 id="the-release-event">The release Event</h2>
+
+<p>A GitHub event with the name <strong>release</strong> is triggered when a release is</p>
+
+<ul>
+  <li>published,</li>
+  <li>unpublished,</li>
+  <li>created,</li>
+  <li>edited,</li>
+  <li>deleted, or</li>
+  <li>prereleased.</li>
+</ul>
+
+<p>See <a href="https://developer.github.com/webhooks/">GitHub Webhooks</a>.</p>
+
+<h2 id="creating-releases-using-the-github-web-app">Creating Releases Using the GitHub Web App</h2>
+
+<p>You can create releases on GitHub Web:</p>
+
+<ul>
+  <li>On GitHub, navigate to the main page of the repository.</li>
+  <li>
+    <p>Under your repository name, click <strong>Releases</strong>.</p>
+
+    <p><img src="https://help.github.com/assets/images/help/releases/release-link.png" alt="Releases tab" /></p>
+
+    <p>https://help.github.com/assets/images/help/releases/release-link.png</p>
+  </li>
+  <li>
+    <p>Click <strong>Draft a new release</strong>.</p>
+
+    <p><img src="https://help.github.com/assets/images/help/releases/draft_release_button.png" alt="Releases draft button" /></p>
+  </li>
+  <li>
+    <p>Type a version number for your release. Versions are based on <a href="https://git-scm.com/book/en/Git-Basics-Tagging">Git tags</a>. We recommend naming tags that fit within <a href="http://semver.org/">semantic versioning</a>.</p>
+
+    <p><img src="https://help.github.com/assets/images/help/releases/releases-tag-version.png" alt="Releases tagged version" /></p>
+  </li>
+  <li>
+    <p>Use the drop-down menu to select the branch that contains the project you want to release.</p>
+
+    <p><img src="https://help.github.com/assets/images/help/releases/releases-tag-branch.png" alt="Releases tagged branch" /></p>
+  </li>
+  <li>
+    <p>Type a title and description for your release.</p>
+
+    <p><img src="https://help.github.com/assets/images/help/releases/releases_description.png" alt="Releases description" /></p>
+  </li>
+  <li>
+    <p>Optionally, to include binary files such as compiled programs in your release, drag and drop or manually select files in the binaries box.</p>
+
+    <p><img src="https://help.github.com/assets/images/help/releases/releases_adding_binary.gif" alt="Providing a DMG with the Release" /></p>
+  </li>
+  <li>
+    <p>To notify users that the release is not ready for production and may be unstable, select <strong>This is a pre-release</strong>.</p>
+
+    <p><img src="https://help.github.com/assets/images/help/releases/prerelease_checkbox.png" alt="Checkbox to mark a release as prerelease" /></p>
+  </li>
+  <li>
+    <p>If you’re ready to publicize your release, click <strong>Publish release</strong>. To work on the release later, click <strong>Save draft</strong>.</p>
+
+    <p><img src="https://help.github.com/assets/images/help/releases/release_buttons.png" alt="Publish release and Draft release buttons" /></p>
+  </li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>See more at <a href="https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release">Managing releases in a repository</a></li>
+  <li>See also <a name="myfootnote1">1</a>: (Paragraph borrowed from <a href="https://stackoverflow.com/questions/33551505/what-exactly-is-a-release-in-github">What exactly is a Release in GitHub?</a>)</li>
+  <li>See <a href="https://developer.github.com/webhooks/">GitHub Webhooks</a>.</li>
+</ul>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

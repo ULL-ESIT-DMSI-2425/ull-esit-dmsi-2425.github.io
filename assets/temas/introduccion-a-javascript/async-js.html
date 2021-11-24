@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>The Async Module | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="The Async Module" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Async Module" />
+<script type="application/ld+json">
+{"headline":"The Async Module","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/async-js.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <p><a href="https://caolan.github.io/async/v3/">Async</a> is a utility module which provides straight-forward, powerful functions for working with asynchronous JavaScript. Although originally designed for use with Node.js and installable via</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install async
+</code></pre></div></div>
+
+<p>it can also be used directly in the browser.</p>
+
+<h2 id="map">Map</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span><span class="p">.</span><span class="nx">map</span><span class="p">([</span><span class="dl">'</span><span class="s1">file1</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">file2</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">file3</span><span class="dl">'</span><span class="p">],</span> <span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">stat</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">cb</span><span class="p">),</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span>  <span class="p">{</span>
+      <span class="c1">// results is now an array of stats for each file</span>
+<span class="p">});</span> 
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://caolan.github.io/async/v3/docs.html#map">Documentation of Map</a></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">map</span><span class="p">(</span>
+     <span class="nx">coll</span><span class="p">,</span> 
+     <span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">iteratee</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span><span class="nx">cb</span><span class="p">),</span> 
+     <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">maincallback</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span>
+   <span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">import</span> <span class="nx">map</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">async/map</span><span class="dl">'</span><span class="p">;</span> 
+    <span class="c1">// En Node.js</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">map</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">async</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Produces a new collection of values by mapping each value in <code class="language-plaintext highlighter-rouge">coll</code> through the <code class="language-plaintext highlighter-rouge">iteratee</code> function.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">iteratee</code> is called with an <code class="language-plaintext highlighter-rouge">item</code> from <code class="language-plaintext highlighter-rouge">coll</code> and a callback <code class="language-plaintext highlighter-rouge">cb</code> for when it has finished processing.</li>
+  <li>Each of these callbacks <code class="language-plaintext highlighter-rouge">cb</code> take 2 arguments: an <code class="language-plaintext highlighter-rouge">error</code>, and the result of  <code class="language-plaintext highlighter-rouge">iteratee(item)</code>.</li>
+  <li>If <code class="language-plaintext highlighter-rouge">iteratee</code> passes an error to its callback <code class="language-plaintext highlighter-rouge">cb</code>, the <code class="language-plaintext highlighter-rouge">maincallback</code> (for the <code class="language-plaintext highlighter-rouge">map</code> function) is immediately called with the error.</li>
+  <li>Note, that since this function applies the <code class="language-plaintext highlighter-rouge">iteratee</code> to each item in parallel, there is no guarantee that the <code class="language-plaintext highlighter-rouge">iteratee</code> functions will complete in order. However, <strong>the <code class="language-plaintext highlighter-rouge">results</code> array will be in the same order as the original <code class="language-plaintext highlighter-rouge">coll</code></strong>.</li>
+</ol>
+
+<h3 id="ejemplo-concatenación-de-ficheros">Ejemplo: Concatenación de ficheros</h3>
+
+<p>El objetivo es escribir un programa que usando <code class="language-plaintext highlighter-rouge">fs.readFile</code> lea  un conjunto de ficheros pasados en vía de comandos y produzca como salida la concatenación de los mismos en el orden especificado, sin usar lecturas síncronas. 
+La escritura debe ocurrir después que hayan terminado todas las lecturas.</p>
+
+<p>He aquí una solución:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../ssh2-hello(master)]$ cat simp-reto-async-reading-multiple-files.js
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">),</span>
+    <span class="p">{</span> <span class="nx">map</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">async</span><span class="dl">'</span><span class="p">),</span>
+    <span class="nx">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">in1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">in2</span><span class="dl">'</span><span class="p">],</span>
+    <span class="nx">output</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">out</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">map</span><span class="p">(</span><span class="nx">inputs</span><span class="p">,</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">,</span>
+   <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">contents</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
+      <span class="k">else</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">contents</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span>
+        <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="nx">output</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Output in file '</span><span class="p">${</span><span class="nx">output</span><span class="p">}</span><span class="s2">'`</span><span class="p">)</span>
+        <span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>Ejecución:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../ssh2-hello(master)]$ node simp-reto-async-reading-multiple-files.js
+Output in file 'out'
+[~/.../ssh2-hello(master)]$ cat in1
+in1
+hi!
+[~/.../ssh2-hello(master)]$ cat in2
+in2
+[~/.../ssh2-hello(master)]$ cat out
+in1
+hi!
+in2
+</code></pre></div></div>
+
+<p>¿Como lograría resolver este problema si no dispusiera de <code class="language-plaintext highlighter-rouge">async.js</code>?</p>
+
+<h2 id="filter">Filter</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">file1</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">file2</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">file3</span><span class="dl">'</span><span class="p">],</span>
+    <span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">fs</span><span class="p">.</span><span class="nx">access</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span>  <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span>  <span class="o">!</span><span class="nx">err</span><span class="p">));</span>  <span class="c1">// Tests a user's permissions for file</span>
+    <span class="p">},</span>  
+    <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span>  <span class="p">{</span>
+      <span class="c1">// results now equals an array of the existing files</span>
+   <span class="p">}</span>
+<span class="p">);</span> 
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://caolan.github.io/async/v3/docs.html#filter">Documentation of filter</a></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">filter</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">async/filter</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">filter</span><span class="p">(</span><span class="nx">coll</span><span class="p">,</span> <span class="nx">iteratee</span><span class="p">,</span> <span class="nx">callbackopt</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Returns a new array of all the values in <code class="language-plaintext highlighter-rouge">coll</code> which pass an async truth test.</li>
+  <li>This operation is performed in parallel, but the results array will be in the same order as the original.</li>
+  <li><code class="language-plaintext highlighter-rouge">iteratee</code> is a truth test to apply to each item in <code class="language-plaintext highlighter-rouge">coll</code>.
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">iteratee</code> is invoked with <code class="language-plaintext highlighter-rouge">(item, callback)</code></li>
+      <li>It is passed a <code class="language-plaintext highlighter-rouge">callback(err, truthValue)</code>, <strong>which must be called with a boolean argument once it has completed</strong></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="parallel">Parallel</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span><span class="p">.</span><span class="nx">parallel</span><span class="p">(</span>
+   <span class="p">[</span>
+     <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="dl">'</span><span class="s1">one</span><span class="dl">'</span><span class="p">);</span> <span class="p">},</span> <span class="mi">200</span><span class="p">);</span>
+     <span class="p">},</span>
+     <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="dl">'</span><span class="s1">two</span><span class="dl">'</span><span class="p">);</span> <span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+     <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="c1">// optional callback</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// the results array will equal ['one','two'] even though</span>
+    <span class="c1">// the second function had a shorter timeout.</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://caolan.github.io/async/v3/docs.html#parallel">Documentation of Parallel</a></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">import</span> <span class="nx">parallel</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">async/parallel</span><span class="dl">'</span><span class="p">;</span>
+
+    <span class="nx">parallel</span><span class="p">(</span><span class="nx">tasks</span><span class="p">,</span> <span class="nx">callbackopt</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Run the <code class="language-plaintext highlighter-rouge">tasks</code> collection of functions in parallel, without waiting until the previous function has completed.</li>
+  <li>If any of the functions pass an error to its callback, the main <code class="language-plaintext highlighter-rouge">callback</code> is immediately called with the value of the error.</li>
+  <li>Once the <code class="language-plaintext highlighter-rouge">tasks</code> have completed, the results are passed to the final <code class="language-plaintext highlighter-rouge">callback</code> as an array.</li>
+</ol>
+
+<p><strong>Hint:</strong> Use <a href="https://caolan.github.io/async/v3/docs.html#reflect"><code class="language-plaintext highlighter-rouge">reflect</code></a> to continue the execution of other tasks when a task fails.</p>
+
+<h3 id="it-is-also-possible-to-use-an-object-instead-of-an-array">It is also possible to use an object instead of an array</h3>
+
+<p>Each property will be run as a function and the results will be passed to the final <code class="language-plaintext highlighter-rouge">callback</code> as an object instead of an array.</p>
+
+<p>This can be a more readable way of handling results from <code class="language-plaintext highlighter-rouge">async.parallel</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// an example using an object instead of an array</span>
+<span class="k">async</span><span class="p">.</span><span class="nx">parallel</span><span class="p">({</span>
+    <span class="na">one</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="p">},</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">two</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// results is now equals to: {one: 1, two: 2}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="example">Example:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../Asyncjs]$ cat parallelTimers.js
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="k">async</span> <span class="o">=</span> <span class="nx">require</span> <span class="p">(</span><span class="dl">'</span><span class="s1">async</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">start</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">;</span>
+<span class="k">async</span><span class="p">.</span><span class="nx">parallel</span><span class="p">([</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span> <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Completed in </span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span> <span class="o">-</span> <span class="nx">start</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">ms</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Execution:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../async-js-book/Asyncjs]$ node parallelTimers.js
+Completed in 305ms
+</code></pre></div></div>
+
+<h2 id="series">Series</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span><span class="p">.</span><span class="nx">series</span><span class="p">([</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// do some stuff ...</span>
+        <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="dl">'</span><span class="s1">one</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// do some more stuff ...</span>
+        <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="dl">'</span><span class="s1">two</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">],</span>
+<span class="c1">// optional callback</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// results is now equal to ['one', 'two']</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Documentation of <a href="https://caolan.github.io/async/v3/docs.html#series">series</a></li>
+</ul>
+
+<p><strong><code class="language-plaintext highlighter-rouge">series(tasks, callbackopt)</code></strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">series</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">async/series</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Run the functions in the <code class="language-plaintext highlighter-rouge">tasks</code> collection in series, <strong>each one running once the previous function has completed</strong>.</li>
+  <li>If any functions in the series pass an error to its callback, no more functions are run, and <code class="language-plaintext highlighter-rouge">callback</code> is immediately called with the value of the error.</li>
+  <li>Otherwise, <code class="language-plaintext highlighter-rouge">callback</code> receives an array of results when <code class="language-plaintext highlighter-rouge">tasks</code> have completed.</li>
+</ol>
+
+<h3 id="it-is-also-possible-to-use-an-object-instead-of-an-array-1">It is also possible to use an object instead of an array</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span><span class="p">.</span><span class="nx">series</span><span class="p">({</span>
+    <span class="na">one</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="p">},</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">two</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">){</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// results is now equal to: {one: 1, two: 2}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Each property will be run as a function, and the results will be passed to the final <code class="language-plaintext highlighter-rouge">callback</code> as an object instead of an array.</p>
+
+<p>This can be a more readable way of handling results from <code class="language-plaintext highlighter-rouge">async.series</code>.</p>
+
+<p><strong>Note</strong> that while many implementations preserve the order of object properties, the <a href="http://www.ecma-international.org/ecma-262/5.1/#sec-8.6">ECMAScript Language Specification</a> explicitly states that</p>
+
+<blockquote>
+  <p>The mechanics and order of enumerating the properties is not specified.</p>
+</blockquote>
+
+<p>So if you rely on the order in which your series of functions are executed, and want this to work on all platforms, consider using an array.</p>
+
+<h3 id="example-1">Example</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../async-js-book/Asyncjs]$ cat seriesTimers.js
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="k">async</span> <span class="o">=</span> <span class="nx">require</span> <span class="p">(</span><span class="dl">'</span><span class="s1">async</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">start</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">;</span>
+
+<span class="k">async</span><span class="p">.</span><span class="nx">series</span><span class="p">([</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span> <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// show time elapsed since start</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Completed in </span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span> <span class="o">-</span> <span class="nx">start</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">ms</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../async-js-book/Asyncjs]$ node seriesTimers.js
+Completed in 618ms
+</code></pre></div></div>
+
+<h2 id="queue">Queue</h2>
+
+<p>See <a href="http://caolan.github.io/async/v3/docs.html#queue">Async.js: queue</a></p>
+
+<p>Creates a <code class="language-plaintext highlighter-rouge">queue</code> object with the specified <code class="language-plaintext highlighter-rouge">concurrency</code>. Tasks added to the <code class="language-plaintext highlighter-rouge">queue</code> are processed in parallel (up to the <code class="language-plaintext highlighter-rouge">concurrency</code> limit). If all worker’s are in progress, the task is queued until one becomes available. Once a <code class="language-plaintext highlighter-rouge">worker</code> completes a <code class="language-plaintext highlighter-rouge">task</code>, that <code class="language-plaintext highlighter-rouge">task</code>’s callback is called.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../async-js-book/Asyncjs]$ cat queue-example.js
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="k">async</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">async</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">ir</span> <span class="o">=</span> <span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="o">=&gt;</span>  <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span><span class="p">)</span> <span class="o">+</span> <span class="nx">min</span><span class="p">))</span>
+<span class="kd">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">makeCb</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">finished processing </span><span class="dl">'</span><span class="o">+</span><span class="nx">str</span><span class="o">+</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="o">+</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="o">-</span> <span class="nx">d</span><span class="p">)));</span>
+
+<span class="kd">const</span> <span class="nx">worker</span> <span class="o">=</span> <span class="p">(</span><span class="nx">task</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span>
+      <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">task</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+        <span class="nx">callback</span><span class="p">();</span>
+      <span class="p">},</span><span class="nx">ir</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="c1">// Wait a random time</span>
+    <span class="p">)</span>
+<span class="p">};</span>
+
+<span class="c1">// create a queue object with concurrency 2</span>
+<span class="kd">const</span> <span class="nx">q</span> <span class="o">=</span> <span class="k">async</span><span class="p">.</span><span class="nx">queue</span><span class="p">(</span><span class="nx">worker</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="cm">/*
+ q.drain: a function that sets a callback that is called when the last item
+          from the queue has returned from the worker.
+  If the callback is omitted, q.drain() returns a promise for the next occurrence.
+*/</span>
+<span class="nx">q</span><span class="p">.</span><span class="nx">drain</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">worker finished and queue is empty</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// assign an error callback</span>
+<span class="nx">q</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">task</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">task experienced an error </span><span class="dl">'</span><span class="o">+</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../async-js-book/Asyncjs]$ node queue-example.js
+hello ear
+finished processing ear 709
+hello bar
+finished processing bar 961
+hello foo
+finished processing foo 976
+hello baz
+finished processing item 1186
+hello bay
+finished processing item 1316
+hello bax
+finished processing item 1323
+worker finished and queue is empty
+</code></pre></div></div>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

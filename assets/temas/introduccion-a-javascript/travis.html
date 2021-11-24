@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Travis | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Travis" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Travis" />
+<script type="application/ld+json">
+{"headline":"Travis","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/travis.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <h2 id="travis">Travis</h2>
+
+<ul>
+  <li><a href="https://travis-ci.org/">https://travis.ci.org</a></li>
+  <li><a href="https://travis-ci.org/profile">Tu página de perfil en Travis</a></li>
+</ul>
+
+<h3 id="autorizando-a-travis">Autorizando a Travis</h3>
+
+<ol>
+  <li>Nos vamos a nuestra página de perfil en Travis
+    <ul>
+      <li><img src="/assets/temas/introduccion-a-javascript/travis-profile.png" alt="Travis: profile page. https://travis-ci.org/profile/user" /></li>
+    </ul>
+  </li>
+  <li>Autorizamos en GitHub a Travis para que acceda a nuestras organizaciones y repos
+    <ul>
+      <li><img src="/assets/temas/introduccion-a-javascript/github-authorized-applications-travis.png" alt="GitHub: Authorizing Travis" /></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="buscando-los-repos-de-una-organización">Buscando los repos de una organización</h3>
+
+<ol>
+  <li>Si en la página de perfil hacemos click en una organización veremos los repos públicos de esa organización (los repos privados aparecen en <a href="https://travis-ci.com/">travis-ci.com</a> que es de pago)
+    <ul>
+      <li><img src="/assets/temas/introduccion-a-javascript/travis-profile-organization.png" alt="Viendo los repos en una organización" /></li>
+    </ul>
+  </li>
+  <li>Si hacemos click en un repo vemos el resultado de las pruebas de la última construcción en los servidores de Travis</li>
+  <li>La URL para ver los repos de una organización es <code class="language-plaintext highlighter-rouge">https://travis-ci.org/profile/organization</code></li>
+  <li>Haciendo click en un repo vamos a los resultados de las pruebas en los servidores de Travis para ese repo
+    <ul>
+      <li><img src="/assets/temas/introduccion-a-javascript/travis-org-repo.png" alt="Viendo los resultados de las pruebas de un repo" /></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="documentación">Documentación</h3>
+
+<ul>
+  <li><a href="https://docs.travis-ci.com/user/for-beginners">Travis CI for Complete Beginners</a></li>
+  <li><a href="https://docs.travis-ci.com/user/languages/javascript-with-nodejs/">Travis CI: Building a Node.js project</a></li>
+  <li><a href="http://crguezl.github.io/apuntes-ruby/node326.html">Apuntes de Ruby del profesor: Travis</a></li>
+  <li><a href="https://github.com/travis-ci/travis.rb">El cliente Travis de línea de comandos</a></li>
+</ul>
+
+<h4 id="como-hacer-un-badge-travis">Como hacer un Badge Travis</h4>
+<p>Para hacer un badge vaya a la página Travis de pruebas del repositorio y haga click en el botón <em>build/passing</em> arriba a la derecha: se abrirá un formulario. Rellénelo de manera adecuada y le indicará el Markdown que debe insertar en su <code class="language-plaintext highlighter-rouge">README.md</code></p>
+
+<p><img src="/assets/temas/introduccion-a-javascript/travisstatus.png" alt="Travis badge how to" /></p>
+
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

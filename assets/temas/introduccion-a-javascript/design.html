@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>The Open Closed Principle and the Strategy Pattern | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="The Open Closed Principle and the Strategy Pattern" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Open Closed Principle and the Strategy Pattern" />
+<script type="application/ld+json">
+{"headline":"The Open Closed Principle and the Strategy Pattern","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/design.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <h2 id="code-smells">Code Smells</h2>
+
+<h3 id="definición-de-code-smell-de-la-wikipedia">Definición de <em>Code Smell</em> de la Wikipedia:</h3>
+
+<p>According to Martin Fowler, <em>“a <strong>code smell</strong> is a surface indication that usually corresponds to a deeper problem in the system”</em>.</p>
+
+<p>Smells are certain structures in the code that indicate violation of fundamental design principles and negatively impact design quality.</p>
+
+<p>Code smells <strong>are usually not bugs</strong>. They are not technically incorrect and do not currently prevent the program from functioning. Instead, <strong>they indicate weaknesses in design</strong> that may be slowing down development or increasing the risk of bugs or failures in the future.</p>
+
+<h3 id="application-level-smells">Application-level smells:</h3>
+<ul>
+  <li><strong>Duplicated code:</strong> identical or very similar code exists in more than one location.</li>
+  <li><strong>Contrived complexity:</strong> forced usage of overcomplicated design patterns where simpler design would suffice.</li>
+</ul>
+
+<h3 id="class-level-smells">Class-level smells:</h3>
+<ul>
+  <li><strong>Large class:</strong> a class that has grown too large. See God object.</li>
+  <li><strong>Feature envy:</strong> a class that uses methods of another class excessively.</li>
+  <li><strong>Inappropriate intimacy:</strong> a class that has dependencies on implementation details of another class.</li>
+  <li><strong>Refused bequest:</strong> a class that overrides a method of a base class in such a way that the contract of the base class is not honored by the derived class. See Liskov substitution principle.</li>
+  <li><strong>Lazy class / Freeloader:</strong> a class that does too little.</li>
+  <li><strong>Excessive use of literals:</strong> these should be coded as named constants, to improve readability and to avoid programming errors. Additionally, literals can and should be externalized into resource files/scripts where possible, to facilitate localization of software if it is intended to be deployed in different regions.</li>
+  <li><strong>Cyclomatic complexity:</strong> too many branches or loops; this may indicate a function needs to be broken up into smaller functions, or that it has potential for simplification.</li>
+  <li><strong>Downcasting:</strong> a type cast which breaks the abstraction model; the abstraction may have to be refactored or eliminated.</li>
+  <li><strong>Orphan Variable or Constant class:</strong> a class that typically has a collection of constants which belong elsewhere (typically a problem when using a Constants class ) where those constants should be owned by one of the other member classes.</li>
+</ul>
+
+<h3 id="method-level-smells">Method-level smells:</h3>
+
+<ul>
+  <li><strong>Too many parameters:</strong> a long list of parameters is hard to read, and makes calling and testing the function complicated. It may indicate that the purpose of the function is ill-conceived and that the code should be refactored so responsibility is assigned in a more clean-cut way.</li>
+  <li><strong>Long method:</strong> a method, function, or procedure that has grown too large.</li>
+  <li><strong>Excessively long identifiers:</strong> in particular, the use of naming conventions to provide disambiguation that should be implicit in the software architecture.</li>
+  <li><strong>Excessively short identifiers:</strong> the name of a variable should reflect its function unless the function is obvious.</li>
+  <li><strong>Excessive return of data:</strong> a function or method that returns more than what each of its callers needs.</li>
+</ul>
+
+<h3 id="switch-smell">Switch Smell</h3>
+
+<ul>
+  <li>El uso de un <code class="language-plaintext highlighter-rouge">switch</code> es a veces un punto débil: si introducimos nuevas casos deberemos modificar el código de la clase original en la que está el switch introduciendo un nuevo <code class="language-plaintext highlighter-rouge">case</code>.</li>
+</ul>
+
+<p>Viola el principio <em>Open/Closed</em>.</p>
+
+<h2 id="el-principio-openclosed">El principio <em>Open/Closed</em></h2>
+
+<ul>
+  <li><em>“software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification”</em>;
+that is, such an entity can allow its behaviour to be extended without modifying its source code.</li>
+</ul>
+
+<h3 id="ejemplo-de-violación-del-principio-openclosed">Ejemplo de Violación del Principio Open/Closed</h3>
+
+<p>El diseño inicial del lenguaje Egg viola el Principio Open/Close:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../PLgrado/eloquentjsegg(master)]$ sed -ne '/fun.*evaluate/,/^}/p'  lib/eggvm.js
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">evaluate</span><span class="p">(</span><span class="nx">expr</span><span class="p">,</span> <span class="nx">env</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">:</span> <span class="k">return</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">word</span><span class="dl">'</span><span class="p">:</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">name</span> <span class="k">in</span> <span class="nx">env</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">env</span><span class="p">[</span><span class="nx">expr</span><span class="p">.</span><span class="nx">name</span><span class="p">];</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">ReferenceError</span><span class="p">(</span><span class="s2">`Undefined variable: </span><span class="p">${</span><span class="nx">expr</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">apply</span><span class="dl">'</span><span class="p">:</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">operator</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">word</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">operator</span><span class="p">.</span><span class="nx">name</span> <span class="k">in</span> <span class="nx">specialForms</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">specialForms</span><span class="p">[</span><span class="nx">expr</span><span class="p">.</span><span class="nx">operator</span><span class="p">.</span><span class="nx">name</span><span class="p">](</span><span class="nx">expr</span><span class="p">.</span><span class="nx">args</span><span class="p">,</span> <span class="nx">env</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="kd">let</span> <span class="nx">op</span> <span class="o">=</span> <span class="nx">evaluate</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">operator</span><span class="p">,</span> <span class="nx">env</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">op</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">function</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="dl">'</span><span class="s1">Applying a non-function</span><span class="dl">'</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="nx">op</span><span class="p">(...</span><span class="nx">expr</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">arg</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">evaluate</span><span class="p">(</span><span class="nx">arg</span><span class="p">,</span> <span class="nx">env</span><span class="p">)));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="design-patterns">Design patterns</h2>
+
+<p>A design pattern is a general, reusable solution to a commonly occurring problem.</p>
+
+<p>It is not a finished design that can be transformed directly into source or machine code. It is a description or template for how to solve a problem that can be used in many different situations. Design patterns are formalized best practices that the programmer can use to solve common problems when designing an application or system.</p>
+
+<p>Design patterns may be viewed as a structured approach to computer programming intermediate between the levels of</p>
+<ul>
+  <li>a programming paradigm and</li>
+  <li>a concrete algorithm.</li>
+</ul>
+
+<h2 id="strategy-pattern">Strategy Pattern</h2>
+
+<p>La solución para eliminar el <em>Switch Smell</em> es usar el <code class="language-plaintext highlighter-rouge">strategy design pattern</code>.</p>
+
+<p>The basic idea  of the <code class="language-plaintext highlighter-rouge">strategy design pattern</code> is to <strong>delegate tasks to encapsulated algorithms which are interchangable at runtime</strong>.</p>
+
+<p>In the Strategy pattern we have an object (the <em>context</em>) that is trying to get something done. But to get that thing done, we need to supply the context with a second object, called the <em>strategy</em>, that helps￼ to get the thing done.</p>
+
+<ol>
+  <li>Define a family of objects which all do the same thing</li>
+  <li>Ensure the family of objects share the same interface so that they are interchangable.</li>
+</ol>
+
+<p>Otro ejemplo, también de Elijah Manor se encuentra en el artículo <a href="http://elijahmanor.com/switching-to-the-strategy-pattern-in-javascript/">Switching to the Strategy Pattern in JavaScript</a>.</p>
+
+<h2 id="eliminate-javascript-code-smells">Eliminate JavaScript Code Smells</h2>
+
+<p>Vea el Vídeo  de Elijah Manor.</p>
+
+<p>Presta especial atención al <em>code smell</em> <strong>Switch Statement Smell</strong> desde el minuto 11:37 al 29:15.</p>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/JVlfj7mQZPo" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<p>Pueden encontrar las <a href="http://elijahmanor.com/talks/js-smells/#/">trasparencias</a> de la presentación en <a href="http://elijahmanor.com/talks/js-smells/#/">http://elijahmanor.com/talks/js-smells/#/</a>.</p>
+
+<h3 id="example-of-the-strategy-pattern-http-file-server-fron-eloquent-js">Example of the strategy Pattern: HTTP file server fron Eloquent JS</h3>
+
+<ul>
+  <li>Repo ULL-MII-SYTWS-1920/eloquent-javascript-exercises <a href="https://github.com/ULL-MII-SYTWS-1920/eloquent-javascript-exercises/blob/master/20_3_public_space/server.js">solution 20_3_public_space/server.js</a></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../chapter20-nodejs/juanIrache-20_3_public_space(master)]$ pwd -P
+/Users/casiano/local/src/javascript/eloquent-javascript-3/juanIrache-solutions/20_3_public_space
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">createServer</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">http</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">methods</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="nx">createServer</span><span class="p">((</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">handler</span> <span class="o">=</span> <span class="nx">methods</span><span class="p">[</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">]</span> <span class="o">||</span> <span class="nx">notAllowed</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`method= </span><span class="p">${</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">}</span><span class="s2"> url=</span><span class="p">${</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">handler</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">status</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">error</span><span class="p">;</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="na">body</span><span class="p">:</span> <span class="nb">String</span><span class="p">(</span><span class="nx">error</span><span class="p">),</span> <span class="na">status</span><span class="p">:</span> <span class="mi">500</span> <span class="p">};</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(({</span> <span class="nx">body</span><span class="p">,</span> <span class="nx">status</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="nx">type</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">text/plain</span><span class="dl">'</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="dl">'</span><span class="s1">Access-Control-Allow-Origin</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="dl">'</span><span class="s1">Access-Control-Allow-Methods</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">PUT, GET, OPTIONS, DELETE, MKCOL</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="nx">status</span><span class="p">,</span> <span class="p">{</span> <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="nx">type</span> <span class="p">});</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">body</span> <span class="o">&amp;&amp;</span> <span class="nx">body</span><span class="p">.</span><span class="nx">pipe</span><span class="p">)</span> <span class="nx">body</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+      <span class="k">else</span> <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8000</span><span class="p">);</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">notAllowed</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">status</span><span class="p">:</span> <span class="mi">405</span><span class="p">,</span>
+    <span class="na">body</span><span class="p">:</span> <span class="s2">`Method </span><span class="p">${</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">}</span><span class="s2"> not allowed.`</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">parse</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">url</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">sep</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">baseDirectory</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">urlPath</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">{</span> <span class="nx">pathname</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">parse</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">resolve</span><span class="p">(</span><span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">pathname</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">path</span> <span class="o">!=</span> <span class="nx">baseDirectory</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">path</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="nx">baseDirectory</span> <span class="o">+</span> <span class="nx">sep</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">403</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Forbidden</span><span class="dl">'</span> <span class="p">};</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">path</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">createReadStream</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">stat</span><span class="p">,</span> <span class="nx">readdir</span><span class="p">,</span> <span class="nx">mkdir</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">).</span><span class="nx">promises</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">mime</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">mime</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">methods</span><span class="p">.</span><span class="nx">GET</span> <span class="o">=</span> <span class="k">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">urlPath</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">stats</span><span class="p">;</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="nx">stats</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">stat</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">code</span> <span class="o">!=</span> <span class="dl">'</span><span class="s1">ENOENT</span><span class="dl">'</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="dl">'</span><span class="s1">File not found</span><span class="dl">'</span> <span class="p">};</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">stats</span><span class="p">.</span><span class="nx">isDirectory</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="na">body</span><span class="p">:</span> <span class="p">(</span><span class="k">await</span> <span class="nx">readdir</span><span class="p">(</span><span class="nx">path</span><span class="p">)).</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="se">\n</span><span class="dl">'</span><span class="p">)</span> <span class="p">};</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="na">body</span><span class="p">:</span> <span class="nx">createReadStream</span><span class="p">(</span><span class="nx">path</span><span class="p">),</span> <span class="na">type</span><span class="p">:</span> <span class="nx">mime</span><span class="p">.</span><span class="nx">getType</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">rmdir</span><span class="p">,</span> <span class="nx">unlink</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">).</span><span class="nx">promises</span><span class="p">;</span>
+
+<span class="nx">methods</span><span class="p">.</span><span class="nx">DELETE</span> <span class="o">=</span> <span class="k">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">urlPath</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">stats</span><span class="p">;</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="nx">stats</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">stat</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">code</span> <span class="o">!=</span> <span class="dl">'</span><span class="s1">ENOENT</span><span class="dl">'</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">204</span> <span class="p">};</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">stats</span><span class="p">.</span><span class="nx">isDirectory</span><span class="p">())</span> <span class="k">await</span> <span class="nx">rmdir</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+  <span class="k">else</span> <span class="k">await</span> <span class="nx">unlink</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">204</span> <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">createWriteStream</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">pipeStream</span><span class="p">(</span><span class="k">from</span><span class="p">,</span> <span class="nx">to</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">from</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">reject</span><span class="p">);</span>
+    <span class="nx">to</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">reject</span><span class="p">);</span>
+    <span class="nx">to</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">finish</span><span class="dl">'</span><span class="p">,</span> <span class="nx">resolve</span><span class="p">);</span>
+    <span class="k">from</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">to</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nx">methods</span><span class="p">.</span><span class="nx">PUT</span> <span class="o">=</span> <span class="k">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">urlPath</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+  <span class="k">await</span> <span class="nx">pipeStream</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">createWriteStream</span><span class="p">(</span><span class="nx">path</span><span class="p">));</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="nx">path</span> <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="nx">methods</span><span class="p">.</span><span class="nx">MKCOL</span> <span class="o">=</span> <span class="k">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">urlPath</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">stats</span><span class="p">;</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="nx">stats</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">stat</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">code</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">ENOENT</span><span class="dl">"</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+    <span class="k">await</span> <span class="nx">mkdir</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">{</span><span class="na">status</span><span class="p">:</span> <span class="mi">204</span><span class="p">};</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">stats</span><span class="p">.</span><span class="nx">isDirectory</span><span class="p">())</span> <span class="k">return</span> <span class="p">{</span><span class="na">status</span><span class="p">:</span> <span class="mi">204</span><span class="p">};</span>
+  <span class="k">else</span> <span class="k">return</span> <span class="p">{</span><span class="na">status</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Not a directory</span><span class="dl">"</span><span class="p">};</span>
+<span class="p">};</span>
+
+<span class="nx">methods</span><span class="p">.</span><span class="nx">OPTIONS</span> <span class="o">=</span> <span class="k">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">204</span> <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="ejemplo-oop-temperature-converter-removing-switch-smell">Ejemplo: OOP Temperature Converter Removing Switch Smell</h3>
+
+<p><a href="https://github.com/ULL-ESIT-GRADOII-DSI/temperature-oop-noswitch/tree/sepfiles">ULL-ESIT-GRADOII-DSI/temperature-oop-noswitch</a></p>
+
+<h2 id="referencias">Referencias</h2>
+
+<ul>
+  <li><a href="https://casianorodriguezleon.gitbooks.io/pl1516/content/apuntes/codesmell.html">Apuntes del curso 15/16: Code Smells/Código Hediondo</a></li>
+  <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/patterns/">Apuntes del curso 16/17: Patrones de Diseño</a></li>
+  <li><a href="https://casianorodriguezleon.gitbooks.io/pl1516/content/practicas/noswitchsmell.html">Apuntes del curso 15/16: Eliminando Switch Smell</a></li>
+  <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/patterns/strategypattern.html">Apuntes del curso 16/17: Strategy Pattern</a></li>
+  <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/practicas/practicaevaluastrategypattern.html">Apuntes del curso 16/17: Práctica: Evaluar Strategy Pattern</a></li>
+  <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/practicas/practicamodulestrategypattern.html">Apuntes del curso 16/17: Práctica: Creación de Paquetes NPM y Strategy Pattern</a></li>
+  <li><a href="http://jshint.com/">JSHint</a></li>
+</ul>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

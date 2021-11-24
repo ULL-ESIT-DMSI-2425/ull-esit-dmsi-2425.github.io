@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Gulp: a tool to Automate and Enhance your Workflow | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Gulp: a tool to Automate and Enhance your Workflow" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Gulp: a tool to Automate and Enhance your Workflow" />
+<script type="application/ld+json">
+{"headline":"Gulp: a tool to Automate and Enhance your Workflow","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/build-tools.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <h1 id="gulp-a-tool-to-automate-and-enhance-your-workflow">Gulp: a tool to Automate and Enhance your Workflow</h1>
+
+<h2 id="gulp-tutorial-getting-started">Gulp Tutorial Getting Started</h2>
+
+<ul>
+  <li><a href="https://gulpjs.com/docs/en/getting-started/quick-start">Quick Start</a></li>
+  <li><a href="https://gulpjs.com/docs/en/getting-started/javascript-and-gulpfiles">JavaScript and Gulpfiles</a></li>
+  <li><a href="https://gulpjs.com/docs/en/getting-started/creating-tasks">Creating Tasks</a></li>
+  <li><a href="https://gulpjs.com/docs/en/getting-started/async-completion">Async Completion</a></li>
+  <li><a href="https://gulpjs.com/docs/en/getting-started/working-with-files">Working with Files</a></li>
+  <li><a href="https://gulpjs.com/docs/en/getting-started/explaining-globs">Explaining Globs</a></li>
+  <li><a href="https://gulpjs.com/docs/en/getting-started/using-plugins">Using Plugins</a></li>
+  <li><a href="https://gulpjs.com/docs/en/getting-started/watching-files">Watching Files</a></li>
+</ul>
+
+<h2 id="gulp-api-documentation">Gulp API Documentation</h2>
+
+<ul>
+  <li><a href="https://gulpjs.com/docs/en/api/concepts">Concepts</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/src">src()</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/dest">dest()</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/symlink">symlink()</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/lastrun">lastRun()</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/series">series()</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/parallel">parallel()</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/watch">watch()</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/task">task()</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/registry">registry()</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/tree">tree()</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/vinyl">Vinyl</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/vinyl-isvinyl">Vinyl.isVinyl()</a></li>
+  <li><a href="https://gulpjs.com/docs/en/api/vinyl-iscustomprop">Vinyl.isCustomProp()</a></li>
+</ul>
+
+<h2 id="examples-of-how-to-execute-shell-commands-with-gulp">Examples of how to execute shell commands with gulp</h2>
+
+<h3 id="en-gulp-40">En gulp 4.0</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../chapter20-nodejs/juanIrache-20_3_public_space(master)]$ pwd -P
+/Users/casiano/local/src/javascript/eloquent-javascript-3/juanIrache-solutions/20_3_public_space
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../juanIrache-solutions/20_3_public_space(master)]$ cat gulpfile.js 
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">gulp</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">exec</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">child_process</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">util</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">util</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">pexec</span> <span class="o">=</span> <span class="nx">util</span><span class="p">.</span><span class="nx">promisify</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">child_process</span><span class="dl">'</span><span class="p">).</span><span class="nx">exec</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">server</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">exec</span><span class="p">(</span><span class="dl">'</span><span class="s1">nodemon server.js</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">stdout</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">stderr</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">stderr</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hubieron errores:</span><span class="se">\n</span><span class="dl">"</span><span class="o">+</span><span class="nx">e</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">cget</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">stdout</span><span class="p">,</span> <span class="nx">stderr</span><span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">pexec</span><span class="p">(</span><span class="dl">"</span><span class="s2">curl -v http://localhost:8000/package.json</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">stdout:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">stdout</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">stderr:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">stderr</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hubieron errores:</span><span class="se">\n</span><span class="dl">"</span><span class="o">+</span><span class="nx">e</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">exports</span><span class="p">.</span><span class="nx">cget</span> <span class="o">=</span> <span class="nx">cget</span><span class="p">;</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">server</span> <span class="o">=</span> <span class="nx">server</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../juanIrache-solutions/20_3_public_space(master)]$ gulp server
+[13:32:53] Using gulpfile ~/local/src/javascript/eloquent-javascript-3/juanIrache-solutions/20_3_public_space/gulpfile.js
+[13:32:53] Starting 'server'...
+[nodemon] 1.11.0
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node server.js`
+hello world!
+</code></pre></div></div>
+
+<p>En otra terminal:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../chapter20-nodejs/juanIrache-20_3_public_space(master)]$ gulp cget
+[13:35:11] Using gulpfile ~/local/src/javascript/eloquent-javascript-3/juanIrache-solutions/20_3_public_space/gulpfile.js
+[13:35:11] Starting 'cget'...
+stdout: {
+  "name": "20_3_public_space",
+  "version": "1.0.0",
+  "description": "Solutions for Chapter 20 of EJS book: https://eloquentjavascript.net/20_node.html by Juan Irache",
+  "main": "code.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Casiano Rodriguez-Leon &lt;casiano.rodriguez.leon@gmail.com&gt; (https://github.com/crguezl)",
+  "license": "ISC",
+  "dependencies": {
+    "mime": "^2.4.4"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
+
+stderr:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying ::1...
+* TCP_NODELAY set
+* Connected to localhost (::1) port 8000 (#0)
+&gt; GET /package.json HTTP/1.1
+&gt; Host: localhost:8000
+&gt; User-Agent: curl/7.54.0
+&gt; Accept: */*
+&gt; 
+&lt; HTTP/1.1 200 OK
+&lt; Access-Control-Allow-Origin: *
+&lt; Access-Control-Allow-Methods: POST, PUT, GET, OPTIONS, DELETE, MKCOL
+&lt; Content-Type: application/json
+&lt; Date: Thu, 31 Oct 2019 13:35:12 GMT
+&lt; Connection: keep-alive
+&lt; Transfer-Encoding: chunked
+&lt; 
+{ [519 bytes data]
+100   512    0   512    0     0   9662      0 --:--:-- --:--:-- --:--:--  9846
+* Connection #0 to host localhost left intact
+
+[13:35:12] Finished 'cget' after 97 ms
+</code></pre></div></div>
+
+<h2 id="en-gulp-39">En Gulp 3.9</h2>
+
+<ul>
+  <li>Véase la sección <a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/apuntes/gulp/">Gulp</a> de los apuntes</li>
+</ul>
+
+<p>Aquí tiene un ejemplo (incompleto) en gulp 3.9:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">gulp</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">shell</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">gulp-shell</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">pre-install</span><span class="dl">"</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">([</span>
+        <span class="dl">"</span><span class="s2">npm i -g gulp static-server</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">npm install -g nodemon</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">npm install -g gulp-shell</span><span class="dl">"</span>
+  <span class="p">]));</span>
+
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">serve</span><span class="dl">"</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">nodemon server.js</span><span class="dl">"</span><span class="p">));</span>
+
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">lint</span><span class="dl">"</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">jshint *.js **/*.js</span><span class="dl">"</span><span class="p">));</span>
+
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">get</span><span class="dl">"</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">curl -v http://localhost:8000/file.txt</span><span class="dl">"</span><span class="p">));</span>
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">put</span><span class="dl">"</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">curl -v -X PUT -d 'Bye world!' http://localhost:8000/file.txt</span><span class="dl">"</span><span class="p">));</span>
+</code></pre></div></div>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

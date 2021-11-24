@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Authentication | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Authentication" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Authentication" />
+<script type="application/ld+json">
+{"headline":"Authentication","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/authentication.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <h2 id="sessions-y-authentication">Sessions y Authentication</h2>
+
+<p>Véase la sección <a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/cookies/">Cookies y Autenticación</a>
+en los apuntes del profesor</p>
+
+<h2 id="json-web-tokens">JSON Web Tokens</h2>
+
+<ul>
+  <li><a href="https://jwt.io/">jwt.io</a></li>
+  <li><a href="/jwt-handbook-v0_14_1.pdf">JWT Handbook</a> (pdf) Sebastian E. Peyrrot</li>
+  <li><a href="https://www.oscarblancarteblog.com/2018/01/16/implementar-json-web-tokens-nodejs/">Implementar JSON Web Tokens con NodeJS</a> Oscar Blancarte Blog
+    <ul>
+      <li><a href="https://www.oscarblancarteblog.com/2018/01/15/construir-api-rest-nodejs-tercera-parte/">Construir un API REST con NodeJS (Tercera parte)</a></li>
+      <li><a href="https://www.oscarblancarteblog.com/2018/01/12/construir-api-rest-nodejs-segunda-parte/">Segunda parte</a></li>
+      <li><a href="https://www.oscarblancarteblog.com/2018/01/11/construir-api-rest-nodejs-primera-parte/">Primera Parte</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="oauth">OAuth</h2>
+
+<ul>
+  <li><a href="http://nereida.deioc.ull.es/~lpp/perlexamples/node773.html">Introducción a OAuth</a> (Apuntes del profesor)</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[What is OAuth2? How does OAuth2 work?</td>
+          <td>Tech Primers](https://youtu.be/CPbvxxslDTU) Yotube video</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h2 id="passport">Passport</h2>
+
+<h3 id="passport-introducción">Passport: Introducción</h3>
+
+<ul>
+  <li><a href="http://passportjs.org/">Passport</a> is authentication middleware for Node.js.</li>
+  <li>Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application.</li>
+  <li>A comprehensive set of strategies support authentication using
+    <ul>
+      <li>a <a href="http://passportjs.org/docs/username-password">username and password</a>,</li>
+      <li><a href="http://passportjs.org/docs/facebook">Facebook</a>,</li>
+      <li><a href="http://passportjs.org/docs/twitter">Twitter</a>,</li>
+      <li><a href="http://www.passportjs.org/packages/passport-github2/">Strategy Passport-GitHub2</a>. The author of Passport-Github has not maintained the original …
+        <ul>
+          <li><a href="https://github.com/cfsghost/passport-github/tree/master/examples/login">Passport-GitHub2 Example</a></li>
+        </ul>
+      </li>
+      <li><a href="http://www.passportjs.org/packages/passport-github/">GitHub strategy documentation</a> and repo <a href="https://github.com/jaredhanson/passport-github">GitHub</a>,</li>
+      <li>and <a href="http://www.passportjs.org/packages/">more</a>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="passport-tutoriales">Passport: Tutoriales</h3>
+
+<ul>
+  <li><a href="https://github.com/ULL-ESIT-SYTW-1617/express-4.x-github-example">Example of how to use Express 4.x and Passport to authenticate users using GitHub</a></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[~/.../useoctonode/express-4.x-github-example(master)]$ pwd -P
+/Users/casiano/local/src/javascript/learning/useoctonode/express-4.x-github-example
+</code></pre></div></div>
+<ul>
+  <li><a href="https://github.com/ULL-ESIT-DSI-1617/express-4.x-facebook-example">GitHub repo demonstrating how to use Express 4.x and Passport to authenticate users using Facebook</a></li>
+  <li><a href="https://github.com/ULL-ESIT-SYTW-1617/express-4.x-local-example">Example of how to use Express 4.x and Passport for authentication with username and password</a></li>
+  <li><a href="https://scotch.io/tutorials/easy-node-authentication-setup-and-local">Easy Node Authentication: Setup and Local</a></li>
+  <li><a href="http://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619">Authenticating Node.js Applications With Passport</a>
+    <ul>
+      <li><a href="https://github.com/tutsplus/passport-mongo">Repositorio con el código del tutorial</a></li>
+    </ul>
+  </li>
+  <li><a href="https://youtu.be/Z1ktxiqyiLA">Node.js Login System With Passport</a> YouTube video
+    <ul>
+      <li><a href="https://youtu.be/Z1ktxiqyiLA">Part 1</a>
+        <ul>
+          <li><a href="http://download.oracle.com/oll/tutorials/SQLInjection/html/lesson1/les01_tm_ovw3.htm">What Is Input Validation and Sanitization?</a></li>
+          <li><a href="https://gist.github.com/brianmacarthur/a4e3e0093d368aa8e423">Flash Messages</a>: A flash message is used in order to keep a message in session through one or several requests of the same user. By default, it is removed from session after it has been displayed to the user. Flash messages are usually used in combination with HTTP redirections, because in this case there is no view, so messages can only be displayed in the request that follows redirection.</li>
+        </ul>
+      </li>
+      <li><a href="https://youtu.be/OnuC3VtEQks">Part 2</a></li>
+      <li><a href="https://youtu.be/iX8UhDOmkPE">Part 3</a>
+        <ul>
+          <li><a href="https://github.com/jaredhanson/passport-local">Passport-local</a> (GitHub module repo)</li>
+          <li><a href="http://www.passportjs.org/docs/username-password/">Passport Docs: Username &amp; Password</a></li>
+          <li><a href="http://www.passportjs.org/docs/downloads/html/#flash-messages">Passport Docs: Flash Messages</a></li>
+          <li><a href="https://github.com/dcodeIO/bcrypt.js">Bcryptjs</a> at GitHub</li>
+          <li><a href="http://www.passportjs.org/docs/configure/#sessions">Passport: sessions</a> (serialize/deserialize)</li>
+        </ul>
+      </li>
+      <li><a href="https://github.com/bradtraversy/loginapp">GitHub repo</a></li>
+      <li><a href="https://github.com/ULL-ESIT-MII-CA-1718/loginapp">Fork at ULL-ESIT-CA-1718</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="passport-notas-sobre-como-configurar-una-webapp-en-facebook">Passport: Notas sobre como Configurar una WebApp en Facebook</h3>
+
+<ul>
+  <li><a href="https://developers.facebook.com/docs/apps/">Facebook App Development Guide</a>
+    <ul>
+      <li><a href="https://developers.facebook.com/docs/apps/register">Facebook: Register and Configure an App</a></li>
+    </ul>
+  </li>
+  <li>StackOverflow: <a href="http://stackoverflow.com/questions/2459728/how-to-test-facebook-connect-locally">How to Test Facebook Connect Locally</a>
+    <ul>
+      <li>
+        <p>Facebook → Settings → Basic:</p>
+
+        <p>write “localhost” in the “App Domains” field then click on “+Add Platform” choose “Web Site”.</p>
+
+        <p>After that, in the “Site Url” field write your localhost url 
+(e.g.: <code class="language-plaintext highlighter-rouge">http://localhost:3000/login/facebook/return</code>).
+This will allow you to test your facebook plugins locally.</p>
+      </li>
+    </ul>
+  </li>
+  <li>StackOverflow: <a href="http://stackoverflow.com/questions/8107911/facebook-site-url">Facebook Site URL?</a></li>
+</ul>
+
+<!--
+## Prácticas
+
+* [Práctica: Cookies, Sesiones, Autenticación y Módulos npm (p8-t3-sessions-and-modules)](practicas/p8-t3-sessions-and-modules)
+-->
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

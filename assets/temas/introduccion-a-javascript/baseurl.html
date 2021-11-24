@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Working with different environments: url and baseurl and more | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Working with different environments: url and baseurl and more" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Working with different environments: url and baseurl and more" />
+<script type="application/ld+json">
+{"headline":"Working with different environments: url and baseurl and more","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/baseurl.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <p>Now you have to test your site locally and to deploy it in production. Sometimes, the <code class="language-plaintext highlighter-rouge">baseurl</code> is different and the <code class="language-plaintext highlighter-rouge">jekyll build</code> may not work out of the box in one of those environment.</p>
+
+<p>We need to understand <code class="language-plaintext highlighter-rouge">site.url</code> and <code class="language-plaintext highlighter-rouge">site.baseurl</code> and <code class="language-plaintext highlighter-rouge">page.path</code> and in which situation we need them. Those variables don’t serve the same purpose.</p>
+
+<p><img src="/assets/images/what-is-a-baseurl.jpeg" alt="" /></p>
+
+<h2 id="siteurl"><code class="language-plaintext highlighter-rouge">site.url</code></h2>
+
+<p><code class="language-plaintext highlighter-rouge">site.url</code> is typically used in conjunction with <code class="language-plaintext highlighter-rouge">site.baseurl</code> when you want a link to something with the full URL to it.</p>
+
+<p>For example, in the page head for the <code class="language-plaintext highlighter-rouge">canonical</code> header and the <code class="language-plaintext highlighter-rouge">RSS link</code>. It’s also used in the xml feed to point to site resources as the software that will manage this feed doesn’t know resource’s urls.</p>
+
+<h2 id="sitebaseurl"><code class="language-plaintext highlighter-rouge">site.baseurl</code></h2>
+
+<p><code class="language-plaintext highlighter-rouge">site.baseurl</code> indicates the root folder of your Jekyll site. By default it is set to <code class="language-plaintext highlighter-rouge">""</code> (empty string). That means that your Jekyll site is at the root of <code class="language-plaintext highlighter-rouge">http://example.com</code>.</p>
+
+<p>If your Jekyll site lives in <code class="language-plaintext highlighter-rouge">http://example.com/blog</code>, you have to set <code class="language-plaintext highlighter-rouge">site.baseurl</code> to <code class="language-plaintext highlighter-rouge">/blog</code> (<em>note the slash!</em>). This will allow assets (css, js) to load correctly.</p>
+
+<p>See how assets must be loaded in your <code class="language-plaintext highlighter-rouge">head</code> section:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"{{ site.baseurl }}/css/main.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>or, more verbose:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"{{ "</span><span class="err">/</span><span class="na">css</span><span class="err">/</span><span class="na">main.css</span><span class="err">"</span> <span class="err">|</span> <span class="na">prepend:</span> <span class="na">site.baseurl</span> <span class="err">}}"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="use-jekyll-serve">Use <code class="language-plaintext highlighter-rouge">jekyll serve</code></h2>
+
+<p>Let’s imagine that your site lives in a github repository <code class="language-plaintext highlighter-rouge">introduction</code> inside an organization <code class="language-plaintext highlighter-rouge">ULL-ESIT-PL-1819</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote -v
+origin	git@github.com:ULL-ESIT-PL-1819/introduccion.git
+</code></pre></div></div>
+
+<p>and is served at GitHub at the url: <code class="language-plaintext highlighter-rouge">https://ull-esit-pl-1819.github.io/introduccion/</code>.</p>
+
+<p>You can setup the <code class="language-plaintext highlighter-rouge">baseurl</code> to <code class="language-plaintext highlighter-rouge">/introduccion</code> and test your site locally with <code class="language-plaintext highlighter-rouge">jekyll serve</code>, your site will be served at <code class="language-plaintext highlighter-rouge">http://127.0.0.1:4000/introduccion/</code></p>
+
+<h2 id="use-multiple-configuration-files">Use multiple configuration files</h2>
+
+<p>If, for one reason or another, you cannot use <code class="language-plaintext highlighter-rouge">jekyll serve</code>, you can set a configuration file for both environment and <code class="language-plaintext highlighter-rouge">jekyll build</code> depending on where you are deploying.</p>
+
+<p>Let’s say we have the local site served at <code class="language-plaintext highlighter-rouge">http://localhost</code> and the production site served at <code class="language-plaintext highlighter-rouge">https://username.github.io/myProject</code>.</p>
+
+<p>We leave the <code class="language-plaintext highlighter-rouge">_config.yml</code> with</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">url</span><span class="pi">:</span> <span class="s">https://username.github.io</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s">/myProject</span>
+</code></pre></div></div>
+
+<p>We create a new <code class="language-plaintext highlighter-rouge">_config_dev.yml</code> with only</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">url</span><span class="pi">:</span> <span class="s">https://localhost</span> 
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+</code></pre></div></div>
+
+<p>Now to test locally :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll build --config _config.yml,_config_dev.yml
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll build --config _config.yml,_config_dev.yml --watch
+</code></pre></div></div>
+
+<p>When pushed on production, the <code>jekyll build</code> command will use the default <code>_config.yml</code>.</p>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

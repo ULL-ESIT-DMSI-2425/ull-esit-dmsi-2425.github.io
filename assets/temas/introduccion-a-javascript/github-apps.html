@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>GitHub Apps | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="GitHub Apps" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="GitHub Apps" />
+<script type="application/ld+json">
+{"headline":"GitHub Apps","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/github-apps.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <h1 id="github-apps">GitHub Apps</h1>
+
+<p>Follow the github.lab course by githubtraining:</p>
+
+<ul>
+  <li><a href="https://lab.github.com/githubtraining/getting-started-with-github-apps">Getting started with GitHub Apps</a></li>
+</ul>
+
+<h2 id="smeeio">Smee.io</h2>
+
+<p>If your application needs to respond to webhooks, you’ll need some way to expose localhost to the internet. smee.io is a small service that uses Server-Sent Events to proxy payloads from the webhook source, then transmit them to your locally running application:</p>
+
+<ul>
+  <li><a href="https://smee.io/">smee.io</a></li>
+</ul>
+
+<p>Can you tell which type of event was sent back to the application when you changed the pull request header?</p>
+
+<p><img src="/assets/images/smee-io.png" alt="" /></p>
+
+<h3 id="use-the-cli">Use the CLI</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>             $ npm install --global smee-client
+</code></pre></div></div>
+
+<p>Then the <code class="language-plaintext highlighter-rouge">smee</code> command will forward webhooks from <code class="language-plaintext highlighter-rouge">smee.io</code> to your local development environment.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ smee -u https://smee.io/WJgXrPCZYXL5qvLz
+</code></pre></div></div>
+
+<p>For usage info:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ smee --help
+</code></pre></div></div>
+
+<p>Use the Node.js client</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install --save smee-client
+</code></pre></div></div>
+
+<p>Then:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">SmeeClient</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">smee-client</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">smee</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SmeeClient</span><span class="p">({</span>
+  <span class="na">source</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://smee.io/WJgXrPCZYXL5qvLz</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">target</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://localhost:3000/events</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">logger</span><span class="p">:</span> <span class="nx">console</span>
+<span class="p">})</span>
+
+<span class="kd">const</span> <span class="nx">events</span> <span class="o">=</span> <span class="nx">smee</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>
+
+<span class="c1">// Stop forwarding events</span>
+<span class="nx">events</span><span class="p">.</span><span class="nx">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="using-probots-built-in-support">Using Probot’s built-in support</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install --save smee-client
+</code></pre></div></div>
+
+<p>Then set the environment variable:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WEBHOOK_PROXY_URL=https://smee.io/WJgXrPCZYXL5qvLz
+</code></pre></div></div>
+
+<h2 id="probot">Probot</h2>
+
+<ul>
+  <li><a href="https://probot.github.io/">Probot</a>: Use pre-built apps to extend GitHub,
+and easily build and share your own.</li>
+</ul>
+
+<h3 id="optimized-for-github">Optimized for GitHub.</h3>
+
+<p>Receive webhooks and use the authenticated client to access the GitHub API. Granular permissions give each app access only to the data it needs and nothing more.</p>
+
+<h3 id="easily-scriptable">Easily scriptable:</h3>
+
+<p>Focus on what you want to build. A simple API—built on the latest ES6 JavaScript features—hides the details you don’t care about.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">app</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">issues.opened</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="nx">context</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">issue</span><span class="p">({</span>
+      <span class="na">body</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello World!</span><span class="dl">'</span>
+    <span class="p">})</span>
+    <span class="k">await</span> <span class="nx">context</span><span class="p">.</span><span class="nx">github</span><span class="p">.</span><span class="nx">issues</span><span class="p">.</span><span class="nx">createComment</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://github.com/crguezl/getting-started-github-apps">Repo crguezl/getting-started-github-app</a></li>
+  <li><a href="https://youtu.be/7JZLipM8bT0">Build a GitHub App that can automate workflow and deploy to AWS Lambda</a> YouTube</li>
+</ul>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Jest | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Jest" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jest" />
+<script type="application/ld+json">
+{"headline":"Jest","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/jest.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <p><a href="https://jestjs.io/">Jest</a> es un framework de prueba de código abierto.</p>
+
+<p>Desarrollado por Facebook e integrado en el popular paquete de <a href="https://github.com/facebook/create-react-app">create-react-app</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save-dev jest
+</code></pre></div></div>
+
+<p>Jest viene con capacidades de built-in mocking y aserción incorporadas. Además, Jest ejecuta sus pruebas simultáneamente en paralelo, lo que proporciona una ejecución de prueba más suave y más rápida.</p>
+
+<p>Jest también proporciona <a href="https://jestjs.io/docs/en/snapshot-testing">snapshots testing</a>.</p>
+
+<ul>
+  <li><a href="https://jestjs.io/docs/en/getting-started">Getting Started</a></li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// If you want debugging output run it this way:</span>
+<span class="c1">// DEBUG=1 npm test</span>
+<span class="kd">const</span> <span class="nx">debug</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">[</span><span class="dl">"</span><span class="s2">DEBUG</span><span class="dl">"</span><span class="p">];</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">inspect</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">util</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">ins</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="nx">debug</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">inspect</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="p">{</span><span class="na">depth</span><span class="p">:</span> <span class="kc">null</span><span class="p">}))</span> <span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">buildLexer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./index</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">SPACE</span> <span class="o">=</span> <span class="sr">/</span><span class="se">(?&lt;</span><span class="sr">SPACE&gt;</span><span class="se">\s</span><span class="sr">+|</span><span class="se">\/\/</span><span class="sr">.*</span><span class="se">)</span><span class="sr">/</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">RESERVEDWORD</span> <span class="o">=</span> <span class="sr">/</span><span class="se">(?&lt;</span><span class="sr">RESERVEDWORD&gt;</span><span class="se">\b(</span><span class="sr">const|let</span><span class="se">)\b)</span><span class="sr">/</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">ID</span> <span class="o">=</span> <span class="sr">/</span><span class="se">(?&lt;</span><span class="sr">ID&gt;</span><span class="se">\b([</span><span class="sr">a-z_</span><span class="se">]\w</span><span class="sr">*</span><span class="se">))\b</span><span class="sr">/</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">STRING</span> <span class="o">=</span> <span class="sr">/</span><span class="se">(?&lt;</span><span class="sr">STRING&gt;"</span><span class="se">([^\\</span><span class="sr">"</span><span class="se">]</span><span class="sr">|</span><span class="se">\\</span><span class="sr">."</span><span class="se">)</span><span class="sr">*"</span><span class="se">)</span><span class="sr">/</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">OP</span> <span class="o">=</span> <span class="sr">/</span><span class="se">(?&lt;</span><span class="sr">OP&gt;</span><span class="se">[</span><span class="sr">+*</span><span class="se">\/</span><span class="sr">=-</span><span class="se">])</span><span class="sr">/</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">myTokens</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">SPACE</span><span class="dl">'</span><span class="p">,</span> <span class="nx">SPACE</span><span class="p">],</span> <span class="p">[</span><span class="dl">'</span><span class="s1">RESERVEDWORD</span><span class="dl">'</span><span class="p">,</span> <span class="nx">RESERVEDWORD</span><span class="p">],</span> <span class="p">[</span><span class="dl">'</span><span class="s1">ID</span><span class="dl">'</span><span class="p">,</span> <span class="nx">ID</span><span class="p">],</span> 
+  <span class="p">[</span><span class="dl">'</span><span class="s1">STRING</span><span class="dl">'</span><span class="p">,</span> <span class="nx">STRING</span><span class="p">],</span> <span class="p">[</span><span class="dl">'</span><span class="s1">OP</span><span class="dl">'</span><span class="p">,</span> <span class="nx">OP</span><span class="p">]</span> 
+<span class="p">];</span>
+
+<span class="kd">let</span> <span class="nx">str</span><span class="p">,</span> <span class="nx">lexer</span><span class="p">,</span> <span class="nx">r</span><span class="p">;</span>
+<span class="nx">lexer</span> <span class="o">=</span> <span class="nx">buildLexer</span><span class="p">(</span><span class="nx">myTokens</span><span class="p">);</span>
+
+<span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">const varName = "value"</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">ins</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="nx">r</span> <span class="o">=</span> <span class="nx">lexer</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="nx">ins</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">expected</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">RESERVEDWORD</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">const</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ID</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">varName</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OP</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">=</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">STRING</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">"value"</span><span class="dl">'</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">r</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">expected</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">let x = a + </span><span class="se">\n</span><span class="s1">β</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">ins</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="nx">r</span> <span class="o">=</span> <span class="nx">lexer</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="nx">expected</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">RESERVEDWORD</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">let</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ID</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">x</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OP</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">=</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ID</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OP</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">+</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ID</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">β</span><span class="dl">'</span> <span class="p">}</span>
+<span class="p">];</span>
+<span class="nx">ins</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+<span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">r</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">expected</span><span class="p">);</span>
+<span class="p">});</span>
+
+
+<span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1"> // Entrada con errores</span><span class="se">\n</span><span class="s1">let x = 42*c</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">ins</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="nx">r</span> <span class="o">=</span> <span class="nx">lexer</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="nx">ins</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+<span class="nx">expected</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">RESERVEDWORD</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">let</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ID</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">x</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OP</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">=</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ERROR</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">42*c</span><span class="dl">'</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">r</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">expected</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://github.com/ULL-ESIT-PL-1920/lexer-generator">ULL-ESIT-PL-1920/lexer-generator</a> (private)</li>
+</ul>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

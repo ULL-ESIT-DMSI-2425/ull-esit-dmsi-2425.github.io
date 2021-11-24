@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Jekyll | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Jekyll" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jekyll" />
+<script type="application/ld+json">
+{"headline":"Jekyll","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","url":"/assets/temas/introduccion-a-javascript/jekyll.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3063641813b8629a08f3d2c9a7cfa03bc586cae8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI-1920/ull-esit-dmsi-1920.github.io target="_blank">Rep</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-1920" target="_blank">DMSI org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
+                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+
+            </div>
+
+            <p>A <strong>static site generator (SSG)</strong> (see <a href="https://www.staticgen.com/">https://www.staticgen.com/</a> is a compromise between using a hand-coded static site and a full content management system (CMS). You generate an HTML-only website using raw data (such as Markdown files) and templates. The resulting build is transferred to your live server.</p>
+
+<p><img src="https://d1qmdf3vop2l07.cloudfront.net/quiet-lily.cloudvent.net/compressed/_min_/ac88548cb0c955ba3f21d06b34647a83.png" alt="" /></p>
+
+<p>Jekyll, <a href="https://www.11ty.dev/docs/">Elevently</a> and <a href="https://hexo.io/docs/">hexo</a> are examples of SSG.</p>
+
+<p>Recuerda que GitHub provee un servicio de Hosting de páginas estáticas (<a href="https://pages.github.com/">GitHub Pages</a>) que se sirven mediante Jekyll.</p>
+
+<ul>
+  <li><a href="https://jekyllrb.com/docs/">Jekyll docs</a></li>
+  <li><a href="https://jekyllrb.com/tutorials/using-jekyll-with-bundler/">Using Jekyll with Bundler</a></li>
+</ul>
+
+<h2 id="jekyll-documentation-and-tutorials">Jekyll Documentation and Tutorials</h2>
+
+<ul>
+  <li><a href="https://jekyllrb.com/docs/pages/">Pages</a></li>
+  <li><a href="https://jekyllrb.com/docs/posts/">Posts</a></li>
+  <li><a href="https://jekyllrb.com/docs/front-matter/">Front Matter</a></li>
+  <li><a href="https://jekyllrb.com/docs/collections/">Collections</a></li>
+  <li><a href="https://dev-notes.eu/2016/08/page-sections-in-jekyll-seperating-content-from-layout/">Page Sections in Jekyll - Separating Content from Layout</a></li>
+  <li><a href="https://ben.balter.com/2015/02/20/jekyll-collections/">Explain like I’m five: Jekyll collections</a></li>
+  <li><a href="https://jekyllrb.com/docs/datafiles/">Data Files</a></li>
+  <li><a href="https://youtu.be/CERXESTZ5w4">Why I love Jekyll Data Files - Chen Hui Jing // JekyllConf 2019</a> YouTube</li>
+  <li><a href="https://jekyllrb.com/docs/assets/">Assets</a></li>
+  <li><a href="https://jekyllrb.com/docs/static-files/">Static Files</a></li>
+</ul>
+
+<h2 id="site-structure">Site Structure</h2>
+
+<ul>
+  <li><a href="https://jekyllrb.com/docs/structure/">Directory Structure</a></li>
+  <li><a href="https://jekyllrb.com/docs/liquid/">Liquid</a></li>
+  <li>Liquid Sandbox: <a href="https://jumpseller.com/support/liquid-sandbox/">You can test your Liquid code here. This sandbox only loads the default Liquid methods </a></li>
+  <li><a href="https://jekyllrb.com/docs/variables/">Variables</a></li>
+  <li><a href="https://jekyllrb.com/docs/includes/">Includes</a></li>
+  <li><a href="https://jekyllrb.com/docs/layouts/">Layouts</a></li>
+  <li><a href="https://jekyllrb.com/docs/permalinks/">Permalinks</a></li>
+  <li><a href="https://jekyllrb.com/docs/themes/">Themes</a></li>
+  <li><a href="https://jekyllrb.com/docs/pagination/">Pagination</a></li>
+</ul>
+
+<h2 id="using-jekyll-with-docker">Using Jekyll with Docker</h2>
+
+<ul>
+  <li>
+    <p><a href="docker.html">docker</a></p>
+  </li>
+  <li>
+    <p><a href="https://dev.to/michael/compile-a-jekyll-project-without-installing-jekyll-or-ruby-by-using-docker-4184">Compile a Jekyll project without installing Jekyll or Ruby by using Docker</a></p>
+  </li>
+</ul>
+
+<p>File <code class="language-plaintext highlighter-rouge">docker-compose.yml</code>:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
+
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">site</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">jekyll/jekyll:3.8.6</span>
+    <span class="na">command</span><span class="pi">:</span> <span class="s">bundle exec jekyll serve --future --incremental --watch --livereload --drafts --host 0.0.0.0 --port 4000</span> 
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">4000:4000</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">.:/srv/jekyll</span>
+      <span class="pi">-</span> <span class="s">./vendor/bundle:/usr/local/bundle</span>
+</code></pre></div></div>
+
+<p>En el <code class="language-plaintext highlighter-rouge">Rakefile</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">task</span> <span class="ss">:docker</span> <span class="k">do</span>
+  <span class="c1"># sh 'docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" --env JEKYLL_ENV=development -p 4000:4000 jekyll/jekyll:3.8 jekyll serve'</span>
+  <span class="n">sh</span> <span class="s1">'docker compose up'</span> 
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>o bien:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  apuntes git:(main) ✗ cat jekyll-up 
+#!/bin/bash
+docker compose up                                                                                      
+➜  apuntes git:(main) ✗ cat jekyll-down 
+#!/bin/bash
+docker compose down
+</code></pre></div></div>
+
+<h2 id="jekyll-como-preparar-un-informe-de-prácticas-usando-github-pages">Jekyll: Como preparar un informe de Prácticas usando GitHub Pages</h2>
+
+<ul>
+  <li><a href="preparar-informe-de-practicas-con-ghpages">Como preparar un informe de Prácticas usando Jekyll y GitHub Pages</a></li>
+</ul>
+
+<h2 id="tutorials">Tutorials</h2>
+
+<h3 id="tutorials-1"><a href="https://jekyllrb.com/tutorials/home/">Tutorials</a></h3>
+<h3 id="video-walkthroughs"><a href="https://jekyllrb.com/tutorials/video-walkthroughs/">Video Walkthroughs</a></h3>
+<h3 id="navigation"><a href="https://jekyllrb.com/tutorials/navigation/">Navigation</a></h3>
+<h3 id="order-of-interpretation"><a href="https://jekyllrb.com/tutorials/orderofinterpretation/">Order of interpretation</a></h3>
+
+<h3 id="custom-404-page"><a href="https://jekyllrb.com/tutorials/custom-404-page/">Custom 404 Page</a></h3>
+
+<h4 id="an-example-of-a-404-page">An Example of a 404 page</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.../pl1920/apuntes(master)]$ cat 404.md 
+</code></pre></div></div>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">error</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Error</span>
+<span class="nn">---</span>
+<span class="gh"># Error: ¡Ay Diós mío!</span>
+
+<span class="gu">## Aún no he escrito esta página. </span><span class="sb">
+
+
+</span><span class="nt">&lt;div&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+img, #quote, #comment-cat {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+<span class="gh">#author {</span>
+  float: right;
+}
+<span class="nt">&lt;/style&gt;</span><span class="sb">
+
+
+</span><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"comment-cat"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"cat"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;br/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"quote"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"author"</span><span class="nt">&gt;&lt;/div&gt;</span><span class="sb">
+
+
+</span><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+
+/<span class="err">*</span>
+  https://docs.thecatapi.com/ 
+<span class="err">*</span>/
+const URL = 'https://api.thecatapi.com/v1/images/search?size=full';
+
+(async function() {
+  try {
+    
+    // CAT 
+    let divTitle = document.getElementById("comment-cat");
+    
+    let divcat = document.getElementById("cat");
+    let response = await fetch(URL, {
+       headers: {
+       'x-api-key': "56a4f1cc-7f60-468d-9dba-e4b6f04b7c7d"
+       }
+    });
+    let cat = await response.json();
+    // console.log(cat);   
+    let img = document.createElement("img");
+    let title = document.createElement("h2");
+    title.innerText = "Consuélate con un gatito";   
+    divTitle.append(title);
+    img.src = cat[0].url;
+    divcat.appendChild(img);   <span class="sb">
+
+    // QUOTE
+    const quoteDiv = document.getElementById("quote");
+    const authorDiv = document.getElementById("author");
+    
+    const quoteRes = await fetch('https://api.quotable.io/random');
+    const data = await quoteRes.json();
+    quoteDiv.innerHTML = `&lt;h2&gt;${data.content}&lt;/h2&gt;`;
+    authorDiv.innerHTML = `&lt;h3&gt;—${data.author}&lt;/h3&gt;`;
+</span>  }
+  catch(e) { 
+    console.log(e);
+  }
+})();
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="convert-an-html-site-to-jekyll"><a href="https://jekyllrb.com/tutorials/convert-site-to-jekyll/">Convert an HTML site to Jekyll</a></h3>
+<h3 id="using-jekyll-with-bundler"><a href="https://jekyllrb.com/tutorials/using-jekyll-with-bundler/">Using Jekyll with Bundler</a></h3>
+
+<h2 id="the-jekyll-conference">The Jekyll Conference</h2>
+
+<ul>
+  <li><a href="https://jekyllconf.com/">The free, online global conference for all things Jekyll</a>
+Best Practices, Advanced Case Studies, The Future of Jekyll</li>
+</ul>
+
+<h2 id="cloudcannon-the-cloud-cms-for-jekyll">CloudCannon: The Cloud CMS for Jekyll</h2>
+
+<p><a href="https://app.cloudcannon.com/">CloudCannon</a> is cloud content management system and hosting provider for Jekyll websites. The way it works is this:</p>
+
+<ol>
+  <li>A developer uploads a Jekyll site in the browser or syncs with GitHub, Bitbucket or Dropbox.</li>
+  <li>CloudCannon builds the site, hosts it and</li>
+  <li><strong>provides an interface for non-technical people to update content</strong>.</li>
+</ol>
+
+<ul>
+  <li><a href="https://app.cloudcannon.com/">CloudCannon</a></li>
+  <li><a href="https://learn.cloudcannon.com/jekyll/client-editable-jekyll-sites/">Client editable Jekyll sites</a></li>
+</ul>
+
+<h2 id="editors">Editors</h2>
+
+<ul>
+  <li><a href="https://forestry.io/">Forestry</a> is an editor-friendly interface over Git. This means that developers and editors can now use the same workflow and tool set.</li>
+</ul>
+
+<h2 id="themes">Themes</h2>
+
+<p>With gem-based themes, some of the site’s directories (such as the <code class="language-plaintext highlighter-rouge">assets</code>, <code class="language-plaintext highlighter-rouge">_layouts</code>, <code class="language-plaintext highlighter-rouge">_includes</code>, and <code class="language-plaintext highlighter-rouge">_sass</code> directories) are stored in the theme’s gem, hidden from your immediate view. Yet all of the necessary directories will be read and processed during Jekyll’s build process.</p>
+
+<p>You can run <code class="language-plaintext highlighter-rouge">bundle update &lt;THEME&gt;</code>, replacing <code class="language-plaintext highlighter-rouge">&lt;THEME&gt;</code> with the theme name, such as <code class="language-plaintext highlighter-rouge">minima</code>, to just update the theme gem:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.../sytws1920/apuntes(master)]$ bundle update jekyll-theme-midnight
+Fetching gem metadata from https://rubygems.org/...........
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+Using concurrent-ruby 1.1.5
+...
+Bundler attempted to update jekyll-theme-midnight but its version stayed the same
+Bundle updated!
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://jekyllrb.com/docs/themes/">Themes documentation</a></li>
+  <li><a href="https://jekyllthemes.io/jekyll-documentation-themes">Jekyll and Project Documentation Themes</a></li>
+  <li><a href="https://github.com/ULL-MII-SYTWS-1920/documentation-theme-jekyll">documentation-theme-jekyll</a> Un tema muy interesante</li>
+</ul>
+
+<h2 id="converting-a-jekyll-web-site-to-pdf">Converting a Jekyll Web Site to PDF</h2>
+
+<ul>
+  <li><a href="https://www.princexml.com/">Prince</a></li>
+  <li><a href="https://github.com/pdfkit/PDFKit">PDFKit</a></li>
+  <li><a href="https://github.com/wkhtmltopdf/wkhtmltopdf">GitHub repo wkhtmltopdf: Convert HTML to PDF using Webkit (QtWebKit)</a> see <a href="https://wkhtmltopdf.org">https://wkhtmltopdf.org</a></li>
+</ul>
+
+<h2 id="blog-a-collection-of-music-albums">Blog: A Collection of Music Albums</h2>
+
+<ul>
+  <li><a href="https://dev.to/adrienjoly/how-to-maintain-a-collection-of-music-albums-online-using-jekyll-and-github-pages-3hd6">How to maintain a collection of music albums online, using Jekyll and Github Pages</a>. See it at <a href="http://adrienjoly.com/album-shelf/">http://adrienjoly.com/album-shelf/</a></li>
+</ul>
+
+<h2 id="react-and-jekyll">React and Jekyll</h2>
+
+<ul>
+  <li><a href="https://www.npmjs.com/package/jekyll-react-webpack">A npm package providing a Jekyll Boilerplate with React using Webpack</a> (Not supported by GitHub Pages)
+    <ul>
+      <li><a href="https://marcoslombog.com/2019/04/07/jekyll-react-webpack.html">Blog: Start building your great modern static website with this boilerplate using Jekyll, React and Webapck.</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="auth-and-jekyll">Auth and Jekyll</h2>
+
+<ul>
+  <li><a href="https://github.com/benbalter/jekyll-auth">benbalter/jekyll-auth: A simple way to use GitHub OAuth to serve a protected Jekyll site to your GitHub organization</a></li>
+</ul>
+
+<h2 id="e-commerce">E-commerce</h2>
+
+<ul>
+  <li><a href="https://snipcart.com/blog/jekyll-ecommerce-tutorial">Jekyll E-Commerce Tutorial: Add a Shopping Cart to Your Static Website</a> 2019</li>
+  <li><a href="https://snipcart.com/blog/headless-ecommerce-guide">Headless E-Commerce: What, Why, &amp; How (Tools Included)</a> 2018</li>
+  <li><a href="https://github.com/bradonomics/jekyll-cart">GitHub repo:A Jekyll based shopping cart built with simpleCart(js)</a></li>
+  <li><a href="https://youtu.be/jdp_XmogTEo">Jekyll Cart Demo</a> Video en YouTube</li>
+</ul>
+
+<h2 id="developing">Developing</h2>
+
+<ul>
+  <li><a href="https://stackoverflow.com/questions/27386169/change-site-url-to-localhost-during-jekyll-local-development">Change site.url to localhost during jekyll local development</a></li>
+</ul>
+
+<p>”</p>
+
+<p>This is a common problem between different Jekyll environments.</p>
+
+<h3 id="some-explanations">Some explanations</h3>
+
+<p>We need to understand <code class="language-plaintext highlighter-rouge">site.url</code> and <code class="language-plaintext highlighter-rouge">site.baseurl</code> and in which situation we need them. Those variables don’t serve the same purpose.</p>
+
+<h4 id="siteurl"><code class="language-plaintext highlighter-rouge">site.url</code></h4>
+
+<p>By default, this variable is only used in page head for the <code class="language-plaintext highlighter-rouge">canonical</code> header and the <code class="language-plaintext highlighter-rouge">RSS link</code>. It’s also used in the xml feed to point to site resources as the software that will manage this feed doesn’t know resource’s urls.</p>
+
+<p>This variable is only necessary for external systems.</p>
+
+<h4 id="sitebaseurl"><code class="language-plaintext highlighter-rouge">site.baseurl</code></h4>
+
+<p>This variable indicates the root folder of your Jekyll site. By default it is set to <code class="language-plaintext highlighter-rouge">""</code> (empty string). That means that your Jekyll site is at the root of <code class="language-plaintext highlighter-rouge">http://example.com</code>.</p>
+
+<p>If your Jekyll site lives in <code class="language-plaintext highlighter-rouge">http://example.com/blog</code>, you have to set <code class="language-plaintext highlighter-rouge">site.baseurl</code> to <code class="language-plaintext highlighter-rouge">/blog</code> (<strong>note the slash</strong>). This will allow assets (css, js) to load correctly.</p>
+
+<p>See how assets are loaded in you head :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;link rel="stylesheet" href="/css/main.css"&gt;
+</code></pre></div></div>
+
+<p>that can also be :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;link rel="stylesheet" href="/css/main.css"&gt;
+</code></pre></div></div>
+
+<h3 id="working-in-different-environments">Working in different environments</h3>
+
+<p>Now you have to test your site locally and to deploy it in production. Sometimes, the <code class="language-plaintext highlighter-rouge">baseurl</code> is different and the <code class="language-plaintext highlighter-rouge">jekyll build</code> may not work out of the box in one of those environment.</p>
+
+<p>Here we have two solutions :</p>
+
+<h4 id="use-jekyll-serve">Use <code class="language-plaintext highlighter-rouge">jekyll serve</code></h4>
+
+<p>Let’s imagine that your site lives in a github repository and is served at <code class="language-plaintext highlighter-rouge">https://username.github.io/myProject</code>.</p>
+
+<p>You can setup the <code class="language-plaintext highlighter-rouge">baseurl</code> to <code class="language-plaintext highlighter-rouge">/myProject</code>. and test your site locally with <code class="language-plaintext highlighter-rouge">jekyll serve</code>, your site will be served at <code class="language-plaintext highlighter-rouge">http://127.0.0.1:4000/myProject/</code></p>
+
+<h4 id="use-multiple-configuration-files">Use multiple configuration files</h4>
+
+<p>If, for one reason or another, you cannot use <code class="language-plaintext highlighter-rouge">jekyll serve</code>, you can set a configuration file for both environment and <code class="language-plaintext highlighter-rouge">jekyll build</code> depending on where you are deploying.</p>
+
+<p>Let’s say we have the local site served at <code class="language-plaintext highlighter-rouge">http://localhost</code> and the production site served at <code class="language-plaintext highlighter-rouge">https://username.github.io/myProject</code>.</p>
+
+<p>We leave the <code class="language-plaintext highlighter-rouge">_config.yml</code> with <code class="language-plaintext highlighter-rouge">url: https://username.github.io</code> and <code class="language-plaintext highlighter-rouge">baseurl: /myProject</code></p>
+
+<p>We create a new <code class="language-plaintext highlighter-rouge">_config_dev.yml</code> with only <code class="language-plaintext highlighter-rouge">url: https://localhost</code> and <code class="language-plaintext highlighter-rouge">baseurl: ""</code></p>
+
+<p>Now to test locally :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll build --config _config.yml,_config_dev.yml
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll build --config _config.yml,_config_dev.yml --watch
+</code></pre></div></div>
+
+<p>When pushed on production, the <code>jekyll build</code> command will use the default <code>_config.yml</code>.</p>
+
+<h2 id="testing-html-pages">Testing HTML pages</h2>
+
+<h3 id="htmlproofer">HTMLProofer</h3>
+
+<blockquote>
+  <p>When testing Jekyll output, there is no better tool than <a href="https://github.com/gjtorikian/html-proofer">html-proofer</a>.
+This tool checks your resulting site to ensure all links and images exist.
+Utilize it either with the convenient <code>htmlproofer</code> command-line executable,
+or write a Ruby script which utilizes the gem</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usuario@ubuntu:~/src/ull-mii-sytws-1920.github.io$ bundle exec htmlproofer ./_site --disable-external
+Running ["ImageCheck", "ScriptCheck", "LinkCheck"] on ["./_site"] on *.html... 
+
+
+Ran on 158 files!
+
+
+- ./_site/2019/09/30/leccion.html
+  *  internally linking to /practicas, which does not exist (line 31)
+     &lt;a href="/practicas" title="Prácticas"&gt;✍&lt;/a&gt;
+  *  internally linking to /practicas, which does not exist (line 129)
+     &lt;a href="/practicas" title="Prácticas"&gt;✍&lt;/a&gt;
+- ./_site/404.html
+  *  internally linking to /practicas, which does not exist (line 31)
+     &lt;a href="/practicas" title="Prácticas"&gt;✍&lt;/a&gt;
+     ... many more entries
+</code></pre></div></div>
+
+<p>Let us see if its true. Instead of running with <code class="language-plaintext highlighter-rouge">jekyll</code> serve, I use a static server to see if the build 
+is really consistent:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usuario@ubuntu:~/src/ull-mii-sytws-1920.github.io/_site$ static-server -p 8080
+options.index is now deprecated please use options.templates.index instead.
+* Static server successfully started.
+* Serving files at: http://localhost:8080
+* Press Ctrl+C to shutdown.
+&lt;-- [GET] /2019/09/30/leccion.html
+--&gt; 200 OK /2019/09/30/leccion.html 5.63 KiB (15.964ms)
+...
+&lt;-- [GET] /practicas/
+--&gt; 403 /practicas/ (2.199ms)
+&lt;-- [GET] /favicon.ico
+</code></pre></div></div>
+
+<p>See the <code class="language-plaintext highlighter-rouge">403 /practicas/ (2.199ms)</code> warning.</p>
+
+<p>It seems <code class="language-plaintext highlighter-rouge">htmlproofer</code> is right in spite that it works in <code class="language-plaintext highlighter-rouge">github.io</code></p>
+
+<p>We use <a href="https://github.com/gjtorikian/html-proofer">HTMLProofer</a> to test our web site.
+Here is an example of use:</p>
+
+<h3 id="rakefile-task-for-testing">Rakefile task for testing</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.../sytws1920/ull-mii-sytws-1920.github.io(master)]$ cat Rakefile 
+</code></pre></div></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">desc</span> <span class="s2">"sytws: bundle exec jekyll serve --watch"</span>
+<span class="n">task</span> <span class="ss">:serve</span> <span class="k">do</span>
+  <span class="n">sh</span> <span class="s2">"bundle exec jekyll serve --future --watch --port 8080 --host 10.6.128.216"</span>
+<span class="k">end</span>
+
+<span class="o">...</span> <span class="c1"># more tasks</span>
+
+<span class="nb">require</span> <span class="s1">'html-proofer'</span>
+<span class="n">desc</span> <span class="s2">"test links in the build web site"</span>
+<span class="n">task</span> <span class="ss">:test</span> <span class="k">do</span>
+  <span class="n">sh</span> <span class="s2">"bundle exec jekyll build"</span>
+  <span class="n">options</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="ss">:assume_extension</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> 
+    <span class="ss">:disable_external</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> 
+    <span class="ss">:empty_alt_ignore</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+    <span class="ss">:file_ignore</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="sr">%r{categories}</span> <span class="p">]</span>
+  <span class="p">}</span>
+  <span class="no">HTMLProofer</span><span class="p">.</span><span class="nf">check_directory</span><span class="p">(</span><span class="s2">"./_site"</span><span class="p">,</span> <span class="n">options</span><span class="p">).</span><span class="nf">run</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="testing-with-github-actions">Testing with GitHub Actions</h3>
+
+<p>Here is an example of using the action <a href="https://github.com/marketplace/actions/proof-html">Proof-HTML</a> to check the health of our site:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">➜  apuntes git:(main) ✗ cat .github/workflows/testHTML.yml</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">CI</span>
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+  <span class="na">schedule</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0</span><span class="nv"> </span><span class="s">8</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">6'</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-ruby@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">ruby-version</span><span class="pi">:</span> <span class="s">2.7.x</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/cache@v2</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">path</span><span class="pi">:</span> <span class="s">vendor/bundle</span>
+          <span class="na">key</span><span class="pi">:</span> <span class="s">${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}</span>
+          <span class="na">restore-keys</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">${{ runner.os }}-gems-</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">bundle config path vendor/bundle</span>
+          <span class="s">bundle install --jobs 4 --retry 3</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">bundle exec jekyll build</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">anishathalye/proof-html@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">directory</span><span class="pi">:</span> <span class="s">./_site</span>
+          <span class="na">enforce_https</span><span class="pi">:</span> <span class="no">false</span>
+          <span class="na">tokens</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">{"https://github.com": "${{ secrets.GITHUB_TOKEN }}"}</span>
+          <span class="na">url_ignore</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">http://www.example.com/</span>
+            <span class="s">https://en.wikipedia.org/wiki/Main_Page</span>
+          <span class="na">url_ignore_re</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">^https://twitter.com/</span>
+</code></pre></div></div>
+
+<h3 id="testing-with-htmlproofer-and-travis">Testing with HTMLProofer and Travis</h3>
+
+<ul>
+  <li><a href="https://github.com/gjtorikian/html-proofer/wiki/Using-HTMLProofer-From-Ruby-and-Travis">Using HTMLProofer From Ruby and Travis</a></li>
+</ul>
+
+<h2 id="jekyll-as-a-web-service">Jekyll as a Web Service</h2>
+
+<ul>
+  <li><a href="https://www.techiediaries.com/how-to-use-jekyll-like-a-pro-output-data-as-json/">Jekyll JSON API</a></li>
+</ul>
+
+<h2 id="maths-y-jekyll">Maths y Jekyll</h2>
+
+<p>See the tutorial:</p>
+
+<ul>
+  <li><a href="http://sgeos.github.io/github/jekyll/2016/08/21/adding_mathjax_to_a_jekyll_github_pages_blog.html">Adding MathJax to a GitHub Pages Jekyll Blog</a></li>
+</ul>
+
+<p>Summarizing, the simplest way is to add a line like:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Mathjax Support  --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'</span> <span class="na">async</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>at then end of your layout.</p>
+
+<p>Here is an example of what you can do:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb"> r </span><span class="o">=</span><span class="nb"> h </span><span class="o">=</span><span class="nb"> </span><span class="nv">\sqrt</span><span class="p">{</span><span class="nv">\frac</span><span class="nb"> </span><span class="p">{</span><span class="m">1</span><span class="p">}</span><span class="nb"> </span><span class="p">{</span><span class="m">2</span><span class="p">}}</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\sqrt</span><span class="p">{</span><span class="nv">\frac</span><span class="nb"> </span><span class="p">{</span><span class="nb">N</span><span class="p">}</span><span class="nb"> </span><span class="p">{</span><span class="nb">N</span><span class="o">+</span><span class="m">1</span><span class="p">}}</span><span class="nb"> </span><span class="nv">\sqrt</span><span class="p">{</span><span class="nv">\frac</span><span class="nb"> </span><span class="p">{</span><span class="nb">N</span><span class="o">+</span><span class="m">1</span><span class="p">}</span><span class="nb"> </span><span class="p">{</span><span class="m">2</span><span class="nb">N</span><span class="p">}}</span><span class="nb"> </span><span class="p">$$</span>
+</code></pre></div></div>
+
+<p>that renders as:</p>
+
+\[r = h = \sqrt{\frac {1} {2}} = \sqrt{\frac {N} {N+1}} \sqrt{\frac {N+1} {2N}}\]
+
+<h2 id="working-with-upcoming-posts-in-jekyll">Working with upcoming posts in Jekyll</h2>
+
+<p>We used to work on more than one post at a time and publish them in future. 
+So you just want to test them while writing the blog, but you don’t want publish them to your live blog immediately. There are  different ways to achieve this in jekyll. This article discuss several workflows:</p>
+
+<ul>
+  <li><a href="http://www.fizerkhan.com/blog/posts/Working-with-upcoming-posts-in-Jekyll.html">Working with upcoming posts in Jekyll</a></li>
+</ul>
+
+<h2 id="cursos-en-youtube-de-jekyll-and-netlifycms-por-thomas-bradley">Cursos en YouTube de Jekyll and NetlifyCMS por Thomas Bradley</h2>
+
+<ul>
+  <li><a href="https://www.youtube.com/playlist?list=PLWjCJDeWfDdfVEcLGAfdJn_HXyM4Y7_k-">Jekyll</a></li>
+  <li><a href="https://www.youtube.com/playlist?list=PLWjCJDeWfDdcU8zbZZrr6L1zpf_2Eqt_w">Jekyll + NetlifyCMS</a> 14 Youtube videos</li>
+  <li><a href="https://www.youtube.com/playlist?list=PLWjCJDeWfDdcEBngBwpB8F7wtjZ12PIy0">Jekyll + Patternbot</a></li>
+</ul>
+
+<h2 id="chen-hui-jing-talks-on-jekyll">Chen Hui Jing Talks on Jekyll</h2>
+
+<ul>
+  <li><a href="https://www.chenhuijing.com/blog/jekyll/#%F0%9F%91%BE">Chen Hui Jing talks on Jekyll</a></li>
+  <li><a href="https://www.chenhuijing.com/talks/#%F0%9F%8F%80">Chen Hui Jing talks</a> Slides in reveal.js</li>
+</ul>
+
+<h2 id="práctica-jekyll-netlify">Práctica jekyll-netlify</h2>
+
+<ul>
+  <li><a href="/practicas/jekyll-netlify">Práctica jekyll-netlify</a></li>
+  <li><a href="practicas/jekyll-search">Práctica jekyll-search</a></li>
+</ul>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p1-t1-iaas">Setting up Our Environment: iaas</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/p2-t1-vscode">Editores: VS Code y GitPod</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli">GitHub cli (REST)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/gh-cli-graphql">GitHub cli (GraphQL)</a></li>
+
+  <li> <a href="/tema1-introduccion/practicas/npm-module">Publishing an npm-module</a></li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2021/11/29/leccion.html">Clase del Lunes 2021/11/29</a></li>
+  
+<li> <a href="/2021/11/24/leccion.html">Clase del Miércoles 2021/11/24</a></li>
+  
+<li> <a href="/2021/11/22/leccion.html">Clase del Lunes 2021/11/22</a></li>
+  
+<li> <a href="/2021/11/17/leccion.html">Clase del Miércoles 2021/11/17</a></li>
+  
+<li> <a href="/2021/11/15/leccion.html">Clase del Lunes 2021/11/15</a></li>
+  
+<li> <a href="/2021/11/10/leccion.html">Clase del Miércoles 2021/11/10</a></li>
+  
+<li> <a href="/2021/11/08/leccion.html">Clase del Lunes 2021/11/08</a></li>
+  
+<li> <a href="/2021/11/03/leccion.html">Clase del Miércoles 2021/11/03</a></li>
+  
+<li> <a href="/2021/10/27/leccion.html">Clase del Miércoles 2021/10/27</a></li>
+  
+<li> <a href="/2021/10/25/leccion.html">Clase del Lunes 2021/10/25</a></li>
+  
+<li> <a href="/2021/10/20/leccion.html">Clase del Miércoles 2021/10/20</a></li>
+  
+<li> <a href="/2021/10/18/leccion.html">Clase del Lunes 2021/10/18</a></li>
+  
+<li> <a href="/2021/10/13/leccion.html">Clase del Miércoles 2021/10/13</a></li>
+  
+<li> <a href="/2021/10/11/leccion.html">Clase del Lunes 2021/10/11</a></li>
+  
+<li> <a href="/2021/10/06/leccion.html">Clase del Lunes 2021/10/06</a></li>
+  
+<li> <a href="/2021/10/04/leccion.html">Clase del Lunes 2021/10/04</a></li>
+  
+<li> <a href="/2021/09/29/leccion.html">Clase del Miércoles 2021/09/29</a></li>
+  
+<li> <a href="/2021/09/27/leccion.html">Clase del Lunes 2021/09/27</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>
