@@ -20,7 +20,7 @@
 {"headline":"Clase del Lunes 2021/11/29","description":"Práctica gh-cli-graphql","dateModified":"2021-11-29T00:00:00+00:00","datePublished":"2021-11-29T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/11/29/leccion.html"},"url":"/2021/11/29/leccion.html","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=0a29c525b5f02a62b2d06cffdadc8ca52271a3bb">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1311abbb73b7db5caf1f47fd6e6573a026a48cad">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -85,7 +85,16 @@
     <ol>
       <li>Haremos un fork al espacio del usuario y renombraremos los ficheros</li>
       <li>Documentación</li>
-      <li>Automatizaremos las comprobaciones</li>
+      <li>Automatizaremos las comprobaciones de error</li>
+    </ol>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ➜  gh-cli-graphql-casiano-rodriguez-leon-alumnoudv5 git:(main) ✗ ./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1922 -r prueba-funciona  -n prueba
+ gh: Could not resolve to a Repository with the name 'ULL-ESIT-DMSI-1922/prueba-funciona'.
+ ➜  gh-cli-graphql-casiano-rodriguez-leon-alumnoudv5 git:(main) ✗ ./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-antonella
+ gh: Name already exists on this account
+</code></pre></div>    </div>
+
+    <ol>
       <li>Publicaremos la extensión</li>
     </ol>
   </li>
