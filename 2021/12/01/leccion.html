@@ -5,19 +5,19 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Clase del Lunes 2021/11/22 | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Clase del Miércoles 2021/12/01 | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Clase del Lunes 2021/11/22" />
+<meta property="og:title" content="Clase del Miércoles 2021/12/01" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Práctica gh-cli-graphql" />
-<meta property="og:description" content="Práctica gh-cli-graphql" />
+<meta name="description" content="Práctica Publishing an npm module" />
+<meta property="og:description" content="Práctica Publishing an npm module" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-11-22T00:00:00+00:00" />
+<meta property="article:published_time" content="2021-12-01T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Clase del Lunes 2021/11/22" />
+<meta property="twitter:title" content="Clase del Miércoles 2021/12/01" />
 <script type="application/ld+json">
-{"headline":"Clase del Lunes 2021/11/22","description":"Práctica gh-cli-graphql","dateModified":"2021-11-22T00:00:00+00:00","datePublished":"2021-11-22T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/11/22/leccion.html"},"url":"/2021/11/22/leccion.html","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"Clase del Miércoles 2021/12/01","description":"Práctica Publishing an npm module","dateModified":"2021-12-01T00:00:00+00:00","datePublished":"2021-12-01T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/12/01/leccion.html"},"url":"/2021/12/01/leccion.html","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=728225b1cd10a65b408e16d12484a751943b9546">
@@ -68,17 +68,27 @@
 
             </div>
 
-            <h1>Clase del Lunes 2021/11/22</h1>
+            <h1>Clase del Miércoles 2021/12/01</h1>
 
-<h2 id="práctica-gh-cli-graphql">Práctica gh-cli-graphql</h2>
+<h2 id="práctica-publishing-an-npm-module">Práctica Publishing an npm module</h2>
 
 <p>Estamos estudiando las extensiones en GitHub Cli:</p>
 
 <ul>
-  <li><a href="/tema1-introduccion/practicas/gh-cli-graphql">Práctica gh-cli</a></li>
+  <li><a href="/tema1-introduccion/practicas/gh-cli-graphql">Práctica gh-cli-graphql</a></li>
 </ul>
 
-<h3 id="gh-repo-rename-alu0101227610js">gh-repo-rename-alu0101227610.js</h3>
+<ol>
+  <li>Publicaremos un módulo npm con el código js y el ejecutable en el ámbito del alumno
+    <ul>
+      <li>Véase <a href="/tema1-introduccion/practicas/npm-module/">Práctica npm-module</a></li>
+      <li><a href="/tema1-introduccion/creating-and-publishing-npm-module">Creating and Publishing an npm module</a></li>
+    </ul>
+  </li>
+  <li>Modificaremos la extensión para que use el módulo npm</li>
+</ol>
+
+<h3 id="gh-repo-rename-aluxxxxjs">gh-repo-rename-aluXXXX.js</h3>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#! /usr/bin/env node
 </span><span class="kd">const</span> <span class="nx">ins</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">util</span><span class="dl">"</span><span class="p">).</span><span class="nx">inspect</span><span class="p">;</span>
@@ -99,21 +109,58 @@
 <span class="kd">let</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">program</span><span class="p">.</span><span class="nx">args</span><span class="p">;</span>
 <span class="k">debugger</span><span class="p">;</span>
 
-<span class="kd">let</span> <span class="nx">originalName</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">program</span><span class="p">.</span><span class="nx">opts</span><span class="p">().</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">getRepoId</span> <span class="o">=</span> <span class="p">(</span><span class="nx">owner</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`
+query {
+  repository(owner: "</span><span class="p">${</span><span class="nx">owner</span><span class="p">}</span><span class="s2">", name: "</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">") {
+    id
+  }
+}
+`</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">renameRepo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">newName</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`
+mutation {
+  updateRepository(input: {name: "</span><span class="p">${</span><span class="nx">newName</span><span class="p">}</span><span class="s2">", repositoryId: "</span><span class="p">${</span><span class="nx">id</span><span class="p">}</span><span class="s2">"}) {
+    repository {
+      name
+    }
+  }
+}
+`</span><span class="p">;</span>
 
 <span class="kd">let</span> <span class="p">{</span> <span class="nx">org</span><span class="p">,</span> <span class="nx">repo</span><span class="p">,</span> <span class="nx">name</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">program</span><span class="p">.</span><span class="nx">opts</span><span class="p">();</span>
-<span class="c1">// console.log(originalName);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">org</span> <span class="o">||</span> <span class="o">!</span> <span class="nx">repo</span> <span class="o">||</span> <span class="o">!</span><span class="nx">name</span><span class="p">)</span> <span class="nx">program</span><span class="p">.</span><span class="nx">help</span><span class="p">();</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">shell</span><span class="p">.</span><span class="nx">which</span><span class="p">(</span><span class="dl">'</span><span class="s1">git</span><span class="dl">'</span><span class="p">))</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">echo</span><span class="p">(</span><span class="dl">"</span><span class="s2">git not installed</span><span class="dl">"</span><span class="p">)</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">shell</span><span class="p">.</span><span class="nx">which</span><span class="p">(</span><span class="dl">'</span><span class="s1">gh</span><span class="dl">'</span><span class="p">))</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">echo</span><span class="p">(</span><span class="dl">"</span><span class="s2">gh not installed</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">`gh api -X PATCH /repos/</span><span class="p">${</span><span class="nx">org</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">repo</span><span class="p">}</span><span class="s2"> -f name=</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span> <span class="p">{</span><span class="na">silent</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
+<span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">`gh api  graphql -f query='</span><span class="p">${</span><span class="nx">getRepoId</span><span class="p">(</span><span class="nx">org</span><span class="p">,</span> <span class="nx">repo</span><span class="p">)}</span><span class="s2">' --jq '.data.repository.id'`</span><span class="p">,</span> 
+                   <span class="p">{</span><span class="na">silent</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">code</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">stderr</span><span class="p">);</span>
+  <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">rj</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">stdout</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The repo </span><span class="p">${</span><span class="nx">org</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">repo</span><span class="p">}</span><span class="s2"> has been renamed to </span><span class="p">${</span><span class="nx">rj</span><span class="p">.</span><span class="nx">full_name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-<span class="c1">//console.log(`The repo has been renamed to ${rj.full_name}`);</span>
+<span class="kd">const</span> <span class="nx">Id</span> <span class="o">=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">stdout</span><span class="p">;</span>
+
+<span class="c1">//  stdout: '{"data":{"updateRepository":{"repository":{"name":"prueba"}}}}'</span>
+<span class="nx">r</span>  <span class="o">=</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span>
+  <span class="s2">`gh api graphql -f query='</span><span class="p">${</span><span class="nx">renameRepo</span><span class="p">(</span><span class="nx">Id</span><span class="p">,</span> <span class="nx">name</span><span class="p">)}</span><span class="s2">'  --jq '.data.updateRepository.repository.name'`</span><span class="p">,</span>
+  <span class="p">{</span><span class="na">silent</span><span class="p">:</span><span class="kc">true</span><span class="p">})</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">code</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">stderr</span><span class="p">);</span>
+    <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">stdout</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  gh-cli-graphql-casiano-rodriguez-leon-alumnoudv5 git:(main) ✗ ./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1922 -r prueba-funciona  -n prueba
+➜  gh-cli-graphql-casiano-rodriguez-leon-alumnoudv5 git:(main) ✗ ./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1922 -r prueba-funciona  -n prueba
+gh: Could not resolve to a Repository with the name 'ULL-ESIT-DMSI-1922/prueba-funciona'.
+➜  gh-cli-graphql-casiano-rodriguez-leon-alumnoudv5 git:(main) ✗ ./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-antonella
+gh: Name already exists on this account
 </code></pre></div></div>
 
 <h3 id="packagejson">Package.json</h3>
@@ -124,28 +171,28 @@
     <span class="dl">"</span><span class="s2">commander</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^8.3.0</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">shelljs</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^0.8.4</span><span class="dl">"</span>
   <span class="p">},</span>
-  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh-repo-rename-alu0101227610</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh-repo-rename-aluXXXX</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1.1.0</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">main</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh-repo-rename-alu0101227610.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">main</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh-repo-rename-aluXXXX.js</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">debug</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node --inspect-brk gh-repo-rename-alu0101227610.js -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">debug</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node --inspect-brk gh-repo-rename-aluXXXX.js -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">create-prueba</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh create-repo prueba ULL-ESIT-DMSI-1920</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">list-prueba</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gh submodule-add -s prueba -o ULL-ESIT-DMSI-1920 -n</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./gh-repo-rename-alu0101227610 -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-funciona; npm run list-prueba</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">back</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./gh-repo-rename-alu0101227610 -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba; npm run list-prueba</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node gh-repo-rename-alu0101227610.js</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-funciona; npm run list-prueba</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">back</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./gh-repo-rename-aluXXXX -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba; npm run list-prueba</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node gh-repo-rename-aluXXXX.js</span><span class="dl">"</span>
   <span class="p">},</span>
   <span class="dl">"</span><span class="s2">repository</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
     <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">git</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">git+https://github.com/alu0101227610/gh-repo-rename-alu0101227610.git</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">git+https://github.com/aluXXXX/gh-repo-rename-aluXXXX.git</span><span class="dl">"</span>
   <span class="p">},</span>
   <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">license</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ISC</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">bugs</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/alu0101227610/gh-repo-rename-alu0101227610/issues</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/aluXXXX/gh-repo-rename-aluXXXX/issues</span><span class="dl">"</span>
   <span class="p">},</span>
-  <span class="dl">"</span><span class="s2">homepage</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/alu0101227610/gh-repo-rename-alu0101227610#readme</span><span class="dl">"</span>
+  <span class="dl">"</span><span class="s2">homepage</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/aluXXXX/gh-repo-rename-aluXXXX#readme</span><span class="dl">"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -163,7 +210,7 @@
 <span class="c"># script in all invocation scenarios, notably also when the script is sourced, which is not true for $0.</span>
 <span class="nv">SCRIPT_DIR</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span> <span class="nb">cd</span> <span class="nt">--</span> <span class="s2">"</span><span class="si">$(</span> <span class="nb">dirname</span> <span class="nt">--</span> <span class="s2">"</span><span class="k">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="k">}</span><span class="s2">"</span> <span class="si">)</span><span class="s2">"</span> &amp;&gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">pwd</span> <span class="si">)</span><span class="s2">"</span>
 
-node <span class="k">${</span><span class="nv">SCRIPT_DIR</span><span class="k">}</span>/gh-repo-rename-alu0101227610.js <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+node <span class="k">${</span><span class="nv">SCRIPT_DIR</span><span class="k">}</span>/gh-repo-rename-aluXXXX.js <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
 </code></pre></div></div>
 
 <p>Entendiendo el script:</p>
@@ -184,8 +231,6 @@ node <span class="k">${</span><span class="nv">SCRIPT_DIR</span><span class="k">
 [~/campus-virtual/1920/dmsi1920/apuntes(master)]$ . /tmp/bash_source 
 . /tmp
 </code></pre></div></div>
-
-<h2 id="empezamos-con-graphql">Empezamos con GraphQL.</h2>
 
 <h3 id="github-graphql-explorer">GitHub GraphQL Explorer</h3>
 
