@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2021/12/13",
+      "date": "December 13, 2021",
+
+      "excerpt": "<h2 id="práctica-publishing-an-npm-module">Práctica Publishing an npm module</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2021/12/13/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2021/12/01",
       "date": "December 01, 2021",
 
@@ -197,29 +220,6 @@
       
       
       "url": "/2021/11/03/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2021/10/27",
-      "date": "October 27, 2021",
-
-      "excerpt": "<p>Hemos estudiado los comandos <code class="language-plaintext highlighter-rouge">git submodule</code> y el uso de submodulos.</p>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2021/10/27/leccion.html",
        "tags"  : [
         
         ]
