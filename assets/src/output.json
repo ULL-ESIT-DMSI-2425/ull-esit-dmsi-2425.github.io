@@ -1,6 +1,32 @@
 
     
     {
+      "title": "Clase del Miércoles 2021/12/15",
+      "date": "December 15, 2021",
+
+      "excerpt": "<ol>
+  <li><a href="/tema3-modelos-emergentes/practicas/vue-intro/">Comenzaremos a aprender Vue.js</a></li>
+  <li>Hablaremos del Trabajo Fin de Asignatura</li>
+</ol>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2021/12/15/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Lunes 2021/12/13",
       "date": "December 13, 2021",
 
@@ -197,29 +223,6 @@
       
       
       "url": "/2021/11/08/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2021/11/03",
-      "date": "November 03, 2021",
-
-      "excerpt": "<p>GitPod: making environment variables persistent across workspaces:</p>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2021/11/03/leccion.html",
        "tags"  : [
         
         ]
