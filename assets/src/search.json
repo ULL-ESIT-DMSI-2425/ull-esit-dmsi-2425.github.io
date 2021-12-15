@@ -147,8 +147,8 @@
     
       {
         "title": "Clase del Miércoles 2021/12/15",
-        "excerpt": "\n  Vue.js Fundamentals\n    \n      crguezl/vuejs-fundamentals\n      Vue.js Fundamentals at Vue School\n    \n  \n  Introduction to Vue.js\n    \n      crguezl/learning-vue-geting-started-guid\n    \n  \n\n\n",
-        "content": "\n  Vue.js Fundamentals\n    \n      crguezl/vuejs-fundamentals\n      Vue.js Fundamentals at Vue School\n    \n  \n  Introduction to Vue.js\n    \n      crguezl/learning-vue-geting-started-guid\n    \n  \n\n\n",
+        "excerpt": "\n  Vue.js Fundamentals\n    \n      crguezl/vuejs-fundamentals\n      Vue.js Fundamentals at Vue School\n    \n  \n  Introduction to Vue.js\n    \n      crguezl/learning-vue-geting-started-guid\n    \n  \n\n\nReferences\n\n",
+        "content": "\n  Vue.js Fundamentals\n    \n      crguezl/vuejs-fundamentals\n      Vue.js Fundamentals at Vue School\n    \n  \n  Introduction to Vue.js\n    \n      crguezl/learning-vue-geting-started-guid\n    \n  \n\n\nReferences\n\n\n  Emmet Cheat Sheet\n\n",
         "url": "/2021/12/15/leccion.html"
       },
     
@@ -1038,9 +1038,9 @@
   },
   
   {
-    "title": "Práctca Vue Fundamentals",
+    "title": "Práctica Vue Fundamentals",
     "excerpt": "\n",
-    "content": "Práctca Vue Fundamentals\n\nVéase crguezl/vuejs-fundamentals\n",
+    "content": "Práctica Vue Fundamentals\n\nVéase crguezl/vuejs-fundamentals\n",
     "url": "/tema3-modelos-emergentes/practicas/vue-fundamentals/"
   },
   
