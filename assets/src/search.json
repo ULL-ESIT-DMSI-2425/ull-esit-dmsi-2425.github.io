@@ -1038,6 +1038,13 @@
   },
   
   {
+    "title": "Práctica: Vue Components Basics",
+    "excerpt": "\n",
+    "content": "Práctica: Vue Components Basics\n\nSee repo crguezl/vuejs-components-basics-plan-picker-component for the full description of this lab.\n",
+    "url": "/tema3-modelos-emergentes/practicas/vue-components-basics/"
+  },
+  
+  {
     "title": "Práctica Vue Fundamentals",
     "excerpt": "\n",
     "content": "Práctica Vue Fundamentals\n\nVéase crguezl/vuejs-fundamentals\n",
