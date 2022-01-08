@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2022/01/10",
+      "date": "January 10, 2022",
+
+      "excerpt": "<h2 id="interesting-tools">Interesting Tools</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2022/01/10/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2021/12/15",
       "date": "December 15, 2021",
 
@@ -211,29 +234,6 @@
       
       
       "url": "/2021/11/10/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2021/11/08",
-      "date": "November 08, 2021",
-
-      "excerpt": "<p>Estamos estudiando las extensiones en GitHub Cli:</p>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2021/11/08/leccion.html",
        "tags"  : [
         
         ]
