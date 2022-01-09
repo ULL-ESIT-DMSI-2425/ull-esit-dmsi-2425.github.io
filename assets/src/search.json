@@ -751,6 +751,13 @@
   },
   
   {
+    "title": "GitHub Profile Card",
+    "excerpt": "\n",
+    "content": "GitHub Profile Card\n",
+    "url": "/tema3-modelos-emergentes/practicas/github-profile-card.html"
+  },
+  
+  {
     "title": "Reto 1: Commanding Databases with yargs (p10-t3-commanding-databases)",
     "excerpt": "\n",
     "content": "Reto 1: Commanding Databases with yargs (p10-t3-commanding-databases)\n\nReescriba el programa de línea de comandos esclu usando yargs en vez de commander\n\nyargs\n\n\n  yargs en npm\n  yargs home page\n  Yargs’ API\n  Examples\n  Parsing Tricks\n    \n      Stop the Parser\n      Negating Boolean Arguments\n      Numbers\n      Arrays\n      Objects\n    \n  \n  Advanced Topics\n    \n      Composing Your App Using Commands\n      Building Configurable CLI Apps\n      Customizing Yargs’ Parser\n    \n  \n\n\nReto 2: Commanding Databases with node-fetch (p10-t3-commanding-databases)\n\nRe-escriba esclu usando node-fetchen vez de request\n\n\n  node-fetch\n  Motivation\n  Features\n  Difference from client-side fetch\n  Installation\n  Loading and configuring the module\n  Common Usage\n    \n      Plain text or HTML\n      JSON\n      Simple Post\n      Post with JSON\n      Post with form parameters\n      Handling exceptions\n      Handling client and server errors\n    \n  \n  Advanced Usage\n    \n      Streams\n      Buffer\n      Accessing Headers and other Meta data\n      Post data using a file stream\n      Post with form-data (https://github.com/bitinn/node-fetch/blob/master/README.mddetect multipart)\n      Request cancellation with AbortSignal\n    \n  \n  API\n    \n      fetch(url[, options])\n      Options\n      Class: Request\n      Class: Response\n      Class: Headers\n      Interface: Body\n      Class: FetchError\n    \n  \n\n",
