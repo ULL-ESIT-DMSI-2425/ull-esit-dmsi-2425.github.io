@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Miércoles 2022/01/19",
+      "date": "January 19, 2022",
+
+      "excerpt": "<h2 id="evaluación">Evaluación</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2022/01/19/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Lunes 2022/01/17",
       "date": "January 17, 2022",
 
@@ -211,29 +234,6 @@
       
       
       "url": "/2021/11/22/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2021/11/17",
-      "date": "November 17, 2021",
-
-      "excerpt": "<h2 id="práctica-gh-cli">Práctica gh-cli</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2021/11/17/leccion.html",
        "tags"  : [
         
         ]
