@@ -863,9 +863,9 @@
   },
   
   {
-    "title": "Curso 22/23",
+    "title": "Curso 22/23 - Programación de Aplicaciones Web",
     "excerpt": "\n",
-    "content": "Curso 22/23\n\nClasses\n\n{% include clases-impartidas.md %}\n\nLabs\n\n{% include practicas.md %}\n\nTopics\n\n{% include temas.md %}\n",
+    "content": "Curso 22/23 - Programación de Aplicaciones Web\n\nClasses\n\n{% include clases-impartidas.md %}\n\nLabs\n\n{% include practicas.md %}\n\nTopics\n\n{% include temas.md %}\n",
     "url": "/"
   },
   
