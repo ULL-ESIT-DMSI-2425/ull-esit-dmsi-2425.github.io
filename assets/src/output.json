@@ -1,33 +1,8 @@
 
     
     {
-      "title": "Clase del Miércoles 2021/09/29",
-      "date": "September 29, 2021",
-
-      "excerpt": "<ul>
-  <li>Como usar <a href="/tema1-introduccion/gitpod">gitpod</a></li>
-  <li>Introduccion a <a href="https://guides.github.com/features/mastering-markdown/">Markdown</a></li>
-</ul>
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2021/09/29/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2021/09/27",
-      "date": "September 27, 2021",
+      "title": "Clase del Miércoles 2022/09/28",
+      "date": "September 28, 2022",
 
       "excerpt": "<ul>
   <li><a href="/tema0-presentacion/">Presentación de la asignatura</a></li>
@@ -38,7 +13,7 @@
         ],
       
       
-      "url": "/2021/09/27/leccion.html",
+      "url": "/2022/09/28/leccion.html",
        "tags"  : [
         
         ]
