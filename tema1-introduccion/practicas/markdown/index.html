@@ -18,7 +18,7 @@
 {"headline":"Aprender Markdown","url":"/tema1-introduccion/practicas/markdown/","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=825109c142c3e4be2856ae9d2ba341c8b093b6ac">
+    <link rel="stylesheet" href="/assets/css/style.css?v=494d536ccd61834691138cc186d2f9ff3de3eee2">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -68,6 +68,125 @@
 
 <p>Lea el tutorial de <a href="https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">GitHub Markdown</a> y escriba un informe</p>
 
+<p>La siguiente sección establece los objetivos y competencias que debes lograr.
+Las subsiguientes secciones presentan los recursos para lograr estos objetivos.</p>
+
+<h2 id="objetivo-1-aprender-markdown">Objetivo 1: Aprender Markdown</h2>
+
+<p>Un objetivo de esta tarea es aprender Markdown. Para ello, en el repositorio que se crea cuando aceptas la asignación  deberás rellenar los contenidos del fichero <code class="language-plaintext highlighter-rouge">README.md</code> con un pequeño curriculum vitae/carta de presentación usando markdown.</p>
+
+<ul>
+  <li>Incluye alguna imagen</li>
+  <li>Incluye algunos enlaces (por ejemplo un enlace a tu usuario en el campus virtual o el LMS de tu institución educativa).</li>
+  <li>Incluya al menos una lista enumerada y una lista no ordenada (<em>bullets</em>)</li>
+  <li>Una cita favorita (blockquote)</li>
+  <li>Un fragmento de código inline de un lenguaje de programación</li>
+  <li>
+    <p>Incluye un trozo de código que ocupe varias líneas como este y asegúrate de que aparece coloreado:</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fancyAlert</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">facebox</span><span class="p">({</span><span class="na">div</span><span class="p">:</span><span class="dl">'</span><span class="s1">#foo</span><span class="dl">'</span><span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Incluye una tabla. Puede hacerse así:</p>
+
+    <div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  First Header | Second Header
+  ------------ | -------------
+  Content from cell 1 | Content from cell 2
+  Content in the first column | Content in the second column
+</code></pre></div>    </div>
+    <p>y se verá así:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>First Header</th>
+          <th>Second Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Content from cell 1</td>
+          <td>Content from cell 2</td>
+        </tr>
+        <tr>
+          <td>Content in the first column</td>
+          <td>Content in the second column</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>Incluye un emoji. Por ejemplo  <code class="language-plaintext highlighter-rouge">:+1:</code> se ve: :+1:</li>
+  <li>Añade un fichero <code class="language-plaintext highlighter-rouge">master.md</code>  (puedes crearlo usando el menu o bien visitando una ruta con la sintáxis <code class="language-plaintext highlighter-rouge">https://github.com/:owner:/:repo:/new/main</code>) en el que describas tu experiencia hasta ahora en este master y lo enlazas desde el fichero <code class="language-plaintext highlighter-rouge">README.md</code>.
+    <ol>
+      <li>Incluyas alguna imagen en el repo en una carpeta <code class="language-plaintext highlighter-rouge">img</code> y la muestres desde el texto</li>
+      <li>Añadas un segundo fichero en el repo con nombre  <code class="language-plaintext highlighter-rouge">objetivos.md</code>  contando cuáles son tus objetivos con respecto a este curso y lo referencies desde el fichero <code class="language-plaintext highlighter-rouge">README.md</code>. Añade una referencia/enlace  de vuelta en <code class="language-plaintext highlighter-rouge">objetivos.md</code> a  tu <code class="language-plaintext highlighter-rouge">README.md</code></li>
+    </ol>
+
+    <ul>
+      <li>En el fichero 
+<code class="language-plaintext highlighter-rouge">master.md</code> pon un enlace de vuelta al <code class="language-plaintext highlighter-rouge">README.md</code></li>
+    </ul>
+  </li>
+  <li>Podemos hacer uso del editor que provee la interfaz web de GitHub.</li>
+  <li>Pero hay editores alternativos mejores como <a href="/pages/gitpod">el editor web de GitHub  y GitPod</a></li>
+  <li>Recuerda hacer “commits” para guardar los cambios.</li>
+  <li>
+    <p>En la tarea entrega el enlace al repo con los contenidos de tu trabajo</p>
+  </li>
+  <li>Añade una imagen-enlace. Se deberá ver la imagen pero esta será un enlace 
+a otra página</li>
+</ul>
+
+<p>En este <a href="https://github.com/orgs/ULL-MFP-AET-2122/repositories?q=aprender-markdown&amp;type=all&amp;language=&amp;sort=">enlace puedes visitar ejemplos de lo que han hecho algunos alumnos de la asignatura <em>Aprendizaje y Enseñanza de la Tecnología</em> del master de Formación de Profesorado en el curso 21/22</a></p>
+
+<h2 id="objetivo-2-aprender-a-usar-un-editor-en-la-nube">Objetivo 2: Aprender a Usar un Editor en la Nube</h2>
+
+<p>Hay múltiples formas de editar en la nube un repositorio GitHub. 
+En estas <a href="editores-en-la-nube">notas</a> recogemos estas alternativas:</p>
+
+<ol>
+  <li>Editar directamente usando el <a href="https://docs.github.com/es/repositories/working-with-files/managing-files/editing-files">editor on-line de GitHub</a></li>
+  <li><a href="https://docs.github.com/en/codespaces/the-githubdev-web-based-editor">Usar el editor GitHub.dev</a>: se activa simplemente  tecleando el punto cuando se está visitando el repo</li>
+  <li>Usar <a href="editores-en-la-nube#codespaces">Codespaces</a> (Probablemente la opción mas recomendable si dispones de este servicio)</li>
+  <li>Usar <a href="editores-en-la-nube#gitpod">GitPod</a>, una alternativa a Codespaces</li>
+</ol>
+
+<h2 id="objetivo-3-aprender-a-usar-incidencias">Objetivo 3: Aprender a Usar Incidencias</h2>
+
+<p>Cuando termines esta tarea puedes generar una incidencia comunicándoselo al profesor. Así practicas un poco mas de markdown.</p>
+
+<h2 id="introducción-a-github-classroom-como-estudiante">Introducción a GitHub Classroom (como estudiante)</h2>
+
+<p>Los profesores de este curso han configurado la tarea asociada usando <a href="https://docs.github.com/es/education/manage-coursework-with-github-classroom/teach-with-github-classroom">GitHub Classroom  (que abreviaremos a veces como GHC)</a>. GitHub Classroom es una aplicación web para los docentes que proporciona herramientas para la administración de cursos integradas con GitHub.</p>
+
+<h2 id="introduccion-al-lenguaje-de-marcas-markdown">Introduccion al Lenguaje de Marcas MarkDown</h2>
+
+<p>Lee</p>
+
+<ol>
+  <li><a href="https://docs.github.com/es/get-started/writing-on-github">Escribir en GitHub</a></li>
+  <li>El tutorial <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Mastering Markdown</a> para saber mas sobre esta forma de elaborar documentos</li>
+  <li>Para mas detalles consulta la guía de usuario
+<a href="https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/getting-started-with-writing-and-formatting-on-github" target="_blank">Getting started with writing and formatting on GitHub</a></li>
+</ol>
+
+<h2 id="introducción-a-la-edición-en-la-nube-de-repositorios-github">Introducción a la Edición en la Nube de Repositorios GitHub</h2>
+
+<p>Para manejar todo el proceso de edición pueden ayudarte estas <a href="editores-en-la-nube">notas sobre Edición en la Nube</a>.</p>
+
+<h2 id="referencias">Referencias</h2>
+
+<ul>
+  <li><a href="https://guides.github.com/features/mastering-markdown/#examples">Mastering (GitHub) Markdown</a></li>
+  <li><a href="editores-en-la-nube#documentacion-github-interfaz-web">Documentación GitHub sobre la Interfaz Web</a></li>
+  <li><a href="https://youtu.be/iqW_yzZkU_8">How to use VS Code to submit an assignment to Github Classroom (initially empty repository)</a> Vídeo que muestra como deben hacer los estudiantes para aceptar, trabajar y entregar una tarea asignada con GHC usando el editor VS Code</li>
+  <li><a href="https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/github-glossary">GitHub Glossary</a></li>
+</ul>
 
 
 <!--
