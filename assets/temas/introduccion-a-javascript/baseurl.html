@@ -18,7 +18,7 @@
 {"headline":"Working with different environments: url and baseurl and more","url":"/assets/temas/introduccion-a-javascript/baseurl.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=009fffb0cda077c6f7c1a1f2e5f752995b1b1fc2">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5bdec0af02c7b5ec071404d75bb29d28814545e8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -78,9 +78,9 @@
 
 <h2 id="sitebaseurl"><code class="language-plaintext highlighter-rouge">site.baseurl</code></h2>
 
-<p><code class="language-plaintext highlighter-rouge">site.baseurl</code> indicates the root folder of your Jekyll site. By default it is set to <code class="language-plaintext highlighter-rouge">""</code> (empty string). That means that your Jekyll site is at the root of <code class="language-plaintext highlighter-rouge">http://example.com</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">site.baseurl</code> indicates the root folder of your Jekyll site. By default it is set to <code class="language-plaintext highlighter-rouge">""</code> (empty string). That means that your Jekyll site is at the root of <code class="language-plaintext highlighter-rouge">https://example.com</code>.</p>
 
-<p>If your Jekyll site lives in <code class="language-plaintext highlighter-rouge">http://example.com/blog</code>, you have to set <code class="language-plaintext highlighter-rouge">site.baseurl</code> to <code class="language-plaintext highlighter-rouge">/blog</code> (<em>note the slash!</em>). This will allow assets (css, js) to load correctly.</p>
+<p>If your Jekyll site lives in <code class="language-plaintext highlighter-rouge">https://example.com/blog</code>, you have to set <code class="language-plaintext highlighter-rouge">site.baseurl</code> to <code class="language-plaintext highlighter-rouge">/blog</code> (<em>note the slash!</em>). This will allow assets (css, js) to load correctly.</p>
 
 <p>See how assets must be loaded in your <code class="language-plaintext highlighter-rouge">head</code> section:</p>
 
@@ -102,13 +102,13 @@ origin	git@github.com:ULL-ESIT-PL-1819/introduccion.git
 
 <p>and is served at GitHub at the url: <code class="language-plaintext highlighter-rouge">https://ull-esit-pl-1819.github.io/introduccion/</code>.</p>
 
-<p>You can setup the <code class="language-plaintext highlighter-rouge">baseurl</code> to <code class="language-plaintext highlighter-rouge">/introduccion</code> and test your site locally with <code class="language-plaintext highlighter-rouge">jekyll serve</code>, your site will be served at <code class="language-plaintext highlighter-rouge">http://127.0.0.1:4000/introduccion/</code></p>
+<p>You can setup the <code class="language-plaintext highlighter-rouge">baseurl</code> to <code class="language-plaintext highlighter-rouge">/introduccion</code> and test your site locally with <code class="language-plaintext highlighter-rouge">jekyll serve</code>, your site will be served at <code class="language-plaintext highlighter-rouge">https://127.0.0.1:4000/introduccion/</code></p>
 
 <h2 id="use-multiple-configuration-files">Use multiple configuration files</h2>
 
 <p>If, for one reason or another, you cannot use <code class="language-plaintext highlighter-rouge">jekyll serve</code>, you can set a configuration file for both environment and <code class="language-plaintext highlighter-rouge">jekyll build</code> depending on where you are deploying.</p>
 
-<p>Let’s say we have the local site served at <code class="language-plaintext highlighter-rouge">http://localhost</code> and the production site served at <code class="language-plaintext highlighter-rouge">https://username.github.io/myProject</code>.</p>
+<p>Let’s say we have the local site served at <code class="language-plaintext highlighter-rouge">https://localhost</code> and the production site served at <code class="language-plaintext highlighter-rouge">https://username.github.io/myProject</code>.</p>
 
 <p>We leave the <code class="language-plaintext highlighter-rouge">_config.yml</code> with</p>
 

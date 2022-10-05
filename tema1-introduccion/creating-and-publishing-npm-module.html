@@ -18,7 +18,7 @@
 {"headline":"Creating and Publishing a Node.js Module in GitHub and NPM Registries","url":"/tema1-introduccion/creating-and-publishing-npm-module.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=009fffb0cda077c6f7c1a1f2e5f752995b1b1fc2">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5bdec0af02c7b5ec071404d75bb29d28814545e8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -87,7 +87,7 @@ utility comes bundled with node.js and is installed automatically. For
 API documentation, visit <a href="https://docs.npmjs.com/">https://docs.npmjs.com/</a> or just type <code class="language-plaintext highlighter-rouge">npm</code> in
 your terminal.</p>
 
-<p>For you ruby devs, npm is akin to <a href="http://rubygems.org/">rubygems</a>.</p>
+<p>For you ruby devs, npm is akin to <a href="https://rubygems.org/">rubygems</a>.</p>
 
 <h2 id="dont-have-nodejs-installed">Don’t have node.js installed?</h2>
 
@@ -96,7 +96,7 @@ along. Try one of the following install options or just read along.</p>
 
 <ul>
   <li>Homebrew users can simply run <code class="language-plaintext highlighter-rouge">brew install node</code></li>
-  <li>Download a binary from <a href="http://nodejs.org/">http://nodejs.org/</a></li>
+  <li>Download a binary from <a href="https://nodejs.org/">https://nodejs.org/</a></li>
   <li>Use <a href="https://github.com/creationix/nvm">Node Version Manager (NVM)</a>
 – <em>recommended</em></li>
 </ul>
@@ -248,13 +248,13 @@ Logged in as crguezl on https://npm.pkg.github.com/.
 
 <p>A Node/npm module is just an ordinary JavaScript file with the addition
 that it must follow the 
-<a href="http://www.commonjs.org/specs/modules/1.0/">CommonJS module spec</a>.</p>
+<a href="https://www.commonjs.org/specs/modules/1.0/">CommonJS module spec</a>.</p>
 
 <p>Node modules run in their own scope
 so that they do not conflict with other modules.</p>
 
 <p>Node relatedly provides
-access to some <a href="http://nodejs.org/api/globals.html">globals</a> to help
+access to some <a href="https://nodejs.org/api/globals.html">globals</a> to help
 facilitate module interoperability.</p>
 
 <p>The primary two items that we are
@@ -275,7 +275,7 @@ anything that should be exposed publicly.</p>
 <p>For our demo, we’ll create an npm module consisting of a couple utility
 methods for escaping and unescaping HTML entities – commonly needed
 utils to prevent cross site scripting
-(<a href="http://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a>) 
+(<a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a>) 
 attacks when
 rendering user generated content.</p>
 
@@ -327,7 +327,7 @@ along.</p>
         <span class="dl">"</span><span class="s2">unescape</span><span class="dl">"</span><span class="p">,</span>
         <span class="dl">"</span><span class="s2">html</span><span class="dl">"</span>
       <span class="p">],</span>
-      <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Brent Ertz &lt;brent.ertz@gmail.com&gt; (http://brentertz.com/)</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Brent Ertz &lt;brent.ertz@gmail.com&gt; (https://brentertz.com/)</span><span class="dl">"</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">license</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">BSD-2-Clause</span><span class="dl">"</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">bugs</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/brentertz/scapegoat/issues</span><span class="dl">"</span>
@@ -391,7 +391,7 @@ modules, we did not need to <code class="language-plaintext highlighter-rouge">r
 <p>Next, we’ll surely want to write some tests. <em>Perhaps it would have been
 preferable to write them first.</em> Here we are going to use the
 <a href="https://mochajs.org/">Mocha</a> and
-<a href="http://chaijs.com/">Chai</a> frameworks. There are others you can use, like <a href="/assets/temas/introduccion-a-javascript/jest">Jest</a>.
+<a href="https://chaijs.com/">Chai</a> frameworks. There are others you can use, like <a href="/assets/temas/introduccion-a-javascript/jest">Jest</a>.
 Mocha and Chai can be installed and persisted to the <code class="language-plaintext highlighter-rouge">package.json</code> file
 with the following commands. <em>Note that they are added to the
 ‘devDependencies’ section, as they are only required during development
@@ -415,7 +415,7 @@ root, with the following contents:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node_modules
 </code></pre></div></div>
 
-<p>To build a <code class="language-plaintext highlighter-rouge">.gitignore</code> see also <a href="http://gitignore.io/">http://gitignore.io/</a>.</p>
+<p>To build a <code class="language-plaintext highlighter-rouge">.gitignore</code> see also <a href="https://gitignore.io/">https://gitignore.io/</a>.</p>
 
 <p>The <code class="language-plaintext highlighter-rouge">npm install</code> command also created <code class="language-plaintext highlighter-rouge">package-lock.json</code> containing a detailed description of all the dependences. We add this file to the control version:</p>
 
@@ -873,7 +873,7 @@ Options:
 
 <p>As you may have noticed in the readme above, I referenced the version
 0.1.0 in the release history. We’ll need to update that in our
-<code class="language-plaintext highlighter-rouge">package.json</code>. If you are not familiar with <a href="http://semver.org/">semantic versioning aka
+<code class="language-plaintext highlighter-rouge">package.json</code>. If you are not familiar with <a href="https://semver.org/">semantic versioning aka
 SemVer</a>, please add it to your reading list.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"version": "0.1.0",
@@ -885,7 +885,7 @@ SemVer</a>, please add it to your reading list.</p>
 project. I’ll choose an MIT license, add a LICENSE-MIT file to the
 project root, and update the <code class="language-plaintext highlighter-rouge">package.json</code> respectively. Note that you
 can obtain the actual content for your chosen license type at
-<a href="http://opensource.org/licenses/alphabetical">http://opensource.org/licenses/alphabetical</a>. The updated section of
+<a href="https://opensource.org/licenses/alphabetical">https://opensource.org/licenses/alphabetical</a>. The updated section of
 the package.json now looks like the following.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"licenses": [
@@ -1267,7 +1267,7 @@ mapping for your project using</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="dl">"</span><span class="s2">private</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">publishConfig</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="dl">"</span><span class="s2">registry</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://my-internal-registry.local</span><span class="dl">"</span>
+      <span class="dl">"</span><span class="s2">registry</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://my-internal-registry.local</span><span class="dl">"</span>
     <span class="p">}</span> 
 </code></pre></div></div>
 
@@ -1275,7 +1275,7 @@ mapping for your project using</p>
 
 <h4 id="at-npm">At npm</h4>
 
-<p>If you publish it on the npm website, go find your module on the <a href="http://npmjs.org">http://npmjs.org</a> website and share it with your friends.</p>
+<p>If you publish it on the npm website, go find your module on the <a href="https://npmjs.org">https://npmjs.org</a> website and share it with your friends.</p>
 
 <h4 id="at-github">At GitHub</h4>
 

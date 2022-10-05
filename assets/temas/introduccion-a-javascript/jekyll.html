@@ -18,7 +18,7 @@
 {"headline":"Jekyll","url":"/assets/temas/introduccion-a-javascript/jekyll.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=009fffb0cda077c6f7c1a1f2e5f752995b1b1fc2">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5bdec0af02c7b5ec071404d75bb29d28814545e8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -310,7 +310,7 @@ Bundle updated!
 <h2 id="blog-a-collection-of-music-albums">Blog: A Collection of Music Albums</h2>
 
 <ul>
-  <li><a href="https://dev.to/adrienjoly/how-to-maintain-a-collection-of-music-albums-online-using-jekyll-and-github-pages-3hd6">How to maintain a collection of music albums online, using Jekyll and Github Pages</a>. See it at <a href="http://adrienjoly.com/album-shelf/">http://adrienjoly.com/album-shelf/</a></li>
+  <li><a href="https://dev.to/adrienjoly/how-to-maintain-a-collection-of-music-albums-online-using-jekyll-and-github-pages-3hd6">How to maintain a collection of music albums online, using Jekyll and Github Pages</a>. See it at <a href="https://adrienjoly.com/album-shelf/">https:///adrienjoly.com/album-shelf/</a></li>
 </ul>
 
 <h2 id="react-and-jekyll">React and Jekyll</h2>
@@ -360,9 +360,9 @@ Bundle updated!
 
 <h4 id="sitebaseurl"><code class="language-plaintext highlighter-rouge">site.baseurl</code></h4>
 
-<p>This variable indicates the root folder of your Jekyll site. By default it is set to <code class="language-plaintext highlighter-rouge">""</code> (empty string). That means that your Jekyll site is at the root of <code class="language-plaintext highlighter-rouge">http://example.com</code>.</p>
+<p>This variable indicates the root folder of your Jekyll site. By default it is set to <code class="language-plaintext highlighter-rouge">""</code> (empty string). That means that your Jekyll site is at the root of <code class="language-plaintext highlighter-rouge">https://example.com</code>.</p>
 
-<p>If your Jekyll site lives in <code class="language-plaintext highlighter-rouge">http://example.com/blog</code>, you have to set <code class="language-plaintext highlighter-rouge">site.baseurl</code> to <code class="language-plaintext highlighter-rouge">/blog</code> (<strong>note the slash</strong>). This will allow assets (css, js) to load correctly.</p>
+<p>If your Jekyll site lives in <code class="language-plaintext highlighter-rouge">https://example.com/blog</code>, you have to set <code class="language-plaintext highlighter-rouge">site.baseurl</code> to <code class="language-plaintext highlighter-rouge">/blog</code> (<strong>note the slash</strong>). This will allow assets (css, js) to load correctly.</p>
 
 <p>See how assets are loaded in you head :</p>
 
@@ -384,13 +384,13 @@ Bundle updated!
 
 <p>Let’s imagine that your site lives in a github repository and is served at <code class="language-plaintext highlighter-rouge">https://username.github.io/myProject</code>.</p>
 
-<p>You can setup the <code class="language-plaintext highlighter-rouge">baseurl</code> to <code class="language-plaintext highlighter-rouge">/myProject</code>. and test your site locally with <code class="language-plaintext highlighter-rouge">jekyll serve</code>, your site will be served at <code class="language-plaintext highlighter-rouge">http://127.0.0.1:4000/myProject/</code></p>
+<p>You can setup the <code class="language-plaintext highlighter-rouge">baseurl</code> to <code class="language-plaintext highlighter-rouge">/myProject</code>. and test your site locally with <code class="language-plaintext highlighter-rouge">jekyll serve</code>, your site will be served at <code class="language-plaintext highlighter-rouge">https://127.0.0.1:4000/myProject/</code></p>
 
 <h4 id="use-multiple-configuration-files">Use multiple configuration files</h4>
 
 <p>If, for one reason or another, you cannot use <code class="language-plaintext highlighter-rouge">jekyll serve</code>, you can set a configuration file for both environment and <code class="language-plaintext highlighter-rouge">jekyll build</code> depending on where you are deploying.</p>
 
-<p>Let’s say we have the local site served at <code class="language-plaintext highlighter-rouge">http://localhost</code> and the production site served at <code class="language-plaintext highlighter-rouge">https://username.github.io/myProject</code>.</p>
+<p>Let’s say we have the local site served at <code class="language-plaintext highlighter-rouge">https://localhost</code> and the production site served at <code class="language-plaintext highlighter-rouge">https://username.github.io/myProject</code>.</p>
 
 <p>We leave the <code class="language-plaintext highlighter-rouge">_config.yml</code> with <code class="language-plaintext highlighter-rouge">url: https://username.github.io</code> and <code class="language-plaintext highlighter-rouge">baseurl: /myProject</code></p>
 
@@ -443,7 +443,7 @@ is really consistent:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usuario@ubuntu:~/src/ull-mii-sytws-1920.github.io/_site$ static-server -p 8080
 options.index is now deprecated please use options.templates.index instead.
 * Static server successfully started.
-* Serving files at: http://localhost:8080
+* Serving files at: https://localhost:8080
 * Press Ctrl+C to shutdown.
 &lt;-- [GET] /2019/09/30/leccion.html
 --&gt; 200 OK /2019/09/30/leccion.html 5.63 KiB (15.964ms)
@@ -521,7 +521,7 @@ Here is an example of use:</p>
           <span class="na">tokens</span><span class="pi">:</span> <span class="pi">|</span>
             <span class="s">{"https://github.com": "${{ secrets.GITHUB_TOKEN }}"}</span>
           <span class="na">url_ignore</span><span class="pi">:</span> <span class="pi">|</span>
-            <span class="s">http://www.example.com/</span>
+            <span class="s">https://www.example.com/</span>
             <span class="s">https://en.wikipedia.org/wiki/Main_Page</span>
           <span class="na">url_ignore_re</span><span class="pi">:</span> <span class="pi">|</span>
             <span class="s">^https://twitter.com/</span>
@@ -544,7 +544,7 @@ Here is an example of use:</p>
 <p>See the tutorial:</p>
 
 <ul>
-  <li><a href="http://sgeos.github.io/github/jekyll/2016/08/21/adding_mathjax_to_a_jekyll_github_pages_blog.html">Adding MathJax to a GitHub Pages Jekyll Blog</a></li>
+  <li><a href="https://sgeos.github.io/github/jekyll/2016/08/21/adding_mathjax_to_a_jekyll_github_pages_blog.html">Adding MathJax to a GitHub Pages Jekyll Blog</a></li>
 </ul>
 
 <p>Summarizing, the simplest way is to add a line like:</p>
@@ -570,7 +570,7 @@ Here is an example of use:</p>
 So you just want to test them while writing the blog, but you don’t want publish them to your live blog immediately. There are  different ways to achieve this in jekyll. This article discuss several workflows:</p>
 
 <ul>
-  <li><a href="http://www.fizerkhan.com/blog/posts/Working-with-upcoming-posts-in-Jekyll.html">Working with upcoming posts in Jekyll</a></li>
+  <li><a href="https://www.fizerkhan.com/blog/posts/Working-with-upcoming-posts-in-Jekyll.html">Working with upcoming posts in Jekyll</a></li>
 </ul>
 
 <h2 id="cursos-en-youtube-de-jekyll-and-netlifycms-por-thomas-bradley">Cursos en YouTube de Jekyll and NetlifyCMS por Thomas Bradley</h2>

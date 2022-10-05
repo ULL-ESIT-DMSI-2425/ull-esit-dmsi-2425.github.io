@@ -18,7 +18,7 @@
 {"headline":"Gulp: a tool to Automate and Enhance your Workflow","url":"/assets/temas/introduccion-a-javascript/build-tools.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=009fffb0cda077c6f7c1a1f2e5f752995b1b1fc2">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5bdec0af02c7b5ec071404d75bb29d28814545e8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -128,7 +128,7 @@
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">cget</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">{</span><span class="nx">stdout</span><span class="p">,</span> <span class="nx">stderr</span><span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">pexec</span><span class="p">(</span><span class="dl">"</span><span class="s2">curl -v http://localhost:8000/package.json</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">stdout</span><span class="p">,</span> <span class="nx">stderr</span><span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">pexec</span><span class="p">(</span><span class="dl">"</span><span class="s2">curl -v https://localhost:8000/package.json</span><span class="dl">"</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">stdout:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">stdout</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">stderr:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">stderr</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
@@ -221,8 +221,8 @@ stderr:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  
 
   <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">lint</span><span class="dl">"</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">jshint *.js **/*.js</span><span class="dl">"</span><span class="p">));</span>
 
-  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">get</span><span class="dl">"</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">curl -v http://localhost:8000/file.txt</span><span class="dl">"</span><span class="p">));</span>
-  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">put</span><span class="dl">"</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">curl -v -X PUT -d 'Bye world!' http://localhost:8000/file.txt</span><span class="dl">"</span><span class="p">));</span>
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">get</span><span class="dl">"</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">curl -v https://localhost:8000/file.txt</span><span class="dl">"</span><span class="p">));</span>
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">put</span><span class="dl">"</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">"</span><span class="s2">curl -v -X PUT -d 'Bye world!' https://localhost:8000/file.txt</span><span class="dl">"</span><span class="p">));</span>
 </code></pre></div></div>
 
 

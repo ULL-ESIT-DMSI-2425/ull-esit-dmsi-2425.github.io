@@ -18,7 +18,7 @@
 {"headline":"Cross-Origin Resource Sharing CORS","url":"/assets/temas/introduccion-a-javascript/cors.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=009fffb0cda077c6f7c1a1f2e5f752995b1b1fc2">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5bdec0af02c7b5ec071404d75bb29d28814545e8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -82,8 +82,8 @@ to access a resource with a different domain (a <em>cross-domain request</em>).<
 
 <p>In a similar way,</p>
 <ul>
-  <li><em>http://localhost:</em><strong><em>9000</em></strong> and</li>
-  <li><em>http://localhost:</em><strong><em>8080</em></strong></li>
+  <li><em>https://localhost:</em><strong><em>9000</em></strong> and</li>
+  <li><em>https://localhost:</em><strong><em>8080</em></strong></li>
 </ul>
 
 <p>are also different origins. The <strong>path</strong> or <strong>query</strong> parameters  are ignored when considering the origin.</p>
@@ -211,7 +211,7 @@ What you can do on the client side (and probably what you are thinking of) is se
 <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">()</span>
 
 <span class="kd">var</span> <span class="nx">corsOptions</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">origin</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://example.com</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">origin</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://example.com</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">optionsSuccessStatus</span><span class="p">:</span> <span class="mi">200</span> <span class="c1">// some legacy browsers (IE11, various SmartTVs) choke on 204</span>
 <span class="p">}</span>
 
@@ -228,10 +228,10 @@ What you can do on the client side (and probably what you are thinking of) is se
 Possible values:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Boolean</code> - set <code class="language-plaintext highlighter-rouge">origin</code> to <code class="language-plaintext highlighter-rouge">true</code> to reflect the <a href="http://tools.ietf.org/html/draft-abarth-origin-09">request origin</a>, as defined by <code class="language-plaintext highlighter-rouge">req.header('Origin')</code>, or set it to <code class="language-plaintext highlighter-rouge">false</code> to disable CORS.</li>
-  <li><code class="language-plaintext highlighter-rouge">String</code> - set <code class="language-plaintext highlighter-rouge">origin</code> to a specific origin. For example if you set it to <code class="language-plaintext highlighter-rouge">"http://example.com"</code> only requests from “http://example.com” will be allowed.</li>
+  <li><code class="language-plaintext highlighter-rouge">Boolean</code> - set <code class="language-plaintext highlighter-rouge">origin</code> to <code class="language-plaintext highlighter-rouge">true</code> to reflect the <a href="https://tools.ietf.org/html/draft-abarth-origin-09">request origin</a>, as defined by <code class="language-plaintext highlighter-rouge">req.header('Origin')</code>, or set it to <code class="language-plaintext highlighter-rouge">false</code> to disable CORS.</li>
+  <li><code class="language-plaintext highlighter-rouge">String</code> - set <code class="language-plaintext highlighter-rouge">origin</code> to a specific origin. For example if you set it to <code class="language-plaintext highlighter-rouge">"https://example.com"</code> only requests from “https://example.com” will be allowed.</li>
   <li><code class="language-plaintext highlighter-rouge">RegExp</code> - set <code class="language-plaintext highlighter-rouge">origin</code> to a regular expression pattern which will be used to test the request origin. If it’s a match, the request origin will be reflected. For example the pattern <code class="language-plaintext highlighter-rouge">/example\.com$/</code> will reflect any request that is coming from an origin ending with “example.com”.</li>
-  <li><code class="language-plaintext highlighter-rouge">Array</code> - set <code class="language-plaintext highlighter-rouge">origin</code> to an array of valid origins. Each origin can be a <code class="language-plaintext highlighter-rouge">String</code> or a <code class="language-plaintext highlighter-rouge">RegExp</code>. For example <code class="language-plaintext highlighter-rouge">["http://example1.com", /\.example2\.com$/]</code> will accept any request from “http://example1.com” or from a subdomain of “example2.com”.</li>
+  <li><code class="language-plaintext highlighter-rouge">Array</code> - set <code class="language-plaintext highlighter-rouge">origin</code> to an array of valid origins. Each origin can be a <code class="language-plaintext highlighter-rouge">String</code> or a <code class="language-plaintext highlighter-rouge">RegExp</code>. For example <code class="language-plaintext highlighter-rouge">["https://example1.com", /\.example2\.com$/]</code> will accept any request from “https://example1.com” or from a subdomain of “example2.com”.</li>
   <li><code class="language-plaintext highlighter-rouge">Function</code> - set <code class="language-plaintext highlighter-rouge">origin</code> to a function implementing some custom logic. The function takes the request origin as the first parameter and a callback (which expects the signature <code class="language-plaintext highlighter-rouge">err [object], allow [bool]</code>) as the second.</li>
 </ul>
 
@@ -244,7 +244,7 @@ Possible values:</p>
 <p>Si en <code class="language-plaintext highlighter-rouge">Client-js</code> cambiamos el <code class="language-plaintext highlighter-rouge">fetch</code> para solicitar al server en 3001 que es donde escucha nuestro servidor:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">search</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">`http://localhost:3001/api/food?q=</span><span class="p">${</span><span class="nx">query</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">`https://localhost:3001/api/food?q=</span><span class="p">${</span><span class="nx">query</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">accept</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span>
   <span class="p">})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">checkStatus</span><span class="p">)</span>
@@ -256,7 +256,7 @@ Possible values:</p>
 <p>Obtenemos una respuesta similar a esta:</p>
 
 <blockquote>
-  <p>Access to fetch at <code class="language-plaintext highlighter-rouge">http://localhost:3001/api/food?q=r</code> from origin <code class="language-plaintext highlighter-rouge">http://localhost:3000</code> has been blocked <strong>by CORS policy</strong>:</p>
+  <p>Access to fetch at <code class="language-plaintext highlighter-rouge">https://localhost:3001/api/food?q=r</code> from origin <code class="language-plaintext highlighter-rouge">https://localhost:3000</code> has been blocked <strong>by CORS policy</strong>:</p>
 </blockquote>
 
 <blockquote>
@@ -301,7 +301,7 @@ Possible values:</p>
 <span class="p">];</span>
 
 <span class="kd">const</span> <span class="nx">corsOptions</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">origin</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://localhost:3000</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">origin</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://localhost:3000</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">optionsSuccessStatus</span><span class="p">:</span> <span class="mi">200</span> <span class="c1">// some legacy browsers (IE11, various SmartTVs) choke on 204</span>
 <span class="p">}</span>
 
@@ -348,7 +348,7 @@ Possible values:</p>
 <span class="p">});</span>
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">port</span><span class="dl">"</span><span class="p">),</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Find the server at: http://localhost:</span><span class="p">${</span><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">port</span><span class="dl">"</span><span class="p">)}</span><span class="s2">/`</span><span class="p">);</span> <span class="c1">// eslint-disable-line no-console</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Find the server at: https://localhost:</span><span class="p">${</span><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">port</span><span class="dl">"</span><span class="p">)}</span><span class="s2">/`</span><span class="p">);</span> <span class="c1">// eslint-disable-line no-console</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
