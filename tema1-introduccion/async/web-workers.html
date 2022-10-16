@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Web Worker Examples | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Web Worker Examples" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Web Worker Examples" />
+<script type="application/ld+json">
+{"headline":"Web Worker Examples","url":"/tema1-introduccion/async/web-workers.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=8e9c8f02552406369306f9af0a78bf45ab8449e3">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-2223" target="_blank">org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/108465062-ull-esit-dmsi-2223" target="_blank">classroom</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2223.ull.es/course/view.php?id=2223090033" target="_blank">campus</a></span>
+                <span class="credits left"> &nbsp; Teams <a href="/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+            </div>
+
+            <h1 id="web-worker-examples">Web Worker Examples</h1>
+
+<h2 id="simple-web-worker">Simple web-worker</h2>
+
+<p>Puede encontrar los códigos de ejemplo en este repo:</p>
+
+<ul>
+  <li><a href="https://github.com/SYTW/simple-web-worker">Repo de ejemplo simple-web-worker</a>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">~/local/src/uai/uai2015/simple-web-worker</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Ejemplo de uso de Web Workers.</p>
+
+<p><a href="http://sytw.github.io/simple-web-worker/">Demo en GitHub Pages</a> en http://sytw.github.io/simple-web-worker/</p>
+
+<h2 id="ejemplo-fibonacci">Ejemplo: Fibonacci</h2>
+
+<ul>
+  <li><a href="https://github.com/ULL-MII-SYTWS-1920/fibonacci-worker">Repo de ejemplo fibonacci-worker</a>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">~/local/src/uai/uai2015</code></li>
+      <li><code class="language-plaintext highlighter-rouge">~/campus-virtual/1920/sytws1920/apuntes/tema1-introduccion/practicas/p2-t1-c3-file-system/event-loop/fibonacci-worker</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Can you create a web worker inside a web worker? Answer: <strong>yes!</strong></p>
+
+<h2 id="tutorial-by-chinenye-onuegbu-code-examples-for-jsday-canarias-2019">Tutorial by Chinenye Onuegbu: Code examples for JSDay Canarias 2019</h2>
+
+<ul>
+  <li>Fork en SYTWS-1920 del repo de la charla impartida por <a href="https://github.com/ULL-MII-SYTWS-1920/jsday-canarias-2019-examples-multithreading">Chinenye Onuegbu: Code examples for JSDay Canarias 2019</a>
+    <ul>
+      <li><a href="https://youtu.be/YYfhuudsfFM">Video</a>. Una presentación extraordinaria. No te la pierdas.</li>
+    </ul>
+  </li>
+  <li>En la carpeta <a href="https://github.com/ULL-MII-SYTWS-1920/jsday-canarias-2019-examples-multithreading/tree/master/talk/example-1">example-1</a> encontramos un ejemplo minimal de web worker</li>
+  <li>En este repo podemos encontrar ejemplos de uso de web-workers en Node.js (denominados worker threads). Véase la carpeta <a href="https://github.com/ULL-MII-SYTWS-1920/jsday-canarias-2019-examples-multithreading/tree/master/nodejs-threads">nodejs-threads</a></li>
+</ul>
+
+<h2 id="paralleljs">Parallel.js</h2>
+
+<ul>
+  <li><a href="https://github.com/ULL-MII-SYTWS-1920/parallel-js-examples">parallel-js-examples repo</a> Parallel.js is a Node.js lib for parallel programming</li>
+  <li><a href="https://github.com/ULL-MII-SYTWS-1920/parallel-js-examples">parallel-js-examples</a></li>
+</ul>
+
+<h2 id="referencias">Referencias</h2>
+
+<ul>
+  <li>
+    <p>Tutorial: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using Web Workers en Mozilla Developer Network</a></p>
+  </li>
+  <li>
+    <p>See <a href="https://github.com/ULL-MII-SYTWS-1920/uai2015">meta repo ULL-MII-SYTWS-1920/uai2015</a></p>
+
+    <p>In my machine is allocated in:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/local/src/uai/uai2015/
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><a href="http://proquest.safaribooksonline.com/book/programming/javascript/9781449322120/firstchapter">Book Web Workers: Safari O’Reilly. Usa Acceso ULL</a></p>
+  </li>
+</ul>
+
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/asyncmap">Asyncmap</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=asyncmap&type=all&language=&sort=" target="_blank">asyncmap</a></li>
+      <li><a href="/tema1-introduccion/practicas/asyncmap#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2022/10/17/leccion.html">Clase del Lunes 2022/10/17</a></li>
+  
+<li> <a href="/2022/10/10/leccion.html">Clase del Lunes 2022/10/10</a></li>
+  
+<li> <a href="/2022/10/05/leccion.html">Clase del Miércoles 2022/10/05</a></li>
+  
+<li> <a href="/2022/10/03/leccion.html">Clase del Lunes 2022/10/03</a></li>
+  
+<li> <a href="/2022/09/28/leccion.html">Clase del Miércoles 2022/09/28</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

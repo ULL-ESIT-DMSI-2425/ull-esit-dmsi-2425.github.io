@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>The JS Event Loop | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="The JS Event Loop" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The JS Event Loop" />
+<script type="application/ld+json">
+{"headline":"The JS Event Loop","url":"/tema1-introduccion/async/event-loop/","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=8e9c8f02552406369306f9af0a78bf45ab8449e3">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-2223" target="_blank">org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/108465062-ull-esit-dmsi-2223" target="_blank">classroom</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2223.ull.es/course/view.php?id=2223090033" target="_blank">campus</a></span>
+                <span class="credits left"> &nbsp; Teams <a href="/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+            </div>
+
+            <h1 id="the-js-event-loop">The JS Event Loop</h1>
+
+<h2 id="introducción">Introducción</h2>
+
+<p><img src="/assets/images/how-the-event-loop-works.png" alt="" /></p>
+
+<p><i>All JavaScript environments use an event loop</i></p>
+
+<p>As long as there’s something left to do, JSs event loop will keep spinning. Whenever an event occurs, JS invokes any <em>callbacks</em> (event handlers) that are listening for that event.</p>
+
+<p>The general algorithm of the JS Engine is like this:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">executeSequentially</span><span class="p">(</span><span class="nx">mainTask</span><span class="p">);</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">thereArePendingTasks</span><span class="p">())</span> <span class="k">do</span>
+  <span class="kd">let</span> <span class="nx">oldestFinishedTask</span> <span class="o">=</span> <span class="nx">waitUntilSomeTaskIsReady</span><span class="p">();</span>
+  <span class="nx">executeSequentially</span><span class="p">(</span><span class="nx">oldestFinishedTask</span><span class="p">);</span>
+<span class="nx">end</span> <span class="k">do</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/event-loop.png" alt="" /></p>
+
+<p><i>There’s an endless loop, when JavaScript engine waits for tasks, executes them and then sleeps waiting for more tasks</i></p>
+
+<p>When JS runs in the browser:</p>
+
+<ul>
+  <li>Rendering never happens while the engine executes a task. Doesn’t matter if the task takes a long time. Changes to DOM are painted only after the task is complete.</li>
+  <li>
+    <p>If a task takes too long, the browser can’t do other tasks, process user events, so after a time it raises an alert like <strong>Page Unresponsive</strong> suggesting to kill the task with the whole page. That happens when there are a lot of complex calculations or a programming error leading to infinite loop.</p>
+  </li>
+  <li>Your JavaScript code runs single threaded. There is just one thing happening at a time.
+    <ul>
+      <li>Pay attention to how you write your code and avoid anything that could block the thread, like synchronous network calls or long loops.</li>
+      <li>In most browsers there is an event loop for every browser tab, to avoid a web page with heavy processing to block your entire browser.</li>
+      <li>Web Workers run in their own event loop as well</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Quote from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Runtime_concepts">MDN</a>:</p>
+
+<blockquote>
+  <p>Each message is processed completely before any other message is processed […]
+A downside of this model is that if a message takes too long to complete, the web application is unable to process user interactions like click or scroll. The browser mitigates this with the “<strong>a script is taking too long to run</strong>” dialog. A good practice to follow is to make message processing short and if possible cut down one message into several messages.</p>
+</blockquote>
+
+<p>MDN utiliza la terminología <em>cola de mensajes</em> para la <em>cola de callbacks</em>:</p>
+
+<blockquote>
+  <p>A JavaScript runtime uses a message queue, which is a list of messages to be processed. 
+Each message has an associated function which gets called in order to handle the message.</p>
+</blockquote>
+
+<h2 id="unas-preguntas">Unas Preguntas</h2>
+
+<h3 id="la-pila-de-llamadas">La pila de LLamadas</h3>
+
+<p><code class="language-plaintext highlighter-rouge">console.trace</code> muestra la <a href="https://developer.mozilla.org/en-US/docs/Web/API/console#Stack_traces">stack trace</a> en la consola. la stack trace es el camino de las llamadas hasta el punto: <code class="language-plaintext highlighter-rouge">{ nombre-de-rutina, fichero-del-programa, nº de línea, nº de columna}</code></p>
+
+<p>¿Cual es la salida de las llamadas a <code class="language-plaintext highlighter-rouge">console.trace</code>?</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="mi">1</span>	<span class="kd">function</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+      <span class="mi">2</span>	  <span class="c1">// console.trace imprime una traza de la pila</span>
+      <span class="mi">3</span>	  <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">(</span><span class="dl">"</span><span class="s2">-----------At multiply-----------</span><span class="dl">"</span><span class="p">);</span>
+      <span class="mi">4</span>	  <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="nx">y</span><span class="p">;</span>
+      <span class="mi">5</span>	<span class="p">}</span>
+      <span class="mi">6</span>
+      <span class="mi">7</span>	<span class="kd">function</span> <span class="nx">squared</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+      <span class="mi">8</span>	  <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">(</span><span class="dl">"</span><span class="s2">-----------At squared-----------</span><span class="dl">"</span><span class="p">);</span>
+      <span class="mi">9</span>	  <span class="k">return</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span>
+      <span class="mi">10</span>	<span class="p">}</span>
+      <span class="mi">11</span>
+      <span class="mi">12</span>	<span class="kd">function</span> <span class="nx">printSquare</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+      <span class="mi">13</span>	   <span class="k">return</span> <span class="nx">squared</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+      <span class="mi">14</span>	<span class="p">}</span>
+      <span class="mi">15</span>
+      <span class="mi">16</span>	<span class="kd">let</span> <span class="nx">numberSquared</span> <span class="o">=</span> <span class="nx">printSquare</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+      <span class="mi">17</span>	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numberSquared</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><a href="callstack-js-execution">Output from execution</a></p>
+
+<h3 id="orden-de-ejecución">Orden de Ejecución</h3>
+
+<p>¿En que orden ocurren las salidas?</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">this is the start</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="nx">cb</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Callback 1: this is a msg from call back</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">});</span> <span class="c1">// has a default time value of 0</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">this is just a message</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="nx">cb1</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Callback 2: this is a msg from call back</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">this is the end</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="p">})();</span>
+</code></pre></div></div>
+
+<ul>
+  <li>El método <code class="language-plaintext highlighter-rouge">setTimeout(funcion, retraso)</code> establece un temporizador que ejecuta <code class="language-plaintext highlighter-rouge">funcion</code> después de que transcurre un tiempo <code class="language-plaintext highlighter-rouge">retraso</code> en milisegundos.</li>
+  <li>Si se omite este parámetro se usa el valor 0.</li>
+  <li>El valor retornado identifica el temporizador creado con la llamada a <code class="language-plaintext highlighter-rouge">setTimeout()</code>; este valor puede pasarse a <code class="language-plaintext highlighter-rouge">clearTimeout()</code> para cancelar el temporizador.</li>
+</ul>
+
+<h3 id="hoist-cual-es-la-salida">Hoist: Cual es la salida?</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hoist</span><span class="p">);</span> 
+
+  <span class="kd">var</span> <span class="nx">hoist</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The variable has been hoisted.</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>¿Cual sería la salida de esta variante?</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hoist</span><span class="p">);</span>
+
+  <span class="nx">hoist</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The variable has been hoisted.</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<p>Para responder a esta pregunta es conveniente tener claro el concepto de <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting">Hoisting</a> en JS. Hoisting is a JavaScript mechanism where <strong>variables, function and class declarations</strong> are moved to the top of their scope before code execution. Hoisting  only moves the declaration. The assignments are left in place.</p>
+
+<p>The scope of a variable declared with the keyword <code class="language-plaintext highlighter-rouge">var</code> is its current execution context. This is either the enclosing <code class="language-plaintext highlighter-rouge">function</code> or for variables declared outside any function, <code class="language-plaintext highlighter-rouge">global</code>.</p>
+
+<p>Véase <a href="https://www.digitalocean.com/community/tutorials/understanding-hoisting-in-javascript">Understanding Hoisting in JavaScript by Mabishi Wakio</a></p>
+
+<h3 id="hoisting-y-asíncronía-cual-es-la-salida">Hoisting y Asíncronía ¿Cual es la salida?</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;=</span><span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">setTimeout</span><span class="p">(()</span><span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>(<code class="language-plaintext highlighter-rouge">tema1-introduccion/practicas/p2-t1-c3-file-system/event-loop/var.js</code>)</p>
+
+<h3 id="js-is-single-threaded">JS is single threaded</h3>
+
+<p>¿Cual es la salida?</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getSeconds</span><span class="p">();</span>
+
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Ran after </span><span class="dl">"</span> <span class="o">+</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getSeconds</span><span class="p">()</span> <span class="o">-</span> <span class="nx">s</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> seconds</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
+
+  <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getSeconds</span><span class="p">()</span> <span class="o">-</span> <span class="nx">s</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Good, looped for 2 seconds</span><span class="dl">"</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Si no proporciona argumentos, el constructor <code class="language-plaintext highlighter-rouge">new Date()</code>  crea un objeto <code class="language-plaintext highlighter-rouge">Date</code> con la hora y fecha de hoy según la hora local.</li>
+  <li>El método <code class="language-plaintext highlighter-rouge">getSeconds()</code> devuelve un número entre 0 y 59 representando los segundos en la fecha especificada de acuerdo a la hora local.</li>
+</ul>
+
+<h2 id="repasando-las-preguntas-a-la-luz-del-bucle-de-eventos">Repasando las Preguntas a la luz del Bucle de Eventos</h2>
+
+<h3 id="ejemplo-la-pila-de-llamadas">Ejemplo: La Pila de Llamadas</h3>
+
+<p>Este ejemplo es tomado del vídeo:</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ">Philip Roberts: ¿Que diablos es el “event loop” (bucle de eventos) de todos modos? (JSConf EU)</a></li>
+</ul>
+
+<p>se le puede proporcionar a <code class="language-plaintext highlighter-rouge">loupe</code>:</p>
+
+<ul>
+  <li><a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">loupe</a> a tool in the cloud to see the event loop working</li>
+</ul>
+
+<p>Está en este directorio en mi laptop:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">~/campus-virtual/1920/sytws1920/ull-mii-sytws-1920.github.io/tema1-introduccion/practicas/p2-t1-c3-file-system/event-loop/callstack.js</code></li>
+</ul>
+
+<p>Este es el código:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// console.trace imprime una traza de la pila</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">(</span><span class="dl">"</span><span class="s2">-----------At multiply-----------</span><span class="dl">"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">squared</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">(</span><span class="dl">"</span><span class="s2">-----------At squared-----------</span><span class="dl">"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">printSquare</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">squared</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">numberSquared</span> <span class="o">=</span> <span class="nx">printSquare</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numberSquared</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><a href="/async/callstack-js-execution">Output from execution</a></p>
+
+<h3 id="orden-de-ejecución-1">Orden de Ejecución</h3>
+
+<p>Directorio en mi máquina:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tema1-introduccion/practicas/p2-t1-c3-file-system/event-loop/order.js 
+</code></pre></div></div>
+
+<p>Ejemplo sacado del Tutorial <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop">Concurrency model and Event Loop</a> at https://developer.mozilla.org</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">this is the start</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="nx">cb</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Callback 1: this is a msg from call back</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span> <span class="c1">// has a default time value of 0</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">this is just a message</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="nx">cb1</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Callback 2: this is a msg from call back</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">this is the end</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<h3 id="ejemplo-js-is-single-threaded">Ejemplo: JS <em>is single threaded</em></h3>
+
+<p>En mi máquina:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tema1-introduccion/practicas/p2-t1-c3-file-system/event-loop/settimeout-does-not-run-inmediately.js 
+</code></pre></div></div>
+
+<p>Tomado del tutorial:</p>
+
+<ul>
+  <li>Tutorial <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop">Concurrency model and Event Loop</a> at https://developer.mozilla.org</li>
+</ul>
+
+<p>Primero, un ejemplo, para entender el funcionamiento de <code class="language-plaintext highlighter-rouge">Date</code>y <code class="language-plaintext highlighter-rouge">getSeconds</code>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="o">~</span><span class="sr">/.../</span><span class="nx">p2</span><span class="o">-</span><span class="nx">t1</span><span class="o">-</span><span class="nx">c3</span><span class="o">-</span><span class="nx">file</span><span class="o">-</span><span class="nx">system</span><span class="o">/</span><span class="nx">event</span><span class="o">-</span><span class="nx">loop</span><span class="p">(</span><span class="nx">master</span><span class="p">)]</span><span class="nx">$</span> <span class="nx">node</span>
+<span class="nx">Welcome</span> <span class="nx">to</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">js</span> <span class="nx">v12</span><span class="p">.</span><span class="mf">10.0</span><span class="p">.</span>
+<span class="nx">Type</span> <span class="dl">"</span><span class="s2">.help</span><span class="dl">"</span> <span class="k">for</span> <span class="nx">more</span> <span class="nx">information</span><span class="p">.</span>
+<span class="o">&gt;</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">16</span><span class="nx">T10</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mf">51.682</span><span class="nx">Z</span>
+<span class="o">&gt;</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span>
+<span class="mi">51</span>
+<span class="o">&gt;</span> <span class="nx">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">16</span><span class="nx">T10</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mf">57.992</span><span class="nx">Z</span>
+<span class="o">&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span><span class="o">-</span><span class="nx">d</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span>
+<span class="mi">6</span>
+</code></pre></div></div>
+
+<p>¿Cual es la salida?</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getSeconds</span><span class="p">();</span>
+
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Ran after </span><span class="dl">"</span> <span class="o">+</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getSeconds</span><span class="p">()</span> <span class="o">-</span> <span class="nx">s</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> seconds</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
+
+<span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getSeconds</span><span class="p">()</span> <span class="o">-</span> <span class="nx">s</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Good, looped for 2 seconds</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="race-condition">Race Condition</h2>
+
+<p>See the examples:</p>
+
+<ul>
+  <li><a href="/event-loop/exercises/race-condition/instructions.html#loading-an-image-with-some-delay">A Simple Example: Loading an Image with Some Delay </a></li>
+  <li><a href="/event-loop/exercises/race-condition/instructions.html#manually-interleaving-promises">Manually Interleaving Promises</a></li>
+</ul>
+
+<h2 id="the-event-loop-en-el-libro-the-modern-javascript-tutorial">The Event Loop en el libro <a href="https://javascript.info">The Modern JavaScript Tutorial</a></h2>
+
+<ul>
+  <li><a href="https://javascript.info/event-loop#event-loop">Event Loop</a></li>
+  <li><a href="https://javascript.info/event-loop#use-case-1-splitting-cpu-hungry-tasks">Use-case 1: splitting CPU-hungry tasks</a></li>
+  <li><a href="https://javascript.info/event-loop#use-case-2-progress-indication">Use case 2: progress indication</a></li>
+  <li><a href="https://javascript.info/event-loop#use-case-3-doing-something-after-the-event">Use case 3: doing something after the event</a></li>
+  <li><a href="https://javascript.info/event-loop#macrotasks-and-microtasks">Macrotasks and Microtasks</a></li>
+  <li><a href="https://javascript.info/event-loop#summary">Summary</a></li>
+</ul>
+
+<h2 id="the-section-concurrency-model-and-the-event-loop-at-httpsdevelopermozillaorg">The section <em>Concurrency model and the event loop</em> at https://developer.mozilla.org/</h2>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Runtime_concepts">Runtime concepts</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Event_loop">Event loop</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Never_blocking">Never blocking</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Specifications">Specifications</a></li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://javascript.info/microtask-queue">Event loop: microtasks and macrotasks</a> en el libro https://javascript.info</li>
+  <li>Tutorial <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop">Concurrency model and Event Loop</a> at https://developer.mozilla.org</li>
+  <li><a href="https://flaviocopes.com/javascript-event-loop/">The JavaScript Event Loop</a> by Flavio</li>
+  <li><a href="https://www.infoq.com/presentations/javascript-concurrency-parallelism/">Concurrency and Parallel Computing in JavaScript</a> Stephan Herhut. Strange Loop 2013.</li>
+  <li><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ">Philip Roberts: ¿Que diablos es el “event loop” (bucle de eventos) de todos modos? (JSConf EU)</a></li>
+  <li><a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">loupe</a> a tool in the cloud to see the event loop working</li>
+  <li><a href="https://github.com/ULL-MII-SYTWS-1920/jsday-canarias-2019-examples-multithreading">Chinenye Onuegbu: Code examples for JSDay Canarias 2019</a>
+    <ul>
+      <li><a href="https://youtu.be/YYfhuudsfFM">Video</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/asyncmap">Asyncmap</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=asyncmap&type=all&language=&sort=" target="_blank">asyncmap</a></li>
+      <li><a href="/tema1-introduccion/practicas/asyncmap#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2022/10/17/leccion.html">Clase del Lunes 2022/10/17</a></li>
+  
+<li> <a href="/2022/10/10/leccion.html">Clase del Lunes 2022/10/10</a></li>
+  
+<li> <a href="/2022/10/05/leccion.html">Clase del Miércoles 2022/10/05</a></li>
+  
+<li> <a href="/2022/10/03/leccion.html">Clase del Lunes 2022/10/03</a></li>
+  
+<li> <a href="/2022/09/28/leccion.html">Clase del Miércoles 2022/09/28</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

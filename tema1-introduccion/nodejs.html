@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Debugging NodeJS | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Debugging NodeJS" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Debugging NodeJS" />
+<script type="application/ld+json">
+{"headline":"Debugging NodeJS","url":"/tema1-introduccion/nodejs.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=8e9c8f02552406369306f9af0a78bf45ab8449e3">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-2223" target="_blank">org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/108465062-ull-esit-dmsi-2223" target="_blank">classroom</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2223.ull.es/course/view.php?id=2223090033" target="_blank">campus</a></span>
+                <span class="credits left"> &nbsp; Teams <a href="/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+            </div>
+
+            <h3 id="debugging-nodejs">Debugging NodeJS</h3>
+
+<ul>
+  <li><a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/nodejs/">Debugging NodeJS</a></li>
+  <li>Debugging in 2017 with Node.js YouTube video https://youtu.be/Xb_0awoShR8
+    <ul>
+      <li><a href="https://youtu.be/Xb_0awoShR8">Debugging in 2017 with Node.js</a> YouTube</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="nvm">nvm</h3>
+
+<ul>
+  <li><a href="https://www.sitepoint.com/quick-tip-multiple-versions-node-nvm/">Quick Tip: Install Multiple Versions of Node.js using nvm</a></li>
+  <li><a href="https://github.com/creationix/nvm">Node Version Manager - Simple bash script to manage multiple active node.js versions</a></li>
+</ul>
+
+<h3 id="eloquent-js-book-chapter-20">Eloquent JS Book Chapter 20</h3>
+
+<ul>
+  <li><a href="https://eloquentjavascript.net/20_node.html">Eloquent JS Book Chapter 20</a>: <a href="https://eloquentjavascript.net/20_node.html">Node.js</a></li>
+</ul>
+
+<h3 id="anatomy-of-an-http-transaction">Anatomy of an HTTP Transaction</h3>
+
+<ul>
+  <li><a href="https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/">Anatomy of an HTTP Transaction</a></li>
+</ul>
+
+<h3 id="the-book-nodejs-8-the-right-way-chapter-2-wrangling-the-file-system">The book “Node.js 8 the Right Way”. Chapter 2: Wrangling the File System</h3>
+
+<ul>
+  <li><a href="https://proquest-safaribooksonline-com.accedys2.bbtk.ull.es/book/web-development/9781680505344/part-idot-getting-up-to-speed-on-nodedotjs-8/chp_filesystem_html" target="_blank">Node.js 8 the Right Way</a> Practical, Server-Side JS that Scales. Jim R. Wilson 2018 Edition. Safari. Chapter 2: Wrangling the File System. Acceda por medio del <a href="https://www.ull.es/servicios/biblioteca/servicios/puntoq/" target="_blank">PuntoQ</a> de la ULL</li>
+  <li><a href="https://github.com/ULL-MII-CA-1819/nodejs-the-right-way/tree/master/filesystem-chapter-2">Chapter 2: Wrangling the File System. GitHub Repo. Folder with Solutions to Chapter 2</a> Privado
+    <ul>
+      <li><a href="https://books.google.es/books?id=oA9QDwAAQBAJ&amp;lpg=PT96&amp;ots=-mLQPlvsSj&amp;dq=should%20ldjclient%20emit%20a%20close%20event&amp;hl=es&amp;pg=PP1#v=onepage&amp;q=should%20ldjclient%20emit%20a%20close%20event&amp;f=false">Book “Node.js 8 the Right Way”</a> 2018 Edition Google Books</li>
+      <li><a href="https://github.com/iMarcoGovea/books/blob/master/nodejs/Node.js%20the%20Right%20Way.pdf">Book “Node.js 8 the Right Way”</a> Old Edition in GitHub</li>
+    </ul>
+  </li>
+  <li>Node.JS 8 The Right Way. Practical Server-Side That Scales: <a href="https://github.com/ULL-MII-CA-1819/nodejs-the-right-way">Repo with the solutions (all chapters)</a></li>
+  <li><a href="https://eloquentjavascript.net/2nd_edition/20_node.html#h_3O5dGIJE9F">Read section <em>The HTTP module</em> from Eloquent Javascript 2nd edition</a></li>
+  <li><a href="https://eloquentjavascript.net/2nd_edition/20_node.html#h_LvXChBt2KP">Read section <em>A File Server</em> from Eloquent Javascript 2nd edition</a></li>
+</ul>
+
+<h4 id="streams">Streams</h4>
+
+<ul>
+  <li><a href="https://medium.com/the-node-js-collection/a-brief-history-of-node-streams-pt-1-3401db451f21">A Brief History of Node Streams</a></li>
+  <li><a href="https://medium.com/the-node-js-collection/a-brief-history-of-node-streams-pt-2-bcb6b1fd7468">A Brief History of Node Streams. Part 2</a></li>
+</ul>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/asyncmap">Asyncmap</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=asyncmap&type=all&language=&sort=" target="_blank">asyncmap</a></li>
+      <li><a href="/tema1-introduccion/practicas/asyncmap#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2022/10/17/leccion.html">Clase del Lunes 2022/10/17</a></li>
+  
+<li> <a href="/2022/10/10/leccion.html">Clase del Lunes 2022/10/10</a></li>
+  
+<li> <a href="/2022/10/05/leccion.html">Clase del Miércoles 2022/10/05</a></li>
+  
+<li> <a href="/2022/10/03/leccion.html">Clase del Lunes 2022/10/03</a></li>
+  
+<li> <a href="/2022/09/28/leccion.html">Clase del Miércoles 2022/09/28</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Async map | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Async map" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Async map" />
+<script type="application/ld+json">
+{"headline":"Async map","url":"/tema1-introduccion/practicas/asyncmap/","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=8e9c8f02552406369306f9af0a78bf45ab8449e3">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-2223" target="_blank">org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/108465062-ull-esit-dmsi-2223" target="_blank">classroom</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2223.ull.es/course/view.php?id=2223090033" target="_blank">campus</a></span>
+                <span class="credits left"> &nbsp; Teams <a href="/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+            </div>
+
+            <h1 id="async-map">Async map</h1>
+
+<h2 id="descripción-de-la-práctica">Descripción de la Práctica</h2>
+
+<p>Para la realización de esta práctica estudie /repase el tema <a href="/tema1-introduccion/async/">Async Programming in JavaScript</a>.</p>
+
+<p>El objetivo es escribir un programa Node.js que usando <code class="language-plaintext highlighter-rouge">fs.readFile</code></p>
+
+<ol>
+  <li>lea <strong>en paralelo</strong> un conjunto de ficheros pasados como argumentos en línea de comandos y</li>
+  <li>produzca como salida la concatenación de los mismos en el orden especificado.</li>
+</ol>
+
+<p>No se considera una solución usar <code class="language-plaintext highlighter-rouge">fs.readFileSync</code> o timers (<code class="language-plaintext highlighter-rouge">setTimeout</code> etc.) o usar promesas. Se pide una solución usando callbacks.
+Use <code class="language-plaintext highlighter-rouge">fs.readFile(path[, options], callback)</code>.</p>
+
+<p>Este sería un ejemplo de uso:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ concat -f one.txt -f two.txt -f three.txt -o salida.txt
+</code></pre></div></div>
+
+<h2 id="commander">commander</h2>
+
+<p>Con <a href="https://www.npmjs.com/package/commander?activeTab=readme">commander</a> es posible indicar una opción que se puede repetir</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">program</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">commander</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nx">collect</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">previous</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">previous</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="nx">value</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="nx">program</span><span class="p">.</span><span class="nx">option</span><span class="p">(</span><span class="dl">'</span><span class="s1">-c, --collect &lt;value&gt;</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">repeatable value</span><span class="dl">'</span><span class="p">,</span> <span class="nx">collect</span><span class="p">,</span> <span class="p">[]);</span>
+<span class="nx">program</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">program</span><span class="p">.</span><span class="nx">collect</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Ejecución:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ node repeatable-option-commander.js -c a -c b -c c
+[ 'a', 'b', 'c' ]
+</code></pre></div></div>
+<h2 id="entrega">Entrega</h2>
+
+<h3 id="solución-con-el-módulo-async-js">Solución con el Módulo async-js</h3>
+
+<p>Lea la sección <a href="/temas/async/async-js">The Async Module</a> de los apuntes y encuentre una solución usando <code class="language-plaintext highlighter-rouge">Async</code>.</p>
+
+<p>Considere la posibilidad de excepciones debidas a que alguno de los ficheros no exista.</p>
+
+<p>Si no se le ocurre una solución, puede consultar las soluciones a la pregunta <a href="https://stackoverflow.com/questions/39020704/nodejs-how-to-read-multiple-files-asynchronously-and-write-read-contents-to-on">NodeJS - How to read multiple files asynchronously and write read contents to one file</a> en StackOverflow.</p>
+
+<h3 id="solucion-sin-usar-el-módulo-async-js">Solucion sin usar el Módulo async-js</h3>
+
+<p>A continuación, busque  una solución para este problema sin hacer uso de <code class="language-plaintext highlighter-rouge">Async</code> ¿Cómo lo haría?
+No se considera una solución usar <code class="language-plaintext highlighter-rouge">fs.readFileSync</code> o timers (<code class="language-plaintext highlighter-rouge">setTimeout</code> etc.) o usar promesas. Se pide una solución usando callbacks.</p>
+
+<h3 id="abstracción-de-la-solución">Abstracción de la solución</h3>
+
+<p>Haciendo abstracción de la solución encontrada en el paso anterior escriba una función <code class="language-plaintext highlighter-rouge">asyncMap</code> que funcione como el <code class="language-plaintext highlighter-rouge">map</code> del módulo <code class="language-plaintext highlighter-rouge">Async</code> y que sirva 
+para cualuier función asíncrona que siga el patrón de <code class="language-plaintext highlighter-rouge">callback(err, result)</code>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">asyncMap</span><span class="p">(</span><span class="nx">inputs</span><span class="p">,</span> <span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">cb</span><span class="p">),</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">contents</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="variante-del-problema-serial-en-vez-de-paralelo">Variante del Problema: Serial en vez de paralelo</h3>
+
+<p>Ahora cambiamos el problema para lea <strong>en secuencial</strong> el conjunto de ficheros pasados como argumentos en línea de comandos y 
+produzca como salida la concatenación de los mismos en el orden especificado. Las mismas restricciones que en el caso anterior.</p>
+
+<p>Provea una  función general <code class="language-plaintext highlighter-rouge">series</code> que secuencialice cualquier array de funciones asíncronas.
+Debe funcionar tal como lo hace la función <code class="language-plaintext highlighter-rouge">series</code>  del módulo <a href="/temas/async/async-js">Async.js</a>.</p>
+
+<p>Esta sería la forma de uso de la función <code class="language-plaintext highlighter-rouge">series</code>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">series</span><span class="p">(</span><span class="nx">program</span><span class="p">.</span><span class="nx">files</span><span class="p">,</span> <span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">cb</span><span class="p">),</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span>  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">file</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="nx">program</span><span class="p">.</span><span class="nx">output</span><span class="p">);</span>
+      <span class="nx">file</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error en la apertura del archivo </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">program</span><span class="p">.</span><span class="nx">output</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">err</span><span class="p">)</span> <span class="p">});</span>
+      <span class="nx">results</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">file</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="dl">'</span><span class="se">\n</span><span class="dl">'</span><span class="p">);</span> <span class="p">});</span>
+      <span class="nx">file</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Fallo en la lectura de los ficheros</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="módulos-commonjs-y-es6">Módulos CommonJS y ES6</h2>
+
+<p>Esta es la estructura del template de la práctica:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  asyncmap-solution git:(main) tree -I node_modules
+.
+├── README.md
+├── concatSerialize.js
+├── my-async.mjs
+├── package-lock.json
+├── package.json
+├── scripts
+│   ├── create-inputs.bash
+│   └── make-big-file.bash
+├── sol-using-async.mjs
+└── test
+    ├── expected.txt
+    ├── f1.txt
+    ├── f2.txt
+    ├── f3.txt
+    └── output.txt
+</code></pre></div></div>
+
+<p>En <code class="language-plaintext highlighter-rouge">concatSerialize.js</code> los módulos son cargados usando <code class="language-plaintext highlighter-rouge">require</code> (ver <a href="https://nodejs.org/api/modules.html#modules_modules_commonjs_modules">CommonJS</a>) mientras que en <code class="language-plaintext highlighter-rouge">sol-using-async.mjs</code>  y <code class="language-plaintext highlighter-rouge">my-async.mjs</code> 
+se usan los módulos ES6 (ver <a href="https://nodejs.org/api/esm.html#esm_ecmascript_modules">ECMAScript Modules</a>).</p>
+
+<h2 id="variables-en-el-packagejson">Variables en el package.json</h2>
+
+<p>En el directorio <code class="language-plaintext highlighter-rouge">scripts</code> hay dos scripts para la creación de ficheros de prueba y que son usados en la sección <code class="language-plaintext highlighter-rouge">scripts</code> del <code class="language-plaintext highlighter-rouge">package.json</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  asyncmap-solution git:(main) npm run
+Lifecycle scripts included in asyncmap-solution@1.0.0:
+  test
+    npm run clean; npm run create-inputs 3 7; npm run my-async.mjs; cmp --silent test/output.txt test/expected.txt &amp;&amp; echo 'OK'
+
+available via `npm run-script`:
+  create-inputs
+    scripts/create-inputs.bash ${npm_package_config_numfiles} ${npm_package_config_size}
+  my-async.mjs
+    node my-async.mjs -f test/f*.txt -o test/output.txt
+  sol-using-async.mjs
+    node sol-using-async.mjs -f test/f*.txt -o test/output.txt
+  concatSerialize.js
+    node concatSerialize.js -f test/f{1..3}.txt -o test/output.txt
+  test-err
+    node my-async.js -f f1.txt -f no-existe.txt -f f3.txt -o test/output.txt
+  save
+    git commit -am save &amp;&amp; git push -u origin main
+  clean
+    rm -f test/f*.txt test/output.txt
+</code></pre></div></div>
+
+<p>El <code class="language-plaintext highlighter-rouge">package.json</code> ilustra como se pueden definir variables en la sección <code class="language-plaintext highlighter-rouge">"config"</code> y usarlas en los <code class="language-plaintext highlighter-rouge">scripts</code> de <code class="language-plaintext highlighter-rouge">npm</code> referenciándolas con <code class="language-plaintext highlighter-rouge">${npm_package_config_varname}</code>.:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="err">...</span><span class="w">  
+  </span><span class="nl">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"numfiles"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"create-inputs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"scripts/create-inputs.bash ${npm_package_config_numfiles} ${npm_package_config_size}"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+
+</span></code></pre></div></div>
+
+<h1 id="rúbrica">Rúbrica</h1>
+
+<ul>
+  <li>Código de la práctica correcto</li>
+  <li>Se da una solucion paralela usando la librería async</li>
+  <li>Se da una solucion paralela sin usar la librería async al problema de la lectura de ficheros</li>
+  <li>Se crea una función <code>asyncmap</code> genérica que funciona como el <code>map</code> de async</li>
+  <li>Se da una función <code>series</code> que resuelve el problema de serializar llamadas a funciones asíncronas</li>
+  <li>Informe bien elaborado</li>
+  <li>Kanban Board project conteniendo las incidencias de la rúbrica</li>
+  <li>Ha entregado el .zip en el campus con el repo</li>
+</ul>
+
+<h2 id="referencias">Referencias</h2>
+
+<ul>
+  <li>Tema <a href="/tema1-introduccion/async/">Async Programming in JavaScript</a></li>
+  <li>Sección <a href="/tema1-introduccion/async/async-js">The Async Module</a> de estos apuntes</li>
+  <li>El manual del módulo async: <a href="https://caolan.github.io/async/v3/">https://caolan.github.io/async/v3/</a></li>
+  <li>Pregunta <a href="https://stackoverflow.com/questions/39020704/nodejs-how-to-read-multiple-files-asynchronously-and-write-read-contents-to-on">NodeJS - How to read multiple files asynchronously and write read contents to one file</a> en StackOverflow</li>
+</ul>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/asyncmap">Asyncmap</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=asyncmap&type=all&language=&sort=" target="_blank">asyncmap</a></li>
+      <li><a href="/tema1-introduccion/practicas/asyncmap#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2022/10/17/leccion.html">Clase del Lunes 2022/10/17</a></li>
+  
+<li> <a href="/2022/10/10/leccion.html">Clase del Lunes 2022/10/10</a></li>
+  
+<li> <a href="/2022/10/05/leccion.html">Clase del Miércoles 2022/10/05</a></li>
+  
+<li> <a href="/2022/10/03/leccion.html">Clase del Lunes 2022/10/03</a></li>
+  
+<li> <a href="/2022/09/28/leccion.html">Clase del Miércoles 2022/09/28</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>
