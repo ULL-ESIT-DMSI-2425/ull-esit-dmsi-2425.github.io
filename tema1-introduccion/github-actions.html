@@ -18,7 +18,7 @@
 {"headline":"GitHub Actions: An Introduction","url":"/tema1-introduccion/github-actions.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=c0cda8250efa7c55287bd37187e10558fa7115d7">
+    <link rel="stylesheet" href="/assets/css/style.css?v=3c44d153e5850a4d07a4aedcc402c86936fac707">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -64,7 +64,75 @@
                 <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
             </div>
 
-            <h1 id="github-actions-an-introduction">GitHub Actions: An Introduction</h1>
+            <ul>
+  <li><a href="#-pagetitle-">GitHub Actions: An Introduction</a>
+    <ul>
+      <li><a href="#workflow">Workflow</a></li>
+      <li><a href="#editing-github-actions">Editing Github Actions</a></li>
+      <li><a href="#job">Job</a></li>
+      <li><a href="#step">Step</a></li>
+      <li><a href="#actions">Actions</a>
+        <ul>
+          <li><a href="#types-of-actions">Types of Actions</a></li>
+        </ul>
+      </li>
+      <li><a href="#event">Event</a>
+        <ul>
+          <li><a href="#the-release-event">The <code class="language-plaintext highlighter-rouge">release</code> event</a></li>
+        </ul>
+      </li>
+      <li><a href="#runner">Runner</a></li>
+      <li><a href="#syntax-of-the-yml-file">Syntax of the .yml File</a>
+        <ul>
+          <li><a href="#name">Name:</a></li>
+          <li><a href="#on">On:</a></li>
+          <li><a href="#jobs">Jobs:</a></li>
+          <li><a href="#env">Env:</a></li>
+          <li><a href="#stepswith">steps.with</a></li>
+        </ul>
+      </li>
+      <li><a href="#expression-syntax">Expression Syntax</a>
+        <ul>
+          <li><a href="#literal-values">literal values,</a></li>
+          <li><a href="#operators">Operators</a></li>
+          <li><a href="#functions">functions</a></li>
+          <li><a href="#the-if-keyword-and-functions-to-check-job-status">The if Keyword and Functions to Check Job Status</a></li>
+          <li><a href="#object-filters">Object Filters</a></li>
+        </ul>
+      </li>
+      <li><a href="#contexts">Contexts</a>
+        <ul>
+          <li><a href="#matrix-context">Matrix Context</a></li>
+          <li><a href="#github-context">GitHub Context</a></li>
+          <li><a href="#env-context">Env Context</a></li>
+          <li><a href="#steps-context">Steps Context</a></li>
+          <li><a href="#the-runner-context">The Runner Context</a></li>
+          <li><a href="#the-strategy-context">The Strategy Context</a></li>
+          <li><a href="#the-secrets-context">The Secrets Context</a>
+            <ul>
+              <li><a href="#creating-a-secret">Creating a Secret</a></li>
+              <li><a href="#using-a-secret">Using a Secret</a></li>
+              <li><a href="#example-a-github-action-to-publish-a-npm-package">Example: A GitHub Action to Publish a npm Package</a></li>
+            </ul>
+          </li>
+          <li><a href="#exercise">Exercise</a></li>
+          <li><a href="#debugging-context-to-the-log-file">Debugging Context to the log file</a>
+            <ul>
+              <li><a href="#exercise-1">Exercise</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#github_token">GITHUB_TOKEN</a></li>
+      <li><a href="#creating-a-packaged-javascript-action">Creating a Packaged JavaScript Action</a></li>
+      <li><a href="#running-manually-github-workflows-with-gh">Running Manually GitHub Workflows with gh</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#videos-about-github-actions">Videos about GitHub Actions</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="github-actions-an-introduction">GitHub Actions: An Introduction</h1>
 
 <p>Github Actions enables you to create custom software development lifecycle workflows directly in your Github repository. These workflows are made out of different tasks so-called actions that can be run automatically on certain events.</p>
 
