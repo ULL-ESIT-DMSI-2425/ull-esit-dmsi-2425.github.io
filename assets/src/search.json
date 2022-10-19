@@ -47,6 +47,13 @@
         "url": "/2022/10/19/leccion.html"
       },
     
+      {
+        "title": "Clase del Lunes 2022/10/24",
+        "excerpt": "Lab “Introduction to Systems Development” and Static Generators\n\n",
+        "content": "Lab “Introduction to Systems Development” and Static Generators\n\nLab “Introduction to Systems Development”)  and Static Generators\n\nRepaso\n\nEl Lunes de la semana pasada vimos\n\n\n  Significado de algunos de los elementos en el _config.yml\n  Como hacer deploys en GitHub Pages\n\n\nEl Miércoles nos introducimos a Liquid, como funciona el frontmatter de una página y\nla función de la carpeta _data\n\nHoy seguiremos con:\n\nMore about Data\n\n\n  Como usar Data Files\n  Ejemplo: https://ull-esit-dmsi.github.io/teams\n    \n      GraphQL query\n      Fichero teams.json con la respuesta del query\n    \n  \n\n\nCollections\n\n\n  Como usar Collections en Jekyll\n\n\nMore about Deploys\n\n\n  Como hacer deploys en Netlify (hacer público el repo) o Vercel\n\n\nDefaults\n\n\n  Front Matter Defaults, \nestudie y practique como se usan. Muestre que los ha usado  en su informe de entrega.\n\n\n\n  The different types that are available to you are pages, posts, drafts or any collection in your site\n\n\nRúbrica\n\n\n  Grading Rubric for this lab\n\n\nRepos de entrega\n\n\n  Aquí un enlace a los Repos de entrega de esta práctica\n\n",
+        "url": "/2022/10/24/leccion.html"
+      },
+    
   
   
   
