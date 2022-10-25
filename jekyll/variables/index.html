@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Jekyll Variables | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Jekyll Variables" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jekyll Variables" />
+<script type="application/ld+json">
+{"headline":"Jekyll Variables","url":"/jekyll/variables/","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=2050b3feeff13bf8aaeeb52c6a149db641a70fb7">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-2223" target="_blank">org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/108465062-ull-esit-dmsi-2223" target="_blank">classroom</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2223.ull.es/course/view.php?id=2223090033" target="_blank">campus</a></span>
+                <span class="credits left"> &nbsp; Teams <a href="/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+            </div>
+
+            <h1 id="jekyll-variables">Jekyll Variables</h1>
+
+<h3 id="global">Global</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>site</td>
+      <td>Site wide information + configuration settings from _config.yml. See below for details.</td>
+    </tr>
+    <tr>
+      <td>page</td>
+      <td>Page specific information + the front matter. Custom variables set via the front matter will be available here. See below for details.</td>
+    </tr>
+    <tr>
+      <td>layout</td>
+      <td>Layout specific information + the front matter. Custom variables set via front matter in layouts will be available here.</td>
+    </tr>
+    <tr>
+      <td>theme</td>
+      <td>Theme-gem specific information as defined in the theme’s gemspec. Useful for rendering information in the theme demo’s “About” page, for example</td>
+    </tr>
+    <tr>
+      <td>content</td>
+      <td>In layout files, the rendered content of the Post or Page being wrapped. Not defined in Post or Page files.</td>
+    </tr>
+    <tr>
+      <td>paginator</td>
+      <td>When the paginate configuration option is set, this variable becomes available for use. See Pagination for details.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="site-object">site object</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>site.time</td>
+      <td>The current time (when you run the jekyll command).</td>
+    </tr>
+    <tr>
+      <td>site.pages</td>
+      <td>A list of all Pages.</td>
+    </tr>
+    <tr>
+      <td>site.posts</td>
+      <td>A reverse chronological list of all Posts.</td>
+    </tr>
+    <tr>
+      <td>site.related_posts</td>
+      <td>If the page being processed is a Post, this contains a list of up to ten related Posts. By default, these are the ten most recent posts. For high quality but slow to compute results, run the jekyll command with the –lsi (latent semantic indexing) option. Also note GitHub Pages does not support the lsi option when generating sites.</td>
+    </tr>
+    <tr>
+      <td>site.static_files</td>
+      <td>A list of all static files (i.e. files not processed by Jekyll’s converters or the Liquid renderer). Each file has five properties: path, modified_time, name, basename and extname.</td>
+    </tr>
+    <tr>
+      <td>site.html_pages</td>
+      <td>A subset of site.pages listing those which end in .html.</td>
+    </tr>
+    <tr>
+      <td>site.html_files</td>
+      <td>A subset of site.static_files listing those which end in .html.</td>
+    </tr>
+    <tr>
+      <td>site.collections</td>
+      <td>A list of all the collections (including posts).</td>
+    </tr>
+    <tr>
+      <td>site.data</td>
+      <td>A list containing the data loaded from the YAML files located in the _data directory.</td>
+    </tr>
+    <tr>
+      <td>site.documents</td>
+      <td>A list of all the documents in every collection.</td>
+    </tr>
+    <tr>
+      <td>site.categories.CATEGORY</td>
+      <td>The list of all Posts in category CATEGORY.</td>
+    </tr>
+    <tr>
+      <td>site.tags.TAG</td>
+      <td>The list of all Posts with tag TAG.</td>
+    </tr>
+    <tr>
+      <td>site.url</td>
+      <td>Contains the url of your site as it is configured in the _config.yml. For example, if you have url: http://mysite.com in your configuration file, then it will be accessible in Liquid as site.url. For the development environment there is an exception, if you are running jekyll serve in a development environment site.url will be set to the value of host, port, and SSL-related options. This defaults to url: http://localhost:4000.</td>
+    </tr>
+    <tr>
+      <td>site.[CONFIGURATION_DATA]</td>
+      <td>All the variables set via the command line and your _config.yml are available through the site variable. For example, if you have foo: bar in your configuration file, then it will be accessible in Liquid as site.foo. Jekyll does not parse changes to _config.yml in watch mode, you must restart Jekyll to see changes to variables.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="page-object">page object</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>page.content</td>
+      <td>The content of the Page, rendered or un-rendered depending upon what Liquid is being processed and what page is.</td>
+    </tr>
+    <tr>
+      <td>page.title</td>
+      <td>The title of the Page.</td>
+    </tr>
+    <tr>
+      <td>page.excerpt</td>
+      <td>The un-rendered excerpt of a document.</td>
+    </tr>
+    <tr>
+      <td>page.url</td>
+      <td>The URL of the Post without the domain, but with a leading slash, e.g. /2008/12/14/my-post.html</td>
+    </tr>
+    <tr>
+      <td>page.date</td>
+      <td>The Date assigned to the Post. This can be overridden in a Post’s front matter by specifying a new date/time in the format YYYY-MM-DD HH:MM:SS (assuming UTC), or YYYY-MM-DD HH:MM:SS +/-TTTT (to specify a time zone using an offset from UTC. e.g. 2008-12-14 10:30:00 +0900).</td>
+    </tr>
+    <tr>
+      <td>page.id</td>
+      <td>An identifier unique to a document in a Collection or a Post (useful in RSS feeds). e.g. /2008/12/14/my-post/my-collection/my-document</td>
+    </tr>
+    <tr>
+      <td>page.categories</td>
+      <td>The list of categories to which this post belongs. Categories are derived from the directory structure above the _posts directory. For example, a post at /work/code/_posts/2008-12-24-closures.md would have this field set to [‘work’, ‘code’]. These can also be specified in the front matter.</td>
+    </tr>
+    <tr>
+      <td>page.collection</td>
+      <td>The label of the collection to which this document belongs. e.g. posts for a post, or puppies for a document at path _puppies/rover.md. If not part of a collection, an empty string is returned.</td>
+    </tr>
+    <tr>
+      <td>page.tags</td>
+      <td>The list of tags to which this post belongs. These can be specified in the front matter.</td>
+    </tr>
+    <tr>
+      <td>page.dir</td>
+      <td>The path between the source directory and the file of the post or page, e.g. /pages/. This can be overridden by permalink in the front matter.</td>
+    </tr>
+    <tr>
+      <td>page.name</td>
+      <td>The filename of the post or page, e.g. about.md</td>
+    </tr>
+    <tr>
+      <td>page.path</td>
+      <td>The path to the raw post or page. Example usage: Linking back to the page or post’s source on GitHub. This can be overridden in the front matter.</td>
+    </tr>
+    <tr>
+      <td>page.next</td>
+      <td>The next post relative to the position of the current post in site.posts. Returns nil for the last entry.</td>
+    </tr>
+    <tr>
+      <td>page.previous</td>
+      <td>The previous post relative to the position of the current post in site.posts. Returns nil for the first entry.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://jekyllrb.com/docs/variables/">Jekyll Variables</a> at Jekyll docs</li>
+</ul>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/asyncmap">Asyncmap</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=asyncmap&type=all&language=&sort=" target="_blank">asyncmap</a></li>
+      <li><a href="/tema1-introduccion/practicas/asyncmap#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2022/10/26/leccion.html">Clase del Miércoles 2022/10/26</a></li>
+  
+<li> <a href="/2022/10/24/leccion.html">Clase del Lunes 2022/10/24</a></li>
+  
+<li> <a href="/2022/10/19/leccion.html">Clase del Miércoles 2022/10/19</a></li>
+  
+<li> <a href="/2022/10/17/leccion.html">Clase del Lunes 2022/10/17</a></li>
+  
+<li> <a href="/2022/10/10/leccion.html">Clase del Lunes 2022/10/10</a></li>
+  
+<li> <a href="/2022/10/05/leccion.html">Clase del Miércoles 2022/10/05</a></li>
+  
+<li> <a href="/2022/10/03/leccion.html">Clase del Lunes 2022/10/03</a></li>
+  
+<li> <a href="/2022/09/28/leccion.html">Clase del Miércoles 2022/09/28</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>
