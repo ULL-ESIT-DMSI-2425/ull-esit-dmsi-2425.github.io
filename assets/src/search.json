@@ -522,7 +522,7 @@
   {
     "title": "Calendarios, Horarios y Exámenes",
     "excerpt": "\n",
-    "content": "Calendarios, Horarios y Exámenes\n\nCalendario Académico\n\n\n\n\n\nHorarios\n\n\n  \n    Horarios de Ingeniería Informática para el curso\n  \n  \n    \n\n\n  \n\n\n\n\n\n\nExámenes de convocatoria\n\n\n\n\nCierre de actas\n\n\n  30 de Enero de 2022\n\n\nNormativa\n\n\n  Reglamento de evaluacion y calificacion\n  Normativas de la ULL para el estudiantado\n\n\n\n",
+    "content": "Calendarios, Horarios y Exámenes\n\nCalendario Académico\n\n\n\n\n\nHorarios\n\n\n  \n    Horarios de Ingeniería Informática para el curso\n  \n  \n    \n\n\n  \n\n\n\n\n{% include embeded-calendar-iframe.html %}\n\nExámenes de convocatoria\n\n\n\n\nCierre de actas\n\n\n  30 de Enero de 2022\n\n\nNormativa\n\n\n  Reglamento de evaluacion y calificacion\n  Normativas de la ULL para el estudiantado\n\n\n\n",
     "url": "/timetables"
   },
   
