@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Clientes para APIS REST | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Clientes para APIS REST" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Clientes para APIS REST" />
+<script type="application/ld+json">
+{"headline":"Clientes para APIS REST","url":"/tema3-modelos-emergentes/rest-clients.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=d6d1a4abb790332e719bed60c50e8a3f40420ff4">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-2223" target="_blank">org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/108465062-ull-esit-dmsi-2223" target="_blank">classroom</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2223.ull.es/course/view.php?id=2223090033" target="_blank">campus</a></span>
+                <span class="credits left"> &nbsp; Teams <a href="/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+            </div>
+
+            <h1 id="clientes-para-apis-rest">Clientes para APIS REST</h1>
+
+<p>API testing requires an application to interact with API. 
+Rest API can be tested with tools like:</p>
+
+<ul>
+  <li>gh cli (for GitHub APIs)</li>
+  <li><a href="https://curl.se/docs/manual.html">Curl</a>
+    <ul>
+      <li>Read <a href="https://terminalcheatsheet.com/guides/curl-rest-api">How to use curl to test a REST AP</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/rangav/thunder-client-support">Thunder Client</a></li>
+  <li>Insomnia</li>
+  <li>Postman</li>
+</ul>
+
+<h2 id="github-cli-using-gh-rest-api">Github cli Using GH REST API</h2>
+
+<ul>
+  <li>Learn to generate a GH token</li>
+  <li>Learn to use <a href="https://stedolan.github.io/jq/">jq</a>
+    <ul>
+      <li><a href="https://stedolan.github.io/jq/manual/">Manual</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Examples that make requests to GitHub REST to <a href="https://docs.github.com/en/rest/metrics/statistics#get-all-contributor-commit-activity">Get all contributor commit activity</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  src git:(main) ✗ gh api \
+  -H "Accept: application/vnd.github+json" \
+  /repos/ULL-ESIT-DMSI-2223/ull-esit-dmsi-2223.github.io/stats/participation | head -n 1
+{"all":[7,2,8,10,2,3,4,0,0,9,14,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,11,14,23,9,9,6,13],"owner":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  src git:(main) ✗ gh api \
+  -H "Accept: application/vnd.github+json" \
+  /repos/ULL-ESIT-DMSI-2223/ull-esit-dmsi-2223.github.io/stats/participation --jq '.all[51]'
+13
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  src git:(main) ✗ gh api \
+  -H "Accept: application/vnd.github+json" \
+  /repos/ULL-ESIT-DMSI-2223/ull-esit-dmsi-2223.github.io/stats/participation --jq '.all[-1]'       
+13
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  src git:(main) ✗ gh api \
+  -H "Accept: application/vnd.github+json" \
+  /repos/ULL-ESIT-DMSI-2223/ull-esit-dmsi-2223.github.io/stats/participation --jq '.all[(.all | length)-1]'
+13
+</code></pre></div></div>
+
+<h2 id="example-using-curl">Example Using curl</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.../chapter20-node-js-crguezl/the-http-module(master)]$ curl -d "param1=value1&amp;param2=value2" -H "Content-Type: application/x-www-form-urlencoded" -X POST https://10.150.22.51:8000/data
+
+&lt;h1&gt;Hello!&lt;/h1&gt;
+&lt;p&gt;You asked for 
+&lt;code&gt;
+/data 
+&lt;!-- The url is the full URL without the server, protocol or port. --&gt;
+&lt;/code&gt;
+using the POST method
+&lt;/p&gt;
+&lt;p&gt;Your headers:&lt;/p&gt; 
+&lt;pre&gt;
+{
+  host: '10.150.22.51:8000',
+  'user-agent': 'curl/7.54.0',
+  accept: '*/*',
+  'content-type': 'application/x-www-form-urlencoded',
+  'content-length': '27'
+}
+&lt;/pre&gt;
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://gist.github.com/subfuzion/08c5d85437d5d4f00e58">curl.md</a> gist illustrating the use of curl</li>
+</ul>
+
+<h2 id="example-using-insomnia">Example Using Insomnia</h2>
+
+<p><img src="/assets/images/insomnia.png" alt="request with inmsomnia" /></p>
+
+<ul>
+  <li><a href="https://insomnia.rest/">https://insomnia.rest/</a></li>
+</ul>
+
+<h2 id="example-using-postman">Example Using Postman</h2>
+
+<p><img src="/assets/images/postman.png" alt="request with Postman" /></p>
+
+<ul>
+  <li><a href="https://www.getpostman.com/">https://www.getpostman.com/</a></li>
+  <li><a href="https://www.sitepoint.com/api-building-and-testing-made-easier-with-postman/">API Building and Testing Made Easier with Postman</a></li>
+  <li><a href="https://learning.getpostman.com/docs/postman/launching_postman/installation_and_updates/">Postman docs</a></li>
+</ul>
+
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/asyncmap">Asyncmap</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=asyncmap&type=all&language=&sort=" target="_blank">asyncmap</a></li>
+      <li><a href="/tema1-introduccion/practicas/asyncmap#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2022/11/03/leccion.html">Clase del Miércoles 2022/11/03</a></li>
+  
+<li> <a href="/2022/10/31/leccion.html">Clase del Lunes 2022/10/31</a></li>
+  
+<li> <a href="/2022/10/26/leccion.html">Clase del Miércoles 2022/10/26</a></li>
+  
+<li> <a href="/2022/10/24/leccion.html">Clase del Lunes 2022/10/24</a></li>
+  
+<li> <a href="/2022/10/19/leccion.html">Clase del Miércoles 2022/10/19</a></li>
+  
+<li> <a href="/2022/10/17/leccion.html">Clase del Lunes 2022/10/17</a></li>
+  
+<li> <a href="/2022/10/10/leccion.html">Clase del Lunes 2022/10/10</a></li>
+  
+<li> <a href="/2022/10/05/leccion.html">Clase del Miércoles 2022/10/05</a></li>
+  
+<li> <a href="/2022/10/03/leccion.html">Clase del Lunes 2022/10/03</a></li>
+  
+<li> <a href="/2022/09/28/leccion.html">Clase del Miércoles 2022/09/28</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

@@ -18,7 +18,7 @@
 {"headline":"REST","url":"/tema3-modelos-emergentes/rest.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=f6d0a6f6704c642fbc39e09055d2aebff7d95070">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d6d1a4abb790332e719bed60c50e8a3f40420ff4">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -128,60 +128,7 @@ Use RequestBin to see what your HTTP client is sending or to inspect and debug w
 
 <h2 id="clientes-para-apis-rest">Clientes para APIS REST</h2>
 
-<p>API testing requires an application to interact with API. 
-Rest API can be tested with tools like:</p>
-
-<ul>
-  <li>Insomnia</li>
-  <li>Postman</li>
-  <li>Curl</li>
-</ul>
-
-<p><strong>Example Using Insomnia</strong></p>
-
-<p><img src="/assets/images/insomnia.png" alt="request with inmsomnia" /></p>
-
-<ul>
-  <li><a href="https://insomnia.rest/">https://insomnia.rest/</a></li>
-</ul>
-
-<p><strong>Example Using Postman</strong></p>
-
-<p><img src="/assets/images/postman.png" alt="request with Postman" /></p>
-
-<ul>
-  <li><a href="https://www.getpostman.com/">https://www.getpostman.com/</a></li>
-  <li><a href="https://www.sitepoint.com/api-building-and-testing-made-easier-with-postman/">API Building and Testing Made Easier with Postman</a></li>
-  <li><a href="https://learning.getpostman.com/docs/postman/launching_postman/installation_and_updates/">Postman docs</a></li>
-</ul>
-
-<p><strong>Example Using curl</strong></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.../chapter20-node-js-crguezl/the-http-module(master)]$ curl -d "param1=value1&amp;param2=value2" -H "Content-Type: application/x-www-form-urlencoded" -X POST https://10.150.22.51:8000/data
-
-&lt;h1&gt;Hello!&lt;/h1&gt;
-&lt;p&gt;You asked for 
-&lt;code&gt;
-/data 
-&lt;!-- The url is the full URL without the server, protocol or port. --&gt;
-&lt;/code&gt;
-using the POST method
-&lt;/p&gt;
-&lt;p&gt;Your headers:&lt;/p&gt; 
-&lt;pre&gt;
-{
-  host: '10.150.22.51:8000',
-  'user-agent': 'curl/7.54.0',
-  accept: '*/*',
-  'content-type': 'application/x-www-form-urlencoded',
-  'content-length': '27'
-}
-&lt;/pre&gt;
-</code></pre></div></div>
-
-<ul>
-  <li><a href="https://gist.github.com/subfuzion/08c5d85437d5d4f00e58">curl.md</a> gist illustrating the use of curl</li>
-</ul>
+<p><a href="rest-clients">Rest Clients</a></p>
 
 <h2 id="google-apis">Google APIs</h2>
 
@@ -262,6 +209,8 @@ using the POST method
 </h2>
 
 <ol reversed>
+  
+<li> <a href="/2022/11/03/leccion.html">Clase del Miércoles 2022/11/03</a></li>
   
 <li> <a href="/2022/10/31/leccion.html">Clase del Lunes 2022/10/31</a></li>
   
