@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Descripción de la Práctica p0-t1-lifecycle | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Building a Jekyll 404 dynamic page | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Descripción de la Práctica p0-t1-lifecycle" />
+<meta property="og:title" content="Building a Jekyll 404 dynamic page" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Descripción de la Práctica p0-t1-lifecycle" />
+<meta property="twitter:title" content="Building a Jekyll 404 dynamic page" />
 <script type="application/ld+json">
-{"headline":"Descripción de la Práctica p0-t1-lifecycle","url":"/tema1-introduccion/practicas/p0-t1-lifecycle/","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+{"headline":"Building a Jekyll 404 dynamic page","url":"/assets/temas/introduccion-a-javascript/jekyll-404.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=72e21fdd0f77844702eb7a0c021d06726c410cfb">
@@ -64,15 +64,136 @@
                 <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
             </div>
 
-            <h1 id="descripción-de-la-práctica-p0-t1-lifecycle">Descripción de la Práctica p0-t1-lifecycle</h1>
+            <h1 id="building-a-jekyll-404-dynamic-page">Building a Jekyll 404 dynamic page</h1>
 
-<p>Lea el capítulo 2 del libro <em>Developing Information Systems</em> y haga un resumen:</p>
+<h2 id="jekyll-docs-on-404">Jekyll docs on 404</h2>
+
+<p>Puede servir fácilmente páginas de error 404 personalizadas con Jekyll  reemplazando la página predeterminada <code class="language-plaintext highlighter-rouge">Error 404 – File Not Found</code> que se muestra cuando uno intenta acceder a un enlace roto en su sitio.</p>
+
+<p>Cualquier fichero <code class="language-plaintext highlighter-rouge">404.html</code> en la raíz de su directorio <code class="language-plaintext highlighter-rouge">_site</code> será atendido automáticamente por GitHub Pages y el servidor de desarrollo WEBrick local.</p>
+
+<p>Véase la documentación de Jekyllrb en <a href="https://jekyllrb.com/tutorials/custom-404-page/">Custom 404 Page</a></p>
+
+<h2 id="the-cat-api">The Cat API</h2>
 
 <ul>
-  <li><a href="https://ebookcentral-proquest-com.accedys2.bbtk.ull.es/lib/bull-ebooks/detail.action?docID=1713962#">Capítulo 2: Lifecycle types and their rationales</a>  por Lynda Girvan, del libro *Developing Information Systems” edited by James Cadle</li>
+  <li><a href="https://docs.thecatapi.com/">TheCatApi // Developer Experience</a> docs</li>
 </ul>
 
-<p>Use GitHub Pages para desplegar un sitio web con sus apuntes</p>
+<h2 id="extensions-for-apis">Extensions for APIs</h2>
+
+<h3 id="vscode-thunder-client">Vscode Thunder Client</h3>
+
+<p>You can install the VSCode extension <a href="https://github.com/rangav/thunder-client-support">Thunder Client</a> for testing the cat API.</p>
+
+<youtube id="AbCTlemwZ1k"></youtube>
+
+<h3 id="chrome">Chrome</h3>
+
+<p>For Chrome you can install:</p>
+
+<ul>
+  <li><a href="https://chrome.google.com/webstore/detail/json-formatter-for-api/ipofikknncgcohpploljmbmpkgamedmi">JSON Formatter for API</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo">Advanced REST client</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/altair-graphql-client/flnheeellpciglgpaodhkhmapeljopja">Altair GraphQL Client</a></li>
+</ul>
+
+<h3 id="exercise-rest-api-request-to-gh">Exercise: REST API request to GH</h3>
+
+<p>Make request to GitHub REST to <a href="https://docs.github.com/en/rest/metrics/statistics#get-all-contributor-commit-activity">Get all contributor commit activity</a> using</p>
+
+<ul>
+  <li>github cli</li>
+  <li>curl</li>
+  <li>thunder client</li>
+  <li>JS</li>
+  <li>Postman</li>
+  <li>Insomnia</li>
+</ul>
+
+<p>Lea la sección <a href="/tema3-modelos-emergentes/rest-clients">REST Clients</a></p>
+
+<h2 id="an-example-of-a-404-page">An Example of a 404 page</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.../pl1920/apuntes(master)]$ cat 404.md 
+</code></pre></div></div>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">error</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Error</span>
+<span class="nn">---</span>
+<span class="gh"># Error: ¡Ay Diós mío!</span>
+
+<span class="gu">## Aún no he escrito esta página. </span><span class="sb">
+
+
+</span><span class="nt">&lt;div&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+img, #quote, #comment-cat {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+<span class="gh">#author {</span>
+  float: right;
+}
+<span class="nt">&lt;/style&gt;</span><span class="sb">
+
+
+</span><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"comment-cat"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"cat"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;br/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"quote"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"author"</span><span class="nt">&gt;&lt;/div&gt;</span><span class="sb">
+
+
+</span><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+
+/<span class="err">*</span>
+  https://docs.thecatapi.com/ 
+<span class="err">*</span>/
+const URL = 'https://api.thecatapi.com/v1/images/search?size=full';
+
+(async function() {
+  try {
+    
+    // CAT 
+    let divTitle = document.getElementById("comment-cat");
+    
+    let divcat = document.getElementById("cat");
+    let response = await fetch(URL, {
+       headers: {
+       'x-api-key': "56a4f1cc-7f60-468d-9dba-e4b6f04b7c7d"
+       }
+    });
+    let cat = await response.json();
+    // console.log(cat);   
+    let img = document.createElement("img");
+    let title = document.createElement("h2");
+    title.innerText = "Consuélate con un gatito";   
+    divTitle.append(title);
+    img.src = cat[0].url;
+    divcat.appendChild(img);   <span class="sb">
+
+    // QUOTE
+    const quoteDiv = document.getElementById("quote");
+    const authorDiv = document.getElementById("author");
+    
+    const quoteRes = await fetch('https://api.quotable.io/random');
+    const data = await quoteRes.json();
+    quoteDiv.innerHTML = `&lt;h2&gt;${data.content}&lt;/h2&gt;`;
+    authorDiv.innerHTML = `&lt;h3&gt;—${data.author}&lt;/h3&gt;`;
+</span>  }
+  catch(e) { 
+    console.log(e);
+  }
+})();
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<p>puede ver la página en <a href="https://ull-esit-dmsi.github.io/2032/10/31/leccion.html">funcionamiento en esta web</a></p>
+
 
 
 <!--

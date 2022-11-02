@@ -18,7 +18,7 @@
 {"headline":"Jekyll","url":"/assets/temas/introduccion-a-javascript/jekyll.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=d6d1a4abb790332e719bed60c50e8a3f40420ff4">
+    <link rel="stylesheet" href="/assets/css/style.css?v=72e21fdd0f77844702eb7a0c021d06726c410cfb">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -75,15 +75,12 @@
       <li><a href="#video-walkthroughs">Video Walkthroughs</a></li>
       <li><a href="#navigation">Navigation</a></li>
       <li><a href="#order-of-interpretation">Order of interpretation</a></li>
-      <li><a href="#custom-404-page">Custom 404 Page</a>
-        <ul>
-          <li><a href="#an-example-of-a-404-page">An Example of a 404 page</a></li>
-        </ul>
-      </li>
+      <li><a href="#custom-404-page">Custom 404 Page</a></li>
       <li><a href="#convert-an-html-site-to-jekyll">Convert an HTML site to Jekyll</a></li>
       <li><a href="#using-jekyll-with-bundler">Using Jekyll with Bundler</a></li>
     </ul>
   </li>
+  <li><a href="#404-page">404 page</a></li>
   <li><a href="#the-jekyll-conference">The Jekyll Conference</a></li>
   <li><a href="#cloudcannon-the-cloud-cms-for-jekyll">CloudCannon: The Cloud CMS for Jekyll</a></li>
   <li><a href="#editors">Editors</a></li>
@@ -122,7 +119,6 @@
   <li><a href="#working-with-upcoming-posts-in-jekyll">Working with upcoming posts in Jekyll</a></li>
   <li><a href="#cursos-en-youtube-de-jekyll-and-netlifycms-por-thomas-bradley">Cursos en YouTube de Jekyll and NetlifyCMS por Thomas Bradley</a></li>
   <li><a href="#chen-hui-jing-talks-on-jekyll">Chen Hui Jing Talks on Jekyll</a></li>
-  <li><a href="#práctica-jekyll-netlify">Práctica jekyll-netlify</a></li>
 </ul>
 
 <p>A <strong>static site generator (SSG)</strong> (see <a href="https://www.staticgen.com/">https://www.staticgen.com/</a> is a compromise between using a hand-coded static site and a full content management system (CMS). You generate an HTML-only website using raw data (such as Markdown files) and templates. The resulting build is transferred to your live server.</p>
@@ -226,91 +222,12 @@ docker compose down
 <h3 id="order-of-interpretation"><a href="https://jekyllrb.com/tutorials/orderofinterpretation/">Order of interpretation</a></h3>
 
 <h3 id="custom-404-page"><a href="https://jekyllrb.com/tutorials/custom-404-page/">Custom 404 Page</a></h3>
-
-<h4 id="an-example-of-a-404-page">An Example of a 404 page</h4>
-
-<p>You can install the VSCode extension <a href="https://github.com/rangav/thunder-client-support">Thunder Client</a> for testing the cat API.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.../pl1920/apuntes(master)]$ cat 404.md 
-</code></pre></div></div>
-
-<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="s">error</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s">Error</span>
-<span class="nn">---</span>
-<span class="gh"># Error: ¡Ay Diós mío!</span>
-
-<span class="gu">## Aún no he escrito esta página. </span><span class="sb">
-
-
-</span><span class="nt">&lt;div&gt;</span>
-<span class="nt">&lt;style&gt;</span>
-img, #quote, #comment-cat {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-<span class="gh">#author {</span>
-  float: right;
-}
-<span class="nt">&lt;/style&gt;</span><span class="sb">
-
-
-</span><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"comment-cat"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"cat"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;br/&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"quote"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"author"</span><span class="nt">&gt;&lt;/div&gt;</span><span class="sb">
-
-
-</span><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-
-/<span class="err">*</span>
-  https://docs.thecatapi.com/ 
-<span class="err">*</span>/
-const URL = 'https://api.thecatapi.com/v1/images/search?size=full';
-
-(async function() {
-  try {
-    
-    // CAT 
-    let divTitle = document.getElementById("comment-cat");
-    
-    let divcat = document.getElementById("cat");
-    let response = await fetch(URL, {
-       headers: {
-       'x-api-key': "56a4f1cc-7f60-468d-9dba-e4b6f04b7c7d"
-       }
-    });
-    let cat = await response.json();
-    // console.log(cat);   
-    let img = document.createElement("img");
-    let title = document.createElement("h2");
-    title.innerText = "Consuélate con un gatito";   
-    divTitle.append(title);
-    img.src = cat[0].url;
-    divcat.appendChild(img);   <span class="sb">
-
-    // QUOTE
-    const quoteDiv = document.getElementById("quote");
-    const authorDiv = document.getElementById("author");
-    
-    const quoteRes = await fetch('https://api.quotable.io/random');
-    const data = await quoteRes.json();
-    quoteDiv.innerHTML = `&lt;h2&gt;${data.content}&lt;/h2&gt;`;
-    authorDiv.innerHTML = `&lt;h3&gt;—${data.author}&lt;/h3&gt;`;
-</span>  }
-  catch(e) { 
-    console.log(e);
-  }
-})();
-<span class="nt">&lt;/script&gt;</span>
-
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
 <h3 id="convert-an-html-site-to-jekyll"><a href="https://jekyllrb.com/tutorials/convert-site-to-jekyll/">Convert an HTML site to Jekyll</a></h3>
 <h3 id="using-jekyll-with-bundler"><a href="https://jekyllrb.com/tutorials/using-jekyll-with-bundler/">Using Jekyll with Bundler</a></h3>
+
+<h2 id="404-page">404 page</h2>
+
+<p>See section <a href="jekyll-404">Building a Jekyll 404 dynamic page</a></p>
 
 <h2 id="the-jekyll-conference">The Jekyll Conference</h2>
 
@@ -651,12 +568,12 @@ So you just want to test them while writing the blog, but you don’t want publi
   <li><a href="https://www.chenhuijing.com/talks/#%F0%9F%8F%80">Chen Hui Jing talks</a> Slides in reveal.js</li>
 </ul>
 
-<h2 id="práctica-jekyll-netlify">Práctica jekyll-netlify</h2>
+<!--
+## Práctica jekyll-netlify
 
-<ul>
-  <li><a href="/practicas/jekyll-netlify">Práctica jekyll-netlify</a></li>
-  <li><a href="practicas/jekyll-search">Práctica jekyll-search</a></li>
-</ul>
+* [Práctica jekyll-netlify](/practicas/jekyll-netlify)
+* [Práctica jekyll-search](practicas/jekyll-search)
+-->
 
 
 <!--
