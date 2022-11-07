@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Race Condition: Loading an image with some delay | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Race Condition: Loading an image with some delay" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Race Condition: Loading an image with some delay" />
+<script type="application/ld+json">
+{"headline":"Race Condition: Loading an image with some delay","url":"/tema1-introduccion/async/event-loop/race-condition.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=cc9c29a351e6d6a11a9754c709f483530b34d68d">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-2223" target="_blank">org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/108465062-ull-esit-dmsi-2223" target="_blank">classroom</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2223.ull.es/course/view.php?id=2223090033" target="_blank">campus</a></span>
+                <span class="credits left"> &nbsp; Teams <a href="/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+            </div>
+
+            <h1 id="race-condition-loading-an-image-with-some-delay">Race Condition: Loading an image with some delay</h1>
+
+<h2 id="the-code">The code</h2>
+
+<p>Consider this file <code class="language-plaintext highlighter-rouge">index.html</code>:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Asynchronous Image Loading<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"holder-div"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+    <span class="kd">let</span> <span class="nx">image</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+        <span class="c1">//url = "https://elementscpa.com/wp-content/uploads/2017/08/elementscpa-business-infinity-loop-tal-e1504182065499.png", </span>
+        <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">infinity-loop.png</span><span class="dl">"</span><span class="p">,</span> 
+        <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">holder-div</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span> <span class="c1">// I suppose the "load" process starts here</span>
+
+    <span class="kd">let</span> <span class="nx">waitFor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">//let waitFor = 2000;</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="c1">// The onload event occurs when an object has been loaded</span>
+      <span class="c1">// We only append it to the container when the load has finished</span>
+      <span class="c1">// If 1000 the handler is inserted in the event queue too late</span>
+      <span class="c1">// If an EventListener is added to an EventTarget while it is </span>
+      <span class="c1">// processing an event, that event does not trigger the listener.</span>
+      <span class="nx">image</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">load</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">();</span>
+        <span class="nx">container</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span>
+      <span class="p">});</span>
+    <span class="p">},</span> <span class="nx">waitFor</span><span class="p">);</span>
+
+  <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.infoq.com/presentations/javascript-concurrency-parallelism"</span><span class="nt">&gt;</span>Concurrency and Parallel Computing in JavaScript (Recorded at: StrangeLoop) by Stephan Herhut on Mar 05, 2014 <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">EventTarget.addEventListener()</code> method of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget">EventTarget</a> sets up a function that will be called whenever the specified event is delivered to the target.</p>
+
+<h2 id="the-experiment">The Experiment</h2>
+
+<p>Install  <a href="https://www.npmjs.com/package/http-server">http-server</a>.</p>
+
+<p>Then  serve this <code class="language-plaintext highlighter-rouge">index.html</code> file with:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http-server -p 9000 -o
+</code></pre></div></div>
+
+<p>with this line uncommented</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">waitFor</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Can you see the infinite loop image?</p>
+
+<p>Now  comment the line where <code class="language-plaintext highlighter-rouge">waitFor</code> is initialized and uncomment the other:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">waitFor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>and run:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http-server -p 8000 -o
+</code></pre></div></div>
+
+<p>(Change the port to avoid cache problems)</p>
+
+<p>What do you think it will happen? Can you explain it?</p>
+
+<h2 id="think">Think</h2>
+
+<p>Here is again our image of the event loop:</p>
+
+<p><img src="/images/event-loop.png" alt="" /></p>
+
+<h2 id="comments">Comments</h2>
+
+<p>El código:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">image</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">load</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">();</span>
+        <span class="nx">container</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span>
+      <span class="p">});</span>
+</code></pre></div></div>
+
+<p>hace que el evento <code class="language-plaintext highlighter-rouge">load</code> sea registrado en el elemento <code class="language-plaintext highlighter-rouge">image</code> que ha sido creado dinámicamente, pero el <code class="language-plaintext highlighter-rouge">setTimeout</code> que lo envuelve hace que dicho registro ocurra 
+después de al menos <code class="language-plaintext highlighter-rouge">waitFor</code> milisegundos.</p>
+
+<p>Por tanto, si pasa cierto tiempo es posible que el evento <code class="language-plaintext highlighter-rouge">load</code> (la carga de la imagen)
+haya ocurrido antes que el manejador sea registrado.</p>
+
+<p><em>Event listeners are not called if they are attached after the event has already fired. “You snooze, you lose.”</em></p>
+
+<h2 id="test-adicional">Test adicional</h2>
+
+<p>Con <code class="language-plaintext highlighter-rouge">let waitFor = 0</code> pruebe a recargar la página. ¿Que ocurrirà?
+¿Pasa lo mismo con todos los navegadores?</p>
+
+<hr />
+
+<h2 id="objetivo">Objetivo</h2>
+
+<p>In your report, develop an explanation for the observed behaviors.</p>
+
+<h2 id="referencias">Referencias</h2>
+
+<ul>
+  <li>Tema <a href="/temas/async/event-loop">Async Programming in JavaScript</a> The Event Loop</li>
+  <li><a href="https://github.com/ULL-MII-SYTWS-1920/uai2015">Meta repo de la Charla UAI2015</a>
+    <ul>
+      <li><a href="https://github.com/ULL-MII-SYTWS-1920/js-race">Repo de Ejemplo ULL-MII-SYTWS-1920/js-race</a></li>
+    </ul>
+  </li>
+  <li>Charla en InfoQ: <a href="https://www.infoq.com/presentations/javascript-concurrency-parallelism/">https://www.infoq.com/presentations/javascript-concurrency-parallelism/</a></li>
+  <li><a href="uai2015">Abstract de la charla UAI2015</a></li>
+  <li><a href="https://youtu.be/wNwBzgDm0BI">Race Condition in JavaScript</a> YouTube Video</li>
+</ul>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/asyncmap">Asyncmap</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=asyncmap&type=all&language=&sort=" target="_blank">asyncmap</a></li>
+      <li><a href="/tema1-introduccion/practicas/asyncmap#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/jekyll-search">Search in Jekyll</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=jekyll-search&type=all&language=&sort=" target="_blank">jekyll-search</a></li>
+      <li><a href="/tema1-introduccion/practicas/jekyll-search#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2022/11/07/leccion.html">Clase del Lunes 2022/11/07</a></li>
+  
+<li> <a href="/2022/11/03/leccion.html">Clase del Miércoles 2022/11/03</a></li>
+  
+<li> <a href="/2022/10/31/leccion.html">Clase del Lunes 2022/10/31</a></li>
+  
+<li> <a href="/2022/10/26/leccion.html">Clase del Miércoles 2022/10/26</a></li>
+  
+<li> <a href="/2022/10/24/leccion.html">Clase del Lunes 2022/10/24</a></li>
+  
+<li> <a href="/2022/10/19/leccion.html">Clase del Miércoles 2022/10/19</a></li>
+  
+<li> <a href="/2022/10/17/leccion.html">Clase del Lunes 2022/10/17</a></li>
+  
+<li> <a href="/2022/10/10/leccion.html">Clase del Lunes 2022/10/10</a></li>
+  
+<li> <a href="/2022/10/05/leccion.html">Clase del Miércoles 2022/10/05</a></li>
+  
+<li> <a href="/2022/10/03/leccion.html">Clase del Lunes 2022/10/03</a></li>
+  
+<li> <a href="/2022/09/28/leccion.html">Clase del Miércoles 2022/09/28</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>
