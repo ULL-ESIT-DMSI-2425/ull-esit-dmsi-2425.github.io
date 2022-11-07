@@ -5,17 +5,19 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Docker | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Clase del Lunes 2022/11/07 | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Docker" />
+<meta property="og:title" content="Clase del Lunes 2022/11/07" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
-<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta name="description" content="Hemos visto" />
+<meta property="og:description" content="Hemos visto" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-07T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Docker" />
+<meta property="twitter:title" content="Clase del Lunes 2022/11/07" />
 <script type="application/ld+json">
-{"headline":"Docker","url":"/assets/temas/introduccion-a-javascript/docker.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+{"headline":"Clase del Lunes 2022/11/07","dateModified":"2022-11-07T00:00:00+00:00","datePublished":"2022-11-07T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2022/11/07/leccion.html"},"url":"/2022/11/07/leccion.html","@type":"BlogPosting","description":"Hemos visto","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=5d4b9b401791a9d358d96efa681d036720f3e08b">
@@ -64,95 +66,36 @@
                 <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
             </div>
 
-            <h2 id="tutorial-getting-started">Tutorial. Getting Started</h2>
+            <h1>Clase del Lunes 2022/11/07</h1>
 
-<!-- Courtesy of embedresponsively.com //-->
-
-<div class="responsive-video-container">
-    <iframe src="https://www.youtube-nocookie.com/embed/iqqDU2crIEQ" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-  </div>
+<h2 id="hemos-visto">Hemos visto</h2>
 
 <ul>
-  <li>
-    <p><a href="https://youtu.be/iqqDU2crIEQ">video</a></p>
-  </li>
-  <li>
-    <p><a href="https://docs.docker.com/get-started/">Getting Started with Docker</a></p>
-  </li>
+  <li>Descripción del lab <a href="/tema1-introduccion/practicas/intro2sd">“Introduction to Systems Development”</a>  and Static Generators</li>
+  <li><a href="/assets/temas/introduccion-a-javascript/jekyll">Apuntes de Jekyll</a></li>
+  <li>Significado de algunos de los elementos en el _config.yml</li>
+  <li>Como hacer deploys en GitHub Pages y como observarlo con GitHub Actions</li>
+  <li><a href="/jekyll/variables">Jekyll Variables</a></li>
+  <li>Un poco de <a href="page.liquid.reference">Liquid</a>: for loops, if, interpolación, <a href="https://jekyllrb.com/docs/liquid/filters/">filtros</a>, etc.</li>
+  <li>El objeto <code class="language-plaintext highlighter-rouge">page</code> y  como funciona el preamble/frontmatter de una página</li>
+  <li>La función de la carpeta <code class="language-plaintext highlighter-rouge">_data</code></li>
+  <li>Los layouts</li>
+  <li>El atributo <code class="language-plaintext highlighter-rouge">content</code> de los layouts</li>
+  <li>Como usar <a href="https://jekyllrb.com/docs/collections/">Collections en Jekyll</a></li>
+  <li><a href="https://jekyllrb.com/docs/configuration/front-matter-defaults/">Front Matter Defaults</a>, 
+<strong>estudie y practique como se usan</strong>. Muestre que los ha usado  en su informe de entrega.</li>
+  <li><a href="/assets/temas/introduccion-a-javascript/jekyll-404">Building a Jekyll 404 dynamic page</a> del capítulo de Jekyll en estos apuntes</li>
+  <li>Google Site Verification: <em>Verification is the process of proving that you own the site that you claim to own. Google needs to confirm ownership because once you are verified for a site, then you have access to its private Google Search data, and can affect how Google Search crawls the site.</em></li>
 </ul>
 
-<h2 id="sample-application">Sample Application</h2>
-
-<p>For the rest of this tutorial, we will be working with a simple todo list manager that is running in Node.js. If you’re not familiar with Node.js, don’t worry. No real JavaScript experience is needed.</p>
+<h2 id="async-programming-in-js">Async Programming in JS</h2>
 
 <ul>
-  <li><a href="https://docs.docker.com/get-started/02_our_app/">Docker Docs: Sample application</a></li>
-  <li><a href="https://github.com/docker/getting-started">Repo docker/getting-started</a></li>
-  <li>The <a href="https://github.com/docker/getting-started/tree/master/app">folder</a> with this app</li>
+  <li><a href="/tema1-introduccion/async/event-loop/">The JS Event Loop</a></li>
+  <li><a href="http:///tema1-introduccion/practicas/asyncmap/">Descripción de la Práctica</a></li>
 </ul>
 
-<h2 id="nodejs-docker-tutorial">Node.js Docker Tutorial</h2>
 
-<p>The Node.js getting started guide teaches you how to create a containerized Node.js application using Docker. In this guide, you’ll learn how to:</p>
-
-<ul>
-  <li>Create a simple Node.js application</li>
-  <li>Create a new Dockerfile which contains instructions required to build a Node.js image</li>
-  <li>Run the newly built image as a container</li>
-  <li>Set up a local development environment to connect a database to the container</li>
-  <li>Use Docker Compose to run the Node.js application</li>
-  <li>Configure a CI/CD pipeline for your application using GitHub Actions.</li>
-  <li>After completing the Node.js getting started modules, you should be able to containerize your own Node.js application based on the examples and instructions provided in this guide.</li>
-</ul>
-
-<p><a href="https://docs.docker.com/language/nodejs/">The Node.js Docker Tutorial</a></p>
-
-<h2 id="using-jekyll-with-docker">Using Jekyll with Docker</h2>
-
-<ul>
-  <li><a href="https://dev.to/michael/compile-a-jekyll-project-without-installing-jekyll-or-ruby-by-using-docker-4184">Compile a Jekyll project without installing Jekyll or Ruby by using Docker</a></li>
-</ul>
-
-<p>File <code class="language-plaintext highlighter-rouge">docker-compose.yml</code>:</p>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
-
-<span class="na">services</span><span class="pi">:</span>
-  <span class="na">site</span><span class="pi">:</span>
-    <span class="na">image</span><span class="pi">:</span> <span class="s">jekyll/jekyll:3.8.6</span>
-    <span class="na">command</span><span class="pi">:</span> <span class="s">bundle exec jekyll serve --future --incremental --watch --livereload --drafts --host 0.0.0.0 --port 4000</span> 
-    <span class="na">ports</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">4000:4000</span>
-    <span class="na">volumes</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">.:/srv/jekyll</span>
-      <span class="pi">-</span> <span class="s">./vendor/bundle:/usr/local/bundle</span>
-</code></pre></div></div>
-
-<p>En el <code class="language-plaintext highlighter-rouge">Rakefile</code>:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">task</span> <span class="ss">:docker</span> <span class="k">do</span>
-  <span class="c1"># sh 'docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" --env JEKYLL_ENV=development -p 4000:4000 jekyll/jekyll:3.8 jekyll serve'</span>
-  <span class="n">sh</span> <span class="s1">'docker compose up'</span> 
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>o bien:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  apuntes git:(main) ✗ cat jekyll-up 
-#!/bin/bash
-docker compose up                                                                                      
-➜  apuntes git:(main) ✗ cat jekyll-down 
-#!/bin/bash
-docker compose down
-</code></pre></div></div>
-
-<h2 id="references">References</h2>
-<ul>
-  <li><a href="https://github.com/docker/getting-started">docker/getting-started</a> en GitHub</li>
-  <li><a href="https://hub.docker.com/r/docker/getting-started">docker/getting-started</a> en Docker</li>
-  <li><a href="https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504">Demystifying Containers - Part I: Kernel Space</a> medium blog</li>
-  <li><a href="https://youtu.be/8fi7uSYlOdc">Containers From Scratch</a> An amzing intro to Containers  by Liz Rice in GOTO 2018</li>
-</ul>
 
 
 <!--

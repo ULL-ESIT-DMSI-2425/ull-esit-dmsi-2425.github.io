@@ -18,7 +18,7 @@
 {"headline":"The JS Event Loop","url":"/tema1-introduccion/async/event-loop/","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=6b026bcb11403d86b34ba69f2c9590f82d1bcaf6">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5d4b9b401791a9d358d96efa681d036720f3e08b">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -125,23 +125,23 @@ Each message has an associated function which gets called in order to handle the
 
 <p>¿Cual es la salida de las llamadas a <code class="language-plaintext highlighter-rouge">console.trace</code>?</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="mi">1</span>	<span class="kd">function</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
-      <span class="mi">2</span>	  <span class="c1">// console.trace imprime una traza de la pila</span>
-      <span class="mi">3</span>	  <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">(</span><span class="dl">"</span><span class="s2">-----------At multiply-----------</span><span class="dl">"</span><span class="p">);</span>
-      <span class="mi">4</span>	  <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="nx">y</span><span class="p">;</span>
-      <span class="mi">5</span>	<span class="p">}</span>
-      <span class="mi">6</span>
-      <span class="mi">7</span>	<span class="kd">function</span> <span class="nx">squared</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-      <span class="mi">8</span>	  <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">(</span><span class="dl">"</span><span class="s2">-----------At squared-----------</span><span class="dl">"</span><span class="p">);</span>
-      <span class="mi">9</span>	  <span class="k">return</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span>
-      <span class="mi">10</span>	<span class="p">}</span>
-      <span class="mi">11</span>
-      <span class="mi">12</span>	<span class="kd">function</span> <span class="nx">printSquare</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-      <span class="mi">13</span>	   <span class="k">return</span> <span class="nx">squared</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
-      <span class="mi">14</span>	<span class="p">}</span>
-      <span class="mi">15</span>
-      <span class="mi">16</span>	<span class="kd">let</span> <span class="nx">numberSquared</span> <span class="o">=</span> <span class="nx">printSquare</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-      <span class="mi">17</span>	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numberSquared</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// console.trace imprime una traza de la pila</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">(</span><span class="dl">"</span><span class="s2">-----------At multiply-----------</span><span class="dl">"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">squared</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">(</span><span class="dl">"</span><span class="s2">-----------At squared-----------</span><span class="dl">"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">printSquare</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">squared</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">numberSquared</span> <span class="o">=</span> <span class="nx">printSquare</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numberSquared</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p><a href="callstack-js-execution">Output from execution</a></p>
@@ -457,6 +457,8 @@ Each message has an associated function which gets called in order to handle the
 </h2>
 
 <ol reversed>
+  
+<li> <a href="/2022/11/07/leccion.html">Clase del Lunes 2022/11/07</a></li>
   
 <li> <a href="/2022/11/03/leccion.html">Clase del Miércoles 2022/11/03</a></li>
   

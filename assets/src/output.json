@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2022/11/07",
+      "date": "November 07, 2022",
+
+      "excerpt": "<h2 id="hemos-visto">Hemos visto</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2022/11/07/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2022/11/03",
       "date": "November 03, 2022",
 
@@ -198,30 +221,6 @@
       
       
       "url": "/2022/10/03/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2022/09/28",
-      "date": "September 28, 2022",
-
-      "excerpt": "<ul>
-  <li><a href="/tema0-presentacion/">Presentación de la asignatura</a></li>
-</ul>
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2022/09/28/leccion.html",
        "tags"  : [
         
         ]
