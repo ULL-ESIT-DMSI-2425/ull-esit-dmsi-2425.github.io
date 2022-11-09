@@ -653,9 +653,9 @@
   },
   
   {
-    "title": "Clases Impartidas",
+    "title": "{{ site.posts size }} taught classes so far",
     "excerpt": "\n",
-    "content": "Clases Impartidas\n\n{% include clases-impartidas.md %}\n",
+    "content": "{{ site.posts | size }} taught classes so far\n\n{% include clases-impartidas.md %}\n",
     "url": "/clases.html"
   },
   
