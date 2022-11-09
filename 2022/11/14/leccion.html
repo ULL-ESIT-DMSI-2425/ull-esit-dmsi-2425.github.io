@@ -5,17 +5,19 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Debugging with Chrome | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Clase del Lunes 2022/11/14 | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Debugging with Chrome" />
+<meta property="og:title" content="Clase del Lunes 2022/11/14" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
-<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta name="description" content="Q&amp;A" />
+<meta property="og:description" content="Q&amp;A" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-14T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Debugging with Chrome" />
+<meta property="twitter:title" content="Clase del Lunes 2022/11/14" />
 <script type="application/ld+json">
-{"headline":"Debugging with Chrome","url":"/assets/temas/introduccion-a-javascript/debugging.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+{"headline":"Clase del Lunes 2022/11/14","dateModified":"2022-11-14T00:00:00+00:00","datePublished":"2022-11-14T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2022/11/14/leccion.html"},"url":"/2022/11/14/leccion.html","@type":"BlogPosting","description":"Q&amp;A","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=fd2b0fa10efc3dcf7b9611f5d2d2abde1c10e73c">
@@ -64,64 +66,23 @@
                 <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
             </div>
 
-            <h2 id="debugging-with-chrome">Debugging with Chrome</h2>
+            <h1>Clase del Lunes 2022/11/14</h1>
 
-<h3 id="debugging-client-code-with-chrome">Debugging Client Code with Chrome</h3>
-
-<ul>
-  <li><a href="https://javascript.info/debugging-chrome">Debugging in Chrome in the client in javascript.info</a></li>
-</ul>
-
-<h3 id="debugging-nodejs-with-chrome">Debugging NodeJS with Chrome</h3>
-
-<p>En la terminal:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜   node --version
-v14.4.0
-➜   node --inspect-brk logging-espree.js
-Debugger listening on ws://127.0.0.1:9229/331b3011-c7f5-447f-8731-1371c53847a5
-For help, see: https://nodejs.org/en/docs/inspector
-</code></pre></div></div>
-
-<p>the option <code class="language-plaintext highlighter-rouge">--inspect-brk=[host:port]</code> does the following:</p>
+<h2 id="qa">Q&amp;A</h2>
 
 <ul>
-  <li>Enable inspector agent</li>
-  <li>Bind to address or hostname <code class="language-plaintext highlighter-rouge">host</code> (default: 127.0.0.1)</li>
-  <li>Listen on port <code class="language-plaintext highlighter-rouge">port</code> (default: 9229)</li>
-  <li>Break before user code starts</li>
+  <li><a href="/assets/temas/introduccion-a-javascript/baseurl.html">Varios ficheros de configuración para Jekyll</a></li>
 </ul>
 
-<p>En el navegador abrimos la URL <code class="language-plaintext highlighter-rouge">chrome://inspect</code> y hacemos <code class="language-plaintext highlighter-rouge">click</code> en el enlace <em>inspect</em></p>
-
-<p><img src="/assets/images/chrome-debugging-nodejs-inspect.jpg" alt="" /></p>
-
-<p>Insert <code class="language-plaintext highlighter-rouge">debugger</code> statements wherever you want to set a break-point:</p>
-
-<p><img src="/assets/images/chrome-debugging-nodejs-debug-statements.png" alt="" /></p>
-
-<h2 id="debugging-with-visual-studio">Debugging with Visual Studio</h2>
-
-<p>If the <strong>Auto Attach</strong> feature is enabled, the Node debugger automatically attaches to certain Node.js processes that have been launched from VS Code’s Integrated Terminal. To enable the feature, either use the <strong>Toggle Auto Attach</strong> command from the command palette (<span class="keybinding">F1</span>) or, if it’s already activated, use the <strong>Auto Attach</strong> Status bar item</p>
-
-<p>After enabling Auto Attach, you’ll need to restart your terminal.</p>
-
-<p><img src="https://code.visualstudio.com/assets/docs/nodejs/nodejs-debugging/auto-attach.gif" alt="" /></p>
-
-<p>See <a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging">Node.js debugging in VS Code</a></p>
-
-<h2 id="references">References</h2>
+<h2 id="async-programming-in-js">Async Programming in JS</h2>
 
 <ul>
-  <li><a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging">Node.js debugging in VS Code</a></li>
-  <li><a href="https://nodejs.org/en/docs/guides/debugging-getting-started/">Node.JS Debugging Guide</a></li>
-  <li>Mis viejos apuntes: <a href="https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/apuntes/nodejs/">Debugging NodeJS</a></li>
-  <li>Debugging in 2017 with Node.js YouTube video https://youtu.be/Xb_0awoShR8
-    <ul>
-      <li><a href="https://youtu.be/Xb_0awoShR8">Debugging in 2017 with Node.js</a> YouTube</li>
-    </ul>
-  </li>
+  <li><a href="/tema1-introduccion/async/event-loop/">The JS Event Loop</a></li>
+  <li><a href="/tema1-introduccion/async/event-loop/race-condition.html">Race Conditions in JS</a></li>
+  <li><a href="http:///tema1-introduccion/practicas/asyncmap/">Descripción de la Práctica</a></li>
 </ul>
+
+
 
 
 <!--
