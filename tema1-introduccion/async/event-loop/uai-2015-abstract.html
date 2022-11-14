@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Desarrollo y Mantenimiento de Sistemas Informáticos | 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</title>
+<title>UAI 2015: Charla Sistemas y Tecnologías Web: Paralelismo y Concurrencia en JavaScript | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="og:title" content="UAI 2015: Charla Sistemas y Tecnologías Web: Paralelismo y Concurrencia en JavaScript" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="twitter:title" content="UAI 2015: Charla Sistemas y Tecnologías Web: Paralelismo y Concurrencia en JavaScript" />
 <script type="application/ld+json">
-{"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/degree.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+{"headline":"UAI 2015: Charla Sistemas y Tecnologías Web: Paralelismo y Concurrencia en JavaScript","url":"/tema1-introduccion/async/event-loop/uai-2015-abstract.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=28fed7bb877c3123000dc44f8fc8ff6b8e360410">
@@ -64,10 +64,56 @@
                 <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
             </div>
 
-            <ul>
-  <li><a href="https://www.ull.es/grados/ingenieria-informatica/" target="_blank">Plan de Estudios, exámenes, etc.</a></li>
-  <li><a href="https://campusvirtual.ull.es/facultades/course/view.php?id=100" target="_blank">Aula de Coordinación de Tercer curso. (Grado en Ingeniería Informática)</a></li>
+            <h1 id="uai-2015-charla-sistemas-y-tecnologías-web-paralelismo-y-concurrencia-en-javascript">UAI 2015: Charla Sistemas y Tecnologías Web: Paralelismo y Concurrencia en JavaScript</h1>
+
+<p>Esta charla de nombre genérico <em>Sistemas y Tecnologías Web</em> es
+básicamente una repetición de la charla <em>Paralelismo y Concurrencia en
+JavaScript</em> que dió Stephan Herhut - Un investigador que trabaja en
+Intel en el proyecto <em><a href="https://en.wikipedia.org/wiki/River_Trail_(JavaScript_engine)">River
+Trail</a></em>,
+una librería para programación paralela en JavaScript - dentro del
+congreso <a href="https://thestrangeloop.com/">Strange Loop</a>y que puede
+encontrarse en <a href="http://www.infoq.com/">InfoQ</a>. En esa charla Stephan
+Herhut habla de Concurrencia y Paralelismo en JavaScript y HTML5,
+introduciendo diversos conceptos y tecnologías como son los Web Workers,
+las Promesas, el Paralelismo Vectorial o SIMD y el proyecto <a href="https://github.com/IntelLabs/RiverTrail/wiki">Parallel
+JavaScript (River Trail)</a>.</p>
+
+<ul>
+  <li>Charla con el vídeo y pdf <a href="http://www.infoq.com/presentations/javascript-concurrency-parallelism">Concurrency and Parallel Computing in
+JavaScript</a>
+por Stephan Herhut el 5 de Marzo de 2014 dentro del congreso Strange
+Loop. Puede encontrarse en <a href="http://www.infoq.com/">InfoQ</a></li>
+  <li>Fichero PDF correspondiente a la charla:
+<a href="StrangeLoop2013-StephanHerhut-ConcurrencyandParallelComputinginJavaScript.pdf">StrangeLoop2013-StephanHerhut-ConcurrencyandParallelComputinginJavaScript.pdf</a></li>
+  <li><a href="https://gist.github.com/crguezl/43107f45bc0c1ec7626c">Gist: Ejemplo de Race Condition en JS tomado de la charla de
+Herhut</a>
+(Modificado)</li>
+  <li><a href="https://github.com/SYTW/simple-web-worker">Repositorio en GitHub con ejemplo de uso de Web Workers
+(comunicación
+bi-direccional)</a></li>
+  <li><a href="https://gist.github.com/crguezl/d65fe06f11619994d1c1">Gist: Ejemplo simple de
+Promise</a></li>
 </ul>
+
+<p>En esta charla - dentro de UAI 2015 - intentaré explicar los mismos
+conceptos siguiendo sus trasparencias y los gist y repositorios github
+que aparecen en la lista anterior.</p>
+
+<ul>
+  <li><a href="https://github.com/crguezl">Casiano Rodríguez León</a> en GitHub</li>
+  <li><a href="http://pal.ull.es/">Grupo de Algoritmos y Lenguajes Paralelos de la Universidad de La
+Laguna</a></li>
+  <li><a href="https://www.ull.es/departamentos/ingenieria-informatica-sistemas/">Area de Lenguajes y Sistemas del Departamento de Informática de la
+Universidad de La
+Laguna</a></li>
+  <li><a href="https://sede.fg.ull.es/es/curso/detalle/a15030448/ultimos-avances-en-informatica-2015-latest-advances-in-computer-science-2015">El curso “Últimos avances en informática 2015 (Latest advances in
+computer science 2015)” en la Sede electrónica Fundación General de
+la Universidad de La
+Laguna</a>
+<a href="https://sede.fg.ull.es/">(FGULL)</a></li>
+</ul>
+
 
 
 <!--
