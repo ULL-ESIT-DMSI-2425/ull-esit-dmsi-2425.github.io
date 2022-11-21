@@ -110,6 +110,13 @@
         "url": "/2022/11/21/leccion.html"
       },
     
+      {
+        "title": "Clase del Miércoles 2022/11/23",
+        "excerpt": "Async Programming in JS\n\n",
+        "content": "Async Programming in JS\n\n\n  The JS Event Loop\n  Descripción de la Práctica\n\n\n\n  Vamos a aislar las soluciones parciales que hemos realizado en módulos y a usar los mismos\ndesde programas cliente\n  Vamos a abstraer las funciones proveídas para que sean más genéricas\n\n",
+        "url": "/2022/11/23/leccion.html"
+      },
+    
   
   
   
