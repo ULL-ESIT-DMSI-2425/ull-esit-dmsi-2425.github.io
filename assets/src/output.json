@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2022/11/21",
+      "date": "November 21, 2022",
+
+      "excerpt": "<h2 id="async-programming-in-js">Async Programming in JS</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2022/11/21/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2022/11/16",
       "date": "November 16, 2022",
 
@@ -197,29 +220,6 @@
       
       
       "url": "/2022/10/19/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2022/10/17",
-      "date": "October 17, 2022",
-
-      "excerpt": "<p>Hoy repasaremos las prácticas:</p>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2022/10/17/leccion.html",
        "tags"  : [
         
         ]
