@@ -124,6 +124,13 @@
         "url": "/2022/11/28/leccion.html"
       },
     
+      {
+        "title": "Clase del Miércoles 2022/11/30",
+        "excerpt": "Async Programming in JS\n\n",
+        "content": "Async Programming in JS\n\n\n  The JS Event Loop\n  Descripción de la Práctica\n\n\nNos quedamos generalizando la función asyncMap para que sea más genérica:\n\nlet asyncMap = function(inputs, fun, callback){\n    // Write your code here\n    for(let i=0; i &lt; inputs.length; i++) {\n      fun(inputs[i], (err, data) =&gt; {\n        /*\n        si hubieron errores llamar a callback con el error\n        si no si es el último que termina llamara a callback con (null, array de resultados)\n        si no hay que guardar el resultado parcial en el array de resultados\n        */\n      })\n    }\n}\n\n\nTenemos también que generalizar la función de secuencialización para que admita cualquier tipo de función asíncrona y no sólo readFile:\n\nfunction readFilesSerially(files, callback) {\n  let counter = 0;\n  let results = [];\n\n  let auxcallback = (err, data) =&gt; {\n    if (err) {\n      callback(new Error(\"Ocurrió un error! \" + err.message))\n    }\n    else {\n      results.push(data)\n      counter++;\n      if (counter &lt; files.length)\n        fs.readFile(files[counter], \"utf-8\", auxcallback)\n      else {\n        // se han leido secuencialmente todos los ficheros\n        callback(null, results)\n      }\n\n    }\n  }\n  fs.readFile(files[0], \"utf-8\", auxcallback);\n\n}\n\n",
+        "url": "/2022/11/30/leccion.html"
+      },
+    
   
   
   

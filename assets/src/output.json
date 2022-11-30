@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Miércoles 2022/11/30",
+      "date": "November 30, 2022",
+
+      "excerpt": "<h2 id="async-programming-in-js">Async Programming in JS</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2022/11/30/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Lunes 2022/11/28",
       "date": "November 28, 2022",
 
@@ -197,29 +220,6 @@
       
       
       "url": "/2022/10/31/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2022/10/26",
-      "date": "October 26, 2022",
-
-      "excerpt": "<h2 id="lab-introduction-to-systems-development-and-static-generators">Lab “Introduction to Systems Development” and Static Generators</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2022/10/26/leccion.html",
        "tags"  : [
         
         ]
