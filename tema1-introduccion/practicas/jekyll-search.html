@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/tema1-introduccion/practicas/jekyll-search","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=c0823368db36ac45ae98de9e226b7ea6dbde96a9">
+    <link rel="stylesheet" href="/assets/css/style.css?v=9f78506e923e6b9ab1d54df906e7049c43fdac27">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -67,31 +67,22 @@
             <ul>
   <li><a href="#práctica-jekyll-search">Práctica jekyll-search</a>
     <ul>
-      <li><a href="#adding-a-simple-search-to-our-jekyll-site">Adding a Simple Search to our Jekyll Site</a>
-        <ul>
-          <li><a href="#como-hacerlo">¿Como hacerlo?</a></li>
-          <li><a href="#liquid-template-to-generate-at-build-time-the-_siteassetssrcsearchjson">Liquid template to generate at build time the _site/assets/src/search.json</a>
-            <ul>
-              <li><a href="#entendiendo-la-línea-content-raw-pagecontent--markdownify--strip_html--jsonify-endraw">Entendiendo la línea <code class="language-plaintext highlighter-rouge">"content": {{ page.content | markdownify | strip_html | jsonify }},</code></a></li>
-            </ul>
-          </li>
-          <li><a href="#la-página-de-búsqueda-searchmd">La página de Búsqueda: search.md</a></li>
-          <li><a href="#la-clase-jekyllsearch-fichero-searchjs">La clase JekyllSearch: Fichero search.js</a>
-            <ul>
-              <li><a href="#urlsearchparams">url.searchParams</a></li>
-              <li><a href="#constructor">constructor</a></li>
-              <li><a href="#windowhistorypushstate">window.history.pushState</a></li>
-            </ul>
-          </li>
-          <li><a href="#caching">Caching</a></li>
-          <li><a href="#fetch-polyfill">Fetch Polyfill</a></li>
-          <li><a href="#estructura-del-sitio">Estructura del sitio</a></li>
-          <li><a href="#referencias">Referencias</a></li>
-        </ul>
-      </li>
+      <li><a href="#adding-a-simple-search-to-our-jekyll-site">Adding a Simple Search to our Jekyll Site</a></li>
+      <li><a href="#como-hacerlo">¿Como hacerlo?</a></li>
+      <li><a href="#liquid-template-to-generate-at-build-time-the-_siteassetssrcsearchjson">Liquid template to generate at build time the _site/assets/src/search.json</a></li>
+      <li><a href="#entendiendo-la-línea-content-raw-pagecontent--markdownify--strip_html--jsonify-endraw">Entendiendo la línea <code class="language-plaintext highlighter-rouge">"content": {{ page.content | markdownify | strip_html | jsonify }},</code></a></li>
+      <li><a href="#la-página-de-búsqueda-searchmd">La página de Búsqueda: search.md</a></li>
+      <li><a href="#la-clase-jekyllsearch-fichero-searchjs">La clase JekyllSearch: Fichero search.js</a></li>
+      <li><a href="#urlsearchparams">url.searchParams</a></li>
+      <li><a href="#constructor">constructor</a></li>
+      <li><a href="#windowhistorypushstate">window.history.pushState</a></li>
+      <li><a href="#caching">Caching</a></li>
+      <li><a href="#fetch-polyfill">Fetch Polyfill</a></li>
+      <li><a href="#estructura-del-sitio">Estructura del sitio</a></li>
+      <li><a href="#rúbrica">Rúbrica</a></li>
+      <li><a href="#referencias">Referencias</a></li>
     </ul>
   </li>
-  <li><a href="#rúbrica">Rúbrica</a></li>
 </ul>
 
 <h1 id="práctica-jekyll-search">Práctica jekyll-search</h1>
@@ -117,7 +108,7 @@
 <p>La entrega de esta práctica se realizará en el mismo repo asociado a <a href="/tema1-introduccion/practicas/intro2sd/">la práctica <em>Introduction to Systems Development</em></a>.
 Cree una rama <code class="language-plaintext highlighter-rouge">intro2sd</code> para señalar el punto de entrega de la anterior y haga la entrega de esta tarea en la rama <code class="language-plaintext highlighter-rouge">main</code>.</p>
 
-<h3 id="como-hacerlo">¿Como hacerlo?</h3>
+<h2 id="como-hacerlo">¿Como hacerlo?</h2>
 
 <ol>
   <li>Since Jekyll has no server side execution, we have to rely on storing all the required content in a single file and search our keyword from that file.</li>
@@ -143,7 +134,7 @@ Cree una rama <code class="language-plaintext highlighter-rouge">intro2sd</code>
 
 <p>Véase <a href="https://raw.githubusercontent.com/ULL-MII-SYTWS-1920/ull-mii-sytws-1920.github.io/master/assets/src/search.json?token=AAIW6GWXQOTDJ7VYDKDGBWK55YN74">search.json</a> (protected)</p>
 
-<h3 id="liquid-template-to-generate-at-build-time-the-_siteassetssrcsearchjson">Liquid template to generate at build time the _site/assets/src/search.json</h3>
+<h2 id="liquid-template-to-generate-at-build-time-the-_siteassetssrcsearchjson">Liquid template to generate at build time the _site/assets/src/search.json</h2>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: null
@@ -217,7 +208,7 @@ sitemap: false
 <p>Use the <a href="https://liquidjs.com/playground.html">Liquid Playground</a> to test the Liquid expressions above.
 The lower left panel is to enter a JSON holding variables that can be accesed in the upper left panel by its name.</p>
 
-<h4 id="entendiendo-la-línea-content--pagecontent--markdownify--strip_html--jsonify-">Entendiendo la línea <code class="language-plaintext highlighter-rouge">"content": {{ page.content | markdownify | strip_html | jsonify }},</code></h4>
+<h2 id="entendiendo-la-línea-content--pagecontent--markdownify--strip_html--jsonify-">Entendiendo la línea <code class="language-plaintext highlighter-rouge">"content": {{ page.content | markdownify | strip_html | jsonify }},</code></h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">page.content</code> el contenido de la página todavia sin renderizar (se supone que es fundamentalmente markdown, pero puede contener yml en el front-matter, html, scripts, liquid, etc.)</li>
@@ -259,7 +250,7 @@ Compara &lt; script&gt;{{page.html}}&lt;/script&gt; con su `strip_html` &lt; scr
 <p>La idea general es que necesitamos suprimir los tags, tanto yml, markdown, HTML, etc. para que no confundan al método de busca. 
 Por eso convertimos el markdown a HTML y después suprimimos los tags HTML. También convertimos el yml a JSON.</p>
 
-<h3 id="la-página-de-búsqueda-searchmd">La página de Búsqueda: search.md</h3>
+<h2 id="la-página-de-búsqueda-searchmd">La página de Búsqueda: search.md</h2>
 
 <p><strong>Fuente</strong>: <a href="https://github.com/ULL-MFP-AET/ull-mfp-aet.github.io/edit/main/search.md">search.md</a></p>
 
@@ -351,7 +342,7 @@ title: Search
 
 <p><img src="/assets/images/what-is-a-baseurl.jpg" alt="https://byparker.com/img/what-is-a-baseurl.jpg" /></p>
 
-<h3 id="la-clase-jekyllsearch-fichero-searchjs">La clase JekyllSearch: Fichero search.js</h3>
+<h2 id="la-clase-jekyllsearch-fichero-searchjs">La clase JekyllSearch: Fichero search.js</h2>
 
 <p>You can find the source at  <a href="https://github.com/ULL-MFP-AET/ull-mfp-aet.github.io/blob/main/assets/src/search.js">ULL-MFP-AET/ull-mfp-aet.github.io/assets/src/search.js</a></p>
 
@@ -428,7 +419,7 @@ title: Search
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h4 id="urlsearchparams">url.searchParams</h4>
+<h2 id="urlsearchparams">url.searchParams</h2>
 
 <p>If the URL of your page is <code class="language-plaintext highlighter-rouge">https://example.com/?name=Jonathan%20Smith&amp;age=18</code> you could parse out the <code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">age</code> parameters using:</p>
 
@@ -437,7 +428,7 @@ title: Search
 <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">));</span> <span class="c1">// is the number 18</span>
 </code></pre></div></div>
 
-<h4 id="constructor">constructor</h4>
+<h2 id="constructor">constructor</h2>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">constructor</span><span class="p">(</span><span class="nx">dataSource</span><span class="p">,</span> <span class="nx">searchField</span><span class="p">,</span> <span class="nx">resultsList</span><span class="p">,</span> <span class="nx">siteURL</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="nx">dataSource</span>
@@ -459,7 +450,7 @@ Such collections always reflect the current state of the document and <em>auto-u
 <p>In contrast, <code class="language-plaintext highlighter-rouge">querySelectorAll</code> returns a static collection. 
 It’s like a fixed array of elements.</p>
 
-<h4 id="windowhistorypushstate">window.history.pushState</h4>
+<h2 id="windowhistorypushstate">window.history.pushState</h2>
 
 <p>The  <code class="language-plaintext highlighter-rouge">window</code> object provides access to the browser’s session history through the <code class="language-plaintext highlighter-rouge">history</code> object. 
 The <code class="language-plaintext highlighter-rouge">history.pushState(state, title, url)</code> method adds a state to the browser’s session history stack.</p>
@@ -473,7 +464,7 @@ The <code class="language-plaintext highlighter-rouge">history.pushState(state, 
     <span class="p">})</span>
 </code></pre></div></div>
 
-<h3 id="caching">Caching</h3>
+<h2 id="caching">Caching</h2>
 
 <p>The resources downloaded through <code class="language-plaintext highlighter-rouge">fetch()</code>, similar to other resources that the browser downloads, are subject to the <a href="https://developer.mozilla.org/en/docs/Web/HTTP/Caching_FAQ">HTTP cache</a>.  </p>
 
@@ -486,7 +477,7 @@ The <code class="language-plaintext highlighter-rouge">history.pushState(state, 
 
 <p>The <code class="language-plaintext highlighter-rouge">search.json</code> is not going to change until the next <code class="language-plaintext highlighter-rouge">push</code></p>
 
-<h3 id="fetch-polyfill">Fetch Polyfill</h3>
+<h2 id="fetch-polyfill">Fetch Polyfill</h2>
 
 <dl>
 <dt>Polyfill</dt>
@@ -509,7 +500,7 @@ The <code class="language-plaintext highlighter-rouge">history.pushState(state, 
   </li>
 </ul>
 
-<h3 id="estructura-del-sitio">Estructura del sitio</h3>
+<h2 id="estructura-del-sitio">Estructura del sitio</h2>
 
 <p>Esta imagen muestra los ficheros implicados en este ejercicio dentro de 
 la estructura del sitio de estos apuntes:</p>
@@ -565,7 +556,23 @@ $ tree -I _site
 
 </code></pre></div></div>
 
-<h3 id="referencias">Referencias</h3>
+<h2 id="rúbrica">Rúbrica</h2>
+
+<ul>
+  <li>Busca en todos los ficheros, no solo los  de los posts sino también los de las páginas</li>
+  <li>Admite expresiones regulares</li>
+  <li>Los resultados vayan apareciendo conforme tecleamos</li>
+  <li>Se muestra una lista de enlaces a los ficheros que contienen la expresión buscada y un resumen de las primeros caracteres del fichero</li>
+  <li>El constructor de JekyllSearch recibe en un objeto los argumentos en vez de posicionalmente</li>
+  <li>Se ha hecho un resumen del capítulo 2 Lifecycle types and their rationales del libro <em>Developing Information Systems</em>, editado by James Cadle</li>
+  <li>Se ha creado una rama <code class="language-plaintext highlighter-rouge">intro2sd</code> para señalar el punto de entrega de la anterior y se hace la entrega de esta tarea en la rama <code class="language-plaintext highlighter-rouge">main</code>.</li>
+  <li>Código de la práctica correcto y funciona</li>
+  <li>Informe bien elaborado</li>
+  <li>Kanban Board project conteniendo las incidencias de la rúbrica</li>
+  <li>Ha entregado el .zip en el campus con el repo</li>
+</ul>
+
+<h2 id="referencias">Referencias</h2>
 
 <ul>
   <li><a href="/assets/temas/introduccion-a-javascript/jekyll">Sección Jekyll en estos apuntes</a></li>
@@ -585,17 +592,6 @@ $ tree -I _site
 * [CloudCannon](https://app.cloudcannon.com/) is cloud content management system and hosting provider for Jekyll websites
 * [documentation-theme-jekyll](https://github.com/ULL-MII-SYTWS-1920/documentation-theme-jekyll) Un tema muy completo. Tiene de todo
 -->
-
-<h1 id="rúbrica">Rúbrica</h1>
-
-<ul>
-  <li>Código de la práctica correcto y funciona</li>
-  <li>El constructor recibe en un objeto los argumentos en vez de posicionalmente</li>
-  <li>Informe bien elaborado</li>
-  <li>Kanban Board project conteniendo las incidencias de la rúbrica</li>
-  <li>Ha entregado el .zip en el campus con el repo</li>
-</ul>
-
 
 
 <!--
