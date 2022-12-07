@@ -18,7 +18,7 @@
 {"headline":"Práctica jekyll-search","url":"/tema1-introduccion/practicas/jekyll-search/","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=a3c16650bfcedb9a5afa2649ece1718e13152552">
+    <link rel="stylesheet" href="/assets/css/style.css?v=907bfaacaf2561a9f23dd2595cd95ee86e2faf19">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -134,14 +134,10 @@ sitemap: false
       },
     {% endfor %}
   {% endfor %}
+  
   {% assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:'doc','doc.title != null' %}
-  {% for page in pages $}
-  {
-    "title": {{ page.title | jsonify }},
-    "excerpt": {{ page.excerpt | markdownify | strip_html | jsonify }},
-    "content": {{ page.content | markdownify | strip_html | jsonify }},
-    "url": {{ site.baseurl | append: page.url | jsonify }}
-  }{% for page in pages $}
+
+  {% for page in pages %}
   {
     "title": {{ page.title | jsonify }},
     "excerpt": {{ page.excerpt | markdownify | strip_html | jsonify }},
@@ -153,6 +149,7 @@ sitemap: false
 {% endcapture %}
 
 {{ json | lstrip }}
+
 </code></pre></div></div>
 
 <p>You can find the <a href="https://github.com/ULL-MFP-AET/ull-mfp-aet.github.io/blob/main/assets/src/search.json" target="_blank">source code at <code class="language-plaintext highlighter-rouge">/ULL-MFP-AET/ull-mfp-aet.github.io/main/assets/src/search.json</code></a></p>
@@ -234,11 +231,7 @@ Por eso convertimos el markdown a HTML y después suprimimos los tags HTML. Tamb
 
 <h3 id="la-página-de-búsqueda-searchmd">La página de Búsqueda: search.md</h3>
 
-<ul>
-  <li><a href="https://raw.githubusercontent.com/ULL-MII-SYTWS-1920/ull-mii-sytws-1920.github.io/master/search.md?token=AAIW6GSTWVSQTT272LOFILK55YPFU">search.md</a> (protected)</li>
-</ul>
-
-<p><strong>Fichero <code class="language-plaintext highlighter-rouge">search.md</code></strong>:</p>
+<p><strong>Fuente</strong>: <a href="https://github.com/ULL-MFP-AET/ull-mfp-aet.github.io/edit/main/search.md">search.md</a></p>
 
 <p>La idea es que vamos a escribir una clase <code class="language-plaintext highlighter-rouge">JekyllSearch</code> que implementa la búsqueda.
 Debe disponer  de un constructor al que se le pasan cuatro argumentos:</p>
@@ -288,10 +281,10 @@ title: Search
 <span class="nt">&lt; script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
   <span class="kd">const</span> <span class="nx">search</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JekyllSearch</span><span class="p">(</span>
-    <span class="dl">'</span><span class="s1">{{site.url}  }/assets/src/search.json</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">{{site.url}}/assets/src/search.json</span><span class="dl">'</span><span class="p">,</span>
     <span class="dl">'</span><span class="s1">#search</span><span class="dl">'</span><span class="p">,</span>
     <span class="dl">'</span><span class="s1">#list</span><span class="dl">'</span><span class="p">,</span>
-    <span class="dl">'</span><span class="s1">{{site.url}  }</span><span class="dl">'</span>
+    <span class="dl">'</span><span class="s1">{{site.baseurl}}</span><span class="dl">'</span>
   <span class="p">);</span>
   <span class="nx">search</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span> 
   
