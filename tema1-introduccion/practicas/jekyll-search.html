@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/tema1-introduccion/practicas/jekyll-search","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=19e07e611d7382b3b864bd25728bf937de99ee59">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5cbf3afe76aa608d74d370f9dff950cf341a208f">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -545,26 +545,38 @@ The <code class="language-plaintext highlighter-rouge">history.pushState(state, 
 
 <h3 id="what-is-cors">What is CORS</h3>
 
-<p>::: tip CORS
-The default behavior of web browsers that initiate requests from a page via JavaScript is that they follow the <strong>same-origin policy</strong>.</p>
+<p>The <strong>default behavior of web browsers that initiate requests from a page via JavaScript is that they follow the same-origin policy</strong>.</p>
+
+<p>Two URLs would be considered to be having different origins when they have different protocols, ports (if specified), or hosts.</p>
+
+<p><img src="/assets/images/same-origin-definition.png" alt="" /></p>
 
 <p>This means that requests can only be made to the same domain (or sub domain). 
 <strong>Requests to an entirely different domain will fail</strong>.</p>
 
+<p><img src="/assets/images/same-origin-error.png" alt="" /></p>
+
 <p>This restriction exists because requests made at other domains by your browser would carry along your cookies which often means you’d be logged in to the other site.</p>
 
-<p>So, without <strong>same-origin</strong>, any site could host JavaScript that called logout on campusvirtual.ull.es for example, and it would log you out. 
-Now imagine the complications when we talk about banking sites, government sites, etc.</p>
+<p>So, without <strong>same-origin</strong>, any site could host JavaScript that called logout on <campusvirtual.ull.es>
+for example, and it would log you out.</campusvirtual.ull.es></p>
+
+<p>:+: Now imagine the complications when we talk about banking sites, government sites, etc.</p>
 
 <p>So, <strong>all browsers simply restrict script-based network calls to their own domain</strong> to make it simple and safe.</p>
 
-<p>CORS allows these cross-domain requests to happen, but <strong>only when each side opts into CORS support</strong>.
-:::</p>
+<p>CORS allows these cross-domain requests to happen, but <strong>only when each side opts into CORS support</strong>.</p>
 
 <p>Sometimes, however it’s just a helpful website (say, http://goodsite.foo) trying to use a public API from another origin (say, http://api.example.com). The programmers who worked hard on api.example.com want all origins to access their site’s contents freely. In that case, the API server at api.example.com can use CORS headers to allow goodsite.foo (or any other requesting origin) to access its API responses.</p>
 
 <p>So, most of the time cross-origin access is a bad thing, but there are cases where it’s a good thing. 
 CORS allows the good case to happen when the requested site wants it to happen.</p>
+
+<p>CORS allows the server to explicitly whitelist certain origin and help to bypass the <strong>same-origin</strong> policy.</p>
+
+<p>If your server is configured for CORS, it will return an extra header with <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> on each response.</p>
+
+<p><img src="/assets/images/cors-header.png" alt="" /></p>
 
 <p>The <code class="language-plaintext highlighter-rouge">mode</code> option of the <code class="language-plaintext highlighter-rouge">fetch()</code> method allows you to define the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request/mode">CORS mode</a> of the request:</p>
 
