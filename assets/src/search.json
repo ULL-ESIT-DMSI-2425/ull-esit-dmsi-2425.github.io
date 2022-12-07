@@ -592,7 +592,7 @@
   {
     "title": "Service Workers",
     "excerpt": "\n",
-    "content": "Basically, a Service Worker is a type of Web Worker, and more specifically it’s like a Shared Worker.\n\nService workers essentially act as proxy servers that sit between web applications, the browser, and the network (when available).\n\nThey are intended, among other things, to enable the creation of effective offline experiences by\n\n\n  intercept network requests and\n  take appropriate action based on whether the network is available, and\n  update assets residing on the server.\n\n\n\n",
+    "content": "{{ page.title }}\n\nBasically, a Service Worker is a type of Web Worker, and more specifically it’s like a Shared Worker.\n\nService workers essentially act as proxy servers that sit between web applications, the browser, and the network (when available).\n\nThey are intended, among other things, to enable the creation of effective offline experiences by\n\n\n  intercept network requests and\n  take appropriate action based on whether the network is available, and\n  update assets residing on the server.\n\n\n\n",
     "url": "/temas/service-workers"
   },
   
