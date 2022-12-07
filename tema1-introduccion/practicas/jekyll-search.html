@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/tema1-introduccion/practicas/jekyll-search","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=639bb5a7173866aa7a9a42d75445d7c2ae88088f">
+    <link rel="stylesheet" href="/assets/css/style.css?v=650bc70aea8036867fdb84f3658ff36262e1a04c">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -74,9 +74,18 @@
       <li><a href="#la-página-de-búsqueda-searchmd">La página de Búsqueda: search.md</a></li>
       <li><a href="#la-clase-jekyllsearch-fichero-searchjs">La clase JekyllSearch: Fichero search.js</a></li>
       <li><a href="#constructor">constructor</a></li>
-      <li><a href="#init">init</a></li>
-      <li><a href="#windowhistorypushstate">window.history.pushState</a></li>
-      <li><a href="#caching">Caching</a></li>
+      <li><a href="#init">init</a>
+        <ul>
+          <li><a href="#url-parameters">URL parameters</a></li>
+          <li><a href="#urlsearchparams">url.searchParams</a></li>
+          <li><a href="#windowhistorypushstate">window.history.pushState</a></li>
+        </ul>
+      </li>
+      <li><a href="#findresults">findResults</a>
+        <ul>
+          <li><a href="#caching">Caching</a></li>
+        </ul>
+      </li>
       <li><a href="#fetch-polyfill">Fetch Polyfill</a></li>
       <li><a href="#estructura-del-sitio">Estructura del sitio</a></li>
       <li><a href="#rúbrica">Rúbrica</a></li>
@@ -467,7 +476,7 @@ It’s like a fixed array of elements.</p>
   <span class="p">}</span>
 </code></pre></div></div>
 
-<p><strong>URL parameters</strong></p>
+<h3 id="url-parameters">URL parameters</h3>
 
 <p>(also known as <strong>query strings</strong>) are a way to structure additional information for a given URL. 
 Parameters are added to the end of a URL after a <code class="language-plaintext highlighter-rouge">?</code> symbol, and multiple parameters can be included when separated by the <code class="language-plaintext highlighter-rouge">&amp;</code> symbol.</p>
@@ -478,7 +487,7 @@ Parameters are added to the end of a URL after a <code class="language-plaintext
 
 <p><img src="/assets/images/search-query.png" alt="" /></p>
 
-<p><strong>url.searchParams</strong></p>
+<h3 id="urlsearchparams">url.searchParams</h3>
 
 <p>If the URL of your page is <code class="language-plaintext highlighter-rouge">https://example.com/?name=Jonathan%20Smith&amp;age=18</code> you could parse out the <code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">age</code> parameters using:</p>
 
@@ -487,7 +496,7 @@ Parameters are added to the end of a URL after a <code class="language-plaintext
 <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">));</span> <span class="c1">// is the number 18</span>
 </code></pre></div></div>
 
-<h2 id="windowhistorypushstate">window.history.pushState</h2>
+<h3 id="windowhistorypushstate">window.history.pushState</h3>
 
 <p>The  <code class="language-plaintext highlighter-rouge">window</code> object provides access to the browser’s session history through the <code class="language-plaintext highlighter-rouge">history</code> object. 
 The <code class="language-plaintext highlighter-rouge">history.pushState(state, title, url)</code> method adds a state to the browser’s session history stack.</p>
@@ -501,7 +510,23 @@ The <code class="language-plaintext highlighter-rouge">history.pushState(state, 
     <span class="p">})</span>
 </code></pre></div></div>
 
-<h2 id="caching">Caching</h2>
+<h2 id="findresults">findResults</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">fetchedData</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">,</span> <span class="p">{</span><span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">no-cors</span><span class="dl">'</span><span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">blob</span> <span class="o">=&gt;</span> <span class="nx">blob</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+  <span class="p">}</span>
+
+  <span class="k">async</span> <span class="nx">findResults</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">fetchedData</span><span class="p">()</span>
+    <span class="kd">const</span> <span class="nx">regex</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">searchField</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="dl">'</span><span class="s1">i</span><span class="dl">'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regex</span><span class="p">)</span> <span class="o">||</span> <span class="nx">item</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regex</span><span class="p">)</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="caching">Caching</h3>
 
 <p>The resources downloaded through <code class="language-plaintext highlighter-rouge">fetch()</code>, similar to other resources that the browser downloads, are subject to the <a href="https://developer.mozilla.org/en/docs/Web/HTTP/Caching_FAQ">HTTP cache</a>.  </p>
 
