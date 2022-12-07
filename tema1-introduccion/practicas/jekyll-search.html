@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/tema1-introduccion/practicas/jekyll-search","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=4c5e042f07bc9d69f3a26500ee020cab6baca2f1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=92bc5e9795c92867048899fc67c4b42b07d481c1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -545,51 +545,13 @@ The <code class="language-plaintext highlighter-rouge">history.pushState(state, 
 
 <h3 id="what-is-cors">What is CORS</h3>
 
-<p>The <strong>default behavior of web browsers that initiate requests from a page via JavaScript is that they follow the same-origin policy</strong>.</p>
-
-<p>Two URLs would be considered to be having different origins when they have different protocols, ports (if specified), or hosts.</p>
-
-<p><img src="/assets/images/same-origin-definition.png" alt="" /></p>
-
-<p>This means that requests can only be made to the same domain (or sub domain). 
-<strong>Requests to an entirely different domain will fail</strong>.</p>
-
-<p><img src="/assets/images/same-origin-error.png" alt="" /></p>
-
-<p>This restriction exists because requests made at other domains by your browser would carry along your cookies which often means you’d be logged in to the other site.</p>
-
-<p>So, without <strong>same-origin</strong>, any site could host JavaScript that called logout on <campusvirtual.ull.es>
-for example, and it would log you out.</campusvirtual.ull.es></p>
-
-<p>:+: Now imagine the complications when we talk about banking sites, government sites, etc.</p>
-
-<p>So, <strong>all browsers simply restrict script-based network calls to their own domain</strong> to make it simple and safe.</p>
-
-<p>CORS allows these cross-domain requests to happen, but <strong>only when each side opts into CORS support</strong>.</p>
-
-<p>If your server is configured for CORS, it will return an extra header with <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> on each response.</p>
-
-<p><img src="/assets/images/cors-header.png" alt="" /></p>
-
-<p>Sometimes it’s just a helpful website (say, https://my.first.site.foo) trying to use a public API from another origin (say, <a href="https://api.github.com">https://api.github.com</a>). The programmers who worked hard on api.github.com want all origins to access their site’s contents freely. In that case, the API server at api.github.com can use CORS headers to allow my.first.site.foo (or any other requesting origin) to access its API responses.</p>
-
-<p><img src="/assets/images/cors-header-github-rest-api.png" alt="" /></p>
-
-<p>So, most of the time cross-origin access is a bad thing, but there are cases where it’s a good thing. 
-CORS allows the good case to happen when the requested site wants it to happen.</p>
-
-<p>CORS allows the server to explicitly whitelist certain origin and help to bypass the <strong>same-origin</strong> policy.</p>
+<p>Read the section <a href="/temas/cors">Introduction to CORS</a> to know waht CORS is.</p>
 
 <p>The <code class="language-plaintext highlighter-rouge">mode</code> option of the <code class="language-plaintext highlighter-rouge">fetch()</code> method allows you to define the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request/mode">CORS mode</a> of the request:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">no-cors</code> prevents the method from being anything other than <code class="language-plaintext highlighter-rouge">HEAD</code>, <code class="language-plaintext highlighter-rouge">GET</code> or <code class="language-plaintext highlighter-rouge">POST</code>, and the headers from being anything other than simple headers.</li>
-  <li>If any ServiceWorkers intercept these requests, they may not add or override any headers except for those that are simple headers.
-    <ul>
-      <li><strong>Service workers</strong> essentially act as proxy servers that sit between web applications, the browser, and the network (when available).</li>
-      <li>They are intended, among other things, to enable the creation of effective offline experiences, intercept network requests and take appropriate action based on whether the network is available, and update assets residing on the server.</li>
-    </ul>
-  </li>
+  <li>If any ServiceWorkers intercept these requests, they may not add or override any headers except for those that are simple headers. See section <a href="/temas/service-workers">Service Workers</a> for more information.</li>
   <li>In addition, <code class="language-plaintext highlighter-rouge">no-cors</code> assures that JavaScript may not access any properties of the resulting <code class="language-plaintext highlighter-rouge">Response</code>.
     <ul>
       <li>This ensures that ServiceWorkers do not affect the semantics of the Web and prevents security and privacy issues arising from leaking data across domains.</li>
