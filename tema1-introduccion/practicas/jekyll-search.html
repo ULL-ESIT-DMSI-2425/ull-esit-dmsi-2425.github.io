@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/tema1-introduccion/practicas/jekyll-search","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=650bc70aea8036867fdb84f3658ff36262e1a04c">
+    <link rel="stylesheet" href="/assets/css/style.css?v=edca1e1aed602686415d1e22d2351d40adcfd934">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -78,6 +78,10 @@
         <ul>
           <li><a href="#url-parameters">URL parameters</a></li>
           <li><a href="#urlsearchparams">url.searchParams</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-event-listeners">The event listeners</a>
+        <ul>
           <li><a href="#windowhistorypushstate">window.history.pushState</a></li>
         </ul>
       </li>
@@ -496,6 +500,16 @@ Parameters are added to the end of a URL after a <code class="language-plaintext
 <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">));</span> <span class="c1">// is the number 18</span>
 </code></pre></div></div>
 
+<h2 id="the-event-listeners">The event listeners</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">this</span><span class="p">.</span><span class="nx">searchField</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">keyup</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">displayResults</span><span class="p">()</span>
+      <span class="c1">// So that when going back in the browser we keep the search</span>
+      <span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">search</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">searchField</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">pushState</span><span class="p">(</span><span class="dl">''</span><span class="p">,</span> <span class="dl">''</span><span class="p">,</span> <span class="nx">url</span><span class="p">.</span><span class="nx">href</span><span class="p">)</span>
+    <span class="p">})</span>
+</code></pre></div></div>
+
 <h3 id="windowhistorypushstate">window.history.pushState</h3>
 
 <p>The  <code class="language-plaintext highlighter-rouge">window</code> object provides access to the browser’s session history through the <code class="language-plaintext highlighter-rouge">history</code> object. 
@@ -509,6 +523,8 @@ The <code class="language-plaintext highlighter-rouge">history.pushState(state, 
       <span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">pushState</span><span class="p">(</span><span class="dl">''</span><span class="p">,</span> <span class="dl">''</span><span class="p">,</span> <span class="nx">url</span><span class="p">.</span><span class="nx">href</span><span class="p">)</span>
     <span class="p">})</span>
 </code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">search.json</code> is not going to change until the next <code class="language-plaintext highlighter-rouge">push</code></p>
 
 <h2 id="findresults">findResults</h2>
 
@@ -536,8 +552,6 @@ The <code class="language-plaintext highlighter-rouge">history.pushState(state, 
 </code></pre></div></div>
 
 <p>This is usually fine, since it means that <strong>if your browser has a cached copy of the response to the HTTP request, it can use the cached copy instead of wasting time and bandwidth re-downloading from a remote server</strong>.</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">search.json</code> is not going to change until the next <code class="language-plaintext highlighter-rouge">push</code></p>
 
 <h2 id="fetch-polyfill">Fetch Polyfill</h2>
 
