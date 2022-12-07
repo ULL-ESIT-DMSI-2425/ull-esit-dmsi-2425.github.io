@@ -15,10 +15,10 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <script type="application/ld+json">
-{"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/tema1-introduccion/practicas/jekyll-search/","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+{"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/tema1-introduccion/practicas/jekyll-search","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=67ba7eac7dbb1ab5328dda6d5717431e168d61e7">
+    <link rel="stylesheet" href="/assets/css/style.css?v=c0823368db36ac45ae98de9e226b7ea6dbde96a9">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -79,7 +79,7 @@
           <li><a href="#la-clase-jekyllsearch-fichero-searchjs">La clase JekyllSearch: Fichero search.js</a>
             <ul>
               <li><a href="#urlsearchparams">url.searchParams</a></li>
-              <li><a href="#live-collections">Live collections</a></li>
+              <li><a href="#constructor">constructor</a></li>
               <li><a href="#windowhistorypushstate">window.history.pushState</a></li>
             </ul>
           </li>
@@ -91,6 +91,7 @@
       </li>
     </ul>
   </li>
+  <li><a href="#rúbrica">Rúbrica</a></li>
 </ul>
 
 <h1 id="práctica-jekyll-search">Práctica jekyll-search</h1>
@@ -358,22 +359,22 @@ title: Search
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">JekyllSearch</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">(</span><span class="nx">dataSource</span><span class="p">,</span> <span class="nx">searchField</span><span class="p">,</span> <span class="nx">resultsList</span><span class="p">,</span> <span class="nx">siteURL</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="nx">dataSource</span>                           <span class="c1">// ruta al fichero json</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">searchField</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">searchField</span><span class="p">)</span> <span class="c1">// DOM el. del input</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">resultsList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">resultsList</span><span class="p">)</span> <span class="c1">// DOM el. para el output</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">siteURL</span> <span class="o">=</span> <span class="nx">siteURL</span>                                 <span class="c1">// folder</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="nx">dataSource</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">searchField</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">searchField</span><span class="p">)</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">resultsList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">resultsList</span><span class="p">)</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">siteURL</span> <span class="o">=</span> <span class="nx">siteURL</span>
 
-    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="p">[];</span>
   <span class="p">}</span>
 
   <span class="nx">fetchedData</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">,</span> <span class="p">{</span><span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">no-cors</span><span class="dl">'</span><span class="p">})</span>
       <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">blob</span> <span class="o">=&gt;</span> <span class="nx">blob</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
   <span class="p">}</span>
 
   <span class="k">async</span> <span class="nx">findResults</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">fetchedData</span><span class="p">()</span>
-    <span class="kd">const</span> <span class="nx">regex</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">searchField</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="dl">'</span><span class="s1">gi</span><span class="dl">'</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">regex</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">searchField</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="dl">'</span><span class="s1">i</span><span class="dl">'</span><span class="p">)</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regex</span><span class="p">)</span> <span class="o">||</span> <span class="nx">item</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regex</span><span class="p">)</span>
     <span class="p">})</span>
@@ -381,12 +382,15 @@ title: Search
 
   <span class="k">async</span> <span class="nx">displayResults</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">findResults</span><span class="p">()</span>
+    <span class="c1">//console.log('this.siteURL = ',this.siteURL)</span>
+
     <span class="kd">const</span> <span class="nx">html</span> <span class="o">=</span> <span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">//console.log(item)</span>
       <span class="k">return</span> <span class="s2">`
         &lt;li class="result"&gt;
             &lt;article class="result__article  article"&gt;
                 &lt;h4&gt;
-                  &lt;a href="</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">siteURL</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span><span class="s2">"&gt;</span><span class="p">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="s2">&lt;/a&gt;
+                  &lt;a href="</span><span class="p">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span><span class="s2">"&gt;</span><span class="p">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="s2">&lt;/a&gt;
                 &lt;/h4&gt;
                 &lt;p&gt;</span><span class="p">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">excerpt</span><span class="p">}</span><span class="s2">&lt;/p&gt;
             &lt;/article&gt;
@@ -401,9 +405,10 @@ title: Search
 
   <span class="c1">// https://stackoverflow.com/questions/43431550/async-await-class-constructor</span>
   <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+    
     <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URL</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">)</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">search</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">searchField</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">search</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Update the attribute</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">searchField</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">search</span><span class="dl">"</span><span class="p">)</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">displayResults</span><span class="p">()</span>
     <span class="p">}</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">searchField</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">keyup</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -432,22 +437,27 @@ title: Search
 <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">));</span> <span class="c1">// is the number 18</span>
 </code></pre></div></div>
 
-<h4 id="live-collections">Live collections</h4>
-
-<p>All methods <code class="language-plaintext highlighter-rouge">getElementsBy*</code> return a live collection. 
-Such collections always reflect the current state of the document and <em>auto-update</em> when it changes. 
-In contrast, <code class="language-plaintext highlighter-rouge">querySelectorAll</code> returns a static collection. 
-It’s like a fixed array of elements.</p>
+<h4 id="constructor">constructor</h4>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">constructor</span><span class="p">(</span><span class="nx">dataSource</span><span class="p">,</span> <span class="nx">searchField</span><span class="p">,</span> <span class="nx">resultsList</span><span class="p">,</span> <span class="nx">siteURL</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="nx">dataSource</span>                           <span class="c1">// ruta al fichero json</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">searchField</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">searchField</span><span class="p">)</span> <span class="c1">// DOM el. del input</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">resultsList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">resultsList</span><span class="p">)</span> <span class="c1">// DOM el. para el output</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">siteURL</span> <span class="o">=</span> <span class="nx">siteURL</span>                                 <span class="c1">// folder</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="nx">dataSource</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">searchField</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">searchField</span><span class="p">)</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">resultsList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">resultsList</span><span class="p">)</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">siteURL</span> <span class="o">=</span> <span class="nx">siteURL</span>
 
-    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
-  <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="p">}</span>
 </code></pre></div></div>
+
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document"><code>Document</code></a> method <strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">querySelectorAll()</a></strong>
+returns a static (not live) <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList"><code>NodeList</code></a> representing a list of the
+document’s elements that match the specified group of selectors.</p>
+
+<p>All methods <code class="language-plaintext highlighter-rouge">getElementsBy*</code> return a <a href="https://www.designcise.com/web/tutorial/what-is-the-difference-between-live-and-static-collections-in-javascript">live collection</a>. 
+Such collections always reflect the current state of the document and <em>auto-update</em> when it changes.</p>
+
+<p>In contrast, <code class="language-plaintext highlighter-rouge">querySelectorAll</code> returns a static collection. 
+It’s like a fixed array of elements.</p>
 
 <h4 id="windowhistorypushstate">window.history.pushState</h4>
 
@@ -575,6 +585,17 @@ $ tree -I _site
 * [CloudCannon](https://app.cloudcannon.com/) is cloud content management system and hosting provider for Jekyll websites
 * [documentation-theme-jekyll](https://github.com/ULL-MII-SYTWS-1920/documentation-theme-jekyll) Un tema muy completo. Tiene de todo
 -->
+
+<h1 id="rúbrica">Rúbrica</h1>
+
+<ul>
+  <li>Código de la práctica correcto y funciona</li>
+  <li>El constructor recibe en un objeto los argumentos en vez de posicionalmente</li>
+  <li>Informe bien elaborado</li>
+  <li>Kanban Board project conteniendo las incidencias de la rúbrica</li>
+  <li>Ha entregado el .zip en el campus con el repo</li>
+</ul>
+
 
 
 <!--
