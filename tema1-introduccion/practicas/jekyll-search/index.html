@@ -5,20 +5,20 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Práctica jekyll-search | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Desarrollo y Mantenimiento de Sistemas Informáticos | 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Práctica jekyll-search" />
+<meta property="og:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Práctica jekyll-search" />
+<meta property="twitter:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <script type="application/ld+json">
-{"headline":"Práctica jekyll-search","url":"/tema1-introduccion/practicas/jekyll-search/","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+{"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/tema1-introduccion/practicas/jekyll-search/","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=b445f73e60c3246673496c1bd05967743cd4d8ca">
+    <link rel="stylesheet" href="/assets/css/style.css?v=095ce8e5d9ebf0b1ac107e6c4a57bfad14b68f43">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -64,7 +64,36 @@
                 <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
             </div>
 
-            <h1 id="práctica-jekyll-search">Práctica jekyll-search</h1>
+            <ul>
+  <li><a href="#práctica-jekyll-search">Práctica jekyll-search</a>
+    <ul>
+      <li><a href="#adding-a-simple-search-to-our-jekyll-site">Adding a Simple Search to our Jekyll Site</a>
+        <ul>
+          <li><a href="#como-hacerlo">¿Como hacerlo?</a></li>
+          <li><a href="#liquid-template-to-generate-at-build-time-the-_siteassetssrcsearchjson">Liquid template to generate at build time the _site/assets/src/search.json</a>
+            <ul>
+              <li><a href="#entendiendo-la-línea-content-raw-pagecontent--markdownify--strip_html--jsonify-endraw">Entendiendo la línea <code class="language-plaintext highlighter-rouge">"content": {{ page.content | markdownify | strip_html | jsonify }},</code></a></li>
+            </ul>
+          </li>
+          <li><a href="#la-página-de-búsqueda-searchmd">La página de Búsqueda: search.md</a></li>
+          <li><a href="#la-clase-jekyllsearch-fichero-searchjs">La clase JekyllSearch: Fichero search.js</a>
+            <ul>
+              <li><a href="#urlsearchparams">url.searchParams</a></li>
+              <li><a href="#live-collections">Live collections</a></li>
+              <li><a href="#windowhistorypushstate">window.history.pushState</a></li>
+            </ul>
+          </li>
+          <li><a href="#caching">Caching</a></li>
+          <li><a href="#fetch-polyfill">Fetch Polyfill</a></li>
+          <li><a href="#estructura-del-sitio">Estructura del sitio</a></li>
+          <li><a href="#referencias">Referencias</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="práctica-jekyll-search">Práctica jekyll-search</h1>
 
 <h2 id="adding-a-simple-search-to-our-jekyll-site">Adding a Simple Search to our Jekyll Site</h2>
 
