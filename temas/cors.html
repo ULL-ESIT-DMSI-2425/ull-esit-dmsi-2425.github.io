@@ -18,7 +18,7 @@
 {"headline":"Introduction to CORS","url":"/temas/cors","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=951ed4f0472c42e6c6de7ea012d0c0f92b58d112">
+    <link rel="stylesheet" href="/assets/css/style.css?v=6a0b8cdd43b71cfe282b3c6288ae4a40d38dc1f8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -181,7 +181,7 @@ Use <code class="language-plaintext highlighter-rouge">*</code> if your applicat
 <h2 id="cors-and-fetch-api">CORS and Fetch API</h2>
 
 <p>If you want to avoid the blocking, the server that hosts the resource needs to have CORS enabled. 
-What you can do on the client side is set the mode of <code class="language-plaintext highlighter-rouge">fetch</code> to CORS (although this is the default setting I believe):</p>
+What you can do on the client side is set the mode of <code class="language-plaintext highlighter-rouge">fetch</code> to <code class="language-plaintext highlighter-rouge">cors</code>  (Although this is the default setting):</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">fetch</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="p">{</span><span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cors</span><span class="dl">'</span><span class="p">});</span>
 </code></pre></div></div>
