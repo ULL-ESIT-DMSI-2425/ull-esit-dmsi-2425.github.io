@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2022/12/12",
+      "date": "December 12, 2022",
+
+      "excerpt": "<h2 id="lab-jekyll-search">Lab jekyll-search</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2022/12/12/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2022/12/07",
       "date": "December 07, 2022",
 
@@ -197,29 +220,6 @@
       
       
       "url": "/2022/11/09/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2022/11/07",
-      "date": "November 07, 2022",
-
-      "excerpt": "<h2 id="hemos-visto">Hemos visto</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2022/11/07/leccion.html",
        "tags"  : [
         
         ]
