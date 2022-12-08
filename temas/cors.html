@@ -18,7 +18,7 @@
 {"headline":"Introduction to CORS","url":"/temas/cors","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=38ed4bf13b5d44f05f54c92da10b14b6fc2a9e2e">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b8d04d9765a925262fc873452dae7c29b23e2905">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -64,7 +64,19 @@
                 <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
             </div>
 
-            <h1 id="introduction-to-cors">Introduction to CORS</h1>
+            <ul>
+  <li><a href="#-pagetitle-">Introduction to CORS</a>
+    <ul>
+      <li><a href="#same-origin-policy">Same origin policy</a></li>
+      <li><a href="#cross-origin-resource-sharing-cors">Cross-Origin Resource Sharing CORS</a></li>
+      <li><a href="#how-cors-works">How CORS works</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="introduction-to-cors">Introduction to CORS</h1>
+
+<h2 id="same-origin-policy">Same origin policy</h2>
 
 <p>The <strong>default behavior of web browsers that initiate requests from a page via JavaScript is that they follow the same-origin policy</strong>.</p>
 
@@ -72,19 +84,47 @@
 
 <p><img src="/assets/images/same-origin-definition.png" alt="" /></p>
 
-<p>This means that requests can only be made to the same domain (or sub domain). 
-<strong>Requests to an entirely different domain will fail</strong>.</p>
+<p><em>Origin</em> includes the combination of <strong>protocol, domain,</strong> and <strong>port.</strong> This means</p>
+
+<ul>
+  <li><em>https://</em><strong><em>api</em></strong><em>.mydomain.com</em> and</li>
+  <li><em>https://mydomain.com</em></li>
+</ul>
+
+<p>are actually different origins and thus impacted by same-origin policy.</p>
+
+<p>In a similar way,</p>
+<ul>
+  <li><em>https://localhost:</em><strong><em>9000</em></strong> and</li>
+  <li><em>https://localhost:</em><strong><em>8080</em></strong></li>
+</ul>
+
+<p>are also different origins. The <strong>path</strong> or <strong>query</strong> parameters  are ignored when considering the origin.</p>
+
+<p>Under SOP requests can only be made to the same domain. 
+<strong>Requests to a different domain will fail</strong>.</p>
 
 <p><img src="/assets/images/same-origin-error.png" alt="" /></p>
 
-<p>This restriction exists because requests made at other domains by your browser would carry along your cookies which often means you’d be logged in to the other site.</p>
+<p>Websites use cookies to keep track of authentication or session info. 
+Those <strong>cookies are bounded to a certain domain</strong> when they are created.</p>
 
-<p>So, without <strong>same-origin</strong>, any site could host JavaScript that called logout on <campusvirtual.ull.es>
-for example, and it would log you out!.</campusvirtual.ull.es></p>
+<p>On every HTTP call to that domain, <strong>the browser will attach the cookies that were created for that domain</strong>. This is on <em>every</em> HTTP call, which could be for static images, HTML pages, or even AJAX calls.</p>
 
-<p>Now imagine the complications when we talk about banking sites, government sites, etc.</p>
+<p>This means when you log into <em>https://examplebank.com</em>, a cookie is stored for <em>https://examplebank.com</em>. If that bank is a single-page React app, they may have created a REST API at <em>https://examplebank.com/api</em> for the SPA to communicate via AJAX.</p>
+
+<ol>
+  <li>Let’s say you browse to a malicious website  <em>https://evilunicorns.com</em> while logged into <em>https://examplebank.com</em>.</li>
+  <li>Without same-origin policy, that hacker website could make <strong>authenticated</strong> malicious AJAX calls to <em>https://examplebank.com/api</em> to <code>POST /withdraw</code> even though the hacker website doesn’t have direct access to the bank’s cookies.</li>
+</ol>
+
+<p><strong>This is due to the browser behavior of automatically attaching any cookies bounded to <em>https://examplebank.com</em> for any HTTP calls to that domain</strong>, including AJAX calls from <em>https://evilunicorns.com</em> to <em>https://examplebank.com</em>.</p>
+
+<p>By restricting HTTP calls to only ones to the same origin (i.e. the browser tab’s domain), same-origin policy closes some hacker backdoors such as around <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank" rel="noopener noreferrer">Cross-Site Request Forgery (CSRF)</a> and <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noopener noreferrer">Cross-Site Scripting (XSS)</a>.</p>
 
 <p>So, <strong>all browsers simply restrict script-based network calls to their own domain</strong> to make it simple and safe.</p>
+
+<h2 id="cross-origin-resource-sharing-cors">Cross-Origin Resource Sharing CORS</h2>
 
 <p>CORS allows these cross-domain requests to happen, but <strong>only when each side opts into CORS support</strong>.</p>
 
@@ -101,6 +141,42 @@ CORS allows the good case to happen when the requested site wants it to happen.<
 
 <p>CORS allows the server to explicitly whitelist certain origin and help to bypass the <strong>same-origin</strong> policy.</p>
 
+<h2 id="how-cors-works">How CORS works</h2>
+
+<p>This is how a <strong>simple CORS request</strong> works:</p>
+
+<ol>
+  <li>A browser tab open to <code class="language-plaintext highlighter-rouge">https://www.mydomain.com</code> initiates AJAX request <code class="language-plaintext highlighter-rouge">GET https://api.mydomain.com/widgets</code></li>
+  <li>Along with adding headers like <code class="language-plaintext highlighter-rouge">Host</code>, the browser automatically adds the <code class="language-plaintext highlighter-rouge">Origin</code> Request Header for cross-origin requests:</li>
+</ol>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">  </span><span class="nf">GET</span> <span class="nn">/widgets/</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">  Host: api.mydomain.com</span>
+<span class="s">  Origin: https://www.mydomain.com</span>
+<span class="s">  [Rest of request...]</span>
+</code></pre></div></div>
+<ol>
+  <li>The server checks the <code class="language-plaintext highlighter-rouge">Origin</code> request header. If the Origin value is allowed, it sets the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> to the value in the request header <code class="language-plaintext highlighter-rouge">Origin</code>.</li>
+</ol>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">     </span><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK  </span>
+<span class="s">     Access-Control-Allow-Origin: https://www.mydomain.com  </span>
+<span class="s">     Content-Type: application/json</span>
+<span class="s">     [Rest of response...]  </span>
+</code></pre></div></div>
+<ol>
+  <li>When the browser receives the response,
+    <ol>
+      <li>the browser checks the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> header to see if it matches the origin of the tab.</li>
+      <li>If not, the response is blocked.</li>
+      <li>The check passes if either the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> matches the single origin exactly or contains the wildcard <code class="language-plaintext highlighter-rouge">*</code> operator.</li>
+      <li>A server that responds <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin: *</code> allows all origins.
+  Use <code class="language-plaintext highlighter-rouge">*</code> if your application absolutely requires it, such as creating an open/public API.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>If you want to know more about CORS continue reading the section <a href="/temas/cors-advanced">Cross-Origin Resource Sharing CORS: Second Part</a> of the course.</p>
 
 
 <!--

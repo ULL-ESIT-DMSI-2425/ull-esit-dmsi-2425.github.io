@@ -5,20 +5,20 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Cross-Origin Resource Sharing CORS | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Cross-Origin Resource Sharing CORS: Second Part | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Cross-Origin Resource Sharing CORS" />
+<meta property="og:title" content="Cross-Origin Resource Sharing CORS: Second Part" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Cross-Origin Resource Sharing CORS" />
+<meta property="twitter:title" content="Cross-Origin Resource Sharing CORS: Second Part" />
 <script type="application/ld+json">
-{"headline":"Cross-Origin Resource Sharing CORS","url":"/assets/temas/introduccion-a-javascript/cors.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+{"headline":"Cross-Origin Resource Sharing CORS: Second Part","url":"/temas/cors-advanced","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=38ed4bf13b5d44f05f54c92da10b14b6fc2a9e2e">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b8d04d9765a925262fc873452dae7c29b23e2905">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -64,7 +64,24 @@
                 <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
             </div>
 
-            <p><strong>CORS</strong> is a security mechanism that allows a web page from one domain or <strong>Origin</strong> 
+            <ul>
+  <li><a href="#-pagetitle-">Cross-Origin Resource Sharing CORS: Second Part</a>
+    <ul>
+      <li><a href="#origin">Origin</a></li>
+      <li><a href="#the-reason-for-the-same-origin-policy">The reason for The Same-Origin Policy</a></li>
+      <li><a href="#the-reasons-for-cross-origin-resource-sharing">The Reasons for Cross-Origin Resource Sharing</a></li>
+      <li><a href="#how-cors-works">How CORS works</a></li>
+      <li><a href="#the-cors-npm-module">The CORS npm module</a></li>
+      <li><a href="#ejemplo-server-en-ull-mii-sytws-1920food-lookup-demo">Ejemplo: server en ULL-MII-SYTWS-1920/food-lookup-demo</a></li>
+      <li><a href="#cómo-hacer-un-ataque-csrf">Cómo hacer un Ataque CSRF</a></li>
+      <li><a href="#cors-references">CORS references</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="cross-origin-resource-sharing-cors-second-part">Cross-Origin Resource Sharing CORS: Second Part</h1>
+
+<p><strong>CORS</strong> is a security mechanism that allows a web page from one domain or <strong>Origin</strong> 
 to access a resource with a different domain (a <em>cross-domain request</em>).</p>
 
 <p>CORS is a relaxation of the <a href="https://en.wikipedia.org/wiki/Same-origin_policy">same-origin policy</a> implemented in modern browsers. Without features like CORS, websites are restricted to accessing resources from the same origin through what is known as same-origin policy.</p>
@@ -99,7 +116,7 @@ to access a resource with a different domain (a <em>cross-domain request</em>).<
   <li>Without same-origin policy, that hacker website could make <strong>authenticated</strong> malicious AJAX calls to <em>https://examplebank.com/api</em> to <code>POST /withdraw</code> even though the hacker website doesn’t have direct access to the bank’s cookies.</li>
 </ol>
 
-<p>This is due to the browser behavior of automatically attaching any cookies bounded to <em>https://examplebank.com</em> for any HTTP calls to that domain, including AJAX calls from <em>https://evilunicorns.com</em> to <em>https://examplebank.com</em>.</p>
+<p><strong>This is due to the browser behavior of automatically attaching any cookies bounded to <em>https://examplebank.com</em> for any HTTP calls to that domain</strong>, including AJAX calls from <em>https://evilunicorns.com</em> to <em>https://examplebank.com</em>.</p>
 
 <p>By restricting HTTP calls to only ones to the same origin (i.e. the browser tab’s domain), same-origin policy closes some hacker backdoors such as around <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank" rel="noopener noreferrer">Cross-Site Request Forgery (CSRF)</a> (Although not all. Mechanisms like CSRF tokens are still necessary).</p>
 
