@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Desarrollo y Mantenimiento de Sistemas Informáticos | 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<script type="application/ld+json">
+{"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=417d21f107d7d1996514664377027bc05df5ecad">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/temas.html">Temas</a></li>
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI-2223" target="_blank">org</a></span>
+                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/108465062-ull-esit-dmsi-2223" target="_blank">classroom</a></span>
+                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2223.ull.es/course/view.php?id=2223090033" target="_blank">campus</a></span>
+                <span class="credits left"> &nbsp; Students <a href="/teams" target="_blank">Activity</a></span>
+                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+            </div>
+
+            <ul>
+  <li><a href="#introduction-to--nextjs-react-and-rest">Introduction to  NextJS, React and REST</a>
+    <ul>
+      <li><a href="#introduction-to-open-ai-rest-api">Introduction to Open AI REST API</a></li>
+      <li><a href="#generating-an-api-key">Generating an API key</a></li>
+      <li><a href="#setup">Setup</a></li>
+      <li><a href="#what-is-rendering">What is Rendering</a></li>
+      <li><a href="#nextjs-pages">next.js Pages</a>
+        <ul>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </li>
+      <li><a href="#pagesapigeneratejs">pages/api/generate.js</a>
+        <ul>
+          <li><a href="#processenvopenai_api_key"><code class="language-plaintext highlighter-rouge">process.env.OPENAI_API_KEY</code></a>
+            <ul>
+              <li><a href="#references-1">References</a></li>
+            </ul>
+          </li>
+          <li><a href="#export-default-async-function-req-res---"><code class="language-plaintext highlighter-rouge">export default async function (req, res) { ... }</code></a></li>
+          <li><a href="#const-completion--await-openaicreatecompletion--"><code class="language-plaintext highlighter-rouge">const completion = await openai.createCompletion({ ... })</code></a></li>
+        </ul>
+      </li>
+      <li><a href="#pagesindexjs">pages/index.js</a>
+        <ul>
+          <li><a href="#import-head-from-nexthead"><code class="language-plaintext highlighter-rouge">import Head from "next/head"</code></a></li>
+          <li><a href="#import-styles-from-indexmodulecss"><code class="language-plaintext highlighter-rouge">import styles from "./index.module.css"</code></a></li>
+          <li><a href="#link-relicon-hrefdogpng-"><code class="language-plaintext highlighter-rouge">&lt;link rel="icon" href="/dog.png" /&gt;</code></a></li>
+          <li><a href="#main-classnamestylesmain"><code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code></a></li>
+          <li><a href="#form-onsubmitonsubmit-form"><code class="language-plaintext highlighter-rouge">&lt;form onSubmit={onSubmit}&gt; ...&lt;/form&gt;</code></a></li>
+          <li><a href="#const-response--await-fetchapigenerate---"><code class="language-plaintext highlighter-rouge">const response = await fetch("/api/generate", { ... })</code></a></li>
+        </ul>
+      </li>
+      <li><a href="#state-in-react">State in React</a></li>
+      <li><a href="#build">build</a></li>
+      <li><a href="#production">Production</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="introduction-to--nextjs-react-and-rest">Introduction to  NextJS, React and REST</h1>
+
+<h2 id="introduction-to-open-ai-rest-api">Introduction to Open AI REST API</h2>
+
+<p>This is an example pet name generator app used in the OpenAI API <a href="https://beta.openai.com/docs/quickstart">quickstart tutorial</a>.</p>
+
+<p>This code uses the <a href="https://nextjs.org/">Next.js</a> framework with <a href="https://reactjs.org/">React</a>.</p>
+
+<p>Read  both this tutorial and the <a href="https://beta.openai.com/docs/quickstartand">OpenAI API quickstart tutorial</a>.</p>
+
+<h2 id="generating-an-api-key">Generating an API key</h2>
+
+<p>Go to the user on the upper right corner and click on the API Keys tab. 
+<img src="/assets/images/nextjs/menu-1.png" alt="" /></p>
+
+<p>Choose View API Keys.</p>
+
+<p><img src="/assets/images/nextjs/generate-api-key.png" alt="" /></p>
+
+<p>Click on the “Create new secret Key” button and copy the key.</p>
+
+<h2 id="setup">Setup</h2>
+
+<ol>
+  <li>
+    <p>Starting with the assignment repo, install the requirements</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span>
+</code></pre></div>    </div>
+
+    <p>Which installs the dependencies listed in <code class="language-plaintext highlighter-rouge">package.json</code>:</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">✗</span><span class="w"> </span><span class="err">jq</span><span class="w"> </span><span class="err">-c</span><span class="w"> </span><span class="err">'.dependencies</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">keys'</span><span class="w"> </span><span class="err">package.json</span><span class="w">
+</span><span class="p">[</span><span class="s2">"next"</span><span class="p">,</span><span class="s2">"openai"</span><span class="p">,</span><span class="s2">"react"</span><span class="p">,</span><span class="s2">"react-dom"</span><span class="p">]</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Make a copy of the example environment variables file</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cp</span> .env.example .env
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add your <a href="https://beta.openai.com/account/api-keys">API key</a> to the newly created <code class="language-plaintext highlighter-rouge">.env</code> file</p>
+  </li>
+  <li>
+    <p>Run the app</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm run dev
+</code></pre></div>    </div>
+
+    <p>The console shows:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  openai-quickstart-node git:(master) ✗ npm run dev
+
+&gt; openai-quickstart-node@0.1.0 dev
+&gt; next dev
+
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+info  - Loaded env from /Users/casianorodriguezleon/campus-virtual/2223/learning/openai-learning/openai-quickstart-node/.env
+wait  - compiling...
+event - compiled client and server successfully in 1174 ms (113 modules)
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>You should now be able to access the app at <a href="http://localhost:3000">http://localhost:3000</a>!</p>
+
+    <p><img src="/assets/images/nextjs/local-app-runnning.png" alt="" /></p>
+  </li>
+</ol>
+
+<p>For the context behind this example app, check out the <a href="https://beta.openai.com/docs/quickstart">Open AI tutorial</a>.</p>
+
+<h2 id="what-is-rendering">What is Rendering</h2>
+
+<p><strong>Rendering</strong> is the conversion of the code you write in your reactive framework (React/Vue/AngularJS) into the HTML representation of your User Interface. 
+Rendering can take place</p>
+<ol>
+  <li>on the server or</li>
+  <li>on the client.</li>
+</ol>
+
+<p>It can happen either</p>
+
+<ol>
+  <li>ahead of time at <strong>build time</strong>, or</li>
+  <li>on every request at runtime.</li>
+</ol>
+
+<p>With Next.js, three types of rendering methods are available:</p>
+
+<ol>
+  <li>
+    <p>Server-Side Rendering,</p>
+
+    <p><img src="https://nextjs.org/static/images/learn/foundations/pre-rendering.png" alt="" /></p>
+
+    <p>On the client, the HTML is used to show a fast non-interactive page, while React uses the JSON data and JavaScript instructions to make components interactive. This process is called <strong>hydration</strong>.</p>
+  </li>
+  <li>Static Site Generation, and</li>
+  <li>
+    <p>Client-Side Rendering.</p>
+
+    <p><img src="https://nextjs.org/static/images/learn/foundations/client-side-rendering.png" alt="" /></p>
+  </li>
+</ol>
+
+<p><strong>Server-Side Rendering</strong> and <strong>Static Site Generation</strong> are also referred to as <strong>Pre-Rendering</strong> 
+because the fetching of external data and transformation of components into HTML happens <strong>before</strong> 
+the result is sent to the client.</p>
+
+<h2 id="nextjs-pages">next.js Pages</h2>
+
+<p>In Next.js, a page is a React Component exported from a .js, .jsx, .ts, or .tsx file in the <code class="language-plaintext highlighter-rouge">pages</code> directory.</p>
+
+<p>Each page is associated with a <strong>route</strong> based on its file name.</p>
+
+<p>Since we have the file <code class="language-plaintext highlighter-rouge">pages/api/generate.js</code> that exports a React component, Next.js will make it accessible at the route <code class="language-plaintext highlighter-rouge">/api/generate</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">index.js</code> file is the main page <code class="language-plaintext highlighter-rouge">/</code> for the app.</p>
+
+<p>By default, Next.js includes its own server which is started with <code class="language-plaintext highlighter-rouge">next start</code>.</p>
+
+<h3 id="references">References</h3>
+
+<p>See <a href="https://nextjs.org/docs/basic-features/pages">https://nextjs.org/docs/basic-features/pages</a></p>
+
+<h2 id="pagesapigeneratejs">pages/api/generate.js</h2>
+
+<p>See <a href="https://www.npmjs.com/package/openai">https://www.npmjs.com/package/openai</a>. Check out the <a href="https://beta.openai.com/docs/api-reference?lang=node.js">full API documentation</a> for examples of all the available functions in <code class="language-plaintext highlighter-rouge">openai</code>.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Configuration</span><span class="p">,</span> <span class="nx">OpenAIApi</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">openai</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">configuration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Configuration</span><span class="p">({</span>
+  <span class="na">apiKey</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">OPENAI_API_KEY</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="kd">const</span> <span class="nx">openai</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OpenAIApi</span><span class="p">(</span><span class="nx">configuration</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">completion</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">openai</span><span class="p">.</span><span class="nx">createCompletion</span><span class="p">({</span>
+    <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">text-davinci-002</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">prompt</span><span class="p">:</span> <span class="nx">generatePrompt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">animal</span><span class="p">),</span>
+    <span class="na">temperature</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span>
+  <span class="p">});</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="na">result</span><span class="p">:</span> <span class="nx">completion</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">text</span> <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">generatePrompt</span><span class="p">(</span><span class="nx">animal</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">capitalizedAnimal</span> <span class="o">=</span>
+    <span class="nx">animal</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">animal</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
+  <span class="k">return</span> <span class="s2">`Suggest three names for an animal that is a superhero.
+
+Animal: Cat
+Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
+Animal: Dog
+Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
+Animal: </span><span class="p">${</span><span class="nx">capitalizedAnimal</span><span class="p">}</span><span class="s2">
+Names:`</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="processenvopenai_api_key"><code class="language-plaintext highlighter-rouge">process.env.OPENAI_API_KEY</code></h3>
+
+<p>Next.js allows you to set environment variables in</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">.env</code> (all environments),</li>
+  <li><code class="language-plaintext highlighter-rouge">.env.development</code> (development environment), and</li>
+  <li><code class="language-plaintext highlighter-rouge">.env.production</code> (production environment).</li>
+  <li><code class="language-plaintext highlighter-rouge">.env.local</code> always overrides the defaults set.</li>
+</ol>
+
+<p>The variables are accesible into <code class="language-plaintext highlighter-rouge">process.env</code>.</p>
+
+<p>By default environment variables are only available in the Node.js environment, 
+meaning they won’t be exposed to the browser.</p>
+
+<p>In order to expose a variable to the browser you have to prefix the variable with <code class="language-plaintext highlighter-rouge">NEXT_PUBLIC_</code>.</p>
+
+<p>When deploying your Next.js application to Vercel, Environment Variables can be configured in the <a href="https://vercel.com/docs/concepts/projects/environment-variables?utm_source=next-site&amp;utm_medium=docs&amp;utm_campaign=next-website">Project Settings</a>.</p>
+
+<p>In Netlify you can use the Netlify UI. Head over to the Build &amp; Deploy settings in your Site Settings, and then plug your values in under “Environment variables” or alternatively, use the <a href="https://docs.netlify.com/cli/get-started/?_ga=2.210632407.351830897.1670331128-1485033729.1667990322#link-with-an-environment-variable">Netlify CLI</a></p>
+
+<h4 id="references-1">References</h4>
+
+<ul>
+  <li><a href="https://nextjs.org/docs/basic-features/environment-variables">https://nextjs.org/docs/basic-features/environment-variables</a></li>
+</ul>
+
+<h3 id="export-default-async-function-req-res---"><code class="language-plaintext highlighter-rouge">export default async function (req, res) { ... }</code></h3>
+
+<p>The <strong>Server Request Object</strong> (<code class="language-plaintext highlighter-rouge">req</code>) includes a set of 
+Express.js-like helper methods to improve the developer experience and increase the speed of creating new API endpoints:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">req.cookies</code> - An object containing the cookies sent by the request. Defaults to <code class="language-plaintext highlighter-rouge">{}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">req.query</code> - An object containing the query string. Defaults to <code class="language-plaintext highlighter-rouge">{}</code></li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">req.body</code> - An object containing the <code class="language-plaintext highlighter-rouge">body</code> parsed by <code class="language-plaintext highlighter-rouge">content-type</code>, or <code class="language-plaintext highlighter-rouge">null</code> if no body was sent</p>
+
+    <p>See the code fragment <code class="language-plaintext highlighter-rouge">generatePrompt(req.body.animal)</code></p>
+  </li>
+</ul>
+
+<p>The <strong>Server Response object</strong>, ( abbreviated as <code class="language-plaintext highlighter-rouge">res</code>) includes a set of 
+Express.js-like helper methods to improve the developer experience and increase the speed of creating new API endpoints:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">res.status(code)</code> - A function to set the status code. code must be a valid HTTP status code</li>
+  <li><code class="language-plaintext highlighter-rouge">res.json(body)</code> - Sends a JSON response. body must be a serializable object</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">res.send(body)</code> - Sends the HTTP response. body can be a string, an object or a Buffer</p>
+
+    <p>See the code fragment <code class="language-plaintext highlighter-rouge">res.status(200).json({ result: completion.data.choices[0].text });</code></p>
+  </li>
+  <li>res.redirect([status,] path) - Redirects to a specified path or URL. status must be a valid HTTP status code. If not specified, status defaults to “307” “Temporary redirect”.</li>
+  <li>res.revalidate(urlPath) - Revalidate a page on demand using getStaticProps. urlPath must be a string.</li>
+</ul>
+
+<h3 id="const-completion--await-openaicreatecompletion--"><code class="language-plaintext highlighter-rouge">const completion = await openai.createCompletion({ ... })</code></h3>
+
+<p>See the documentation at  <a href="https://beta.openai.com/docs/api-reference/completions/create">https://beta.openai.com/docs/api-reference/completions/create</a></p>
+
+<p>It makes a POST request to <a href="https://api.openai.com/v1/completions">https://api.openai.com/v1/completions</a>:</p>
+
+<p>In the JSON body goes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">model</code>: <code class="language-plaintext highlighter-rouge">ID</code> of the model to use. You can use the List models API to see all of your available models</li>
+  <li><code class="language-plaintext highlighter-rouge">prompt</code>: string to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.</li>
+  <li><code class="language-plaintext highlighter-rouge">temperature</code>: Higher values means the model will take more risks. Try 0.9 for more creative applications, and 0  for ones with a well-defined answer.</li>
+</ul>
+
+<p>The response is a JSON object with the following fields:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cmpl-uqkvlQyYK7bGYrRHQ0eXlWi7"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"object"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text_completion"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1589478378</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text-davinci-003"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">This is indeed a test"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"index"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logprobs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"finish_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"length"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"usage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"prompt_tokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"completion_tokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_tokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="pagesindexjs">pages/index.js</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/head</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">styles</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./index.module.css</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">animalInput</span><span class="p">,</span> <span class="nx">setAnimalInput</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">result</span><span class="p">,</span> <span class="nx">setResult</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">();</span>
+
+  <span class="k">async</span> <span class="kd">function</span> <span class="nx">onSubmit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">/api/generate</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="na">animal</span><span class="p">:</span> <span class="nx">animalInput</span> <span class="p">}),</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+    <span class="nx">setResult</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span>
+    <span class="nx">setAnimalInput</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Head</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">OpenAI</span> <span class="nx">Quickstart</span><span class="o">&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">icon</span><span class="dl">"</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">/dog.png</span><span class="dl">"</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/Head</span><span class="err">&gt;
+</span>
+      <span class="o">&lt;</span><span class="nx">main</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">main</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">/dog.png</span><span class="dl">"</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">icon</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Name</span> <span class="nx">my</span> <span class="nx">pet</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">onSubmit</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">input</span>
+            <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span>
+            <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">animal</span><span class="dl">"</span>
+            <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Enter an animal</span><span class="dl">"</span>
+            <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">animalInput</span><span class="p">}</span>
+            <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span>
+          <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">Generate names</span><span class="dl">"</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">result</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">result</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="import-head-from-nexthead"><code class="language-plaintext highlighter-rouge">import Head from "next/head"</code></h3>
+
+<p>nextjs provides a built-in component for appending elements to the <code class="language-plaintext highlighter-rouge">head</code> of the page so that it can 
+be used in the JSX of the page:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>OpenAI Quickstart<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="p">=</span><span class="s">"icon"</span> <span class="na">href</span><span class="p">=</span><span class="s">"/dog.png"</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nc">Head</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="import-styles-from-indexmodulecss"><code class="language-plaintext highlighter-rouge">import styles from "./index.module.css"</code></h3>
+
+<p>This is a <a href="https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css">CSS module</a>.</p>
+
+<p>Next.js supports CSS Modules using the <code class="language-plaintext highlighter-rouge">[name].module.css</code> file naming convention.</p>
+
+<p>CSS Modules locally scope CSS by automatically creating a unique class name.</p>
+
+<p>This allows you to use the same CSS class name in different files without worrying about collisions.</p>
+
+<h3 id="link-relicon-hrefdogpng-"><code class="language-plaintext highlighter-rouge">&lt;link rel="icon" href="/dog.png" /&gt;</code></h3>
+
+<p>This line in the <code class="language-plaintext highlighter-rouge">&lt;Head&gt;</code> component adds a favicon to the page. 
+You’ll find the image in the <code class="language-plaintext highlighter-rouge">public</code> directory.</p>
+
+<p>Next.js can serve static files, like images, under a folder called <code class="language-plaintext highlighter-rouge">public</code> in the root directory.
+Files inside <code class="language-plaintext highlighter-rouge">public</code> can then be referenced by your code starting from the base URL (<code class="language-plaintext highlighter-rouge">/</code>).</p>
+
+<h3 id="main-classnamestylesmain"><code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code></h3>
+
+<p>JSX lets you write HTML-like markup inside a JavaScript file, keeping rendering logic and content in the same place.</p>
+
+<p>Sometimes you will want to add a little JavaScript logic or reference a dynamic property inside that markup.</p>
+
+<p>In this situation, you can use curly braces in your JSX to open a window to JavaScript.</p>
+
+<p>The only reason behind the fact that JSX uses <code class="language-plaintext highlighter-rouge">className</code> over <code class="language-plaintext highlighter-rouge">class</code> is that the <code class="language-plaintext highlighter-rouge">class</code> is a reserved keyword in JavaScript.</p>
+
+<p>We are specifying that the <code class="language-plaintext highlighter-rouge">&lt;main&gt;</code> element should use the <code class="language-plaintext highlighter-rouge">main</code> class from the <code class="language-plaintext highlighter-rouge">index.module.css</code> file.</p>
+
+<h3 id="form-onsubmitonsubmit-form"><code class="language-plaintext highlighter-rouge">&lt;form onSubmit={onSubmit}&gt; ...&lt;/form&gt;</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">onSubmit</code> <strong>prop</strong> is a special React <strong>prop</strong> that lets you specify a function that will be called when the form is submitted.</p>
+
+<p>The async function <code class="language-plaintext highlighter-rouge">onSubmit</code> is called when the form is submitted:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">async</span> <span class="kd">function</span> <span class="nx">onSubmit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">/api/generate</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="na">animal</span><span class="p">:</span> <span class="nx">animalInput</span> <span class="p">}),</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+    <span class="nx">setResult</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span>
+    <span class="nx">setAnimalInput</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="const-response--await-fetchapigenerate---"><code class="language-plaintext highlighter-rouge">const response = await fetch("/api/generate", { ... })</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">fetch</code> function makes a request to the <code class="language-plaintext highlighter-rouge">/api/generate</code> endpoint of the nextjs server.</p>
+
+<p>Thus, the exported function in <code class="language-plaintext highlighter-rouge">pages/api/generate.js</code> is called and the JSON  returned at line</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="na">result</span><span class="p">:</span> <span class="nx">completion</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">text</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<p>will be received in <code class="language-plaintext highlighter-rouge">data</code> after the second <code class="language-plaintext highlighter-rouge">await</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const data = await response.json()
+</code></pre></div></div>
+
+<h2 id="state-in-react">State in React</h2>
+
+<p><strong>React states</strong> are used to store data that can be changed over time.
+In that sense, they are similar to variables declared with the <code class="language-plaintext highlighter-rouge">let</code> keyword.</p>
+
+<p>The difference between a <strong>React state</strong> and a 
+normal variable is that when a <strong>React state variable</strong> changes, 
+the <strong>component is rendered again</strong> and some other things happens, like that 
+the <code class="language-plaintext highlighter-rouge">useEffect</code> hook
+bound to that state will be executed, 
+but when a normal variable changes, this does not happen.
+(The <code class="language-plaintext highlighter-rouge">useEffect</code> Hook allows us to perform side effects in our components.
+It can be used to fetch data from an API, subscribe to a service, …)</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="c1">// ...</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">animalInput</span><span class="p">,</span> <span class="nx">setAnimalInput</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">result</span><span class="p">,</span> <span class="nx">setResult</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">();</span>
+
+  <span class="k">async</span> <span class="kd">function</span> <span class="nx">onSubmit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+    <span class="nx">setResult</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span>
+    <span class="nx">setAnimalInput</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="p">...</span><span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">main</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">main</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="p">...</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">onSubmit</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">input</span>  <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">animal</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Enter an animal</span><span class="dl">"</span>
+            <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">animalInput</span><span class="p">}</span>
+            <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span>
+          <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">Generate names</span><span class="dl">"</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">result</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">result</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this code we have two states: <code class="language-plaintext highlighter-rouge">animalInput</code> and <code class="language-plaintext highlighter-rouge">result</code>.</p>
+
+<p>Therefore,</p>
+
+<ol>
+  <li>each time the <code class="language-plaintext highlighter-rouge">animalInput</code> state changes, the component is rendered again and the <code class="language-plaintext highlighter-rouge">useEffect</code> hook bound to that state will be executed.</li>
+  <li>each time the <code class="language-plaintext highlighter-rouge">result</code> state changes, the component is rendered again and the <code class="language-plaintext highlighter-rouge">useEffect</code> hook bound to that state will be executed.</li>
+</ol>
+
+<p>The <code class="language-plaintext highlighter-rouge">useState</code> hook <strong>allows us to create state variables for our components</strong>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">useState</code> takes in an initial value as an argument and returns an array containing</p>
+
+<ol>
+  <li>the <strong>state</strong> variable and</li>
+  <li>a <strong>setter</strong> function to mutate it</li>
+</ol>
+
+<p>It is common practice to de-structure this array and set its contents to be <code class="language-plaintext highlighter-rouge">const</code>. 
+This is because</p>
+
+<ul>
+  <li>the state variable <strong>should never be reassigned directly</strong> and</li>
+  <li><strong>should only be modified via the setter function</strong>.</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">setter</code> function accepts either a new value or a function which takes the current value as an argument and returns the new value like this:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setResult</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// data just arrived from the API</span>
+</code></pre></div></div>
+
+<p>Since <code class="language-plaintext highlighter-rouge">data</code>has arrived from the API, we can set the <code class="language-plaintext highlighter-rouge">result</code> state to the value of <code class="language-plaintext highlighter-rouge">data.result</code>.
+The <code class="language-plaintext highlighter-rouge">&lt;div className={styles.result}&gt;{result}&lt;/div&gt;</code>has to be rendered again.</p>
+
+<p>Th effect of this statement</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setAnimalInput</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+</code></pre></div></div>
+<p>is that the</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">input</span>  <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">name</span><span class="p">=</span><span class="s">"animal"</span> <span class="na">placeholder</span><span class="p">=</span><span class="s">"Enter an animal"</span>
+            <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">animalInput</span><span class="si">}</span>
+            <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
+<span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<p>will be rendered again with an empty value.</p>
+
+<p>The call to <code class="language-plaintext highlighter-rouge">setAnimalInput(e.target.value)</code> here:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">input</span>  <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">name</span><span class="p">=</span><span class="s">"animal"</span> <span class="na">placeholder</span><span class="p">=</span><span class="s">"Enter an animal"</span>
+   <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">animalInput</span><span class="si">}</span>
+   <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
+<span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<p>will be executed each time the user types a character in the <code class="language-plaintext highlighter-rouge">input</code> field.</p>
+
+<h2 id="build">build</h2>
+
+<p><code class="language-plaintext highlighter-rouge">next build</code> creates an optimized production build of your application. 
+You can enable more verbose build output with the <code class="language-plaintext highlighter-rouge">--debug</code> flag in next build.</p>
+
+<p>The output displays information about each route:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜✗ npx next build --debug
+info  - Loaded env from /Users/casianorodriguezleon/campus-virtual/2223/learning/openai-learning/openai-quickstart-node/.env
+info  - Creating an optimized production build  
+info  - Compiled successfully
+info  - Collecting page data  
+info  - Generating static pages (3/3)
+info  - Finalizing page optimization  
+
+Page                                       Size     First Load JS
+┌ ○ /                                      998 B          73.8 kB
+├   └ css/fc2c832f265f4111.css             522 B
+├ ○ /404                                   193 B            73 kB
+└ λ /api/generate                          0 B            72.8 kB
++ First Load JS shared by all              72.8 kB
+  ├ chunks/framework-e70c6273bfe3f237.js   42 kB
+  ├ chunks/main-f65e66e62fc5ca80.js        28.6 kB
+  ├ chunks/pages/_app-02d0f4839caa4a8e.js  1.36 kB
+  └ chunks/webpack-69bfa6990bb9e155.js     769 B
+
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+Redirects
+
+┌ source: /:path+/
+├ destination: /:path+
+└ permanent: true
+</code></pre></div></div>
+
+<p>This generates the site in the <code class="language-plaintext highlighter-rouge">.next</code> directory.</p>
+
+<h2 id="production">Production</h2>
+
+<p><code class="language-plaintext highlighter-rouge">next start</code> starts the application in <em>production</em> mode. 
+The application should be compiled with <code class="language-plaintext highlighter-rouge">next build</code> before starting.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx next start -p 4000
+
+ready - started server on 0.0.0.0:4000, url: http://localhost:4000
+info  - Loaded env from /Users/casianorodriguezleon/campus-virtual/2223/learning/openai-learning/openai-quickstart-node/.env
+</code></pre></div></div>
+
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/asyncmap">Asyncmap</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=asyncmap&type=all&language=&sort=" target="_blank">asyncmap</a></li>
+      <li><a href="/tema1-introduccion/practicas/asyncmap#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/tema1-introduccion/practicas/jekyll-search">Search in Jekyll</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=jekyll-search&type=all&language=&sort=" target="_blank">jekyll-search</a></li>
+      <li><a href="/tema1-introduccion/practicas/jekyll-search#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+  <li> 
+    <a href="/practicas/nextjs">Introduction to Next.js</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2223/repositories?q=nextjs&type=all&language=&sort=" target="_blank">nextjs</a></li>
+      <li><a href="/practicas/nextjs#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2022/12/12/leccion.html">Clase del Lunes 2022/12/12</a></li>
+  
+<li> <a href="/2022/12/07/leccion.html">Clase del Miércoles 2022/12/07</a></li>
+  
+<li> <a href="/2022/12/05/leccion.html">Clase del Lunes 2022/12/05</a></li>
+  
+<li> <a href="/2022/11/30/leccion.html">Clase del Miércoles 2022/11/30</a></li>
+  
+<li> <a href="/2022/11/28/leccion.html">Clase del Lunes 2022/11/28</a></li>
+  
+<li> <a href="/2022/11/23/leccion.html">Clase del Miércoles 2022/11/23</a></li>
+  
+<li> <a href="/2022/11/21/leccion.html">Clase del Lunes 2022/11/21</a></li>
+  
+<li> <a href="/2022/11/16/leccion.html">Clase del Miércoles 2022/11/16</a></li>
+  
+<li> <a href="/2022/11/14/leccion.html">Clase del Lunes 2022/11/14</a></li>
+  
+<li> <a href="/2022/11/09/leccion.html">Clase del Miércoles 2022/11/09</a></li>
+  
+<li> <a href="/2022/11/07/leccion.html">Clase del Lunes 2022/11/07</a></li>
+  
+<li> <a href="/2022/11/03/leccion.html">Clase del Miércoles 2022/11/03</a></li>
+  
+<li> <a href="/2022/10/31/leccion.html">Clase del Lunes 2022/10/31</a></li>
+  
+<li> <a href="/2022/10/26/leccion.html">Clase del Miércoles 2022/10/26</a></li>
+  
+<li> <a href="/2022/10/24/leccion.html">Clase del Lunes 2022/10/24</a></li>
+  
+<li> <a href="/2022/10/19/leccion.html">Clase del Miércoles 2022/10/19</a></li>
+  
+<li> <a href="/2022/10/17/leccion.html">Clase del Lunes 2022/10/17</a></li>
+  
+<li> <a href="/2022/10/10/leccion.html">Clase del Lunes 2022/10/10</a></li>
+  
+<li> <a href="/2022/10/05/leccion.html">Clase del Miércoles 2022/10/05</a></li>
+  
+<li> <a href="/2022/10/03/leccion.html">Clase del Lunes 2022/10/03</a></li>
+  
+<li> <a href="/2022/09/28/leccion.html">Clase del Miércoles 2022/09/28</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>
