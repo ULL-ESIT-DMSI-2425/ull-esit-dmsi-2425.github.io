@@ -18,7 +18,7 @@
 {"headline":"Introduction to CORS","url":"/temas/cors","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=b8d04d9765a925262fc873452dae7c29b23e2905">
+    <link rel="stylesheet" href="/assets/css/style.css?v=951ed4f0472c42e6c6de7ea012d0c0f92b58d112">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -70,6 +70,7 @@
       <li><a href="#same-origin-policy">Same origin policy</a></li>
       <li><a href="#cross-origin-resource-sharing-cors">Cross-Origin Resource Sharing CORS</a></li>
       <li><a href="#how-cors-works">How CORS works</a></li>
+      <li><a href="#cors-and-fetch-api">CORS and Fetch API</a></li>
     </ul>
   </li>
 </ul>
@@ -166,17 +167,34 @@ CORS allows the good case to happen when the requested site wants it to happen.<
 </code></pre></div></div>
 <ol>
   <li>When the browser receives the response,
-    <ol>
-      <li>the browser checks the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> header to see if it matches the origin of the tab.</li>
-      <li>If not, the response is blocked.</li>
+    <ul>
+      <li>the browser checks the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> header to see if it matches the origin of the tab.  If not, the response is blocked.</li>
       <li>The check passes if either the <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code> matches the single origin exactly or contains the wildcard <code class="language-plaintext highlighter-rouge">*</code> operator.</li>
       <li>A server that responds <code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin: *</code> allows all origins.
-  Use <code class="language-plaintext highlighter-rouge">*</code> if your application absolutely requires it, such as creating an open/public API.</li>
-    </ol>
+Use <code class="language-plaintext highlighter-rouge">*</code> if your application absolutely requires it, such as creating an open/public API.</li>
+    </ul>
   </li>
 </ol>
 
 <p>If you want to know more about CORS continue reading the section <a href="/temas/cors-advanced">Cross-Origin Resource Sharing CORS: Second Part</a> of the course.</p>
+
+<h2 id="cors-and-fetch-api">CORS and Fetch API</h2>
+
+<p>If you want to avoid the blocking, the server that hosts the resource needs to have CORS enabled. 
+What you can do on the client side is set the mode of <code class="language-plaintext highlighter-rouge">fetch</code> to CORS (although this is the default setting I believe):</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">fetch</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="p">{</span><span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cors</span><span class="dl">'</span><span class="p">});</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">mode</code> option specifies the mode you want to use for the request, e.g., <code class="language-plaintext highlighter-rouge">cors</code>, <code class="language-plaintext highlighter-rouge">no-cors</code>, or <code class="language-plaintext highlighter-rouge">same-origin</code>.</p>
+
+<ul>
+  <li>With <code class="language-plaintext highlighter-rouge">same-origin</code> you can perform requests only to your <code class="language-plaintext highlighter-rouge">origin</code>, otherwise the request will result in an error.</li>
+  <li>With <code class="language-plaintext highlighter-rouge">no-cors</code>, you can perform requests to other origins, even if they don’t set the required CORS headers, but you’ll get an <strong>opaque</strong> response. With an opaque response we won’t be able to read the data returned or view the status of the request, meaning we can’t check if the request was successful or not.</li>
+</ul>
+
+<p>However this still requires the server to enable CORS as well, and allow your domain to request the resource.</p>
+
 
 
 <!--
