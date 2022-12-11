@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=49bcc0b70e055a1b7c9406188bfd9a693219e7fa">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d3ad0f24f5716807e572d23d25a01b1df316f49b">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -115,6 +115,7 @@
           <li><a href="#check-the-status">Check the status</a></li>
           <li><a href="#listgetset-the-environment-variables">List/Get/Set the environment variables</a></li>
           <li><a href="#development-mode-with-the-netlify-cli">Development mode with the Netlify CLI</a></li>
+          <li><a href="#deploying-with-the-netlify-cli">Deploying with the Netlify CLI</a></li>
         </ul>
       </li>
       <li><a href="#rubrica">Rubrica</a></li>
@@ -830,6 +831,29 @@ package = "@netlify/plugin-nextjs"
 command = "npm run build"
 publish = ".next"
 </code></pre></div></div>
+
+<h3 id="deploying-with-the-netlify-cli">Deploying with the Netlify CLI</h3>
+
+<p>Netlify deploys are <strong>atomic</strong>, and your site is never in an inconsistent state while you’re uploading a new deploy.</p>
+
+<p>With File Transfer Protocol (FTP) or Amazon Simple Storage Service (S3) uploads, each file is pushed live one after the other, so you can  get into situations where a new HTML page is live before the supporting assets (images, scripts, CSS) have been uploaded. And if your connection cuts out in the middle of an upload, your site could get stuck in a broken state for a long time.</p>
+
+<p>Here is an example of a deploy:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  openai-quickstart-node git:(main) ✗ ntl deploy --prod
+Deploy path: /Users/casianorodriguezleon/campus-virtual/2223/learning/openai-learning/openai-quickstart-node/.next
+Deploying to main site URL...
+✔ Finished hashing 
+✔ CDN requesting 27 files
+✔ Finished uploading 27 assets
+✔ Deploy is live!
+
+Logs:              https://app.netlify.com/sites/nextjs-oai/deploys/6395e63207648c16d41001b7
+Unique Deploy URL: https://6395e63207648c16d41001b7--nextjs-oai.netlify.app
+Website URL:       https://nextjs-oai.netlify.app
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">--prod</code> option deploys to production, the  <code class="language-plaintext highlighter-rouge">--open</code> flag  opens the site after deploy</p>
 
 <h2 id="rubrica">Rubrica</h2>
 
