@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=c4c428903c9ccf2230556fa9535bce476e6eecb1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=bac2189bcaa1165413db6f07b5de8af10bf6cedb">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -69,6 +69,7 @@
     <ul>
       <li><a href="#introduction-to-open-ai-rest-api">Introduction to Open AI REST API</a></li>
       <li><a href="#generating-an-api-key">Generating an API key</a></li>
+      <li><a href="#rest-exercises">REST exercises</a></li>
       <li><a href="#setup">Setup</a></li>
       <li><a href="#what-is-rendering">What is Rendering</a></li>
       <li><a href="#nextjs-pages">next.js Pages</a>
@@ -101,7 +102,6 @@
       <li><a href="#build">build</a></li>
       <li><a href="#production">Production</a></li>
       <li><a href="#deploy-at-netlify">Deploy at Netlify</a></li>
-      <li><a href="#rest-exercises">REST exercises</a></li>
       <li><a href="#rubrica">Rubrica</a></li>
       <li><a href="#references-2">References</a></li>
     </ul>
@@ -128,6 +128,18 @@
 <p><img src="/assets/images/nextjs/generate-api-key.png" alt="" /></p>
 
 <p>Click on the “Create new secret Key” button and copy the key.</p>
+
+<h2 id="rest-exercises">REST exercises</h2>
+
+<p>Make requests to the OpenAI API using a client like the Thunder Client or Postman or Insomnia.</p>
+
+<ol>
+  <li>To get all models</li>
+  <li>To get info of a model</li>
+  <li>To get a cute image</li>
+  <li>To get a completion</li>
+  <li>To get a moderation</li>
+</ol>
 
 <h2 id="setup">Setup</h2>
 
@@ -646,13 +658,13 @@ info  - Loaded env from /Users/casianorodriguezleon/campus-virtual/2223/learning
 
 <p>Netlify’s Next.js Runtime configures your site on Netlify to enable key Next.js functionality.</p>
 
-<p>It automatically generates <a href="https://sytws.netlify.app/temas/web/serverless.html">serverless functions</a> that handle</p>
+<p>It automatically generates <strong><a href="https://sytws.netlify.app/temas/web/serverless.html">serverless functions</a></strong> that handle</p>
 
 <ul>
   <li>server-side rendered (SSR) pages,</li>
   <li>incremental static regeneration (ISR),</li>
   <li>image optimization, and</li>
-  <li>Next.js features.</li>
+  <li>other Next.js features.</li>
 </ul>
 
 <p>See section <a href="https://docs.netlify.com/integrations/frameworks/next-js/overview/">Next.js on Netlify</a>
@@ -666,23 +678,11 @@ for more details.</p>
 
 <p>Click on <strong>show advanced</strong>. Go to <strong>Environment Variables</strong> and add the secret:</p>
 
-<p><img src="/assets/images/nextjs/assets/images/nextjs/netlify-add-variable.png" alt="" /></p>
+<p><img src="/assets/images/nextjs/netlify-add-variable.png" alt="netlify-add-variable" /></p>
 
-<p>after a while your site will be deployed and running:</p>
+<p>click on <strong>deploy site</strong> and after a while your site will be deployed and running:</p>
 
 <p><img src="/assets/images/nextjs/netlify-running-cookies.png" alt="" /></p>
-
-<h2 id="rest-exercises">REST exercises</h2>
-
-<p>Make requests to the OpenAI API using a client like the Thunder Client or Postman or Insomnia.</p>
-
-<ol>
-  <li>To get all models</li>
-  <li>To get info of a model</li>
-  <li>To get a cute image</li>
-  <li>To get a completion</li>
-  <li>To get a moderation</li>
-</ol>
 
 <h2 id="rubrica">Rubrica</h2>
 
