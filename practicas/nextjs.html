@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=e74f43888f941b68322c978049aa02cd25f8935c">
+    <link rel="stylesheet" href="/assets/css/style.css?v=6deec831ce2f4339a3e6b0b247d0ba2b0ef6bd98">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -101,7 +101,11 @@
       <li><a href="#state-in-react">State in React</a></li>
       <li><a href="#build">build</a></li>
       <li><a href="#production">Production</a></li>
-      <li><a href="#deploy-at-netlify">Deploy at Netlify</a></li>
+      <li><a href="#deploy-at-netlify-with-the-ui">Deploy at Netlify with the UI</a>
+        <ul>
+          <li><a href="#environment-variables">Environment Variables</a></li>
+        </ul>
+      </li>
       <li><a href="#rubrica">Rubrica</a></li>
       <li><a href="#references-2">References</a></li>
     </ul>
@@ -654,7 +658,7 @@ ready - started server on 0.0.0.0:4000, url: http://localhost:4000
 info  - Loaded env from /Users/casianorodriguezleon/campus-virtual/2223/learning/openai-learning/openai-quickstart-node/.env
 </code></pre></div></div>
 
-<h2 id="deploy-at-netlify">Deploy at Netlify</h2>
+<h2 id="deploy-at-netlify-with-the-ui">Deploy at Netlify with the UI</h2>
 
 <p>Netlify’s Next.js Runtime configures your site on Netlify to enable key Next.js functionality.</p>
 
@@ -680,20 +684,73 @@ for more details.</p>
 
 <p><img src="/assets/images/nextjs/netlify-add-variable.png" alt="netlify-add-variable" /></p>
 
-<p>When you create environment variables using</p>
-<ul>
-  <li>the Netlify UI,</li>
-  <li>the Netlify CLI, or</li>
-  <li>the Netlify API,</li>
-</ul>
-
-<p>they are set and securely stored on Netlify and provided to the Next.JS server. This means we can avoid committing any sensitive values to our repository.</p>
-
-<p>The Netlify UI reflects any changes made using the CLI (ntl) or the API and vice versa.</p>
-
 <p>Finally, click on <strong>deploy site</strong> and after a while your site will be deployed and running:</p>
 
 <p><img src="/assets/images/nextjs/netlify-running-cookies.png" alt="" /></p>
+
+<h3 id="environment-variables">Environment Variables</h3>
+
+<p>Environment variables are set and securely stored on Netlify and provided to the Next.JS server. This means we can avoid committing any sensitive values to our repository.</p>
+
+<p>There are three ways to create site environment variables:</p>
+
+<ul>
+  <li>In the Netlify UI, create site variables under <strong>Site settings &gt; Environment variables</strong>.</li>
+  <li>With the Netlify CLI, use <code class="language-plaintext highlighter-rouge">env:set</code> to create a site environment variable, and <code class="language-plaintext highlighter-rouge">env:import</code> to import from a <code class="language-plaintext highlighter-rouge">.env</code> file.</li>
+  <li>With the Netlify API, use <code class="language-plaintext highlighter-rouge">createEnvVars</code> to create a new site environment variable.</li>
+</ul>
+
+<p>The Netlify UI reflects any changes made using the CLI (ntl) or the API and vice versa.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  nextjs-solution git:(main) ✗ ntl link --gitRemoteName sytws
+
+netlify link will connect this folder to a site on Netlify
+
+? How do you want to link this folder to a site? Use current git remote origin (https://github.com/ULL-MII-SYTWS/nextjs-solution)
+
+Looking for sites connected to 'https://github.com/ULL-MII-SYTWS/nextjs-solution'...
+
+
+Directory Linked
+
+Admin url: https://app.netlify.com/sites/nextjs-oai
+Site url:  https://nextjs-oai.netlify.app
+
+You can now run other `netlify` cli commands in this directory
+</code></pre></div></div>
+
+<p>Once we have linked the repo to Netlify, we can check the status:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  nextjs-solution git:(main) ✗ ntl status
+──────────────────────┐
+ Current Netlify User │
+──────────────────────┘
+Name:   Casiano Rodriguez-Leon
+Email:  crguezl@ull.edu.es
+GitHub: crguezl
+Teams:
+  Casiano Rodriguez-Leon's team: Collaborator
+────────────────────┐
+ Netlify Site Info  │
+────────────────────┘
+Current site: nextjs-oai
+Admin URL:    https://app.netlify.com/sites/nextjs-oai
+Site URL:     https://nextjs-oai.netlify.app
+Site Id:      de669f71-3b12-4ef0-8c91-c57b81e8eba1
+</code></pre></div></div>
+
+<p>and <code class="language-plaintext highlighter-rouge">list</code>, <code class="language-plaintext highlighter-rouge">set</code> or <code class="language-plaintext highlighter-rouge">get</code> the environment variables:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  nextjs-solution git:(main) ✗ ntl env:list
+1 environment variable for site nextjs-oai
+.---------------------------------------------------------------------.
+|                        Environment variables                        |
+|---------------------------------------------------------------------|
+|      Key       |                       Value                        |
+|----------------|----------------------------------------------------|
+| OPENAI_API_KEY | ************************************************** |
+'---------------------------------------------------------------------'
+</code></pre></div></div>
 
 <h2 id="rubrica">Rubrica</h2>
 
