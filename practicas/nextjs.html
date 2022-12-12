@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=b78a7c4bcf15e4f6d6e888a9dbbbe83938bec1af">
+    <link rel="stylesheet" href="/assets/css/style.css?v=22acfdfa70ca0136a5c82f58eaf226933759335e">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -139,6 +139,8 @@
 <p>You can see a solution deployed at netlify:  <a href="https://nextjs-oai.netlify.app/">https://nextjs-oai.netlify.app/</a></p>
 
 <p>The code uses the <a href="https://nextjs.org/">Next.js</a> framework with <a href="https://reactjs.org/">React</a>.</p>
+
+<p><a href="https://nextjs.org/learn/foundations/about-nextjs">Next.js</a> is a framework on top of React that handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your application.</p>
 
 <p>Read  both this tutorial and the original <a href="https://beta.openai.com/docs/quickstart">OpenAI API quickstart tutorial</a>.</p>
 
@@ -267,11 +269,13 @@ the result is sent to the client.</p>
 
 <h2 id="nextjs-pages">next.js Pages</h2>
 
-<p>In Next.js, a page is a React Component exported from a .js, .jsx, .ts, or .tsx file in the <code class="language-plaintext highlighter-rouge">pages</code> directory.</p>
+<p>Any file inside the folder <code class="language-plaintext highlighter-rouge">pages/api is mapped to </code>/api/*` and <strong>will be treated as an API endpoint instead of a page</strong>.</p>
+
+<p>They are server-side only bundles and won’t increase your client-side bundle size.</p>
 
 <p>Each page is associated with a <strong>route</strong> based on its file name.</p>
 
-<p>Since we have the file <code class="language-plaintext highlighter-rouge">pages/api/generate.js</code> that exports a React component, Next.js will make it accessible at the route <code class="language-plaintext highlighter-rouge">/api/generate</code>.</p>
+<p>Since we have the file <code class="language-plaintext highlighter-rouge">pages/api/generate.js</code>, Next.js will make it accessible at the route <code class="language-plaintext highlighter-rouge">/api/generate</code>.</p>
 
 <p>The <code class="language-plaintext highlighter-rouge">index.js</code> file is the main page <code class="language-plaintext highlighter-rouge">/</code> for the app.</p>
 
@@ -894,7 +898,7 @@ Website URL:       https://nextjs-oai.netlify.app
   <li><a href="https://www.netlify.com/">Netlify</a></li>
   <li><a href="https://nextjs.org/">Next.js</a>
     <ul>
-      <li><a href="https://nextjs.org/learn/foundations/about-nextjs?utm_source=next-site&amp;utm_medium=homepage-cta&amp;utm_campaign=next-website"></a></li>
+      <li><a href="https://nextjs.org/learn/foundations/about-nextjs">Next.js Foundations</a></li>
     </ul>
   </li>
   <li><a href="https://reactjs.org/">React</a></li>
