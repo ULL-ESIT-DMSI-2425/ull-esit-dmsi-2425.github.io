@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=4bb816969288b3f505d8dc13f1bb2fafd9f7c181">
+    <link rel="stylesheet" href="/assets/css/style.css?v=cefd62de509f185b13445d697a6d2d3b32715eae">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -71,8 +71,8 @@
       <li><a href="#creating-an-account">Creating an Account</a></li>
       <li><a href="#generating-an-api-key">Generating an API key</a></li>
       <li><a href="#rest-exercises">REST exercises</a></li>
-      <li><a href="#tree-structure">Tree Structure</a></li>
       <li><a href="#setup">Setup</a></li>
+      <li><a href="#single-page-applications">Single Page Applications</a></li>
       <li><a href="#what-is-rendering">What is Rendering</a></li>
       <li><a href="#nextjs-pages">next.js Pages</a>
         <ul>
@@ -178,7 +178,9 @@
 
 <p>See <a href="https://beta.openai.com/docs/api-reference/">https://beta.openai.com/docs/api-reference/</a></p>
 
-<h2 id="tree-structure">Tree Structure</h2>
+<h2 id="setup">Setup</h2>
+
+<p>Here is the file tree hierarchy of the project:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>✗ tree -I node_modules 
 .
@@ -201,7 +203,7 @@
 5 directories, 10 files
 </code></pre></div></div>
 
-<h2 id="setup">Setup</h2>
+<p>Proceed as follows:</p>
 
 <ol>
   <li>
@@ -252,6 +254,16 @@ event - compiled client and server successfully in 1174 ms (113 modules)
 </ol>
 
 <p>For the context behind this example app, check out the <a href="https://beta.openai.com/docs/quickstart">Open AI tutorial</a>.</p>
+
+<h2 id="single-page-applications">Single Page Applications</h2>
+
+<p>Single Page Applications (SPAs) and Multi-Page Applications (MPAs) are architectural patterns for building web applications.</p>
+
+<p><strong>SPA</strong>s are reactive web applications that give a native look and feel without page loads. SPAs owe this to AJAX/Client-Side Rendering typically provided by a client-side framework such as react/vue/angular.</p>
+
+<p>Many in the industry refer to more traditional web applications as Multi-Page Applications (MPAs). Such applications are comprised of multiple webpages that the user navigates between.</p>
+
+<p><img src="/assets/images/nextjs/spa-mpa-lifecycle.jpg" alt="spa-mpa-lifecycle.jpg" /></p>
 
 <h2 id="what-is-rendering">What is Rendering</h2>
 
