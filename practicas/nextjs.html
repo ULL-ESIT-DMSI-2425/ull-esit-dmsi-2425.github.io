@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=5d9a7616b9e133c123cf4fda483cfcaf27f1c57c">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b78a7c4bcf15e4f6d6e888a9dbbbe83938bec1af">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -41,8 +41,8 @@
             <li><a href="/references.html">Refs</a></li>
             <li><a href="/clases.html">Clases</a></li>
             <li><a href="/practicas.html">Prácticas </a></li> 
-            <li><a href="/temas.html">Temas</a></li>
             <li><a href="/index.html">DMSI</a></li>
+            <li><a href="#title">Comienzo</a></li>
             
         </ul>
         </nav>
@@ -68,6 +68,7 @@
   <li><a href="#introduction-to-the-jam-stack-with-nextjs-react-rest-and-netlify">Introduction to the JAM Stack with NextJS, React, REST and Netlify</a>
     <ul>
       <li><a href="#introduction-to-open-ai-rest-api">Introduction to Open AI REST API</a></li>
+      <li><a href="#creating-an-account">Creating an Account</a></li>
       <li><a href="#generating-an-api-key">Generating an API key</a></li>
       <li><a href="#rest-exercises">REST exercises</a></li>
       <li><a href="#setup">Setup</a></li>
@@ -101,14 +102,14 @@
       <li><a href="#state-in-react">State in React</a></li>
       <li><a href="#build">build</a></li>
       <li><a href="#production">Production</a></li>
-      <li><a href="#deploy-at-netlify-with-the-ui">Deploy at Netlify with the UI</a>
+      <li><a href="#exercise-deploy-at-netlify-with-the-ui">Exercise: Deploy at Netlify with the UI</a>
         <ul>
           <li><a href="#make-public-your-repo">Make public your repo</a></li>
           <li><a href="#deploy-with-the-netlify-ui">Deploy with the Netlify UI</a></li>
         </ul>
       </li>
       <li><a href="#netlify-environment-variables">Netlify Environment Variables</a></li>
-      <li><a href="#the-netlify-cli">The Netlify CLI</a>
+      <li><a href="#exercise-the-netlify-cli">Exercise: The Netlify CLI</a>
         <ul>
           <li><a href="#install-the-netlify-cli">Install the Netlify CLI</a></li>
           <li><a href="#link-the-repo-to-netlify">Link the repo to Netlify</a></li>
@@ -118,6 +119,7 @@
           <li><a href="#deploying-with-the-netlify-cli">Deploying with the Netlify CLI</a></li>
         </ul>
       </li>
+      <li><a href="#exercise-get-images-from-openai">Exercise: Get images from OpenAI</a></li>
       <li><a href="#rubrica">Rubrica</a></li>
       <li><a href="#references-2">References</a></li>
     </ul>
@@ -140,9 +142,17 @@
 
 <p>Read  both this tutorial and the original <a href="https://beta.openai.com/docs/quickstart">OpenAI API quickstart tutorial</a>.</p>
 
+<h2 id="creating-an-account">Creating an Account</h2>
+
+<p><a href="https://openai.com/api/">Create an account at openai api</a>. Unfortunately, at some point is going to ask you for a phone number:</p>
+
+<p><img src="/assets/images/openai-registration-phone-number.png" alt="openapi registration phone number" /></p>
+
+<p>It does not provide any alternatives. Let me know in advance if this is a problem for you.</p>
+
 <h2 id="generating-an-api-key">Generating an API key</h2>
 
-<p><a href="https://auth0.openai.com/u/signup">Create an account at openai</a>. Go to the user on the upper right corner and click on the API Keys tab. 
+<p>Go to the user on the upper right corner and click on the API Keys tab. 
 <img src="/assets/images/nextjs/menu-1.png" alt="" /></p>
 
 <p>Choose View API Keys.</p>
@@ -677,7 +687,7 @@ ready - started server on 0.0.0.0:4000, url: http://localhost:4000
 info  - Loaded env from /Users/casianorodriguezleon/campus-virtual/2223/learning/openai-learning/openai-quickstart-node/.env
 </code></pre></div></div>
 
-<h2 id="deploy-at-netlify-with-the-ui">Deploy at Netlify with the UI</h2>
+<h2 id="exercise-deploy-at-netlify-with-the-ui">Exercise: Deploy at Netlify with the UI</h2>
 
 <p>Netlify’s Next.js Runtime configures your site on Netlify to enable key Next.js functionality.</p>
 
@@ -725,7 +735,7 @@ for more details.</p>
 
 <p>The Netlify UI reflects any changes made using the CLI (ntl) or the API and vice versa.</p>
 
-<h2 id="the-netlify-cli">The Netlify CLI</h2>
+<h2 id="exercise-the-netlify-cli">Exercise: The Netlify CLI</h2>
 
 <p>The Netlify CLI is a command line interface that allows you to manage your Netlify sites from the terminal.</p>
 
@@ -863,6 +873,10 @@ Website URL:       https://nextjs-oai.netlify.app
 
 <p>The <code class="language-plaintext highlighter-rouge">--prod</code> option deploys to production, the  <code class="language-plaintext highlighter-rouge">--open</code> flag  opens the site after deploy</p>
 
+<h2 id="exercise-get-images-from-openai">Exercise: Get images from OpenAI</h2>
+
+<p>Change the app to get an image from OpenAI and display it in the page.</p>
+
 <h2 id="rubrica">Rubrica</h2>
 
 <ul>
@@ -877,7 +891,12 @@ Website URL:       https://nextjs-oai.netlify.app
 <h2 id="references-2">References</h2>
 
 <ul>
-  <li><a href="https://nextjs.org/">Next.js</a></li>
+  <li><a href="https://www.netlify.com/">Netlify</a></li>
+  <li><a href="https://nextjs.org/">Next.js</a>
+    <ul>
+      <li><a href="https://nextjs.org/learn/foundations/about-nextjs?utm_source=next-site&amp;utm_medium=homepage-cta&amp;utm_campaign=next-website"></a></li>
+    </ul>
+  </li>
   <li><a href="https://reactjs.org/">React</a></li>
   <li><a href="https://docs.netlify.com/cli/get-started/?_ga=2.210632407.351830897.1670331128-1485033729.1667990322#link-with-an-environment-variable">Netlify CLI</a></li>
   <li><a href="https://docs.netlify.com/integrations/frameworks/next-js/overview/#app">Next.js on Netlify</a></li>
