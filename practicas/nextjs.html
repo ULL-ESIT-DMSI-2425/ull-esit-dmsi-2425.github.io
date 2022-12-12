@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=22acfdfa70ca0136a5c82f58eaf226933759335e">
+    <link rel="stylesheet" href="/assets/css/style.css?v=663b73b095eecfdaa23f0b6df0968abb837de921">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -269,9 +269,9 @@ the result is sent to the client.</p>
 
 <h2 id="nextjs-pages">next.js Pages</h2>
 
-<p>Any file inside the folder <code class="language-plaintext highlighter-rouge">pages/api is mapped to </code>/api/*` and <strong>will be treated as an API endpoint instead of a page</strong>.</p>
+<p>Any file inside the folder <code class="language-plaintext highlighter-rouge">pages/api</code> is mapped to <code class="language-plaintext highlighter-rouge">/api/*</code> and <strong>will be treated as an API endpoint instead of a page</strong>.</p>
 
-<p>They are server-side only bundles and won’t increase your client-side bundle size.</p>
+<p><strong>They are server-side only bundles</strong> and won’t increase your client-side bundle size. See the section <a href="https://nextjs.org/docs/api-routes/introduction">API Routes</a> introduction.</p>
 
 <p>Each page is associated with a <strong>route</strong> based on its file name.</p>
 
@@ -318,6 +318,13 @@ Animal: </span><span class="p">${</span><span class="nx">capitalizedAnimal</span
 Names:`</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
+<p>For a <a href="https://nextjs.org/docs/api-routes/introduction">Nextjs API route</a> to work, you need to export a function as <code class="language-plaintext highlighter-rouge">default</code> (a.k.a request handler), which then receives the following parameters:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">req</code>: An instance of <code class="language-plaintext highlighter-rouge">http.IncomingMessage</code>, plus some pre-built middlewares</li>
+  <li><code class="language-plaintext highlighter-rouge">res</code>: An instance of <code class="language-plaintext highlighter-rouge">http.ServerResponse</code>, plus some helper functions</li>
+</ul>
 
 <h3 id="processenvopenai_api_key"><code class="language-plaintext highlighter-rouge">process.env.OPENAI_API_KEY</code></h3>
 
@@ -414,6 +421,14 @@ Express.js-like helper methods to improve the developer experience and increase 
 </span></code></pre></div></div>
 
 <h2 id="pagesindexjs">pages/index.js</h2>
+
+<p>There are three core concepts of React that you’ll need to be familiar with to start building React applications. These are:</p>
+
+<ul>
+  <li><a href="https://nextjs.org/learn/foundations/from-javascript-to-react/building-ui-with-components">Components</a></li>
+  <li><a href="https://nextjs.org/learn/foundations/from-javascript-to-react/displaying-data-with-props">Props</a></li>
+  <li><a href="https://nextjs.org/learn/foundations/from-javascript-to-react/adding-interactivity-with-state">State</a></li>
+</ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/head</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
