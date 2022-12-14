@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=5d598636d0a77d125519cc37498d1d97adcfd453">
+    <link rel="stylesheet" href="/assets/css/style.css?v=c7dfa4c32e4cabcbfa5cb8b2e85d7cf43a17e274">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -95,7 +95,7 @@
           <li><a href="#import-head-from-nexthead"><code class="language-plaintext highlighter-rouge">import Head from "next/head"</code></a></li>
           <li><a href="#import-styles-from-indexmodulecss"><code class="language-plaintext highlighter-rouge">import styles from "./index.module.css"</code></a></li>
           <li><a href="#link-relicon-hrefdogpng-"><code class="language-plaintext highlighter-rouge">&lt;link rel="icon" href="/dog.png" /&gt;</code></a></li>
-          <li><a href="#main-classnamestylesmain"><code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code></a></li>
+          <li><a href="#main-classnamestylesmain-curly-braces-in-jsx"><code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code> Curly Braces in JSX</a></li>
           <li><a href="#form-onsubmitonsubmit-form"><code class="language-plaintext highlighter-rouge">&lt;form onSubmit={onSubmit}&gt; ...&lt;/form&gt;</code></a></li>
           <li><a href="#const-response--await-fetchapigenerate---"><code class="language-plaintext highlighter-rouge">const response = await fetch("/api/generate", { ... })</code></a></li>
         </ul>
@@ -480,7 +480,7 @@ Each page is associated with a route based on its file name.</p>
 
 <p>thus, <code class="language-plaintext highlighter-rouge">index.js</code> is a <strong>page</strong> and <code class="language-plaintext highlighter-rouge">index.module.css</code> is a <strong>module</strong>.</p>
 
-<p>Next.js supports pages with [dynamic routes](https://nextjs.org/docs/routing/dynamic-routes. For example, if you create a file called <code class="language-plaintext highlighter-rouge">pages/posts/[id].js</code>, then it will be accessible at <code class="language-plaintext highlighter-rouge">posts/1</code>, <code class="language-plaintext highlighter-rouge">posts/2</code>, etc.</p>
+<p>Next.js supports pages with <a href="https://nextjs.org/docs/routing/dynamic-routes">dynamic routes</a>. For example, if you create a file called <code class="language-plaintext highlighter-rouge">pages/posts/[id].js</code>, then it will be accessible at <code class="language-plaintext highlighter-rouge">posts/1</code>, <code class="language-plaintext highlighter-rouge">posts/2</code>, etc.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/head</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
@@ -559,7 +559,7 @@ You’ll find the image in the <code class="language-plaintext highlighter-rouge
 <p>Next.js can serve static files, like images, under a folder called <code class="language-plaintext highlighter-rouge">public</code> in the root directory.
 Files inside <code class="language-plaintext highlighter-rouge">public</code> can then be referenced by your code starting from the base URL (<code class="language-plaintext highlighter-rouge">/</code>).</p>
 
-<h3 id="main-classnamestylesmain"><code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code></h3>
+<h3 id="main-classnamestylesmain-curly-braces-in-jsx"><code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code> Curly Braces in JSX</h3>
 
 <p>JSX lets you write HTML-like markup inside a JavaScript file, keeping rendering logic and content in the same place.</p>
 
@@ -614,10 +614,10 @@ In that sense, they are similar to variables declared with the <code class="lang
 <p>The difference between a <strong>React state</strong> and a 
 normal variable is that when a <strong>React state variable</strong> changes, 
 the <strong>component is rendered again</strong> and some other things happens, like that 
-the <code class="language-plaintext highlighter-rouge">useEffect</code> hook
+the <code class="language-plaintext highlighter-rouge">useEffect</code> <a href="/react/hooks">hook</a>
 bound to that state will be executed, 
 but when a normal variable changes, this does not happen.
-(The <code class="language-plaintext highlighter-rouge">useEffect</code> Hook allows us to perform side effects in our components.
+(The <code class="language-plaintext highlighter-rouge">useEffect</code> hook allows us to perform side effects in our components.
 It can be used to fetch data from an API, subscribe to a service, …)</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
