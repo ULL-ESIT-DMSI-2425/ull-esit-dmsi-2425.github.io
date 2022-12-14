@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Miércoles 2022/12/14",
+      "date": "December 14, 2022",
+
+      "excerpt": "<h2 id="lab-introduction-to-the-jam-stack-with-nextjs-react-rest-and-netlify">Lab Introduction to the JAM Stack with NextJS, React, REST and Netlify</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2022/12/14/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Lunes 2022/12/12",
       "date": "December 12, 2022",
 
@@ -197,29 +220,6 @@
       
       
       "url": "/2022/11/14/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2022/11/09",
-      "date": "November 09, 2022",
-
-      "excerpt": "<h2 id="qa">Q&amp;A</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2022/11/09/leccion.html",
        "tags"  : [
         
         ]

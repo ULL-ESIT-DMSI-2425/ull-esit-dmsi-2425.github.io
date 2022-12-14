@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=83ef48541ab56ea7bf1c4cc778931b93e789709c">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5d598636d0a77d125519cc37498d1d97adcfd453">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -100,7 +100,11 @@
           <li><a href="#const-response--await-fetchapigenerate---"><code class="language-plaintext highlighter-rouge">const response = await fetch("/api/generate", { ... })</code></a></li>
         </ul>
       </li>
-      <li><a href="#state-in-react">State in React</a></li>
+      <li><a href="#state-in-react">State in React</a>
+        <ul>
+          <li><a href="#references-2">References</a></li>
+        </ul>
+      </li>
       <li><a href="#build">build</a></li>
       <li><a href="#production">Production</a></li>
       <li><a href="#exercise-deploy-at-netlify-with-the-ui">Exercise: Deploy at Netlify with the UI</a>
@@ -122,7 +126,7 @@
       </li>
       <li><a href="#exercise-get-images-from-openai">Exercise: Get images from OpenAI</a></li>
       <li><a href="#rubrica">Rubrica</a></li>
-      <li><a href="#references-2">References</a></li>
+      <li><a href="#references-3">References</a></li>
     </ul>
   </li>
 </ul>
@@ -674,15 +678,26 @@ This is because</p>
   <li><strong>should only be modified via the setter function</strong>.</li>
 </ul>
 
-<p>The <code class="language-plaintext highlighter-rouge">setter</code> function accepts either a new value or a function which takes the current value as an argument and returns the new value like this:</p>
+<p>The <code class="language-plaintext highlighter-rouge">setter</code> function accepts either</p>
+<ol>
+  <li>a new value or</li>
+  <li>a function which <strong>takes the current value as an argument</strong> and returns the new value</li>
+</ol>
+
+<p>We can use it like this:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setResult</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// data just arrived from the API</span>
+</code></pre></div></div>
+
+<p>or like this:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setResult</span><span class="p">(</span><span class="nx">prevData</span> <span class="o">=&gt;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Since <code class="language-plaintext highlighter-rouge">data</code>has arrived from the API, we can set the <code class="language-plaintext highlighter-rouge">result</code> state to the value of <code class="language-plaintext highlighter-rouge">data.result</code>.
 The <code class="language-plaintext highlighter-rouge">&lt;div className={styles.result}&gt;{result}&lt;/div&gt;</code>has to be rendered again.</p>
 
-<p>Th effect of this statement</p>
+<p>The effect of this statement</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setAnimalInput</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
 </code></pre></div></div>
@@ -704,6 +719,12 @@ The <code class="language-plaintext highlighter-rouge">&lt;div className={styles
 </code></pre></div></div>
 
 <p>will be executed each time the user types a character in the <code class="language-plaintext highlighter-rouge">input</code> field.</p>
+
+<h3 id="references-2">References</h3>
+
+<ul>
+  <li>Read the blog <a href="https://blog.webdevsimplified.com/2020-04/use-state/">Everything You Need To Know About useState</a></li>
+</ul>
 
 <h2 id="build">build</h2>
 
@@ -955,7 +976,7 @@ Website URL:       https://nextjs-oai.netlify.app
   <li>The .zip has been delivered on the campus</li>
 </ul>
 
-<h2 id="references-2">References</h2>
+<h2 id="references-3">References</h2>
 
 <ul>
   <li><a href="https://www.netlify.com/">Netlify</a></li>
@@ -1054,6 +1075,8 @@ Website URL:       https://nextjs-oai.netlify.app
 </h2>
 
 <ol reversed>
+  
+<li> <a href="/2022/12/14/leccion.html">Clase del Miércoles 2022/12/14</a></li>
   
 <li> <a href="/2022/12/12/leccion.html">Clase del Lunes 2022/12/12</a></li>
   
