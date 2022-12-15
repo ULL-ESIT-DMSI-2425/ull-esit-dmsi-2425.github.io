@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=c8bcd283122f17248153066b98e7414a2c48b6cc">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d7272d0bb767a48bab94b5ca6bb1ae433c571de1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -812,7 +812,15 @@ Among other thins the JSX code is converted to JavaScript.</p>
 
 <p><img src="/assets/images/nextjs/compilingjsx2js.png" alt="compilingjsx2js.png" /></p>
 
-<p><code class="language-plaintext highlighter-rouge">next build</code> creates an optimized production build of your application. 
+<p>another task is to minify the code:</p>
+
+<p><img src="/assets/images/nextjs/minifying.png" alt="minifying" /></p>
+
+<p>Another stage of the Next.js compiler is Bundling. Bundling is the process of resolving the web of dependencies and merging (or ‘packaging’) the files (or modules) into optimized bundles for the browser, with the goal of reducing the number of requests for files when a user visits a web page:</p>
+
+<p><img src="/assets/images/nextjs/bundling.png" alt="bundling" /></p>
+
+<p>The command <code class="language-plaintext highlighter-rouge">next build</code> creates an optimized production build of your application. 
 You can enable more verbose build output with the <code class="language-plaintext highlighter-rouge">--debug</code> flag in next build.</p>
 
 <p>The output displays information about each route:</p>
