@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=d7272d0bb767a48bab94b5ca6bb1ae433c571de1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=3ec4b7b5b52fc05ffc60a7c292db496ef0efa713">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -108,7 +108,11 @@
       </li>
       <li><a href="#continue-learning-react">Continue learning React</a></li>
       <li><a href="#stages-of-a-web-application">Stages of a web application</a></li>
-      <li><a href="#build">build</a></li>
+      <li><a href="#build">build</a>
+        <ul>
+          <li><a href="#the-command-next-build">The command next build</a></li>
+        </ul>
+      </li>
       <li><a href="#production">Production</a></li>
       <li><a href="#exercise-deploy-at-netlify-with-the-ui">Exercise: Deploy at Netlify with the UI</a>
         <ul>
@@ -816,9 +820,13 @@ Among other thins the JSX code is converted to JavaScript.</p>
 
 <p><img src="/assets/images/nextjs/minifying.png" alt="minifying" /></p>
 
-<p>Another stage of the Next.js compiler is Bundling. Bundling is the process of resolving the web of dependencies and merging (or ‘packaging’) the files (or modules) into optimized bundles for the browser, with the goal of reducing the number of requests for files when a user visits a web page:</p>
+<p>Another stage of the Next.js compiler is <strong>Bundling</strong>. <strong>Bundling</strong> is the process of resolving the web of dependencies and merging (or ‘packaging’) the files (or modules) into optimized bundles for the browser, <strong>with the goal of reducing the number of requests for files when a user visits a web page</strong>:</p>
 
 <p><img src="/assets/images/nextjs/bundling.png" alt="bundling" /></p>
+
+<p><img src="/assets/images/nextjs/code-splitting.png" alt="" /></p>
+
+<h3 id="the-command-next-build">The command next build</h3>
 
 <p>The command <code class="language-plaintext highlighter-rouge">next build</code> creates an optimized production build of your application. 
 You can enable more verbose build output with the <code class="language-plaintext highlighter-rouge">--debug</code> flag in next build.</p>
