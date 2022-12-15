@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=70adf3aacdd50067c96ae845a41c58a21d81ec6b">
+    <link rel="stylesheet" href="/assets/css/style.css?v=c6a8032b5526c01574b3cf51012a5d7b563ea107">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -540,6 +540,16 @@ be used in the JSX of the page:</p>
    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="p">=</span><span class="s">"icon"</span> <span class="na">href</span><span class="p">=</span><span class="s">"/dog.png"</span> <span class="p">/&gt;</span>
 <span class="p">&lt;/</span><span class="nc">Head</span><span class="p">&gt;</span>
 </code></pre></div></div>
+
+<p>JSX is a syntax extension for JavaScript that allows you to describe your UI in a familiar HTML-like syntax.</p>
+
+<p>The nice thing about JSX is that apart from <a href="https://beta.reactjs.org/learn/writing-markup-with-jsx#the-rules-of-jsx">following three JSX rules</a>, you don’t need to learn any new symbols or syntax outside of HTML and JavaScript:</p>
+
+<ol>
+  <li>Return a single root element: To return multiple elements from a component, wrap them with a single parent tag.</li>
+  <li>Close all the tags: self-closing tags like <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> must become <code class="language-plaintext highlighter-rouge">&lt;img /&gt;</code></li>
+  <li>camelCase most of the things: For example, instead of <code class="language-plaintext highlighter-rouge">stroke-width</code> you use <code class="language-plaintext highlighter-rouge">strokeWidth</code>. Since <code class="language-plaintext highlighter-rouge">class</code> is a reserved word, in React you write <code class="language-plaintext highlighter-rouge">className</code> instead</li>
+</ol>
 
 <h3 id="import-styles-from-indexmodulecss"><code class="language-plaintext highlighter-rouge">import styles from "./index.module.css"</code></h3>
 
