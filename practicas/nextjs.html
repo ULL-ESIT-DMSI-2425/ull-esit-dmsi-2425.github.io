@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=7c8f45fe3933e7b810a47760c86f4d90f8e03993">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a95f616363f852f9b577c6ebda0484a8a00eeaf4">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -92,8 +92,8 @@
       </li>
       <li><a href="#pagesindexjs">pages/index.js</a>
         <ul>
-          <li><a href="#import-head-from-nexthead"><code class="language-plaintext highlighter-rouge">import Head from "next/head"</code></a></li>
           <li><a href="#jsx">JSX</a></li>
+          <li><a href="#import-head-from-nexthead"><code class="language-plaintext highlighter-rouge">import Head from "next/head"</code></a></li>
           <li><a href="#import-styles-from-indexmodulecss"><code class="language-plaintext highlighter-rouge">import styles from "./index.module.css"</code></a></li>
           <li><a href="#link-relicon-hrefdogpng-"><code class="language-plaintext highlighter-rouge">&lt;link rel="icon" href="/dog.png" /&gt;</code></a></li>
           <li><a href="#main-classnamestylesmain-curly-braces-in-jsx"><code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code> Curly Braces in JSX</a></li>
@@ -531,6 +531,45 @@ Each page is associated with a route based on its file name.</p>
 <span class="p">}</span>
 </code></pre></div></div>
 
+<h3 id="jsx">JSX</h3>
+
+<p>JSX is a syntax extension for JavaScript that allows you to describe your UI in a familiar HTML-like syntax. 
+This code is JSX:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>OpenAI Quickstart<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="p">=</span><span class="s">"icon"</span> <span class="na">href</span><span class="p">=</span><span class="s">"/dog.png"</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Head</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">main</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">main</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="p">=</span><span class="s">"/dog.png"</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">icon</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Name my pet<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span><span class="nx">onSubmit</span><span class="si">}</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span>
+            <span class="na">type</span><span class="p">=</span><span class="s">"text"</span>
+            <span class="na">name</span><span class="p">=</span><span class="s">"animal"</span>
+            <span class="na">placeholder</span><span class="p">=</span><span class="s">"Enter an animal"</span>
+            <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">animalInput</span><span class="si">}</span>
+            <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
+          <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"submit"</span> <span class="na">value</span><span class="p">=</span><span class="s">"Generate names"</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">result</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">result</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+</code></pre></div></div>
+
+<p>The nice thing about JSX is that apart from <a href="https://beta.reactjs.org/learn/writing-markup-with-jsx#the-rules-of-jsx">following three JSX rules</a>, you don’t need to learn any new symbols or syntax outside of HTML and JavaScript:</p>
+
+<ol>
+  <li>Return a single root element: To return multiple elements from a component, wrap them with a single parent tag.</li>
+  <li>Close all the tags: self-closing tags like <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> must become <code class="language-plaintext highlighter-rouge">&lt;img /&gt;</code></li>
+  <li>camelCase most of the things: For example, instead of <code class="language-plaintext highlighter-rouge">stroke-width</code> you use <code class="language-plaintext highlighter-rouge">strokeWidth</code>. Since <code class="language-plaintext highlighter-rouge">class</code> is a reserved word, in React you write <code class="language-plaintext highlighter-rouge">className</code> instead. Event names are also camelCased</li>
+</ol>
+
 <h3 id="import-head-from-nexthead"><code class="language-plaintext highlighter-rouge">import Head from "next/head"</code></h3>
 
 <p>nextjs provides a built-in component for appending elements to the <code class="language-plaintext highlighter-rouge">head</code> of the page so that it can 
@@ -542,18 +581,6 @@ be used in the JSX of the page:</p>
 <span class="p">&lt;/</span><span class="nc">Head</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
-<h3 id="jsx">JSX</h3>
-
-<p>JSX is a syntax extension for JavaScript that allows you to describe your UI in a familiar HTML-like syntax.</p>
-
-<p>The nice thing about JSX is that apart from <a href="https://beta.reactjs.org/learn/writing-markup-with-jsx#the-rules-of-jsx">following three JSX rules</a>, you don’t need to learn any new symbols or syntax outside of HTML and JavaScript:</p>
-
-<ol>
-  <li>Return a single root element: To return multiple elements from a component, wrap them with a single parent tag.</li>
-  <li>Close all the tags: self-closing tags like <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> must become <code class="language-plaintext highlighter-rouge">&lt;img /&gt;</code></li>
-  <li>camelCase most of the things: For example, instead of <code class="language-plaintext highlighter-rouge">stroke-width</code> you use <code class="language-plaintext highlighter-rouge">strokeWidth</code>. Since <code class="language-plaintext highlighter-rouge">class</code> is a reserved word, in React you write <code class="language-plaintext highlighter-rouge">className</code> instead</li>
-</ol>
-
 <h3 id="import-styles-from-indexmodulecss"><code class="language-plaintext highlighter-rouge">import styles from "./index.module.css"</code></h3>
 
 <p>This is a <a href="https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css">CSS module</a>.</p>
@@ -564,7 +591,11 @@ be used in the JSX of the page:</p>
 
 <p>This allows you to use the same CSS class name in different files without worrying about collisions.</p>
 
-<p>We can then use the <code class="language-plaintext highlighter-rouge">styles</code> object like this:</p>
+<p>We can then use the <code class="language-plaintext highlighter-rouge">styles</code> object like in:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="p">=</span><span class="s">"/dog.png"</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">icon</span><span class="si">}</span> <span class="p">/&gt;</span>
+</code></pre></div></div>
+<p>or in this:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">result</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">result</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></div>
@@ -741,6 +772,8 @@ The <code class="language-plaintext highlighter-rouge">&lt;div className={styles
 <h3 id="references-2">References</h3>
 
 <ul>
+  <li>Read section <a href="https://beta.reactjs.org/learn/adding-interactivity">Adding Interactivity</a> of the React docs</li>
+  <li>Section <a href="https://beta.reactjs.org/learn/managing-state">Managing State</a> of the React docs</li>
   <li>Read the blog <a href="https://blog.webdevsimplified.com/2020-04/use-state/">Everything You Need To Know About useState</a></li>
 </ul>
 
