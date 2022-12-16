@@ -489,7 +489,7 @@ Each page is associated with a route based on its file name.</p>
 
 <p>Next.js supports pages with <a href="https://nextjs.org/docs/routing/dynamic-routes">dynamic routes</a>. For example, if you create a file called <code class="language-plaintext highlighter-rouge">pages/posts/[id].js</code>, then it will be accessible at <code class="language-plaintext highlighter-rouge">posts/1</code>, <code class="language-plaintext highlighter-rouge">posts/2</code>, etc.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/head</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/head</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">styles</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./index.module.css</span><span class="dl">"</span><span class="p">;</span>
 
@@ -511,35 +511,35 @@ Each page is associated with a route based on its file name.</p>
     <span class="nx">setAnimalInput</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Head</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">OpenAI</span> <span class="nx">Quickstart</span><span class="o">&lt;</span><span class="sr">/title</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">icon</span><span class="dl">"</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">/dog.png</span><span class="dl">"</span> <span class="o">/&gt;</span>
-      <span class="o">&lt;</span><span class="sr">/Head</span><span class="err">&gt;
-</span>
-      <span class="o">&lt;</span><span class="nx">main</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">main</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">/dog.png</span><span class="dl">"</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">icon</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Name</span> <span class="nx">my</span> <span class="nx">pet</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">onSubmit</span><span class="p">}</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">input</span>
-            <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span>
-            <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">animal</span><span class="dl">"</span>
-            <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Enter an animal</span><span class="dl">"</span>
-            <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">animalInput</span><span class="p">}</span>
-            <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span>
-          <span class="sr">/</span><span class="err">&gt;
-</span>          <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">Generate names</span><span class="dl">"</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">result</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">result</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>OpenAI Quickstart<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="p">=</span><span class="s">"icon"</span> <span class="na">href</span><span class="p">=</span><span class="s">"/dog.png"</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Head</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">main</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">main</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="p">=</span><span class="s">"/dog.png"</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">icon</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Name my pet<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span><span class="nx">onSubmit</span><span class="si">}</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span>
+            <span class="na">type</span><span class="p">=</span><span class="s">"text"</span>
+            <span class="na">name</span><span class="p">=</span><span class="s">"animal"</span>
+            <span class="na">placeholder</span><span class="p">=</span><span class="s">"Enter an animal"</span>
+            <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">animalInput</span><span class="si">}</span>
+            <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
+          <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"submit"</span> <span class="na">value</span><span class="p">=</span><span class="s">"Generate names"</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">result</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">result</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="jsx">JSX</h3>
 
-<p>JSX is a syntax extension for JavaScript that allows you to describe your UI in a familiar HTML-like syntax. 
+<p>JSX stands for JavaScript eXtended markup language. JSX is a syntax extension for JavaScript that allows you to describe your UI in a familiar HTML-like syntax. 
 This code is JSX:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span>
@@ -568,17 +568,27 @@ This code is JSX:</p>
   <span class="p">);</span>
 </code></pre></div></div>
 
+<p>It’s possible to use JavaScript inside JSX using curly braces. 
+The example below sets the <code class="language-plaintext highlighter-rouge">value</code> property  of the  <code class="language-plaintext highlighter-rouge">input</code>
+to the variable <code class="language-plaintext highlighter-rouge">animalInput</code> and the <code class="language-plaintext highlighter-rouge">onChange</code> property to a function that updates the <code class="language-plaintext highlighter-rouge">animalInput</code> variable to the value written by the user inside the input box:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">name</span><span class="p">=</span><span class="s">"animal"</span> <span class="na">placeholder</span><span class="p">=</span><span class="s">"Enter an animal"</span>
+    <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">animalInput</span><span class="si">}</span>
+    <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
+<span class="p">/&gt;</span>
+</code></pre></div></div>
+
 <p>The nice thing about JSX is that apart from <a href="https://beta.reactjs.org/learn/writing-markup-with-jsx#the-rules-of-jsx">following three JSX rules</a>, you don’t need to learn any new symbols or syntax outside of HTML and JavaScript:</p>
 
 <ol>
   <li>Return a single root element: To return multiple elements from a component, wrap them with a single parent tag.</li>
   <li>Close all the tags: self-closing tags like <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> must become <code class="language-plaintext highlighter-rouge">&lt;img /&gt;</code></li>
-  <li>camelCase most of the things: For example, instead of <code class="language-plaintext highlighter-rouge">stroke-width</code> you use <code class="language-plaintext highlighter-rouge">strokeWidth</code>. Since <code class="language-plaintext highlighter-rouge">class</code> is a reserved word, in React you write <code class="language-plaintext highlighter-rouge">className</code> instead. Event names are also camelCased</li>
+  <li><strong>camelCase</strong> most of the things: For example, instead of <code class="language-plaintext highlighter-rouge">stroke-width</code> you use <code class="language-plaintext highlighter-rouge">strokeWidth</code>. Since <code class="language-plaintext highlighter-rouge">class</code> is a reserved word, in React you write <code class="language-plaintext highlighter-rouge">className</code> instead. Event names are also camelCased</li>
 </ol>
 
 <h3 id="import-head-from-nexthead"><code class="language-plaintext highlighter-rouge">import Head from "next/head"</code></h3>
 
-<p>nextjs provides a built-in component for appending elements to the <code class="language-plaintext highlighter-rouge">head</code> of the page so that it can 
+<p>nextjs provides a built-in <strong>component</strong> for appending elements to the <code class="language-plaintext highlighter-rouge">head</code> of the page so that it can 
 be used in the JSX of the page:</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Head</span><span class="p">&gt;</span>
@@ -586,6 +596,8 @@ be used in the JSX of the page:</p>
    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="p">=</span><span class="s">"icon"</span> <span class="na">href</span><span class="p">=</span><span class="s">"/dog.png"</span> <span class="p">/&gt;</span>
 <span class="p">&lt;/</span><span class="nc">Head</span><span class="p">&gt;</span>
 </code></pre></div></div>
+
+<p><img src="/assets/images/nextjs/HeadComponent.png" alt="assets/images/nextjs/HeadComponent.png" /></p>
 
 <h3 id="import-styles-from-indexmodulecss"><code class="language-plaintext highlighter-rouge">import styles from "./index.module.css"</code></h3>
 
@@ -824,7 +836,20 @@ Among other thins the JSX code is converted to JavaScript.</p>
 
 <p><img src="/assets/images/nextjs/bundling.png" alt="bundling" /></p>
 
+<p>Developers usually split their applications into multiple pages that can be accessed from different URLs. Each of these pages becomes a unique <strong>entry point</strong> into the application.</p>
+
+<p><strong>Code-splitting</strong> is the process of splitting the application’s bundle into smaller chunks required by each entry point. The goal is <strong>to improve the application’s initial load time by only loading the code required to run that page</strong>.</p>
+
 <p><img src="/assets/images/nextjs/code-splitting.png" alt="" /></p>
+
+<p>Next.js has built-in support for code splitting. Each file inside your <code class="language-plaintext highlighter-rouge">pages/</code> directory will be automatically code split into its own JavaScript bundle during the build step.</p>
+
+<p>Even more:</p>
+
+<ul>
+  <li>Any code shared between pages is also split into another bundle to avoid re-downloading the same code on further navigation.</li>
+  <li>After the initial page load, Next.js can start <strong>pre-loading the code of other pages</strong> users are likely to navigate to.</li>
+</ul>
 
 <h3 id="the-command-next-build">The command next build</h3>
 
