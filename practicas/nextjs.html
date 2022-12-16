@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=3ec4b7b5b52fc05ffc60a7c292db496ef0efa713">
+    <link rel="stylesheet" href="/assets/css/style.css?v=80fdee4b4a5efd73132ec930dcbf5e7a746faffc">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -74,7 +74,9 @@
       <li><a href="#setup">Setup</a></li>
       <li><a href="#single-page-applications">Single Page Applications</a></li>
       <li><a href="#what-is-rendering">What is Rendering</a></li>
-      <li><a href="#nextjs-pages">next.js Pages</a>
+      <li><a href="#the-pages-folder">The pages folder</a></li>
+      <li><a href="#the-pages-folder-dynamic-routes">The pages folder: Dynamic routes</a></li>
+      <li><a href="#nextjs-pagesapi-folder">next.js pages/api folder</a>
         <ul>
           <li><a href="#references">References</a></li>
         </ul>
@@ -110,6 +112,7 @@
       <li><a href="#stages-of-a-web-application">Stages of a web application</a></li>
       <li><a href="#build">build</a>
         <ul>
+          <li><a href="#the-nextjs-compiler">The NextJS Compiler</a></li>
           <li><a href="#the-command-next-build">The command next build</a></li>
         </ul>
       </li>
@@ -316,7 +319,115 @@ Rendering can take place</p>
 because the fetching of external data and transformation of components into HTML happens <strong>before</strong> 
 the result is sent to the client.</p>
 
-<h2 id="nextjs-pages">next.js Pages</h2>
+<h2 id="the-pages-folder">The pages folder</h2>
+
+<p>In Next.js, a <strong>page</strong> is a React Component exported from a <code class="language-plaintext highlighter-rouge">.js</code>, <code class="language-plaintext highlighter-rouge">.jsx</code>, <code class="language-plaintext highlighter-rouge">.ts</code>, or <code class="language-plaintext highlighter-rouge">.tsx</code> file in the <code class="language-plaintext highlighter-rouge">pages</code> directory. 
+Each page is associated with a route based on its file name.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">index.js</code> file is the main page <code class="language-plaintext highlighter-rouge">/</code> for the app.</p>
+
+<p>Pages can also be added under <code class="language-plaintext highlighter-rouge">src/pages</code> as an alternative to the root <code class="language-plaintext highlighter-rouge">pages</code> directory.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">src</code> directory is very common in many apps and Next.js supports it by default.</p>
+
+<p><strong>Example</strong>: If you create <code class="language-plaintext highlighter-rouge">pages/about.js</code> that exports a React component like below, it will be accessible at <code class="language-plaintext highlighter-rouge">/about</code>.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">About</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="the-pages-folder-dynamic-routes">The pages folder: Dynamic routes</h2>
+
+<p>Next.js also supports pages with <a href="https://nextjs.org/docs/routing/dynamic-routes">dynamic routes</a>.</p>
+
+<p>For example, if you create a file called <code class="language-plaintext highlighter-rouge">pages/posts/[id].js</code>, then it will be accessible at <code class="language-plaintext highlighter-rouge">posts/1</code>, <code class="language-plaintext highlighter-rouge">posts/2</code>, etc.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  nextjs-dynamic-routes tree -I node_modules
+.
+├── README.md
+├── package-lock.json
+├── package.json
+└── pages
+    ├── index.jsx
+    └── post
+        ├── [pid]
+        │   └── [comment].js
+        └── [pid].js
+</code></pre></div></div>
+
+<p>Consider the following page <code class="language-plaintext highlighter-rouge">pages/post/[pid].js</code>:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">Post</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">()</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">router</span><span class="p">.</span><span class="nx">query</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">pid</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">router</span><span class="p">.</span><span class="nx">query</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Post: <span class="si">{</span><span class="nx">pid</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Post</span>
+</code></pre></div></div>
+
+<p>Any route like <code class="language-plaintext highlighter-rouge">/post/1</code>, <code class="language-plaintext highlighter-rouge">/post/abc</code>, etc. will be matched by pages <code class="language-plaintext highlighter-rouge">/post/[pid].js</code>. 
+The matched <code class="language-plaintext highlighter-rouge">path</code> parameter will be sent as a query parameter to the page, and it will be merged with the other query parameters.</p>
+
+<p>For example, The page <code class="language-plaintext highlighter-rouge">pages/post/[pid]/[comment].js</code></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">Comment</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">()</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">router</span><span class="p">.</span><span class="nx">query</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">pid</span><span class="p">,</span> <span class="nx">comment</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">router</span><span class="p">.</span><span class="nx">query</span>
+
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>pid: <span class="si">{</span><span class="nx">pid</span><span class="si">}</span> Comment: <span class="si">{</span><span class="nx">comment</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Comment</span>
+</code></pre></div></div>
+
+<p>will match the route <code class="language-plaintext highlighter-rouge">/post/abc/a-comment</code> and its query object will be:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"pid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w"> </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a-comment"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  openai-quickstart-node git:(main) ✗ npx next --version 
+Next.js v12.1.6
+</code></pre></div></div>
+
+<p>Client-side navigations to dynamic routes are handled with <a href="https://nextjs.org/docs/api-reference/next/link">next/link</a>. If we wanted to have links to the routes used above it will look like this:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="s">"/post/abc"</span><span class="p">&gt;</span>Go to pages/post/[pid].js<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="s">"/post/abc?foo=bar"</span><span class="p">&gt;</span>Also goes to pages/post/[pid].js<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="s">"/post/abc/a-comment"</span><span class="p">&gt;</span>
+          Go to pages/post/[pid]/[comment].js
+        <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Home</span>
+</code></pre></div></div>
+
+<p>NextJS provides through <code class="language-plaintext highlighter-rouge">next/link</code> a  React component called <code class="language-plaintext highlighter-rouge">Link</code> to do client-side route transitions.
+See <a href="https://nextjs.org/docs/routing/introduction">Introduction to Routing</a> in the NextJS docs.</p>
+
+<p>See the code at <a href="https://github.com/ULL-MII-SYTWS/nextjs-dynamic-routes">ULL-MII-SYTWS/nextjs-dynamic-routes</a></p>
+
+<h2 id="nextjs-pagesapi-folder">next.js pages/api folder</h2>
 
 <p>Any file inside the folder <code class="language-plaintext highlighter-rouge">pages/api</code> is mapped to <code class="language-plaintext highlighter-rouge">/api/*</code> and <strong>will be treated as an API endpoint instead of a page</strong>.</p>
 
@@ -325,10 +436,6 @@ the result is sent to the client.</p>
 <p>Each page is associated with a <strong>route</strong> based on its file name.</p>
 
 <p>Since we have the file <code class="language-plaintext highlighter-rouge">pages/api/generate.js</code>, Next.js will make it accessible at the route <code class="language-plaintext highlighter-rouge">/api/generate</code>.</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">index.js</code> file is the main page <code class="language-plaintext highlighter-rouge">/</code> for the app.</p>
-
-<p>By default, Next.js includes its own server which is started with <code class="language-plaintext highlighter-rouge">next start</code>.</p>
 
 <h3 id="references">References</h3>
 
@@ -486,8 +593,6 @@ It exports a <strong>React component</strong> that renders the home page.</p>
 Each page is associated with a route based on its file name.</p>
 
 <p>thus, <code class="language-plaintext highlighter-rouge">index.js</code> is a <strong>page</strong> and <code class="language-plaintext highlighter-rouge">index.module.css</code> is a <strong>module</strong>.</p>
-
-<p>Next.js supports pages with <a href="https://nextjs.org/docs/routing/dynamic-routes">dynamic routes</a>. For example, if you create a file called <code class="language-plaintext highlighter-rouge">pages/posts/[id].js</code>, then it will be accessible at <code class="language-plaintext highlighter-rouge">posts/1</code>, <code class="language-plaintext highlighter-rouge">posts/2</code>, etc.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/head</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
@@ -823,12 +928,22 @@ The <code class="language-plaintext highlighter-rouge">&lt;div className={styles
 
 <h2 id="build">build</h2>
 
-<p>This is the stage where the code is compiled and optimized for production.
+<h3 id="the-nextjs-compiler">The NextJS Compiler</h3>
+
+<p>The <strong>build stage</strong> is the stage where the code is compiled and optimized for production.
 Among other thins the JSX code is converted to JavaScript.</p>
 
 <p><img src="/assets/images/nextjs/compilingjsx2js.png" alt="compilingjsx2js.png" /></p>
 
-<p>another task is to minify the code:</p>
+<p>Another task is to minify the code. <strong>Minification</strong> refers to the process of removing unnecessary or redundant data without affecting how the resource is processed by the browser</p>
+<ul>
+  <li>code comments</li>
+  <li>formatting,</li>
+  <li>removing unused code,</li>
+  <li>using shorter variable and function names,</li>
+</ul>
+
+<p>and so on. The goal is to reduce the size of the code and improve the performance of the application.</p>
 
 <p><img src="/assets/images/nextjs/minifying.png" alt="minifying" /></p>
 
@@ -844,7 +959,7 @@ Among other thins the JSX code is converted to JavaScript.</p>
 
 <p>Next.js has built-in support for code splitting. Each file inside your <code class="language-plaintext highlighter-rouge">pages/</code> directory will be automatically code split into its own JavaScript bundle during the build step.</p>
 
-<p>Even more:</p>
+<p>Other optimizations:</p>
 
 <ul>
   <li>Any code shared between pages is also split into another bundle to avoid re-downloading the same code on further navigation.</li>
@@ -1118,8 +1233,12 @@ Website URL:       https://nextjs-oai.netlify.app
       <li><a href="https://vercel.com/docs/concepts/projects/environment-variables?utm_source=next-site&amp;utm_medium=docs&amp;utm_campaign=next-website">Environment Variables</a></li>
     </ul>
   </li>
-  <li>A solution deployed at netlify <a href="https://nextjs-oai.netlify.app/">https://nextjs-oai.netlify.app/</a></li>
-  <li><a href="https://github.com/ULL-MII-SYTWS/nextjs-solution/">A repo with a solution</a></li>
+  <li>A solution deployed at netlify <a href="https://nextjs-oai.netlify.app/">https://nextjs-oai.netlify.app/</a>
+    <ul>
+      <li><a href="https://github.com/ULL-MII-SYTWS/nextjs-solution/">A repo with a solution</a></li>
+    </ul>
+  </li>
+  <li>Repo <a href="https://github.com/ULL-MII-SYTWS/nextjs-dynamic-routes">ULL-MII-SYTWS/nextjs-dynamic-routes</a></li>
   <li>Here is YouTube video explaining a project similar to the one described in this lab: <a href="https://youtu.be/fU4o_BKaUZE">Build An AI Image Generator With OpenAI &amp; Node.js</a></li>
 </ul>
 
