@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=80fdee4b4a5efd73132ec930dcbf5e7a746faffc">
+    <link rel="stylesheet" href="/assets/css/style.css?v=dee7361698c1e1b9b819f11b7d94069937a354b5">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -321,8 +321,15 @@ the result is sent to the client.</p>
 
 <h2 id="the-pages-folder">The pages folder</h2>
 
-<p>In Next.js, a <strong>page</strong> is a React Component exported from a <code class="language-plaintext highlighter-rouge">.js</code>, <code class="language-plaintext highlighter-rouge">.jsx</code>, <code class="language-plaintext highlighter-rouge">.ts</code>, or <code class="language-plaintext highlighter-rouge">.tsx</code> file in the <code class="language-plaintext highlighter-rouge">pages</code> directory. 
-Each page is associated with a route based on its file name.</p>
+<p>In Next.js, a <strong>page</strong> is a</p>
+
+<ol>
+  <li>React Component</li>
+  <li>exported from a <code class="language-plaintext highlighter-rouge">.js</code>, <code class="language-plaintext highlighter-rouge">.jsx</code>, <code class="language-plaintext highlighter-rouge">.ts</code>, or <code class="language-plaintext highlighter-rouge">.tsx</code> file and</li>
+  <li>it must be in the <code class="language-plaintext highlighter-rouge">pages</code> directory.</li>
+</ol>
+
+<p>Each page is associated with a route based on its file name.</p>
 
 <p>The <code class="language-plaintext highlighter-rouge">index.js</code> file is the main page <code class="language-plaintext highlighter-rouge">/</code> for the app.</p>
 
@@ -1203,7 +1210,13 @@ Website URL:       https://nextjs-oai.netlify.app
 
 <h2 id="exercise-get-images-from-openai">Exercise: Get images from OpenAI</h2>
 
-<p>Change the app to get an image from OpenAI and display it in the page.</p>
+<p>Add to routes to the app:</p>
+
+<ul>
+  <li>On the first route  <code class="language-plaintext highlighter-rouge">/pet</code>  leave the current service</li>
+  <li>On the second route <code class="language-plaintext highlighter-rouge">/image</code>add functionality to get an image from OpenAI and display it in the page.</li>
+  <li>Add the landing page</li>
+</ul>
 
 <h2 id="rubrica">Rubrica</h2>
 
