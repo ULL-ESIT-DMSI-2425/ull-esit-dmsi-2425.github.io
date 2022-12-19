@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=c36521716dd81b897ef98f97a86ec5d816bac1f5">
+    <link rel="stylesheet" href="/assets/css/style.css?v=511821f88d5bc269bbbb613542832a66757728b3">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -228,9 +228,15 @@
 
     <p>Which installs the dependencies listed in <code class="language-plaintext highlighter-rouge">package.json</code>:</p>
 
-    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">✗</span><span class="w"> </span><span class="err">jq</span><span class="w"> </span><span class="err">-c</span><span class="w"> </span><span class="err">'.dependencies</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">keys'</span><span class="w"> </span><span class="err">package.json</span><span class="w">
-</span><span class="p">[</span><span class="s2">"next"</span><span class="p">,</span><span class="s2">"openai"</span><span class="p">,</span><span class="s2">"react"</span><span class="p">,</span><span class="s2">"react-dom"</span><span class="p">]</span><span class="w">
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">➜</span><span class="w">  </span><span class="err">openai-quickstart-node</span><span class="w"> </span><span class="err">git:(main)</span><span class="w"> </span><span class="err">✗</span><span class="w"> </span><span class="err">jq</span><span class="w"> </span><span class="err">'.dependencies'</span><span class="w"> </span><span class="err">package.json</span><span class="w"> 
+ </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^12.1.6"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"openai"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.0.0"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"react"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17.0.2"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"react-dom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17.0.2"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span></code></pre></div>    </div>
+    <p>Notice that the <code class="language-plaintext highlighter-rouge">next</code> version major is 12</p>
   </li>
   <li>
     <p>Make a copy of the example environment variables file</p>
