@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=f585da2777749ddae8a9c5c7cc9c832762c7d3eb">
+    <link rel="stylesheet" href="/assets/css/style.css?v=cbf1da3bb1e70bdb5e737b67dfe715895d784784">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -112,6 +112,14 @@
       </li>
       <li><a href="#state-in-react">State in React</a>
         <ul>
+          <li><a href="#react-states">React States</a></li>
+          <li><a href="#the-usestate-hook">The useState hook</a></li>
+          <li><a href="#state-in-our-application">State in our Application</a>
+            <ul>
+              <li><a href="#when-the-api-returns-the-result">When the API returns the result</a></li>
+              <li><a href="#when-the-user-types-in-the-input-box">When the user types in the input box</a></li>
+            </ul>
+          </li>
           <li><a href="#references-2">References</a></li>
         </ul>
       </li>
@@ -813,6 +821,8 @@ In this situation, you can use curly braces in your JSX to open a window to Java
 
 <h2 id="state-in-react">State in React</h2>
 
+<h3 id="react-states">React States</h3>
+
 <p><strong>React states</strong> are used to store data that can be changed over time.
 In that sense, they are similar to variables declared with the <code class="language-plaintext highlighter-rouge">let</code> keyword.</p>
 
@@ -821,55 +831,28 @@ normal variable is that when a <strong>React state variable</strong> changes,
 the <strong>component is rendered again</strong> and some other things happens,
 but when a normal variable changes, this does not happen.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="c1">// ...</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">animalInput</span><span class="p">,</span> <span class="nx">setAnimalInput</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">result</span><span class="p">,</span> <span class="nx">setResult</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">();</span>
-
-  <span class="k">async</span> <span class="kd">function</span> <span class="nx">onSubmit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-    <span class="nx">setResult</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span>
-    <span class="nx">setAnimalInput</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;.../&gt;</span>
-      <span class="p">&lt;</span><span class="nt">main</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">main</span><span class="si">}</span><span class="p">&gt;</span>
-        <span class="p">&lt;.../&gt;</span>
-        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span><span class="nx">onSubmit</span><span class="si">}</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">input</span>  <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">name</span><span class="p">=</span><span class="s">"animal"</span> <span class="na">placeholder</span><span class="p">=</span><span class="s">"Enter an animal"</span>
-            <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">animalInput</span><span class="si">}</span>
-            <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
-          <span class="p">/&gt;</span>
-          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"submit"</span> <span class="na">value</span><span class="p">=</span><span class="s">"Generate names"</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">result</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">result</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>In this code we have two states: <code class="language-plaintext highlighter-rouge">animalInput</code> and <code class="language-plaintext highlighter-rouge">result</code>.</p>
-
-<p>Therefore,</p>
-
-<ol>
-  <li>each time the <code class="language-plaintext highlighter-rouge">animalInput</code> state changes, the component is rendered again. The <code class="language-plaintext highlighter-rouge">animalInput</code>changes when the user types in the input field.</li>
-  <li>each time the <code class="language-plaintext highlighter-rouge">result</code> state changes, the component is rendered again. The <code class="language-plaintext highlighter-rouge">result</code> changes when the API returns the result.</li>
-</ol>
+<h3 id="the-usestate-hook">The useState hook</h3>
 
 <p>The <code class="language-plaintext highlighter-rouge">useState</code> hook <strong>allows us to create state variables for our components</strong>.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">);</span>
+</code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">useState</code> takes in an initial value as an argument and returns an array containing</p>
 
 <ol>
   <li>the <strong>state</strong> variable and</li>
-  <li>a <strong>setter</strong> function to mutate it</li>
+  <li>a <strong>setter</strong> function <code class="language-plaintext highlighter-rouge">setState</code> to mutate it</li>
 </ol>
+
+<p>During the initial render, the returned state (<code class="language-plaintext highlighter-rouge">state</code>) is the same as the value passed as the first argument (<code class="language-plaintext highlighter-rouge">initialState</code>).</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">setState</code> function is used to update the state. It accepts a new state value and <strong>enqueues a re-render of the component</strong>.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setState</span><span class="p">(</span><span class="nx">newState</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>During subsequent re-renders, the first value returned by <code class="language-plaintext highlighter-rouge">useState</code> will always be the most recent state after applying updates.</p>
 
 <p>It is common practice to de-structure this array and set its contents to be <code class="language-plaintext highlighter-rouge">const</code>. 
 This is because</p>
@@ -880,10 +863,45 @@ This is because</p>
 </ul>
 
 <p>The <code class="language-plaintext highlighter-rouge">setter</code> function accepts either</p>
+
 <ol>
   <li>a new value or</li>
-  <li>a function which <strong>takes the current value as an argument</strong> and returns the new value</li>
+  <li>If the new state is computed using the previous state, you can pass a function to <code class="language-plaintext highlighter-rouge">setState</code>. The function will receive the previous value, and return an updated value. Here’s an example of a counter component that uses both forms of setState:</li>
 </ol>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Counter</span><span class="p">({</span><span class="nx">initialCount</span><span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialCount</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      Count: <span class="si">{</span><span class="nx">count</span><span class="si">}</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">initialCount</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>Reset<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">prevCount</span> <span class="o">=&gt;</span> <span class="nx">prevCount</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>-<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">prevCount</span> <span class="o">=&gt;</span> <span class="nx">prevCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="state-in-our-application">State in our Application</h3>
+
+<p>In our code we have two states: <code class="language-plaintext highlighter-rouge">animalInput</code> and <code class="language-plaintext highlighter-rouge">result</code>.</p>
+
+<p>Therefore,</p>
+
+<ol>
+  <li>each time the <code class="language-plaintext highlighter-rouge">animalInput</code> state changes, the component is rendered again.
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">animalInput</code>changes when the user types in the input field and when the API returns the result.</li>
+    </ul>
+  </li>
+  <li>each time the <code class="language-plaintext highlighter-rouge">result</code> state changes, the component is rendered again.
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">result</code> changes when the API returns the result.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="when-the-api-returns-the-result">When the API returns the result</h4>
 
 <p>Let’s review the code fragment:</p>
 
@@ -916,6 +934,8 @@ This is because</p>
 </code></pre></div></div>
 
 <p>will be rendered again with an empty value.</p>
+
+<h4 id="when-the-user-types-in-the-input-box">When the user types in the input box</h4>
 
 <p>To understand the line <code class="language-plaintext highlighter-rouge">onChange={(e) =&gt; setAnimalInput(e.target.value)</code> we need to know</p>
 
