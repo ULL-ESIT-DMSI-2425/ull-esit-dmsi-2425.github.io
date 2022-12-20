@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=16c26e74b33c61e64235ef0fe612b711206cb201">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f585da2777749ddae8a9c5c7cc9c832762c7d3eb">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -75,8 +75,11 @@
       <li><a href="#single-page-applications">Single Page Applications</a></li>
       <li><a href="#what-is-rendering">What is Rendering</a></li>
       <li><a href="#the-pages-folder">The pages folder</a></li>
-      <li><a href="#the-pages-folder-dynamic-routes">The pages folder: Dynamic routes</a></li>
-      <li><a href="#exercise-dynamic-routes">Exercise: Dynamic Routes</a></li>
+      <li><a href="#the-pages-folder-dynamic-routes">The pages folder: Dynamic routes</a>
+        <ul>
+          <li><a href="#exercise-on-dynamic-routes">Exercise on Dynamic Routes</a></li>
+        </ul>
+      </li>
       <li><a href="#nextjs-pagesapi-folder">next.js pages/api folder</a>
         <ul>
           <li><a href="#references">References</a></li>
@@ -99,12 +102,12 @@
       <li><a href="#pagesindexjs">pages/index.js</a>
         <ul>
           <li><a href="#jsx">JSX</a></li>
-          <li><a href="#import-head-from-nexthead"><code class="language-plaintext highlighter-rouge">import Head from "next/head"</code></a></li>
-          <li><a href="#import-styles-from-indexmodulecss"><code class="language-plaintext highlighter-rouge">import styles from "./index.module.css"</code></a></li>
-          <li><a href="#link-relicon-hrefdogpng-"><code class="language-plaintext highlighter-rouge">&lt;link rel="icon" href="/dog.png" /&gt;</code></a></li>
-          <li><a href="#main-classnamestylesmain-curly-braces-in-jsx"><code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code> Curly Braces in JSX</a></li>
-          <li><a href="#form-onsubmitonsubmit-form"><code class="language-plaintext highlighter-rouge">&lt;form onSubmit={onSubmit}&gt; ...&lt;/form&gt;</code></a></li>
-          <li><a href="#const-response--await-fetchapigenerate---"><code class="language-plaintext highlighter-rouge">const response = await fetch("/api/generate", { ... })</code></a></li>
+          <li><a href="#comments-to-import-head-from-nexthead">Comments to <code class="language-plaintext highlighter-rouge">import Head from "next/head"</code></a></li>
+          <li><a href="#comments-to-import-styles-from-indexmodulecss">Comments to <code class="language-plaintext highlighter-rouge">import styles from "./index.module.css"</code></a></li>
+          <li><a href="#comments-to-link-relicon-hrefdogpng-">Comments to <code class="language-plaintext highlighter-rouge">&lt;link rel="icon" href="/dog.png" /&gt;</code></a></li>
+          <li><a href="#comments-to-main-classnamestylesmain-curly-braces-in-jsx">Comments to <code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code> Curly Braces in JSX</a></li>
+          <li><a href="#comments-to-form-onsubmitonsubmit-form">Comments to <code class="language-plaintext highlighter-rouge">&lt;form onSubmit={onSubmit}&gt; ...&lt;/form&gt;</code></a></li>
+          <li><a href="#comments-to-const-response--await-fetchapigenerate---">Comments to <code class="language-plaintext highlighter-rouge">const response = await fetch("/api/generate", { ... })</code></a></li>
         </ul>
       </li>
       <li><a href="#state-in-react">State in React</a>
@@ -356,9 +359,10 @@ the result is sent to the client.</p>
 
 <h2 id="the-pages-folder-dynamic-routes">The pages folder: Dynamic routes</h2>
 
-<p>Next.js also supports pages with <a href="https://nextjs.org/docs/routing/dynamic-routes">dynamic routes</a>.</p>
+<p>Next.js also supports pages with <a href="https://nextjs.org/docs/routing/dynamic-routes">dynamic routes</a>. 
+For example, if you create a file called <code class="language-plaintext highlighter-rouge">pages/posts/[id].js</code>, then it will be accessible at <code class="language-plaintext highlighter-rouge">posts/1</code>, <code class="language-plaintext highlighter-rouge">posts/2</code>, etc.</p>
 
-<p>For example, if you create a file called <code class="language-plaintext highlighter-rouge">pages/posts/[id].js</code>, then it will be accessible at <code class="language-plaintext highlighter-rouge">posts/1</code>, <code class="language-plaintext highlighter-rouge">posts/2</code>, etc.</p>
+<p>See the full code of the examples used in this section in the repo <a href="https://github.com/ULL-MII-SYTWS/nextjs-dynamic-routes">ULL-MII-SYTWS/nextjs-dynamic-routes</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  nextjs-dynamic-routes tree -I node_modules
 .
@@ -444,9 +448,9 @@ See <a href="https://nextjs.org/docs/routing/introduction">Introduction to Routi
 
 <p>See the code at <a href="https://github.com/ULL-MII-SYTWS/nextjs-dynamic-routes">ULL-MII-SYTWS/nextjs-dynamic-routes</a></p>
 
-<h2 id="exercise-dynamic-routes">Exercise: Dynamic Routes</h2>
+<h3 id="exercise-on-dynamic-routes">Exercise on Dynamic Routes</h3>
 
-<p>Follow the tutorial <a href="https://nextjs.org/learn/basics/dynamic-routes">Dynamic Routes</a> at <a href="https://nextjs.org/learn/basics/dynamic-routes">https://nextjs.org/learn/basics/dynamic-routes</a> and solve the exercises</p>
+<p>Follow the tutorial <a href="https://nextjs.org/learn/basics/dynamic-routes">Dynamic Routes</a> at <a href="https://nextjs.org/learn/basics/dynamic-routes">https://nextjs.org/learn/basics/dynamic-routes</a> and solve the exercises.</p>
 
 <h2 id="nextjs-pagesapi-folder">next.js pages/api folder</h2>
 
@@ -562,8 +566,12 @@ Express.js-like helper methods to improve the developer experience and increase 
 
     <p>See the code fragment <code class="language-plaintext highlighter-rouge">res.status(200).json({ result: completion.data.choices[0].text });</code></p>
   </li>
-  <li>res.redirect([status,] path) - Redirects to a specified path or URL. status must be a valid HTTP status code. If not specified, status defaults to “307” “Temporary redirect”.</li>
-  <li>res.revalidate(urlPath) - Revalidate a page on demand using getStaticProps. urlPath must be a string.</li>
+  <li><code class="language-plaintext highlighter-rouge">res.redirect([status,] path)</code> - Redirects to a specified <code class="language-plaintext highlighter-rouge">path</code> or URL. <code class="language-plaintext highlighter-rouge">status</code> must be a valid HTTP status code.
+    <ul>
+      <li>If not specified, <code class="language-plaintext highlighter-rouge">status</code> defaults to “307” “Temporary redirect”.</li>
+      <li>If <code class="language-plaintext highlighter-rouge">path</code> starts with “http” or “//”, the redirect is external.</li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="openai-completions-const-completion--await-openaicreatecompletion--">OpenAI Completions: <code class="language-plaintext highlighter-rouge">const completion = await openai.createCompletion({ ... })</code></h3>
@@ -718,7 +726,7 @@ to the variable <code class="language-plaintext highlighter-rouge">animalInput</
   <li><strong>camelCase</strong> most of the things: For example, instead of <code class="language-plaintext highlighter-rouge">stroke-width</code> you use <code class="language-plaintext highlighter-rouge">strokeWidth</code>. Since <code class="language-plaintext highlighter-rouge">class</code> is a reserved word, in React you write <code class="language-plaintext highlighter-rouge">className</code> instead. Event names are also camelCased</li>
 </ol>
 
-<h3 id="import-head-from-nexthead"><code class="language-plaintext highlighter-rouge">import Head from "next/head"</code></h3>
+<h3 id="comments-to-import-head-from-nexthead">Comments to <code class="language-plaintext highlighter-rouge">import Head from "next/head"</code></h3>
 
 <p>nextjs provides a built-in <strong>component</strong> for appending elements to the <code class="language-plaintext highlighter-rouge">head</code> of the page so that it can 
 be used in the JSX of the page:</p>
@@ -731,7 +739,7 @@ be used in the JSX of the page:</p>
 
 <p><img src="/assets/images/nextjs/HeadComponent.png" alt="assets/images/nextjs/HeadComponent.png" /></p>
 
-<h3 id="import-styles-from-indexmodulecss"><code class="language-plaintext highlighter-rouge">import styles from "./index.module.css"</code></h3>
+<h3 id="comments-to-import-styles-from-indexmodulecss">Comments to <code class="language-plaintext highlighter-rouge">import styles from "./index.module.css"</code></h3>
 
 <p>This is a <a href="https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css">CSS module</a>.</p>
 
@@ -750,7 +758,7 @@ be used in the JSX of the page:</p>
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">result</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">result</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
-<h3 id="link-relicon-hrefdogpng-"><code class="language-plaintext highlighter-rouge">&lt;link rel="icon" href="/dog.png" /&gt;</code></h3>
+<h3 id="comments-to-link-relicon-hrefdogpng-">Comments to <code class="language-plaintext highlighter-rouge">&lt;link rel="icon" href="/dog.png" /&gt;</code></h3>
 
 <p>This line in the <code class="language-plaintext highlighter-rouge">&lt;Head&gt;</code> component adds a favicon to the page. 
 You’ll find the image in the <code class="language-plaintext highlighter-rouge">public</code> directory.</p>
@@ -758,19 +766,17 @@ You’ll find the image in the <code class="language-plaintext highlighter-rouge
 <p>Next.js can serve static files, like images, under a folder called <code class="language-plaintext highlighter-rouge">public</code> in the root directory.
 Files inside <code class="language-plaintext highlighter-rouge">public</code> can then be referenced by your code starting from the base URL (<code class="language-plaintext highlighter-rouge">/</code>).</p>
 
-<h3 id="main-classnamestylesmain-curly-braces-in-jsx"><code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code> Curly Braces in JSX</h3>
+<h3 id="comments-to-main-classnamestylesmain-curly-braces-in-jsx">Comments to <code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code> Curly Braces in JSX</h3>
 
-<p>JSX lets you write HTML-like markup inside a JavaScript file, keeping rendering logic and content in the same place.</p>
-
-<p>Sometimes you will want to add a little JavaScript logic or reference a dynamic property inside that markup.</p>
-
-<p>In this situation, you can use curly braces in your JSX to open a window to JavaScript.</p>
+<p>JSX lets you write HTML-like markup inside a JavaScript file, keeping rendering logic and content in the same place. 
+Sometimes you will want to add a little JavaScript logic or reference a dynamic property inside that markup. 
+In this situation, you can use curly braces in your JSX to open a window to JavaScript: <code class="language-plaintext highlighter-rouge">&lt;main className={styles.main}&gt;</code></p>
 
 <p>The only reason behind the fact that JSX uses <code class="language-plaintext highlighter-rouge">className</code> over <code class="language-plaintext highlighter-rouge">class</code> is that the <code class="language-plaintext highlighter-rouge">class</code> is a reserved keyword in JavaScript.</p>
 
 <p>We are specifying that the <code class="language-plaintext highlighter-rouge">&lt;main&gt;</code> element should use the <code class="language-plaintext highlighter-rouge">main</code> class from the <code class="language-plaintext highlighter-rouge">index.module.css</code> file.</p>
 
-<h3 id="form-onsubmitonsubmit-form"><code class="language-plaintext highlighter-rouge">&lt;form onSubmit={onSubmit}&gt; ...&lt;/form&gt;</code></h3>
+<h3 id="comments-to-form-onsubmitonsubmit-form">Comments to <code class="language-plaintext highlighter-rouge">&lt;form onSubmit={onSubmit}&gt; ...&lt;/form&gt;</code></h3>
 
 <p>The <code class="language-plaintext highlighter-rouge">onSubmit</code> <strong>prop</strong> is a special React <strong>prop</strong> that lets you specify a function that will be called when the form is submitted.</p>
 
@@ -791,7 +797,7 @@ Files inside <code class="language-plaintext highlighter-rouge">public</code> ca
   <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="const-response--await-fetchapigenerate---"><code class="language-plaintext highlighter-rouge">const response = await fetch("/api/generate", { ... })</code></h3>
+<h3 id="comments-to-const-response--await-fetchapigenerate---">Comments to <code class="language-plaintext highlighter-rouge">const response = await fetch("/api/generate", { ... })</code></h3>
 
 <p>The <code class="language-plaintext highlighter-rouge">fetch</code> function makes a request to the <code class="language-plaintext highlighter-rouge">/api/generate</code> endpoint of the nextjs server.</p>
 
@@ -812,14 +818,10 @@ In that sense, they are similar to variables declared with the <code class="lang
 
 <p>The difference between a <strong>React state</strong> and a 
 normal variable is that when a <strong>React state variable</strong> changes, 
-the <strong>component is rendered again</strong> and some other things happens, like that 
-the <code class="language-plaintext highlighter-rouge">useEffect</code> <a href="/react/hooks">hook</a>
-bound to that state will be executed, 
-but when a normal variable changes, this does not happen.
-(The <code class="language-plaintext highlighter-rouge">useEffect</code> hook allows us to perform side effects in our components.
-It can be used to fetch data from an API, subscribe to a service, …)</p>
+the <strong>component is rendered again</strong> and some other things happens,
+but when a normal variable changes, this does not happen.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 <span class="c1">// ...</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
@@ -833,21 +835,21 @@ It can be used to fetch data from an API, subscribe to a service, …)</p>
     <span class="nx">setAnimalInput</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="p">...</span><span class="o">/&gt;</span>
-      <span class="o">&lt;</span><span class="nx">main</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">main</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="p">...</span><span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">onSubmit</span><span class="p">}</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">input</span>  <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">animal</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Enter an animal</span><span class="dl">"</span>
-            <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">animalInput</span><span class="p">}</span>
-            <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span>
-          <span class="sr">/</span><span class="err">&gt;
-</span>          <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">Generate names</span><span class="dl">"</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">result</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">result</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;.../&gt;</span>
+      <span class="p">&lt;</span><span class="nt">main</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">main</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;.../&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span><span class="nx">onSubmit</span><span class="si">}</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span>  <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">name</span><span class="p">=</span><span class="s">"animal"</span> <span class="na">placeholder</span><span class="p">=</span><span class="s">"Enter an animal"</span>
+            <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">animalInput</span><span class="si">}</span>
+            <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
+          <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"submit"</span> <span class="na">value</span><span class="p">=</span><span class="s">"Generate names"</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">result</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">result</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -856,8 +858,8 @@ It can be used to fetch data from an API, subscribe to a service, …)</p>
 <p>Therefore,</p>
 
 <ol>
-  <li>each time the <code class="language-plaintext highlighter-rouge">animalInput</code> state changes, the component is rendered again and the <code class="language-plaintext highlighter-rouge">useEffect</code> hook bound to that state will be executed.</li>
-  <li>each time the <code class="language-plaintext highlighter-rouge">result</code> state changes, the component is rendered again and the <code class="language-plaintext highlighter-rouge">useEffect</code> hook bound to that state will be executed.</li>
+  <li>each time the <code class="language-plaintext highlighter-rouge">animalInput</code> state changes, the component is rendered again. The <code class="language-plaintext highlighter-rouge">animalInput</code>changes when the user types in the input field.</li>
+  <li>each time the <code class="language-plaintext highlighter-rouge">result</code> state changes, the component is rendered again. The <code class="language-plaintext highlighter-rouge">result</code> changes when the API returns the result.</li>
 </ol>
 
 <p>The <code class="language-plaintext highlighter-rouge">useState</code> hook <strong>allows us to create state variables for our components</strong>.</p>
@@ -883,24 +885,30 @@ This is because</p>
   <li>a function which <strong>takes the current value as an argument</strong> and returns the new value</li>
 </ol>
 
-<p>We can use it like this:</p>
+<p>Let’s review the code fragment:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">onSubmit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+    <span class="nx">setResult</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span>
+    <span class="nx">setAnimalInput</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Since <code class="language-plaintext highlighter-rouge">data</code> has arrived from the API, we can set the <code class="language-plaintext highlighter-rouge">result</code> state to the value of <code class="language-plaintext highlighter-rouge">data.result</code>:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setResult</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// data just arrived from the API</span>
 </code></pre></div></div>
 
-<p>or like this:</p>
+<p>The component will be rendered showing the new <code class="language-plaintext highlighter-rouge">result</code>.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setResult</span><span class="p">(</span><span class="nx">prevData</span> <span class="o">=&gt;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Since <code class="language-plaintext highlighter-rouge">data</code>has arrived from the API, we can set the <code class="language-plaintext highlighter-rouge">result</code> state to the value of <code class="language-plaintext highlighter-rouge">data.result</code>.
-The <code class="language-plaintext highlighter-rouge">&lt;div className={styles.result}&gt;{result}&lt;/div&gt;</code>has to be rendered again.</p>
-
-<p>The effect of this statement</p>
+<p>Also, the effect of</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setAnimalInput</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
 </code></pre></div></div>
-<p>is that the</p>
+
+<p>is that the input component</p>
+
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">input</span>  <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">name</span><span class="p">=</span><span class="s">"animal"</span> <span class="na">placeholder</span><span class="p">=</span><span class="s">"Enter an animal"</span>
             <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">animalInput</span><span class="si">}</span>
             <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
@@ -909,15 +917,13 @@ The <code class="language-plaintext highlighter-rouge">&lt;div className={styles
 
 <p>will be rendered again with an empty value.</p>
 
-<p>The call to <code class="language-plaintext highlighter-rouge">setAnimalInput(e.target.value)</code> here:</p>
+<p>To understand the line <code class="language-plaintext highlighter-rouge">onChange={(e) =&gt; setAnimalInput(e.target.value)</code> we need to know</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">input</span>  <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">name</span><span class="p">=</span><span class="s">"animal"</span> <span class="na">placeholder</span><span class="p">=</span><span class="s">"Enter an animal"</span>
-   <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">animalInput</span><span class="si">}</span>
-   <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setAnimalInput</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
-<span class="p">/&gt;</span>
-</code></pre></div></div>
-
-<p>will be executed each time the user types a character in the <code class="language-plaintext highlighter-rouge">input</code> field.</p>
+<ol>
+  <li>that the <code class="language-plaintext highlighter-rouge">onchange</code> event occurs when the value of the <code class="language-plaintext highlighter-rouge">&lt;input&gt;</code> has been changed.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">target</code> property of the Event <code class="language-plaintext highlighter-rouge">e</code>  is a reference to the object onto which the event was dispatched, that is, the <code class="language-plaintext highlighter-rouge">&lt;input&gt;</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">setAnimalInput(e.target.value)</code> will be executed each time the user types a character in the <code class="language-plaintext highlighter-rouge">input</code> field and will change the value of the <code class="language-plaintext highlighter-rouge">animalInput</code> state.</li>
+</ol>
 
 <h3 id="references-2">References</h3>
 
