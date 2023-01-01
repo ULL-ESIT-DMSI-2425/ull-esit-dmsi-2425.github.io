@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=cbf1da3bb1e70bdb5e737b67dfe715895d784784">
+    <link rel="stylesheet" href="/assets/css/style.css?v=26d3804b2c12bce836aaddc60ff390effdf51623">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -74,17 +74,25 @@
       <li><a href="#setup">Setup</a></li>
       <li><a href="#single-page-applications">Single Page Applications</a></li>
       <li><a href="#what-is-rendering">What is Rendering</a></li>
-      <li><a href="#the-pages-folder">The pages folder</a></li>
+      <li><a href="#origin-servers-cdns-and-edges">Origin Servers, CDNs and Edges</a>
+        <ul>
+          <li><a href="#origin-servers">Origin Servers</a></li>
+          <li><a href="#content-delivery-network">Content Delivery Network</a></li>
+          <li><a href="#the-edge">The Edge</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-pages-folder">The pages folder</a>
+        <ul>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </li>
       <li><a href="#the-pages-folder-dynamic-routes">The pages folder: Dynamic routes</a>
         <ul>
           <li><a href="#exercise-on-dynamic-routes">Exercise on Dynamic Routes</a></li>
         </ul>
       </li>
-      <li><a href="#nextjs-pagesapi-folder">next.js pages/api folder</a>
-        <ul>
-          <li><a href="#references">References</a></li>
-        </ul>
-      </li>
+      <li><a href="#nextjs-pagesapi-folder">next.js pages/api folder</a></li>
+      <li><a href="#serverless-functions">Serverless Functions</a></li>
       <li><a href="#pagesapigeneratejs">pages/api/generate.js</a>
         <ul>
           <li><a href="#environment-processenvopenai_api_key">Environment: <code class="language-plaintext highlighter-rouge">process.env.OPENAI_API_KEY</code></a>
@@ -304,7 +312,7 @@ event - compiled client and server successfully in 1174 ms (113 modules)
 
 <h2 id="what-is-rendering">What is Rendering</h2>
 
-<p><strong>Rendering</strong> is the conversion of the code you write in your reactive framework (React/Vue/AngularJS) into the HTML representation of your User Interface. 
+<p><strong>Rendering</strong> is the conversion of the source code written in a reactive framework (React/Vue/AngularJS) into <strong>the HTML representation of your User Interface</strong>. 
 Rendering can take place</p>
 <ol>
   <li>on the server or</li>
@@ -340,12 +348,28 @@ Rendering can take place</p>
 because the fetching of external data and transformation of components into HTML happens <strong>before</strong> 
 the result is sent to the client.</p>
 
+<h2 id="origin-servers-cdns-and-edges">Origin Servers, CDNs and Edges</h2>
+
+<h3 id="origin-servers">Origin Servers</h3>
+
+<p>The origin server refers to the main computer that stores and runs the original version of your application code. When an origin server receives a request, it does some computation before sending a response. The result of this computation work can be moved to a CDN (Content Delivery Network).</p>
+
+<h3 id="content-delivery-network">Content Delivery Network</h3>
+
+<p>CDNs store <strong>static content</strong> (such as HTML and image files) in multiple locations around the world and are placed between the client and the origin server. When a new request comes in, the closest CDN location to the user can respond with the cached result.</p>
+
+<p><img src="/assets/images/cdn.png" alt="cdn.png" /></p>
+
+<h3 id="the-edge">The Edge</h3>
+
+<p>Edge servers are distributed to multiple locations around the world. Unlike CDNs, which store static content, Edge servers can run small snippets of code.</p>
+
 <h2 id="the-pages-folder">The pages folder</h2>
 
 <p>In Next.js, a <strong>page</strong> is a</p>
 
 <ol>
-  <li>React Component</li>
+  <li>React Component. A React Component is a function that returns a UI element and can receive props as input.</li>
   <li>exported from a <code class="language-plaintext highlighter-rouge">.js</code>, <code class="language-plaintext highlighter-rouge">.jsx</code>, <code class="language-plaintext highlighter-rouge">.ts</code>, or <code class="language-plaintext highlighter-rouge">.tsx</code> file and</li>
   <li>it must be in the <code class="language-plaintext highlighter-rouge">pages</code> directory.</li>
 </ol>
@@ -364,6 +388,10 @@ the result is sent to the client.</p>
   <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
+<h3 id="references">References</h3>
+
+<p>See <a href="https://nextjs.org/docs/basic-features/pages">https://nextjs.org/docs/basic-features/pages</a></p>
 
 <h2 id="the-pages-folder-dynamic-routes">The pages folder: Dynamic routes</h2>
 
@@ -470,9 +498,31 @@ See <a href="https://nextjs.org/docs/routing/introduction">Introduction to Routi
 
 <p>Since we have the file <code class="language-plaintext highlighter-rouge">pages/api/generate.js</code>, Next.js will make it accessible at the route <code class="language-plaintext highlighter-rouge">/api/generate</code>.</p>
 
-<h3 id="references">References</h3>
+<p>Create a file called <code class="language-plaintext highlighter-rouge">hello.js</code> in <code class="language-plaintext highlighter-rouge">pages/api</code> with the following code:</p>
 
-<p>See <a href="https://nextjs.org/docs/basic-features/pages">https://nextjs.org/docs/basic-features/pages</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">handler</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="na">text</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span> <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Try accessing it at <a href="http://localhost:3000/api/hello">http://localhost:3000/api/hello</a>. You should see <code class="language-plaintext highlighter-rouge">{"text":"Hello"}</code>. Note that:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">req</code> is an instance of <a href="https://nodejs.org/api/http.html#class-httpincomingmessage">http.IncomingMessage</a>, plus some pre-built <a href="https://nextjs.org/docs/api-routes/api-middlewares">middlewares</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">res</code> is an instance of <a href="https://nodejs.org/api/http.html#http_class_http_serverresponse">http.ServerResponse</a>, plus some <a href="https://nextjs.org/docs/api-routes/response-helpers">helper functions</a>.</li>
+</ul>
+
+<p>Functions exported by files inside the folder <code class="language-plaintext highlighter-rouge">pages/api</code> can be deployed as <strong>Serverless Functions</strong> (also known as <strong>Lambdas</strong>).</p>
+
+<p>API Routes can be dynamic, just like regular pages.</p>
+
+<h2 id="serverless-functions">Serverless Functions</h2>
+
+<p><a href="https://sytws.netlify.app/temas/web/serverless.html#serverless-functions">A <strong>serverless</strong> function</a> is a piece of code that is executed in response to a specific event, such as an HTTP request or a message being added to a queue. It is called “<em>serverless</em>” because the developer does not have to worry about the underlying infrastructure that the code will be running on. Instead, the infrastructure is managed by a third party, such as AWS Lambda or Google Cloud Functions.</p>
+
+<p>The developer only needs to provide the code and specify the events that should trigger the code to be executed. The <strong>serverless provider</strong> takes care of the rest, including automatically scaling the function to handle a large number of requests.</p>
+
+<p><img src="https://sytws.netlify.app/images/how-do-serverless-functions-work.png" alt="https://sytws.netlify.app/images/how-do-serverless-functions-work.png" /></p>
 
 <h2 id="pagesapigeneratejs">pages/api/generate.js</h2>
 
@@ -753,7 +803,7 @@ be used in the JSX of the page:</p>
 
 <p>Next.js supports CSS Modules using the <code class="language-plaintext highlighter-rouge">[name].module.css</code> file naming convention.</p>
 
-<p>CSS Modules locally scope CSS by automatically creating a unique class name.</p>
+<p>CSS Modules <strong>locally scope</strong> CSS by automatically creating a <strong>unique class name</strong>.</p>
 
 <p>This allows you to use the same CSS class name in different files without worrying about collisions.</p>
 
@@ -1301,10 +1351,10 @@ Website URL:       https://nextjs-oai.netlify.app
       <li><a href="https://github.com/ULL-MII-SYTWS/nextjs-solution/">A repo with a solution</a></li>
     </ul>
   </li>
-  <li>Repo <a href="https://github.com/ULL-MII-SYTWS/nextjs-dynamic-routes">ULL-MII-SYTWS/nextjs-dynamic-routes</a></li>
   <li>Here is YouTube video explaining a project similar to the one described in this lab: <a href="https://youtu.be/fU4o_BKaUZE">Build An AI Image Generator With OpenAI &amp; Node.js</a></li>
+  <li>Repo <a href="https://github.com/ULL-MII-SYTWS/nextjs-dynamic-routes">ULL-MII-SYTWS/nextjs-dynamic-routes</a></li>
+  <li><a href="https://github.com/vercel/next.js/tree/canary/examples/">NextJS official examples folderx</a></li>
 </ul>
-
 
 
 <!--
