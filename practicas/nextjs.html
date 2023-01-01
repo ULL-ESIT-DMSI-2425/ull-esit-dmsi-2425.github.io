@@ -18,7 +18,7 @@
 {"headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/practicas/nextjs","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=b16103b7c71d86135e7daaff261d198c6398bc49">
+    <link rel="stylesheet" href="/assets/css/style.css?v=dc49690e3538f321118db9d48ef9e4c975f353cf">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -157,7 +157,11 @@
           <li><a href="#deploying-with-the-netlify-cli">Deploying with the Netlify CLI</a></li>
         </ul>
       </li>
-      <li><a href="#exercise-deploy-the-app-to-vercel">Exercise: Deploy the app to Vercel</a></li>
+      <li><a href="#exercise-deploy-the-app-to-vercel">Exercise: Deploy the app to Vercel</a>
+        <ul>
+          <li><a href="#deploying-with-the-vercel-cli">Deploying with the Vercel CLI</a></li>
+        </ul>
+      </li>
       <li><a href="#exercise-get-images-from-openai">Exercise: Get images from OpenAI</a></li>
       <li><a href="#rubrica">Rubrica</a></li>
       <li><a href="#references-3">References</a></li>
@@ -1312,7 +1316,30 @@ Website URL:       https://nextjs-oai.netlify.app
 
 <p>If you have trouble with this or other Next.js steps use <a href="https://github.com/vercel/next.js/discussions">GitHub Discussions: next.js</a></p>
 
+<h3 id="deploying-with-the-vercel-cli">Deploying with the Vercel CLI</h3>
+
 <p>You can also use the <a href="https://vercel.com/docs/cli">Vercel CLI</a> to interact with and configure your projects, enabling you to retrieve logs, manage certificates, replicate your deployment environment locally, manage Domain Name System (DNS) records, etc. It is a wrapper around the <a href="https://vercel.com/docs/rest-api">Vercel API</a>.</p>
+
+<p>Here is an example of use:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  nextjs-blog git:(main) vercel login
+Vercel CLI 28.10.1
+&gt; Log in to Vercel github
+&gt; Success! GitHub authentication complete for crguezl@ull.edu.es
+Congratulations! You are now logged in. In order to deploy something, run `vercel`.
+💡  Connect your Git Repositories to deploy every branch push automatically (https://vercel.link/git).
+➜  nextjs-blog git:(main) vercel ls
+Vercel CLI 28.10.1
+? Set up “~/campus-virtual/2223/learning/nextjs-learning/nextjs-tutorial/nextjs-blog”? [Y/n] y
+? Which scope should contain your project? crguezl
+? Found project “crguezl/nextjs-blog”. Link to it? [Y/n] y
+🔗  Linked to crguezl/nextjs-blog (created .vercel and added it to .gitignore)
+&gt; Deployments for nextjs-blog under crguezl [645ms]
+&gt; To list deployments for a project, run `vercel ls [project]`.
+
+  Age     Deployment                                           Status      Duration
+  22m     https://nextjs-blog-sfbadq2kr-crguezl.vercel.app     ● Ready     38s
+</code></pre></div></div>
 
 <h2 id="exercise-get-images-from-openai">Exercise: Get images from OpenAI</h2>
 
