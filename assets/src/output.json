@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2023/01/09",
+      "date": "January 09, 2023",
+
+      "excerpt": "<h2 id="programación-para-el-final-del-curso">Programación para el Final del Curso</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2023/01/09/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2022/12/21",
       "date": "December 21, 2022",
 
@@ -197,29 +220,6 @@
       
       
       "url": "/2022/11/23/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2022/11/21",
-      "date": "November 21, 2022",
-
-      "excerpt": "<h2 id="async-programming-in-js">Async Programming in JS</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2022/11/21/leccion.html",
        "tags"  : [
         
         ]
