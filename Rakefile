@@ -3,6 +3,11 @@ task :setruby do
   sh "eval \"$(rbenv init - zsh)\""
 end
 
+# Substitute 2324 for the new course
+task :addnewremote do
+  sh "cd ../website && git remote add dmsi2324 https://github.com/ULL-ESIT-DMSI-2223/ull-esit-dmsi-2324.github.io.git"
+end
+
 desc "Publicar fuentes y build"
 task :default => [ :pushhtml ] do
   sh "git ci -am 2324 && git push -u source master && git push -u dmsi2324 master"
