@@ -618,13 +618,6 @@
   },
   
   {
-    "title": "Recursos de la Asignatura",
-    "excerpt": "\n",
-    "content": "Recursos de la Asignatura\n\nCampus Virtual\n\n\n  DMSI\n  Participantes\n  Calificaciones\n  Tareas\n  Foros\n\n\nESIT II\n\n\n  aula de Coordinación de 4º\n  Grupos de Laboratorio de 4º del Grado de II\n\n\nGitHub\n\n\n  Página Web de DMSI\n  Organización ULL-ESIT-DMSI-1920\n    \n      Repo ull-esit-dmsi-1920.github.io\n    \n  \n\n\nGoogle+\n\n\n  Comunidad Currents DMSI (Asegúrate de estar identificado con tu cuenta de Gmail de la ULL)\n\n\nRecursos Generales\n\nPrácticas\n\n\n  Herramientas para la Asignación de Tareas\n    \n      GitHub Classroom\n      CodeLab TFG de Samuel\n    \n  \n  Instrucciones para las entregas de Prácticas y Trabajos\n\n\nBULL\n\n\n  BULL PuntoQ\n  Video tutoriales de ayuda sobre PuntoQ\n  Antiplagio\n\n\niaas.ull.es\n\n\n  Instrucciones para el uso de iaas.ull.es\n    \n      Gestor online de pools\n      IaaS - Uso de la aplicación de gestión de pools\n      Video del profesor: iaas.ull.es\n      https://iaas.ull.es/mismaquinas\n    \n  \n\n\nSTIC\n\nIncidencias\n\n\n  Gestor de incidencias. RT para rt.stic.ull.es\n  Tarjeta Universitaria\n\n\nVPN\n\n\n  Servicio de vpn: guías de configuración\n\n\nMapa de Recursos\n\n\n  Mapa de recursos de la ULL\n\n\nImpresión\n\n\n  Datos para el servicio de impresión\n\n\nCambio de contraseña\n\n\n  Cambio de contraseña\n\n\nSede ULL\n\n\n  Sede ULL\n    \n      Solicitud General\n      Mis trámites\n      Portafirmas de la ULL\n    \n  \n\n\n",
-    "url": "/resources.html"
-  },
-  
-  {
     "title": "Web Worker Examples",
     "excerpt": "\n",
     "content": "Web Worker Examples\n\nSimple web-worker\n\nPuede encontrar los códigos de ejemplo en este repo:\n\n\n  Repo de ejemplo simple-web-worker\n    \n      ~/local/src/uai/uai2015/simple-web-worker\n    \n  \n\n\nEjemplo de uso de Web Workers.\n\nDemo en GitHub Pages en http://sytw.github.io/simple-web-worker/\n\nEjemplo: Fibonacci\n\n\n  Repo de ejemplo fibonacci-worker\n    \n      ~/local/src/uai/uai2015\n      ~/campus-virtual/1920/sytws1920/apuntes/tema1-introduccion/practicas/p2-t1-c3-file-system/event-loop/fibonacci-worker\n    \n  \n\n\nCan you create a web worker inside a web worker? Answer: yes!\n\nTutorial by Chinenye Onuegbu: Code examples for JSDay Canarias 2019\n\n\n  Fork en SYTWS-1920 del repo de la charla impartida por Chinenye Onuegbu: Code examples for JSDay Canarias 2019\n    \n      Video. Una presentación extraordinaria. No te la pierdas.\n    \n  \n  En la carpeta example-1 encontramos un ejemplo minimal de web worker\n  En este repo podemos encontrar ejemplos de uso de web-workers en Node.js (denominados worker threads). Véase la carpeta nodejs-threads\n\n\nParallel.js\n\n\n  parallel-js-examples repo Parallel.js is a Node.js lib for parallel programming\n  parallel-js-examples\n\n\nReferencias\n\n\n  \n    Tutorial: Using Web Workers en Mozilla Developer Network\n  \n  \n    See meta repo ULL-MII-SYTWS-1920/uai2015\n\n    In my machine is allocated in:\n\n    ~/local/src/uai/uai2015/\n    \n  \n  \n    Book Web Workers: Safari O’Reilly. Usa Acceso ULL\n  \n\n\n",
@@ -865,7 +858,7 @@
   {
     "title": "Curso 23/24 - Desarrollo y Mantenimiento",
     "excerpt": "\n",
-    "content": "Curso 23/24 - Desarrollo y Mantenimiento\n\nClasses\n\n{% include clases-impartidas.md %}\n\nLabs\n\n{% include practicas.md %}\n\nTopics\n\n{% include temas.md %}\n",
+    "content": "Curso 23/24 - Desarrollo y Mantenimiento\n\nClasses\n\n{% include clases-impartidas.md %}\n\nLabs\n\n{% include practicas.md %}\n\n",
     "url": "/"
   },
   
