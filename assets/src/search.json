@@ -501,7 +501,7 @@
   {
     "title": "Calendarios, Horarios y Exámenes",
     "excerpt": "\n",
-    "content": "Calendarios, Horarios y Exámenes\n\nCalendario Académico\n\n\n\n\n\n\n  Cierre de actas 25 de Enero\n\n\nHorarios\n\n\n  \n    Horarios de Ingeniería Informática para el curso\n  \n  \n    \n\n\n  \n\n\n\n\n{% include embeded-calendar-iframe.html %}\n\nExámenes de convocatoria\n\n\n\n\n\n  10/01/24, 9:00, 3.7\n  19/06/24, 9:00, 3.7\n  08/07/24, 9:30, 3.7\n\n\nNormativa\n\n{% include normativa.md %}\n\n",
+    "content": "Calendarios, Horarios y Exámenes\n\nCalendario Académico\n\n\n\n\n\n\n  Cierre de actas 25 de Enero\n\n\nHorarios\n\nHorarios de Ingeniería Informática para el curso\n\n\n\n\n\n\n\n{% include embeded-calendar-iframe.html %}\n\nExámenes de convocatoria\n\n\n\n\n\n  10/01/24, 9:00, 3.7\n  19/06/24, 9:00, 3.7\n  08/07/24, 9:30, 3.7\n\n\nNormativa\n\n{% include normativa.md %}\n\n",
     "url": "/timetables"
   },
   
