@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>loadScript | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Desarrollo y Mantenimiento de Sistemas Informáticos | 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="loadScript" />
+<meta property="og:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="loadScript" />
+<meta property="twitter:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <script type="application/ld+json">
-{"url":"/assets/temas/introduccion-a-javascript/event-loop/exercises/promises/load-script/README.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"loadScript","@context":"https://schema.org"}</script>
+{"url":"/tema-nextjs/","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=5622de09209f114d42ba5c46c3c987010348c9fd">
@@ -63,38 +63,10 @@
                 <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
             </div>
 
-            <p>Here’s a callback-based function that loads a script from a specified <code class="language-plaintext highlighter-rouge">src</code> and adds it 
-to the current document:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">loadScript</span><span class="p">(</span><span class="nx">src</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">script</span><span class="dl">'</span><span class="p">);</span>
-  <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
-
-  <span class="nx">script</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">script</span><span class="p">);</span>
-  <span class="nx">script</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">callback</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">`Script load error for </span><span class="p">${</span><span class="nx">src</span><span class="p">}</span><span class="s2">`</span><span class="p">));</span>
-
-  <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Rewrite the <code class="language-plaintext highlighter-rouge">loadScript</code> function using promises.
-Example of usage:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">let</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">loadScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>
-  <span class="nx">script</span> <span class="o">=&gt;</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">script</span><span class="p">.</span><span class="nx">src</span><span class="p">}</span><span class="s2"> is loaded!`</span><span class="p">),</span>
-  <span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">`Error: </span><span class="p">${</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">script</span> <span class="o">=&gt;</span> <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Another handler...</span><span class="dl">'</span><span class="p">));</span>
-</code></pre></div></div>
-
-<h2 id="solution">Solution</h2>
-
-<ul>
-  <li><a href="solution.html">Solution</a></li>
-</ul>
+            <ol>
+  <li>https://nextjs.org/learn/foundations/</li>
+  <li>https://nextjs.org/docs</li>
+</ol>
 
 
 <!--
