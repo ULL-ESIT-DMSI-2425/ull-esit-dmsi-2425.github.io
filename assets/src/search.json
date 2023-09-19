@@ -690,7 +690,7 @@
   {
     "title": "Configurando VSCode",
     "excerpt": "\n",
-    "content": "Configurando VSCode\n\n\n  Instale VSCode en su máquina\n  Siga los tutoriales de VSCode\n  Instale el plugin Remote SSH  y aprenda a usarlo\n  Use Live Share para colaborar con un compañero\n  Elabore un informe con la experiencia adquirida en el repositorio asignado\n\n\nCollaboration con Visual Studio Share\n\nInstale Visual Studio Live Share y pruébelo con un compañero\n\nRemote - SSH: Editando con VSCode en una máquina remota via SSH\n\nInstale las extensiones Remote SSH y compruebe que funcionan con su máquina del iaas\n\n\n  Visual Studio Code Remote - SSH\n  Remote - SSH: Editing Configuration\n\n",
+    "content": "Configurando VSCode\n\n\n  Instale VSCode en su máquina\n  Siga los tutoriales de VSCode\n  Instale el plugin Remote SSH  y aprenda a usarlo\n  Use Live Share para colaborar con un compañero\n  Elabore un informe con la experiencia adquirida en el repositorio asignado\n\n\nCollaboration con Visual Studio Share\n\nInstale Visual Studio Live Share y pruébelo con un compañero\n\nRemote - SSH: Editando con VSCode en una máquina remota via SSH\n\nInstale las extensiones Remote SSH y compruebe que funcionan con su máquina del iaas\n\n\n  Visual Studio Code Remote - SSH\n  Remote - SSH: Editing Configuration\n\n\n\n",
     "url": "/tema1-introduccion/practicas/setup/vscode-config.html"
   },
   
