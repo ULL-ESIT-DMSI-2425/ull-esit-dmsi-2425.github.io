@@ -5,13 +5,14 @@
       "date": "October 04, 2023",
 
       "excerpt": "<ul>
-  <li><a href="#repositorios">Repositorios</a></li>
-  <li><a href="#rúbrica">Rúbrica</a></li>
-  <li><a href="#data-acquisition-via-web-services-and-data-display-via-liquid">Data Acquisition via Web Services and Data Display via Liquid</a></li>
-  <li><a href="#example-of-data-acquisition-via-web-services">Example of Data Acquisition via Web Services</a></li>
-  <li><a href="#deploys">Deploys</a></li>
+  <li><a href="#data-acquisition-via-web-services-and-data-display-via-liquid">Data Acquisition via Web Services and Data Display via Liquid</a>
+    <ul>
+      <li><a href="#data-acquisition-via-web-services">Data Acquisition via Web Services</a></li>
+      <li><a href="#data-display-via-liquid">Data Display via Liquid</a></li>
+    </ul>
+  </li>
   <li><a href="#lab-asyncmap">Lab Asyncmap</a></li>
-  <li><a href="#video">Video</a></li>
+  <li><a href="#deploys">Deploys</a></li>
 </ul>
 
 ",
