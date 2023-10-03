@@ -4,7 +4,15 @@
       "title": "Clase del Miércoles 2023/10/04",
       "date": "October 04, 2023",
 
-      "excerpt": "<p>Hoy seguiremos estudiando los conceptos para la <a href="/tema1-introduccion/practicas/intro2sd/">práctica de generación de sitios web estáticos</a>.</p>
+      "excerpt": "<ul>
+  <li><a href="#repositorios">Repositorios</a></li>
+  <li><a href="#rúbrica">Rúbrica</a></li>
+  <li><a href="#data-acquisition-via-web-services-and-data-display-via-liquid">Data Acquisition via Web Services and Data Display via Liquid</a></li>
+  <li><a href="#example-of-data-acquisition-via-web-services">Example of Data Acquisition via Web Services</a></li>
+  <li><a href="#deploys">Deploys</a></li>
+  <li><a href="#lab-asyncmap">Lab Asyncmap</a></li>
+  <li><a href="#video">Video</a></li>
+</ul>
 
 ",
        "categories"  : [
