@@ -68,6 +68,13 @@
         "url": "/2023/10/11/leccion.html"
       },
     
+      {
+        "title": "Clase del Lunes 2023/10/16",
+        "excerpt": "Lab Asyncmap\n\n",
+        "content": "Lab Asyncmap\n\n\n  Repaso del estado de las últimas prácticas entregadas\n  An introduction to the JS Event Loop at another subject. There is a version also in this notes\n  Lab Asyncmap\n    \n      Template repo\n      Solution repo\n    \n  \n  Race Condition\n  Tema Async Programming in JavaScript\n  Sección The Async Module de estos apuntes\n  El manual del módulo async: https://caolan.github.io/async/v3/\n  Pregunta NodeJS - How to read multiple files asynchronously and write read contents to one file en StackOverflow\n\n\n\n",
+        "url": "/2023/10/16/leccion.html"
+      },
+    
   
   
   
