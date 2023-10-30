@@ -1,7 +1,30 @@
 
     
     {
-      "title": "Clase del Lunes 2023/10/25",
+      "title": "Clase del Lunes 2023/10/30",
+      "date": "October 30, 2023",
+
+      "excerpt": "<h2 id="asistencia-y-entregas">Asistencia y Entregas</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2023/10/30/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
+      "title": "Clase del Miércoles 2023/10/25",
       "date": "October 25, 2023",
 
       "excerpt": "<h2 id="asistencia-y-entregas">Asistencia y Entregas</h2>
@@ -206,29 +229,6 @@
       
       
       "url": "/2023/09/27/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2023/09/25",
-      "date": "September 25, 2023",
-
-      "excerpt": "<p>Hoy estudiaremos los conceptos para la <a href="/tema1-introduccion/practicas/intro2sd/">práctica de generación de sitios web estáticos</a>.</p>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2023/09/25/leccion.html",
        "tags"  : [
         
         ]
