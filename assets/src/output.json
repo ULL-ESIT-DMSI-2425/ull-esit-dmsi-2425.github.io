@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Mi´recoles 2023/11/08",
+      "date": "November 08, 2023",
+
+      "excerpt": "<h2 id="ausencias-y-foro-de-discussions">Ausencias y Foro de discussions</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2023/11/08/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Lunes 2023/11/06",
       "date": "November 06, 2023",
 
@@ -206,29 +229,6 @@
       
       
       "url": "/2023/10/04/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2023/10/02",
-      "date": "October 02, 2023",
-
-      "excerpt": "<p>Hoy seguiremos estudiando los conceptos para la <a href="/tema1-introduccion/practicas/intro2sd/">práctica de generación de sitios web estáticos</a>.</p>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2023/10/02/leccion.html",
        "tags"  : [
         
         ]
