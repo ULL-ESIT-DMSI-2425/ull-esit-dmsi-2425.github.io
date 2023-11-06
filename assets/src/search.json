@@ -688,13 +688,6 @@
   },
   
   {
-    "title": "{{ site.posts size }} taught classes so far",
-    "excerpt": "\n",
-    "content": "{{ site.posts | size }} taught classes so far\n\n{% include clases-impartidas.md %}\n",
-    "url": "/clases.html"
-  },
-  
-  {
     "title": "Prácticas",
     "excerpt": "\n",
     "content": "Prácticas\n\n{% include practicas.md %}\n",
