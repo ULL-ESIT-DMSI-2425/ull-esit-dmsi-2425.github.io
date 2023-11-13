@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2023/11/13",
+      "date": "November 13, 2023",
+
+      "excerpt": "<h2 id="ausencias-y-foro-de-discussions">Ausencias y Foro de discussions</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2023/11/13/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2023/11/08",
       "date": "November 08, 2023",
 
@@ -197,38 +220,6 @@
       
       
       "url": "/2023/10/09/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2023/10/04",
-      "date": "October 04, 2023",
-
-      "excerpt": "<ul>
-  <li><a href="#data-acquisition-via-web-services-and-data-display-via-liquid">Data Acquisition via Web Services and Data Display via Liquid</a>
-    <ul>
-      <li><a href="#data-acquisition-via-web-services">Data Acquisition via Web Services</a></li>
-      <li><a href="#data-display-via-liquid">Data Display via Liquid</a></li>
-    </ul>
-  </li>
-  <li><a href="#lab-asyncmap">Lab Asyncmap</a></li>
-  <li><a href="#deploys">Deploys</a></li>
-</ul>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2023/10/04/leccion.html",
        "tags"  : [
         
         ]
