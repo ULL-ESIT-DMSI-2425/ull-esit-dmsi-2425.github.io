@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Assistants | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Assistants" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Assistants" />
+<script type="application/ld+json">
+{"url":"/assets/temas/openai/openai-playground.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"Assistants","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=f7eca04f54aa717f7fb82987369027a6d700ca87">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="https://ull-esit-pl.netlify.app/recursos/">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left"> <a href="https://github.com/ULL-ESIT-DMSI-2324" target="_blank">GH Org</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/ULL-ESIT-DMSI" target="_blank">GH Template Org</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://classroom.github.com/classrooms/143794118-ull-esit-dmsi-2324" target="_blank">GitHub Classroom</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/discussions" target="_blank">Discussions</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://campusingenieriaytecnologia2324.ull.es/course/view.php?id=2324090033" target="_blank">Campus ULL</a></span>
+                <span class="credits left"> &nbsp; - <a href="/teams" target="_blank">Students Activity</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://meet.google.com/apb-imai-hsq" target="_blank">Google Meet</a></span>
+                <!-- https://www.ull.es/apps/guias/guias/view_guide_course/2324/139264413/3/ -->
+
+            </div>
+
+            <h1 id="assistants">Assistants</h1>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li><a href="https://platform.openai.com/docs/assistants/overview?lang=node.js">https://platform.openai.com/docs/assistants/overview?lang=node.js</a></li>
+</ul>
+
+<h2 id="openai-playground">OpenAI Playground</h2>
+
+<p><a href="https://platform.openai.com/playground">https://platform.openai.com/playground</a></p>
+
+<h3 id="left-panel">Left Panel</h3>
+
+<ul>
+  <li>Assistant:
+    <ul>
+      <li>functions: Function calling lets you describe custom functions of your app or external APIs to the assistant. This allows the assistant to intelligently call those functions by outputting a JSON object containing relevant arguments.</li>
+      <li>See <a href="https://platform.openai.com/docs/assistants/overview">https://platform.openai.com/docs/assistants/overview</a> for more information. This starter guide walks through the key steps to create and run an Assistant that uses <a href="https://platform.openai.com/docs/assistants/tools/code-interpreter">Code Interpreter</a>.</li>
+      <li>Code interpreter: <a href="https://platform.openai.com/docs/assistants/tools/code-interpreter">Code Interpreter</a> enables the assistant to write and run code. This tool can process files with diverse data and formatting, and generate files such as graphs</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="assistants-api">Assistants API</h2>
+
+<p>The Assistants API allows you to build AI assistants within your own applications. An Assistant has instructions and can leverage models, <a href="https://platform.openai.com/docs/assistants/tools">tools</a>, and knowledge to respond to user queries. The Assistants API currently supports three types of <a href="https://platform.openai.com/docs/assistants/tools">tools</a>:</p>
+
+<ol>
+  <li>Code Interpreter,</li>
+  <li>Retrieval, and</li>
+  <li>Function calling.</li>
+</ol>
+
+<h3 id="assistants-playground">Assistants playground</h3>
+
+<p>In addition to the <a href="https://platform.openai.com/docs/api-reference/assistants">Assistants API</a>, we also provide an <a href="https://platform.openai.com/playground?mode=assistant">Assistants playground</a> (sign in required). The playground is a great way to explore the capabilities of the Assistants API and learn how to build your own Assistant without writing any code.</p>
+
+<h3 id="step-1-create-an-assistant">Step 1: Create an Assistant</h3>
+
+<p>An Assistant represents an entity that can be configured to respond to users’ Messages using several parameters like:</p>
+
+<ul>
+  <li><strong>Instructions</strong>: how the Assistant and model should behave or respond</li>
+  <li><strong>Model</strong>: you can specify any GPT-3.5 or GPT-4 models, including fine-tuned models. The Retrieval tool requires gpt-3.5-turbo-1106 and gpt-4-1106-preview models.</li>
+  <li><strong>Tools</strong>: the API supports Code Interpreter and Retrieval that are built and hosted by OpenAI.</li>
+  <li><strong>Functions</strong>: the API allows you to define custom function signatures, with similar behavior as OpenAI <a href="https://platform.openai.com/docs/guides/function-calling">function calling</a> feature.</li>
+</ul>
+
+<p>In this example, we’re <a href="https://platform.openai.com/docs/api-reference/assistants/createAssistant">creating an Assistant</a> that is a <strong>personal math tutor</strong>, with the Code Interpreter tool enabled:</p>
+
+<p>Calls to the Assistants API require that you pass a <em>beta HTTP header</em>. This is handled automatically if you’re using OpenAI’s official Python or Node.js SDKs.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">OpenAI-Beta</span><span class="pi">:</span> <span class="s">assistants=v1</span>
+</code></pre></div></div>
+
+<p>For instance:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">assistant</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">openai</span><span class="p">.</span><span class="nx">beta</span><span class="p">.</span><span class="nx">assistants</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Math Tutor</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">instructions</span><span class="p">:</span> <span class="dl">"</span><span class="s2">You are a personal math tutor. Write and run code to answer math questions.</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">tools</span><span class="p">:</span> <span class="p">[{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">code_interpreter</span><span class="dl">"</span> <span class="p">}],</span>
+  <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gpt-4-1106-preview</span><span class="dl">"</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="step-2-create-a-thread">Step 2: Create a Thread</h3>
+
+<p>A Thread represents a conversation. We recommend <a href="https://platform.openai.com/docs/api-reference/threads/createThread">creating one Thread</a> per user as soon as the user initiates the conversation. Pass any user-specific context and files in this thread by <a href="https://platform.openai.com/docs/api-reference/messages/createMessage">creating Messages</a>.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">thread</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">openai</span><span class="p">.</span><span class="nx">beta</span><span class="p">.</span><span class="nx">threads</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Threads don’t have a size limit. You can pass as many Messages as you want to a Thread.</p>
+
+<p>The API will ensure that requests to the model fit within the maximum context window, 
+using relevant optimization techniques such as truncation.</p>
+
+<h3 id="step-3-add-a-message-to-a-thread">Step 3: Add a Message to a Thread</h3>
+
+<p>A Message contains text, and optionally any <a href="https://platform.openai.com/docs/assistants/tools/supported-files">files</a> that you allow the user to upload.</p>
+
+<p><a href="https://platform.openai.com/docs/api-reference/messages/createMessage">Messages need to be added to a specific Thread</a>.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">openai</span><span class="p">.</span><span class="nx">beta</span><span class="p">.</span><span class="nx">threads</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span>
+  <span class="nx">thread</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+  <span class="p">{</span>
+    <span class="na">role</span><span class="p">:</span> <span class="dl">"</span><span class="s2">user</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">content</span><span class="p">:</span> <span class="dl">"</span><span class="s2">I need to solve the equation `3x + 11 = 14`. Can you help me?</span><span class="dl">"</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>Now if you <a href="https://platform.openai.com/docs/api-reference/messages/listMessages">list Messages in Thread</a>, 
+you will see that this message is added to the thread on creation:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">object</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">list</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">created_at</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1696995451</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">msg_4rb1Skx3XgQZEe4PHVRFQhr0</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">object</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">thread.message</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">thread_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">thread_34p0sfdas0823smfv</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">role</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">user</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">content</span><span class="dl">"</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">I need to solve the equation `3x + 11 = 14`. Can you help me?</span><span class="dl">"</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">annotations</span><span class="dl">"</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+          <span class="p">}],</span>
+        <span class="p">...</span>
+</code></pre></div></div>
+
+<h3 id="step-4-run-the-assistant">Step 4: Run the Assistant</h3>
+
+<p>For the Assistant to respond to the user message, you need to <a href="https://platform.openai.com/docs/api-reference/runs/createRun">create a Run</a>. This makes the Assistant read the Thread and decide whether to call tools (if they are enabled) or simply use the model to best answer the query. As the run progresses, the assistant appends Messages to the thread with the <code class="language-plaintext highlighter-rouge">role="assistant"</code>.</p>
+
+<p>You can <a href="https://platform.openai.com/docs/api-reference/runs/createRun#runs-createrun-instructions">optionally pass additional instructions</a> to the Assistant while creating the Run but note that these instructions override the default instructions of the Assistant:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">run</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">openai</span><span class="p">.</span><span class="nx">beta</span><span class="p">.</span><span class="nx">threads</span><span class="p">.</span><span class="nx">runs</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span>
+  <span class="nx">thread</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+  <span class="p">{</span> 
+    <span class="na">assistant_id</span><span class="p">:</span> <span class="nx">assistant</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+    <span class="na">instructions</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Please address the user as Jane Doe. The user has a premium account.</span><span class="dl">"</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="step-5-check-the-run-status">Step 5: Check the Run status</h3>
+
+<p>This creates a Run in a queued status. You can periodically <a href="https://platform.openai.com/docs/api-reference/runs/getRun">retrieve the Run</a> to check on its <a href="https://platform.openai.com/docs/assistants/how-it-works/run-lifecycle">status</a> to see if it has moved to completed.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">run</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">openai</span><span class="p">.</span><span class="nx">beta</span><span class="p">.</span><span class="nx">threads</span><span class="p">.</span><span class="nx">runs</span><span class="p">.</span><span class="nx">retrieve</span><span class="p">(</span>
+  <span class="nx">thread</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+  <span class="nx">run</span><span class="p">.</span><span class="nx">id</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>And finally, display them to the user! 
+During this Run, the Assistant added two new Messages to the Thread. Here is an example of what that might look like:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">ROLE</th>
+      <th style="text-align: left">CONTENT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">user</td>
+      <td style="text-align: left">I need to solve the equation 3x + 11 = 14. Can you help me?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">assistant</td>
+      <td style="text-align: left">Certainly, Jane Doe. To solve the equation (3x + 11 = 14) for (x), you’ll want to isolate (x) on one side of the equation. Here’s how you can do that: 1. Subtract 11 from both sides of the equation to get (3x = 3). 2. Then, divide both sides by 3 to solve for (x). Let me calculate the value of (x) for you.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">assistant</td>
+      <td style="text-align: left">The solution to the equation (3x + 11 = 14) is (x = 1).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can also retrieve the <a href="https://platform.openai.com/docs/api-reference/runs/listRunSteps">Run Steps</a> of this Run if you’d like to explore or display the inner workings of the Assistant and its tools.</p>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/asyncmap">Asyncmap</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=asyncmap&type=all&language=&sort=" target="_blank">asyncmap</a></li>
+      <li><a href="/tema1-introduccion/practicas/asyncmap#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/jekyll-search">Search in Jekyll</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=jekyll-search&type=all&language=&sort=" target="_blank">jekyll-search</a></li>
+      <li><a href="/tema1-introduccion/practicas/jekyll-search#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/practicas/nextjs">Introduction to Next.js</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=nextjs&type=all&language=&sort=" target="_blank">nextjs</a></li>
+      <li><a href="/practicas/nextjs#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2023/11/15/leccion.html">Clase del Lunes 2023/11/13</a></li>
+  
+<li> <a href="/2023/11/13/leccion.html">Clase del Lunes 2023/11/13</a></li>
+  
+<li> <a href="/2023/11/08/leccion.html">Clase del Miércoles 2023/11/08</a></li>
+  
+<li> <a href="/2023/11/06/leccion.html">Clase del Lunes 2023/11/06</a></li>
+  
+<li> <a href="/2023/10/30/leccion.html">Clase del Lunes 2023/10/30</a></li>
+  
+<li> <a href="/2023/10/25/leccion.html">Clase del Miércoles 2023/10/25</a></li>
+  
+<li> <a href="/2023/10/23/leccion.html">Clase del Lunes 2023/10/23</a></li>
+  
+<li> <a href="/2023/10/18/leccion.html">Clase del Miércoles 2023/10/18</a></li>
+  
+<li> <a href="/2023/10/16/leccion.html">Clase del Lunes 2023/10/16</a></li>
+  
+<li> <a href="/2023/10/11/leccion.html">Clase del Miércoles 2023/10/11</a></li>
+  
+<li> <a href="/2023/10/09/leccion.html">Clase del Lunes 2023/10/09</a></li>
+  
+<li> <a href="/2023/10/04/leccion.html">Clase del Miércoles 2023/10/04</a></li>
+  
+<li> <a href="/2023/10/02/leccion.html">Clase del Lunes 2023/10/02</a></li>
+  
+<li> <a href="/2023/09/27/leccion.html">Clase del Miércoles 2023/09/27</a></li>
+  
+<li> <a href="/2023/09/25/leccion.html">Clase del Lunes 2023/09/25</a></li>
+  
+<li> <a href="/2023/09/20/leccion.html">Clase del Miércoles 2023/09/20</a></li>
+  
+<li> <a href="/2023/09/17/leccion.html">Clase del Lunes 2023/09/17</a></li>
+  
+<li> <a href="/2023/09/11/leccion.html">Clase del Lunes 2023/09/11</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>
