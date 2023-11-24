@@ -141,7 +141,7 @@
       {
         "title": "Clase del Miércoles 2023/11/22",
         "excerpt": "Ausencias y Foro de discussions\n\n",
-        "content": "Ausencias y Foro de discussions\n\n\n  Ausencias y Foro de discussions\n\n\nLab Building a Mini Prompt Engineering Framework: Agents\n\nWe’ll build an agent as described in:\n\n\n  ULL-prompt-engineering/langchain-mini\n\n\nLab Introduction to the JAM Stack with NextJS, React, REST and Netlify\n\nResolveremos dudas de la práctica.\n\nIntroduction to the JAM Stack with NextJS, React, REST and Netlify and OpenAI\n\n\n  Dynamic Routes in Next.js\n  pages/api/generate.js\n\n\n\n",
+        "content": "Ausencias y Foro de discussions\n\n\n  Ausencias y Foro de discussions\n\n\nLab Building a Mini Prompt Engineering Framework: Agents\n\nWe’ll build an agent as described in:\n\n\n  ULL-prompt-engineering/langchain-mini\n  The ReAct Model\n\n\nLab Introduction to the JAM Stack with NextJS, React, REST and Netlify\n\nResolveremos dudas de la práctica.\n\nIntroduction to the JAM Stack with NextJS, React, REST and Netlify and OpenAI\n\n\n  Dynamic Routes in Next.js\n  pages/api/generate.js\n\n\n\n",
         "url": "/2023/11/22/leccion.html"
       },
     
@@ -172,7 +172,7 @@
   {
     "title": "Prompt Engineering",
     "excerpt": "\n",
-    "content": "Prompt Engineering\n\nFollow the tutorial at ULL-prompt-engineering/langchain-mini in repo https://github.com/ULL-prompt-engineering/langchain-mini\n\nReferences\n\n\n  ULL-prompt-engineering/langchain-mini\n  Re-implementing LangChain in 100 lines of code by Colin Eberhardt (May 2023)\n  The ReAct model was introduced by Google in ReAct: Synergizing Reasoning and Acting in Language Models (March of 2023)\n  ReAct: Synergizing Reasoning and Acting in Language Models\n  Brex’s Prompt Engineering Guide GitHub repo\n  Model ReAct Knowledge Language Amatrian’s blog post in “Prompt Engineering 201: Advanced methods and toolkits”\n  Prompt Engineering with OpenAI’s GPT-3 and other LLMs  by James Briggs via YouTube\n\n",
+    "content": "Prompt Engineering\n\nFollow the tutorial at ULL-prompt-engineering/langchain-mini in repo https://github.com/ULL-prompt-engineering/langchain-mini\n\nReferences\n\n\n  ULL-prompt-engineering/langchain-mini\n  The ReAct Model\n  OpenAI completions (Legacy): https://platform.openai.com/docs/api-reference/completions/object\n  Re-implementing LangChain in 100 lines of code by Colin Eberhardt (May 2023)\n  The ReAct model was introduced by Google in ReAct: Synergizing Reasoning and Acting in Language Models (March of 2023)\n  ReAct: Synergizing Reasoning and Acting in Language Models\n  Brex’s Prompt Engineering Guide GitHub repo\n  Model ReAct Knowledge Language Amatrian’s blog post in “Prompt Engineering 201: Advanced methods and toolkits”\n  Prompt Engineering with OpenAI’s GPT-3 and other LLMs  by James Briggs via YouTube\n\n",
     "url": "/practicas/prompt-engineering"
   },
   
