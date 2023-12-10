@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Svelte | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Differences Between Next.js 13 and Next.js 14 | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Svelte" />
+<meta property="og:title" content="Differences Between Next.js 13 and Next.js 14" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Svelte" />
+<meta property="twitter:title" content="Differences Between Next.js 13 and Next.js 14" />
 <script type="application/ld+json">
-{"url":"/tema1-introduccion/svelte.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"Svelte","@context":"https://schema.org"}</script>
+{"url":"/nextjs/differences-13-14","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"Differences Between Next.js 13 and Next.js 14","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=de17c908cea3a08f9121b4735e6b2fb037367415">
@@ -69,7 +69,74 @@
 
             </div>
 
-            <p><a href="https://svelte.dev/tutorial/">Svelte  tutorial</a></p>
+            <h1 id="differences-between-nextjs-13-and-nextjs-14">Differences Between Next.js 13 and Next.js 14</h1>
+
+<p><strong>The following list was developed by Chat GPT 4</strong>:</p>
+
+<p>Next.js 14 introduced several significant improvements and new features over Next.js 13. Here are the main differences:</p>
+
+<ol>
+  <li>
+    <p><strong>Support for React 19 Features in Next.js 14:</strong> Next.js 14 supports React 19 features like concurrent rendering and the <code class="language-plaintext highlighter-rouge">useTransition</code> hook, which were not available in Next.js 13. Concurrent rendering allows React to render multiple versions of a component simultaneously, improving application performance by not blocking the main thread. The <code class="language-plaintext highlighter-rouge">useTransition</code> hook facilitates transitions between states in a controlled manner, useful for loading states, animations, and other effects.</p>
+  </li>
+  <li>
+    <p><strong>Built-in Image Optimizer in Next.js 14:</strong> Next.js 14 includes a new built-in image optimizer that can significantly reduce the size of your application’s image assets, leading to faster page load times and an improved user experience.</p>
+  </li>
+  <li>
+    <p><strong>Next.js CLI Tool in Next.js 14:</strong> This new CLI tool in Next.js 14 makes it easier to manage Next.js projects, providing commands for tasks such as creating new projects, starting the development server, and building and deploying applications.</p>
+  </li>
+  <li>
+    <p><strong>Performance Improvements:</strong> Both versions introduced performance improvements, but Next.js 14 has a new incremental static regeneration (ISR) algorithm and a faster development server, enhancing overall application performance.</p>
+  </li>
+  <li>
+    <p><strong>React Native Support in Next.js 14:</strong> This version now supports <a href="https://reactnative.dev/">React Native</a>, allowing the building of hybrid web and mobile applications with the same codebase.</p>
+  </li>
+  <li>
+    <p><strong>SEO Enhancements in Next.js 14:</strong> It includes improvements to SEO support, such as generating sitemaps and dynamic canonical URLs.</p>
+  </li>
+  <li>
+    <p><strong>Metadata Handling Improvements in Next.js 14:</strong> This version introduces new options like <code class="language-plaintext highlighter-rouge">viewport</code> and <code class="language-plaintext highlighter-rouge">colorScheme</code> for better metadata management, offering more flexibility and power compared to Next.js 13.</p>
+  </li>
+  <li>
+    <p><strong>Server Actions and Partial Prerendering in Next.js 14:</strong> Server Actions, which were experimental in Next.js 13, have been stabilized in Next.js 14. Moreover, Partial Prerendering, an experimental feature in Next.js 14, aims to improve rendering performance by serving static HTML content immediately and using streaming to add dynamic content within React Suspense elements in the same HTTP request.</p>
+  </li>
+  <li>
+    <p><strong>Other Notable Changes in Next.js 14:</strong> These include changes like the minimum Node.js version being updated to 18.17, the deprecation of the <code class="language-plaintext highlighter-rouge">next export</code> command in favor of <code class="language-plaintext highlighter-rouge">output: 'export'</code>, and various improvements and deprecations in features like <code class="language-plaintext highlighter-rouge">next/image</code>.</p>
+  </li>
+</ol>
+
+<p>These changes indicate a continued focus on performance, efficiency, and modern web development practices in Next.js 14, building upon the foundations laid by Next.js 13 
+<a href="https://lightrains.com/blogs/nextjs-13-vs-14-what-is-new">12†source</a>【13†source】【14†source】【15†source】.</p>
+
+<h2 id="server-actions">Server Actions</h2>
+
+<p>Server Actions in Next.js are asynchronous functions executed on the server. They are used in both Server and Client Components to handle form submissions and data mutations in Next.js applications. This feature allows for direct creation or modification of data on the server without going through a separate API endpoint.</p>
+
+<p>To define a Server Action, you can use the React <code class="language-plaintext highlighter-rouge">"use server"</code> directive. This directive can be placed at the top of an asynchronous function to mark it as a Server Action, or at the top of a separate file to mark all exports of that file as Server Actions.</p>
+
+<p>Server Actions can be used in various ways:</p>
+
+<ol>
+  <li>
+    <p><strong>In Server Components:</strong> Server Components can use Server Actions by adding the <code class="language-plaintext highlighter-rouge">"use server"</code> directive at the top of the function body within the component.</p>
+  </li>
+  <li>
+    <p><strong>In Client Components:</strong> Client Components can only import actions that use the module-level <code class="language-plaintext highlighter-rouge">"use server"</code> directive. These actions can be passed to Client Components as props and invoked using the <code class="language-plaintext highlighter-rouge">action</code> attribute in a form element.</p>
+  </li>
+  <li>
+    <p><strong>Forms and Data Mutation:</strong> Server Actions can be invoked using the <code class="language-plaintext highlighter-rouge">action</code> attribute in a form element. They support progressive enhancement, meaning the form will be submitted even if JavaScript hasn’t loaded yet or is disabled. After hydration, the browser does not refresh on form submission. Server Actions can handle the FormData object directly, allowing you to work with form data without needing to use React <code class="language-plaintext highlighter-rouge">useState</code>.</p>
+  </li>
+  <li>
+    <p><strong>Flexibility and Reusability:</strong> Server Actions are not limited to form elements and can be invoked from event handlers, <code class="language-plaintext highlighter-rouge">useEffect</code>, and other elements like buttons. They are reusable across your application and inherit the runtime from the page or layout they are used on.</p>
+  </li>
+  <li>
+    <p><strong>Integration with Next.js Architecture:</strong> Server Actions integrate with the Next.js caching and revalidation architecture, enabling updated UI and new data to be returned in a single server roundtrip.</p>
+  </li>
+</ol>
+
+<p>It’s important to note that Server Actions are still an experimental feature in Next.js, and to use them, you need to enable the experimental <code class="language-plaintext highlighter-rouge">serverActions</code> flag in the <code class="language-plaintext highlighter-rouge">next.config.js</code> file.</p>
+
+<p>For detailed examples and a deeper understanding of Server Actions, you can refer to the <a href="https://codevoweb.com/learn-nextjs-server-actions-and-mutations-with-examples/">Codevoweb article</a> and the <a href="https://nextjs.org/docs/data-fetching/server-actions-and-mutations">official Next.js documentation</a>.</p>
 
 
 <!--
