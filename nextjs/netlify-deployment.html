@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Deploying a Next.js app to Netlify | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Deploying a Next.js app to Netlify" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Deploying a Next.js app to Netlify" />
+<script type="application/ld+json">
+{"url":"/nextjs/netlify-deployment","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"Deploying a Next.js app to Netlify","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=b3537aa1856f81fc6c1675754631767c387b70d4">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="https://ull-esit-pl.netlify.app/recursos/">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left"> <a href="https://github.com/ULL-ESIT-DMSI-2324" target="_blank">GH Org</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/ULL-ESIT-DMSI" target="_blank">GH Template Org</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://classroom.github.com/classrooms/143794118-ull-esit-dmsi-2324" target="_blank">GitHub Classroom</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/discussions" target="_blank">Discussions</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://campusingenieriaytecnologia2324.ull.es/course/view.php?id=2324090033" target="_blank">Campus ULL</a></span>
+                <span class="credits left"> &nbsp; - <a href="/teams" target="_blank">Students Activity</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://meet.google.com/apb-imai-hsq" target="_blank">Google Meet</a></span>
+                <!-- https://www.ull.es/apps/guias/guias/view_guide_course/2324/139264413/3/ -->
+
+            </div>
+
+            <h1 id="deploying-a-nextjs-app-to-netlify">Deploying a Next.js app to Netlify</h1>
+
+<h2 id="deploy-at-netlify-with-the-ui">Deploy at Netlify with the UI</h2>
+
+<p>Netlify’s Next.js Runtime configures your site on Netlify to enable key Next.js functionality.</p>
+
+<p>It automatically generates <strong><a href="https://sytws.netlify.app/temas/web/serverless.html">serverless functions</a></strong> that handle</p>
+
+<ul>
+  <li>server-side rendered (SSR) pages,</li>
+  <li>incremental static regeneration (ISR),</li>
+  <li>image optimization, and</li>
+  <li>other Next.js features.</li>
+</ul>
+
+<p>See section <a href="https://docs.netlify.com/integrations/frameworks/next-js/overview/">Next.js on Netlify</a>
+for more details.</p>
+
+<h3 id="make-public-your-repo">Make public your repo</h3>
+
+<p>Regarding prices and restrictions on deployment you can check the FAQ <a href="https://www.netlify.com/pricing/private-org-repo-faq/">Organization-owned private repository FAQ</a></p>
+
+<h3 id="deploy-with-the-netlify-ui">Deploy with the Netlify UI</h3>
+
+<p>In the Netlify UI, choose new deploy and import your GitHub repo to Netlify</p>
+
+<p><img src="/assets/images/nextjs/netlify-deploy-1.png" alt="" /></p>
+
+<p>Click on <strong>show advanced</strong>. Go to <strong>Environment Variables</strong> and add the secret:</p>
+
+<p><img src="/assets/images/nextjs/netlify-add-variable.png" alt="netlify-add-variable" /></p>
+
+<p>Finally, click on <strong>deploy site</strong> and after a while your site will be deployed and running:</p>
+
+<p><img src="/assets/images/nextjs/netlify-running-cookies.png" alt="" /></p>
+
+<h2 id="netlify-environment-variables">Netlify Environment Variables</h2>
+
+<p>Environment variables are set and securely stored on Netlify and provided to the Next.JS server. This means we can avoid committing any sensitive values to our repository.</p>
+
+<p>There are three ways to create site environment variables:</p>
+
+<ul>
+  <li>In the Netlify UI, create site variables under <strong>Site settings &gt; Environment variables</strong>.</li>
+  <li>With the Netlify CLI, use <code class="language-plaintext highlighter-rouge">env:set</code> to create a site environment variable, and <code class="language-plaintext highlighter-rouge">env:import</code> to import from a <code class="language-plaintext highlighter-rouge">.env</code> file.</li>
+  <li>With the Netlify API, use <code class="language-plaintext highlighter-rouge">createEnvVars</code> to create a new site environment variable.</li>
+</ul>
+
+<p>The Netlify UI reflects any changes made using the CLI (ntl) or the API and vice versa.</p>
+
+<h2 id="exercise-deploy-with-the-netlify-cli">Exercise: Deploy with the Netlify CLI</h2>
+
+<p>The Netlify CLI is a command line interface that allows you to manage your Netlify sites from the terminal.</p>
+
+<h3 id="install-the-netlify-cli">Install the Netlify CLI</h3>
+
+<p>You can install it with npm:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  explorers-up-and-running-with-serverless-functions git:(main) npm install netlify-cli -g
+added 1438 packages, and audited 1439 packages in 26s
+➜  explorers-up-and-running-with-serverless-functions git:(main) npm ls -g netlify-cli
+/Users/casianorodriguezleon/.nvm/versions/node/v16.0.0/lib
+└── netlify-cli@12.2.8
+➜  explorers-up-and-running-with-serverless-functions git:(main) ✗ ntl --version
+netlify-cli/12.2.8 darwin-x64 node-v16.0.0
+➜  explorers-up-and-running-with-serverless-functions git:(main) ✗ node --version
+v16.0.0
+</code></pre></div></div>
+
+<h3 id="link-the-repo-to-netlify">Link the repo to Netlify</h3>
+
+<p>The first step is to <strong>link</strong> the repo to Netlify. Here we are using the <code class="language-plaintext highlighter-rouge">--gitRemoteName</code> option to specify the remote name <code class="language-plaintext highlighter-rouge">sytws</code> of the repo.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  nextjs-solution git:(main) ✗ ntl link --gitRemoteName sytws
+
+netlify link will connect this folder to a site on Netlify
+
+? How do you want to link this folder to a site? Use current git remote origin (https://github.com/ULL-MII-SYTWS/nextjs-solution)
+
+Looking for sites connected to 'https://github.com/ULL-MII-SYTWS/nextjs-solution'...
+
+
+Directory Linked
+
+Admin url: https://app.netlify.com/sites/nextjs-oai
+Site url:  https://nextjs-oai.netlify.app
+
+You can now run other `netlify` cli commands in this directory
+</code></pre></div></div>
+
+<h3 id="check-the-status">Check the status</h3>
+
+<p>Once we have linked the repo to Netlify, we can check the status:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  nextjs-solution git:(main) ✗ ntl status
+──────────────────────┐
+ Current Netlify User │
+──────────────────────┘
+Name:   Casiano Rodriguez-Leon
+Email:  crguezl@ull.edu.es
+GitHub: crguezl
+Teams:
+  Casiano Rodriguez-Leon's team: Collaborator
+────────────────────┐
+ Netlify Site Info  │
+────────────────────┘
+Current site: nextjs-oai
+Admin URL:    https://app.netlify.com/sites/nextjs-oai
+Site URL:     https://nextjs-oai.netlify.app
+Site Id:      blah-blah-blah-blah-blah
+</code></pre></div></div>
+
+<h3 id="listgetset-the-environment-variables">List/Get/Set the environment variables</h3>
+
+<p>We can use <code class="language-plaintext highlighter-rouge">ntl env:&lt;subcommand&gt;</code> syntax to <code class="language-plaintext highlighter-rouge">list</code>, <code class="language-plaintext highlighter-rouge">set</code> or <code class="language-plaintext highlighter-rouge">get</code>  environment variables:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  nextjs-solution git:(main) ✗ ntl env:list
+1 environment variable for site nextjs-oai
+.---------------------------------------------------------------------.
+|                        Environment variables                        |
+|---------------------------------------------------------------------|
+|      Key       |                       Value                        |
+|----------------|----------------------------------------------------|
+| OPENAI_API_KEY | ************************************************** |
+'---------------------------------------------------------------------'
+</code></pre></div></div>
+
+<h3 id="development-mode-with-the-netlify-cli">Development mode with the Netlify CLI</h3>
+
+<p>We can see  the site locally using the <code class="language-plaintext highlighter-rouge">dev</code> command of <code class="language-plaintext highlighter-rouge">ntl</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> openai-quickstart-node git:(main) ✗ ntl dev
+</code></pre></div></div>
+
+<p>Since <code class="language-plaintext highlighter-rouge">ntl</code> knows about Next.js, it will choose a suitable default configuration, it will create a <code class="language-plaintext highlighter-rouge">.netlify</code>folder:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>✗ tree -I node_modules .netlify     
+.netlify
+├── edge-functions
+│   ├── edge-shared
+│   │   ├── next-utils.ts
+│   │   ├── nextConfig.json
+│   │   └── utils.ts
+│   ├── manifest.json
+│   └── next-dev
+│       └── index.js
+├── edge-functions-import-map.json
+├── plugins
+│   ├── package-lock.json
+│   └── package.json
+└── state.json
+</code></pre></div></div>
+
+<p>and it will start the Next.js server injecting the environment variables .</p>
+
+<p>We can change the settings adding a <a href="https://docs.netlify.com/configure-builds/file-based-configuration/">netlify.toml</a> configuration file.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[plugins]]
+package = "@netlify/plugin-nextjs"
+
+[build]
+command = "npm run build"
+publish = ".next"
+</code></pre></div></div>
+
+<h3 id="deploying-with-the-netlify-cli">Deploying with the Netlify CLI</h3>
+
+<p>Netlify deploys are <strong>atomic</strong>, and your site is never in an inconsistent state while you’re uploading a new deploy.</p>
+
+<p>With File Transfer Protocol (FTP) or Amazon Simple Storage Service (S3) uploads, each file is pushed live one after the other, so you can  get into situations where a new HTML page is live before the supporting assets (images, scripts, CSS) have been uploaded. And if your connection cuts out in the middle of an upload, your site could get stuck in a broken state for a long time.</p>
+
+<p>Here is an example of a deploy:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  openai-quickstart-node git:(main) ✗ ntl deploy --prod
+Deploy path: /Users/casianorodriguezleon/campus-virtual/2223/learning/openai-learning/openai-quickstart-node/.next
+Deploying to main site URL...
+✔ Finished hashing 
+✔ CDN requesting 27 files
+✔ Finished uploading 27 assets
+✔ Deploy is live!
+
+Logs:              https://app.netlify.com/sites/nextjs-oai/deploys/6395e63207648c16d41001b7
+Unique Deploy URL: https://6395e63207648c16d41001b7--nextjs-oai.netlify.app
+Website URL:       https://nextjs-oai.netlify.app
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">--prod</code> option deploys to production, the  <code class="language-plaintext highlighter-rouge">--open</code> flag  opens the site after deploy</p>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol reverse>
+
+  
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/asyncmap">Asyncmap</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=asyncmap&type=all&language=&sort=" target="_blank">asyncmap</a></li>
+      <li><a href="/tema1-introduccion/practicas/asyncmap#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/jekyll-search">Search in Jekyll</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=jekyll-search&type=all&language=&sort=" target="_blank">jekyll-search</a></li>
+      <li><a href="/tema1-introduccion/practicas/jekyll-search#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/practicas/prompt-engineering">Building a Mini Prompt Engineering Framework</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=prompt-engineering&type=all&language=&sort=" target="_blank">prompt-engineering</a></li>
+      <li><a href="/practicas/prompt-engineering#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/practicas/nextjs13">Building a Web App with Next.js</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=nextjs13&type=all&language=&sort=" target="_blank">nextjs13</a></li>
+      <li><a href="/practicas/nextjs13#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/practicas/nextjs">OpenAI and Next.js</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2324/repositories?q=nextjs&type=all&language=&sort=" target="_blank">nextjs</a></li>
+      <li><a href="/practicas/nextjs#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2023/12/11/leccion.html">Clase del Lunes 2023/12/11</a></li>
+  
+<li> <a href="/2023/11/29/leccion.html">Clase del Miércoles 2023/11/29</a></li>
+  
+<li> <a href="/2023/11/27/leccion.html">Clase del Lunes 2023/11/27</a></li>
+  
+<li> <a href="/2023/11/22/leccion.html">Clase del Miércoles 2023/11/22</a></li>
+  
+<li> <a href="/2023/11/20/leccion.html">Clase del Lunes 2023/11/20</a></li>
+  
+<li> <a href="/2023/11/15/leccion.html">Clase del Miércoles 2023/11/15</a></li>
+  
+<li> <a href="/2023/11/13/leccion.html">Clase del Lunes 2023/11/13</a></li>
+  
+<li> <a href="/2023/11/08/leccion.html">Clase del Miércoles 2023/11/08</a></li>
+  
+<li> <a href="/2023/11/06/leccion.html">Clase del Lunes 2023/11/06</a></li>
+  
+<li> <a href="/2023/10/30/leccion.html">Clase del Lunes 2023/10/30</a></li>
+  
+<li> <a href="/2023/10/25/leccion.html">Clase del Miércoles 2023/10/25</a></li>
+  
+<li> <a href="/2023/10/23/leccion.html">Clase del Lunes 2023/10/23</a></li>
+  
+<li> <a href="/2023/10/18/leccion.html">Clase del Miércoles 2023/10/18</a></li>
+  
+<li> <a href="/2023/10/16/leccion.html">Clase del Lunes 2023/10/16</a></li>
+  
+<li> <a href="/2023/10/11/leccion.html">Clase del Miércoles 2023/10/11</a></li>
+  
+<li> <a href="/2023/10/09/leccion.html">Clase del Lunes 2023/10/09</a></li>
+  
+<li> <a href="/2023/10/04/leccion.html">Clase del Miércoles 2023/10/04</a></li>
+  
+<li> <a href="/2023/10/02/leccion.html">Clase del Lunes 2023/10/02</a></li>
+  
+<li> <a href="/2023/09/27/leccion.html">Clase del Miércoles 2023/09/27</a></li>
+  
+<li> <a href="/2023/09/25/leccion.html">Clase del Lunes 2023/09/25</a></li>
+  
+<li> <a href="/2023/09/20/leccion.html">Clase del Miércoles 2023/09/20</a></li>
+  
+<li> <a href="/2023/09/17/leccion.html">Clase del Lunes 2023/09/17</a></li>
+  
+<li> <a href="/2023/09/11/leccion.html">Clase del Lunes 2023/09/11</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>
