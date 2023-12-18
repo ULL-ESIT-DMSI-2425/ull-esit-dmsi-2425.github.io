@@ -173,6 +173,13 @@
         "url": "/2023/12/13/leccion.html"
       },
     
+      {
+        "title": "Clase del Lunes 2023/12/18",
+        "excerpt": "Lab Web Development with NextJS\n\n",
+        "content": "Lab Web Development with NextJS\n\nWe continue with the Lab Web Development with NextJS with key nextjs13 in which we will focus on building a web app with the latest versions of Next.js 13 and 14.\n\nCourse and repo links\n\n\n  Next.js 13 Crash Course Tutorial #1 - Introduction &amp; New Features YouTube list by The Net Ninja\n  Repo iamshaunjp/nextjs-masterclass\n\n\nAdvanced Lessons\n\n\n  \n    Intr to Spabase Auth https://netninja.dev/courses/next-13-masterclass/lectures/48541273\n  \n  \n    Setting up a Database &lt;https://netninja.dev/courses/next-13-masterclass/lectures/48541565\n  \n\n\nIntroductory Lessons\n\n\n  Introduction &amp; New Features     https://netninja.dev/courses/next-13-masterclass/lectures/48541140i\n  SSR &amp; Server Components (theory)        https://netninja.dev/courses/next-13-masterclass/lectures/48541141i\n  Pages &amp; Routes  https://netninja.dev/courses/next-13-masterclass/lectures/48541143i\n  Layouts &amp; Links https://netninja.dev/courses/next-13-masterclass/lectures/48541138i\n  Styles, Fonts &amp; Images  https://netninja.dev/courses/next-13-masterclass/lectures/48541142i\n  Fetching Data &amp; Revalidation    https://netninja.dev/courses/next-13-masterclass/lectures/48541146i\n  Dynamic Segments (params)   https://netninja.dev/courses/next-13-masterclass/lectures/48541145i\n  Static Rendering    https://netninja.dev/courses/next-13-masterclass/lectures/48541139i\n  Custom 404 Page     https://netninja.dev/courses/next-13-masterclass/lectures/48541147i\n  Loading UI &amp; Supsense  https://netninja.dev/courses/next-13-masterclass/lectures/48541137i\n  Client Form Component      https://netninja.dev/courses/next-13-masterclass/lectures/48541144i\n  Building the App   https://netninja.dev/courses/next-13-masterclass/lectures/48541136i\n\n\n\n",
+        "url": "/2023/12/18/leccion.html"
+      },
+    
   
   
   

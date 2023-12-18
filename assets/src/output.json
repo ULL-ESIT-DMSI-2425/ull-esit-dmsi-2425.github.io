@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2023/12/18",
+      "date": "December 18, 2023",
+
+      "excerpt": "<h2 id="lab-web-development-with-nextjs">Lab Web Development with NextJS</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2023/12/18/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2023/12/13",
       "date": "December 13, 2023",
 
@@ -197,29 +220,6 @@
       
       
       "url": "/2023/11/08/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2023/11/06",
-      "date": "November 06, 2023",
-
-      "excerpt": "<h2 id="examen-parcial">Examen parcial</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2023/11/06/leccion.html",
        "tags"  : [
         
         ]
