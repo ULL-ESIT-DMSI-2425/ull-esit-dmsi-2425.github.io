@@ -513,7 +513,7 @@
   },
   
   {
-    "title": "DMSI 23/24 Teams. Waiting for the 2024/25 Teams ...",
+    "title": "DMSI 24/25 Teams",
     "excerpt": "\n",
     "content": "{{ page.title}}\n\n{% include teams2.html %}\n\n",
     "url": "/teams.html"
