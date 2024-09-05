@@ -515,7 +515,7 @@
   {
     "title": "DMSI 24/25 Teams",
     "excerpt": "\n",
-    "content": "{{ page.title}}\n\n{% include teams2.html %}\n\n",
+    "content": "{{ page.title}}\n\n{% include teams2.html fake=”alu0100291865” %}\n\n",
     "url": "/teams.html"
   },
   
