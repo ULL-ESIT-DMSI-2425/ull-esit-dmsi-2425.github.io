@@ -634,7 +634,7 @@
   {
     "title": "Prácticas",
     "excerpt": "\n",
-    "content": "Prácticas\n\n{% include practicas.md %}\n",
+    "content": "Prácticas\n\nAntes de proceder a las prácticas deberás rellenar el cuestionario con la relación GitHub/AluXXX\n\n{% include practicas.md %}\n",
     "url": "/practicas.html"
   },
   
