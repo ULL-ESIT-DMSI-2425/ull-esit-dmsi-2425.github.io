@@ -1,10 +1,10 @@
 
     
     {
-      "title": "Clase del Miércoles 2023/12/20",
-      "date": "December 20, 2023",
+      "title": "Clase del Lunes 2024/09/23",
+      "date": "September 23, 2024",
 
-      "excerpt": "<h2 id="lab-web-development-with-nextjs">Lab Web Development with NextJS</h2>
+      "excerpt": "<p>Hoy repasaremos las prácticas:</p>
 
 ",
        "categories"  : [
@@ -12,7 +12,7 @@
         ],
       
       
-      "url": "/2023/12/20/leccion.html",
+      "url": "/2024/09/23/leccion.html",
        "tags"  : [
         
         ]
@@ -24,10 +24,10 @@
 
     
     {
-      "title": "Clase del Lunes 2023/12/18",
-      "date": "December 18, 2023",
+      "title": "Clase del Miércoles 2024/09/18",
+      "date": "September 18, 2024",
 
-      "excerpt": "<h2 id="lab-web-development-with-nextjs">Lab Web Development with NextJS</h2>
+      "excerpt": "<h2 id="prácticas">Prácticas</h2>
 
 ",
        "categories"  : [
@@ -35,7 +35,7 @@
         ],
       
       
-      "url": "/2023/12/18/leccion.html",
+      "url": "/2024/09/18/leccion.html",
        "tags"  : [
         
         ]
@@ -47,179 +47,19 @@
 
     
     {
-      "title": "Clase del Miércoles 2023/12/13",
-      "date": "December 13, 2023",
+      "title": "Clase del Lunes 2024/09/16",
+      "date": "September 16, 2024",
 
-      "excerpt": "<h2 id="xvii-edition-of-the-seminar-latest-advances-in-computing">XVII Edition of the Seminar “Latest Advances in Computing</h2>
-
+      "excerpt": "<ul>
+  <li><a href="/tema0-presentacion/">Presentación de la asignatura</a></li>
+</ul>
 ",
        "categories"  : [
         
         ],
       
       
-      "url": "/2023/12/13/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2023/12/11",
-      "date": "December 11, 2023",
-
-      "excerpt": "<h2 id="labs-que-veremos-en-clase">Labs que veremos en clase</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2023/12/11/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2023/11/29",
-      "date": "November 29, 2023",
-
-      "excerpt": "<h2 id="ausencias-y-foro-de-discussions">Ausencias y Foro de discussions</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2023/11/29/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2023/11/27",
-      "date": "November 27, 2023",
-
-      "excerpt": "<h2 id="ausencias-y-foro-de-discussions">Ausencias y Foro de discussions</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2023/11/27/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2023/11/22",
-      "date": "November 22, 2023",
-
-      "excerpt": "<h2 id="ausencias-y-foro-de-discussions">Ausencias y Foro de discussions</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2023/11/22/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2023/11/20",
-      "date": "November 20, 2023",
-
-      "excerpt": "<h2 id="ausencias-y-foro-de-discussions">Ausencias y Foro de discussions</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2023/11/20/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2023/11/15",
-      "date": "November 15, 2023",
-
-      "excerpt": "<h2 id="ausencias-y-foro-de-discussions">Ausencias y Foro de discussions</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2023/11/15/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2023/11/13",
-      "date": "November 13, 2023",
-
-      "excerpt": "<h2 id="ausencias-y-foro-de-discussions">Ausencias y Foro de discussions</h2>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2023/11/13/leccion.html",
+      "url": "/2024/09/16/leccion.html",
        "tags"  : [
         
         ]
