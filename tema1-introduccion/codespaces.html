@@ -4,21 +4,24 @@
 <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.7.1 -->
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>GitHub CodeSpaces | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
-<meta name="generator" content="Jekyll v3.9.0" />
+<meta name="generator" content="Jekyll v3.9.2" />
 <meta property="og:title" content="GitHub CodeSpaces" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<link rel="canonical" href="http://localhost:4444/tema1-introduccion/codespaces.html" />
+<meta property="og:url" content="http://localhost:4444/tema1-introduccion/codespaces.html" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="GitHub CodeSpaces" />
 <script type="application/ld+json">
-{"url":"/tema1-introduccion/codespaces.html","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"GitHub CodeSpaces","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"GitHub CodeSpaces","url":"http://localhost:4444/tema1-introduccion/codespaces.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=8da8d4db583293dec122a3580e4b4b5147c1c4ab">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f9d3647130afe323f8bbd1fd5cf0147bdde7bf5b">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
 
@@ -111,25 +114,33 @@ If it’s got a browser, it’s now a development environment for your students.
 
 <h2 id="teachers-using-it-in-classroom-assignments">Teachers: Using it in Classroom Assignments</h2>
 
-<p>Go to the classroom config and enable codespaces:</p>
+<p>See <a href="teachers-classroom-codespaces">Setting up Codespaces in GitHub Classroom</a></p>
 
-<p><img src="/assets/images/codespaces-github-classroom-settings.png" alt="" /></p>
+<h2 id="personalizing-your-codespace">Personalizing your Codespace</h2>
 
-<p>Now inside an assignment you can choose codespaces as editor for the students:</p>
+<p>Si quieres personalizar tu Codespace, puedes leer <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account">Personalizing GitHub Codespaces for your account</a>.Puedes personalizar GitHub Codespaces usando</p>
 
-<p><img src="/assets/images/codespaces-github-classroom-assignment.png" alt="" /></p>
+<ol>
+  <li>un <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles">repositorio <code class="language-plaintext highlighter-rouge">dotfiles</code> en GitHub</a> o</li>
+  <li>usando <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync">Settings Sync</a>.</li>
+</ol>
 
-<h2 id="using-it-as-a-user">Using it as a User</h2>
+<p>To speed up codespace creation, you can configure your project to <strong>prebuild codespaces</strong> for specific branches in specific regions. You create and configure prebuilds in your repository’s settings.</p>
 
-<p><img src="/assets/images/codespaces-yours.png" alt="" /></p>
+<ul>
+  <li>Repository-level settings for GitHub Codespaces are available for all repositories owned by personal accounts.</li>
+  <li>For repositories owned by organizations, repository-level settings for GitHub Codespaces are available for organizations on GitHub Team plans that there is the one you get from GH Education as a teacher.</li>
+</ul>
 
-<p>Here is an example working:</p>
+<p>See the documentation at <a href="https://docs.github.com/en/codespaces/prebuilding-your-codespaces">codespaces/prebuilding-your-codespaces</a>.</p>
 
-<p><img src="/assets/images/codespaces-working.png" alt="" /></p>
+<p>A <strong>prebuild</strong> assembles the main components of a codespace for a particular combination of repository, branch, and <code class="language-plaintext highlighter-rouge">devcontainer.json</code> configuration file.</p>
 
-<p>And here an example of your codespaces page:</p>
+<p>It provides a quick way to create a new codespace. For complex and/or large repositories in particular, you can create a new codespace more quickly by using a prebuild.</p>
 
-<p><img src="/assets/images/codespaces-screen.png" alt="" /></p>
+<p>Whenever you push changes to your repository, GitHub Codespaces uses GitHub Actions to automatically update your prebuilds.</p>
+
+<p>See <a href="https://github.com/codespaces-contrib/dotfiles">codespaces-contrib/dotfiles</a> and <a href="https://github.com/crguezl/dotfiles">crguezl/dotfiles</a> (private repo)</p>
 
 
 <!--
@@ -170,6 +181,16 @@ If it’s got a browser, it’s now a development environment for your students.
   </li>
   
 
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ul>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ul>
+  </li>
+  
+
 </ol>
 
 
@@ -181,6 +202,10 @@ If it’s got a browser, it’s now a development environment for your students.
 </h2>
 
 <ol reversed>
+  
+<li> <a href="/2024/09/23/leccion.html">Clase del Lunes 2024/09/23</a></li>
+  
+<li> <a href="/2024/09/18/leccion.html">Clase del Miércoles 2024/09/18</a></li>
   
 <li> <a href="/2024/09/16/leccion.html">Clase del Lunes 2024/09/16</a></li>
   
