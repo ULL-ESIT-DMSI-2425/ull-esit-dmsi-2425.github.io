@@ -1,6 +1,6 @@
-# Curso 24/25 - Desarrollo y Mantenimiento DMSI
+# Curso 23/24 - Desarrollo y Mantenimiento 
 
-## Classes 
+## Classes
 
 {% include clases-impartidas.md %}
 

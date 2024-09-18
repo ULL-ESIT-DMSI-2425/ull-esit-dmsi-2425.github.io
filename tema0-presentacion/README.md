@@ -24,7 +24,7 @@ Véase la sección [guia-docente-evaluacion](guia-docente-evaluacion)
 
 ## Normativa
 
-{% include normativa.md curso="2425" %}
+{% include normativa.md %}
 
 ## Recursos
 
