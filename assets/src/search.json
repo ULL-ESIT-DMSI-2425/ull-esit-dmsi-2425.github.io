@@ -1110,7 +1110,7 @@
   {
     "title": "Curso 24/25 - Desarrollo y Mantenimiento",
     "excerpt": "\n",
-    "content": "Curso 24/25 - Desarrollo y Mantenimiento\n\nClasses\n\n{% include clases-impartidas.md %}\n\nLabs\n\n{% include practicas.md %}\n\n",
+    "content": "Curso 24/25 - Desarrollo y Mantenimiento\n\nClasses 24/25\n\n{% include clases-impartidas.md %}\n\nLabs 24/25\n\n{% include practicas.md %}\n\n",
     "url": "/"
   },
   
