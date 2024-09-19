@@ -8,4 +8,4 @@ touch .nojekyll;
 git add . ;
 git ci -am 'new build 2024/2025'; 
 git push origin master;
-# git push --force dmsi2425 master
+git push dmsi2425 master
