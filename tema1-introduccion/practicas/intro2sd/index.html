@@ -120,6 +120,45 @@
 <p>Para saber más sobre Jekyll y para resolver dudas de esta práctica 
 puede consultar la <a href="/assets/temas/introduccion-a-javascript/jekyll">sección de Jekyll en estos apuntes</a></p>
 
+<h2 id="tips-20242025">Tips 2024/2025</h2>
+
+<p>Abra codespaces en el repositorio de la práctica.</p>
+
+<p>La versión de ruby en 2025 en el docker es</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@crguezl ➜ /workspaces/intro2sd-casiano-rodriguez-leon-alu0100291865 <span class="o">(</span>main<span class="o">)</span> <span class="nv">$ </span>rvm <span class="nb">ls
+   </span>ruby-3.3.2 <span class="o">[</span> x86_64 <span class="o">]</span>
+<span class="o">=</span><span class="k">*</span> ruby-3.3.4 <span class="o">[</span> x86_64 <span class="o">]</span>
+
+<span class="c"># =&gt; - current</span>
+<span class="c"># =* - current &amp;&amp; default</span>
+<span class="c">#  * - default</span>
+</code></pre></div></div>
+<p>Mientras que el template está con la 3.1:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@crguezl ➜ /workspaces/intro2sd-casiano-rodriguez-leon-alu0100291865 <span class="o">(</span>main<span class="o">)</span> <span class="nv">$ </span><span class="nb">cat</span> .rvm
+ruby-3.1
+</code></pre></div></div>
+
+<p>Parece que podemos usar la instalada pero dará un problema en la instalación. Para ello quitemos el <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mv </span>Gemfile.lock Gemfile.lock.3.1
+</code></pre></div></div>
+
+<p>y ejecutemos:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Si todo va bien ejecutamos el servidor:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rake serve
+</code></pre></div></div>
+
+<p>que en ralidad ejecuta el comando:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll s <span class="nt">--watch</span> <span class="nt">--incremental</span> <span class="nt">--future</span> <span class="nt">-V</span> <span class="nt">-P</span> 4001
+</code></pre></div></div>
+
 <h1 id="rúbrica">Rúbrica</h1>
 
 <ul>

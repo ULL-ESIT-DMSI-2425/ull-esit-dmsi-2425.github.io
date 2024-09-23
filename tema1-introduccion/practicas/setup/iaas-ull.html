@@ -98,7 +98,7 @@
     <ul>
       <li>Instale <a href="https://linuxbrew.sh/">linuxbrew</a></li>
       <li>Instale git si es necesario</li>
-      <li><a href="https://git-scm.com/book/es/v1/Empezando-Configurando-Git-por-primera-vez">Configura git</a></li>
+      <li><a href="https://git-scm.com/book/en/v2/GitHub-Account-Setup-and-Configuration">Configura git</a></li>
       <li>Procure que la rama actual aparezca en el prompt de la terminal.
         <ul>
           <li>Puede usar <a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh">git prompt</a></li>
@@ -108,12 +108,78 @@
       </li>
       <li><a href="https://git-scm.com/book/tr/v2/Git-Basics-Git-Aliases">git aliases</a></li>
       <li>Instale <a href="https://github.com/creationix/nvm">nvm</a></li>
-      <li>install nodeJS usando nvm</li>
+      <li>Install nodeJS usando nvm</li>
+      <li>Install GitHub CLI</li>
       <li>etc.</li>
     </ul>
   </li>
 </ul>
 
+<h2 id="tips-course-2425">Tips course 24/25</h2>
+
+<p>The ssh connection with the ull iass machine <strong>only opens when the wifi is activated</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  practicas-alumnos ifconfig en0
+en0: <span class="nv">flags</span><span class="o">=</span>8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+        <span class="nv">options</span><span class="o">=</span>400&lt;CHANNEL_IO&gt;
+        ether f8:ff:c2:2a:30:43
+        inet6 fe80::8d6:eae8:55e3:bdf3%en0 prefixlen 64 secured scopeid 0x6 
+        inet 10.151.45.224 netmask 0xffff0000 broadcast 10.151.255.255
+        nd6 <span class="nv">options</span><span class="o">=</span>201&lt;PERFORMNUD,DAD&gt;
+        media: autoselect
+        status: active
+➜  practicas-alumnos ssh dmsi    
+Welcome to Ubuntu 20.04.3 LTS <span class="o">(</span>GNU/Linux 5.4.0-196-generic x86_64<span class="o">)</span>
+
+ <span class="k">*</span> Documentation:  https://help.ubuntu.com
+ <span class="k">*</span> Management:     https://landscape.canonical.com
+ <span class="k">*</span> Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Sep 23 08:38:45 UTC 2024
+
+  System load:  0.0                Processes:             140
+  Usage of /:   37.5% of 19.52GB   Users logged <span class="k">in</span>:       1
+  Memory usage: 6%                 IPv4 address <span class="k">for </span>ens3: 10.6.131.75
+  Swap usage:   0%
+
+ <span class="k">*</span> Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar <span class="k">for </span>easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+103 updates can be applied immediately.
+To see these additional updates run: apt list <span class="nt">--upgradable</span>
+
+New release <span class="s1">'22.04.5 LTS'</span> available.
+Run <span class="s1">'do-release-upgrade'</span> to upgrade to it.
+
+
+Last login: Mon Sep 23 08:35:49 2024 from 10.151.45.224
+usuario@ubuntu:~<span class="nv">$ </span> 
+</code></pre></div></div>
+
+<p>If you do not know the device name for the Wi-Fi network adapter, on a Mac you can use the following examples:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  apuntes git:(master) ✗ networksetup -getairportpower $(system_profiler SPAirPortDataType | awk -F: '/Interfaces:/{getline; print $1;}')
+Wi-Fi Power (en0): On
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  apuntes git:(master) ✗ ifconfig $(system_profiler SPAirPortDataType | awk -F: '/Interfaces:/{getline; print $1;}') | awk '/status:/{print $2}'
+active
+</code></pre></div></div>
+
+<p>Or we can use <code class="language-plaintext highlighter-rouge">wdutil</code> (Wireless Diagnostics command line utility):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  apuntes git:(master) ✗ wdutil --help
+usage: sudo wdutil diagnose [-q] [-f outputDirectoryPath]
+            -q may be specified to suppress legal prompt and Finder window
+       sudo wdutil info
+       sudo wdutil log [{+|-} {system|wifi}]+
+       sudo wdutil dump
+       sudo wdutil clean
+</code></pre></div></div>
 
 
 <!--
