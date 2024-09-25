@@ -19,7 +19,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"GitHub CodeSpaces","url":"/tema1-introduccion/codespaces.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=40194786890eca51ceff72790a89b3d8501cdbec">
+    <link rel="stylesheet" href="/assets/css/style.css?v=dd24dafc8889a08eef92a630332cc9d07fb296ef">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
 
@@ -184,6 +184,115 @@ If it’s got a browser, it’s now a development environment for your students.
   </li>
   <li>Enable <a href="/tema1-introduccion/gpg">GPG verification</a> in your Codespace</li>
 </ol>
+
+<h3 id="codespace-personalization-troubleshooting">Codespace Personalization: Troubleshooting</h3>
+
+<p>See the docs at <a href="https://docs.github.com/en/codespaces/troubleshooting/troubleshooting-personalization-for-codespaces">Troubleshooting personalization options for GitHub Codespaces</a>.</p>
+
+<p>Check <code class="language-plaintext highlighter-rouge">/workspaces/.codespaces/.persistedshare/dotfiles</code> to see if your <code class="language-plaintext highlighter-rouge">dotfiles</code> were cloned.</p>
+
+<ul>
+  <li>
+    <p>If your <code class="language-plaintext highlighter-rouge">dotfiles</code> were cloned, try manually re-running your install script to verify that it is executable.</p>
+  </li>
+  <li>
+    <p>If your <code class="language-plaintext highlighter-rouge">dotfiles</code> were not cloned, check <code class="language-plaintext highlighter-rouge">/workspaces/.codespaces/.persistedshare/</code></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@casiano-rodriguez ➜ /workspaces <span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-a</span> .codespaces/.persistedshare/<span class="k">*</span>.log
+.codespaces/.persistedshare/creation.log
+@casiano-rodriguez ➜ /workspaces <span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-a</span> .codespaces/.persistedshare/<span class="k">*</span>.txt
+.codespaces/.persistedshare/vsserverhostlog.txt  
+.codespaces/.persistedshare/vsserverterminallog.txt
+</code></pre></div>    </div>
+    <p>The file <code class="language-plaintext highlighter-rouge">.codespaces/.persistedshare/vsserverterminallog.txt</code> contains the output of the terminal including escape codes.</p>
+
+    <p>The file <code class="language-plaintext highlighter-rouge">.codespaces/.persistedshare/vsserverhostlog.txt</code> contains the output of the host.</p>
+  </li>
+  <li>
+    <p>Check <code class="language-plaintext highlighter-rouge">/workspaces/.codespaces/.persistedshare/creation.log</code> for possible issues. For more information, see <a href="https://docs.github.com/en/codespaces/troubleshooting/github-codespaces-logs#creation-logs">Creation logs</a>.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@casiano-rodriguez ➜ /workspaces <span class="nv">$ </span><span class="nb">cat</span> .codespaces/.persistedshare/creation.log
+</code></pre></div>    </div>
+
+    <p>See the <a href="/tema1-introduccion/codespaces-persistedhare-creation-log">output of the previous <code class="language-plaintext highlighter-rouge">cat .codespaces/.persistedshare/creation.log</code> command</a></p>
+  </li>
+</ul>
+
+<p>For instance, I notice that the <code class="language-plaintext highlighter-rouge">.gitconfig</code> file in the dotfiles repositoryis is in <code class="language-plaintext highlighter-rouge">/workspaces/.codespaces/.persistedshare/dotfiles/.gitconfig</code>
+but hasn’t being copied to the home directory (<code class="language-plaintext highlighter-rouge">/home/codespace</code>). 
+So I manually link it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">ln</span> <span class="nt">-s</span> /workspaces/.codespaces/.persistedshare/dotfiles/.gitconfig ~/
+</code></pre></div></div>
+
+<h3 id="the-codespaces-shared-folder">The codespaces shared folder</h3>
+
+<p>The shared folder is located at <code class="language-plaintext highlighter-rouge">/root/.codespaces/shared/</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@casiano-rodriguez ➜ /workspaces/intro2sd-casiano-rodriguez-leon-alu0100291865 <span class="o">(</span>main<span class="o">)</span> <span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-a</span> ../.codespaces/shared
+.environmentConfigurationCompleted  
+devContainerTelemetry.json  
+merged_devcontainer.json  
+unifiedPostCreateOutput.json
+.user-secrets.json                  
+editors                            // folder
+postCreateOutput.json     
+user-secrets-envs.json
+.env          
+codespaceStatusTool.js              
+environment-variables.json  
+read-config.json
+.env-secrets  
+cs-agent.sock                       // a socket
+first-run-notice.txt        
+resource-usage.json
+</code></pre></div></div>
+
+<p>It contains among others the <code class="language-plaintext highlighter-rouge">user-secrets.json</code> file:</p>
+
+<p><code class="language-plaintext highlighter-rouge">➜ /workspaces/dotfiles (main) $ cat ../.codespaces/shared/.user-secrets.json  | jq '.'</code></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EnvironmentVariable"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GITHUB_SERVER_URL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EnvironmentVariable"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GITHUB_API_URL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.github.com"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EnvironmentVariable"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GITHUB_GRAPHQL_URL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.github.com/graphql"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EnvironmentVariable"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GITHUB_TOKEN"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghu_XXXX...XXX"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EnvironmentVariable"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GITHUB_USER"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"casiano-rodriguez"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EnvironmentVariable"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CODESPACES"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EnvironmentVariable"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CODESPACE_NAME"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"studious-potato-blah-blah"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+<p>THE <code class="language-plaintext highlighter-rouge">GH_TOKEN</code> secret does not appear in the <code class="language-plaintext highlighter-rouge">user-secrets.json</code> file.</p>
 
 
 
