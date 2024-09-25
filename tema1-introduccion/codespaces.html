@@ -116,11 +116,12 @@ If it’s got a browser, it’s now a development environment for your students.
 
 <h2 id="personalizing-your-codespace">Personalizing your Codespace</h2>
 
+<!-- ## Personalizing your Codespace -->
 <p>Si quieres personalizar tu Codespace, puedes leer <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account">Personalizing GitHub Codespaces for your account</a>.Puedes personalizar GitHub Codespaces usando</p>
 
 <ol>
-  <li>un <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles">repositorio <code class="language-plaintext highlighter-rouge">dotfiles</code> en GitHub</a> o</li>
-  <li>usando <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync">Settings Sync</a>.</li>
+  <li>Un <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles">repositorio <code class="language-plaintext highlighter-rouge">dotfiles</code> en GitHub</a> o</li>
+  <li>Usando <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync">Settings Sync</a>.</li>
 </ol>
 
 <p>To speed up codespace creation, you can configure your project to <strong>prebuild codespaces</strong> for specific branches in specific regions. You create and configure prebuilds in your repository’s settings.</p>
@@ -141,7 +142,49 @@ If it’s got a browser, it’s now a development environment for your students.
 <p>See <a href="https://github.com/codespaces-contrib/dotfiles">codespaces-contrib/dotfiles</a>, 
 <a href="https://github.com/casiano-rodriguez/dotfiles">casiano-rodriguez/dotfiles</a> and <a href="https://github.com/crguezl/dotfiles">crguezl/dotfiles</a> (the last two are private repos)</p>
 
-<p>Generate a token with admin power (go to https://github.com/settings/tokens) and use it in the <code class="language-plaintext highlighter-rouge">GH_TOKEN</code> secret in the codespace repository settings. See in your https://github.com/settings/codespaces the <strong>Codespace user secrets</strong> section and the section <strong>Dotfiles</strong>. Put all you repos as <strong>Trusted repositories</strong> in the corresponding subsection.</p>
+<h3 id="exercise-personalizing-your-codespace">Exercise: Personalizing your Codespace</h3>
+
+<ol>
+  <li>Generate a token with admin power (go to https://github.com/settings/tokens). Give them superpowers and save it as <code class="language-plaintext highlighter-rouge">admin</code> token</li>
+  <li>Go to your <strong>Codespace user secrets</strong> section  <a href="https://github.com/settings/codespaces">https://github.com/settings/codespaces</a> and
+    <ul>
+      <li>Add a <code class="language-plaintext highlighter-rouge">GH_TOKEN</code> secret in the codespace repository settings. See <a href="https://cli.github.com/manual/gh_help_environment">https://cli.github.com/manual/gh_help_environment</a>.</li>
+      <li>
+        <p>As value use the token you generated in the previous step.</p>
+
+        <p><img src="/assets/images/codespaces-secrets-admin-token.png" alt="/assets/images/codespaces-secrets-admin-token.png" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>Activate the section <strong>Dotfiles</strong>.</li>
+  <li>Create a <code class="language-plaintext highlighter-rouge">dotfiles</code> repository in your GitHub account.
+    <ul>
+      <li><a href="https://github.com/casiano-rodriguez/dotfiles"><img src="/assets/images/codespaces-dotfile.png" alt="assets/images/codespaces-dotfile.png" /></a></li>
+      <li>Copy what you want of your <code class="language-plaintext highlighter-rouge">.gitconfig</code> and <code class="language-plaintext highlighter-rouge">.bashrc</code> files to the <code class="language-plaintext highlighter-rouge">dotfiles</code> repository.</li>
+      <li>
+        <p>Write a <code class="language-plaintext highlighter-rouge">install.sh</code> script that installs your favorite tools. Example:</p>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> gh <span class="nb">alias set cd</span> <span class="s1">'!gh config set current-org "$1" 2&gt;/dev/null'</span>
+ gh <span class="nb">alias set pwd</span> <span class="s1">'!gh config get current-org'</span>
+ <span class="c">#gh extension install github/gh-classroom</span>
+ <span class="c">#gh extension install github/gh-copilot</span>
+ gh extension <span class="nb">install </span>gh-cli-for-education/gh-org-teams
+ gh extension <span class="nb">install </span>crguezl/gh-org-clone
+ <span class="c">#gh extension install crguezl/gh-submodule-add</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Put all you repos as <strong>Trusted repositories</strong> in the corresponding subsection of <a href="https://github.com/settings/codespaces">https://github.com/settings/codespaces</a>.</li>
+  <li>Activate the <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync">Settings Sync</a> section.
+    <ul>
+      <li><img src="/assets/images/codespaces-settings-sync.png" alt="" /></li>
+      <li><a href="https://code.visualstudio.com/docs/editor/settings-sync">Settings Sync section of the Visual Studio Code documentation</a></li>
+    </ul>
+  </li>
+  <li>Enable <a href="/tema1-introduccion/gpg">GPG verification</a> in your Codespace</li>
+</ol>
+
 
 
 <!--

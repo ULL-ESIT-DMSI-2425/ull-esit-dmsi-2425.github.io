@@ -5,6 +5,13 @@
       "date": "September 25, 2024",
 
       "excerpt": "<p>Hoy estudiaremos</p>
+<ol>
+  <li>La sincronización y personalización de <a href="/tema1-introduccion/codespaces#personalizing-your-codespace">Codespaces</a>.</li>
+  <li>Los conceptos para la <a href="/tema1-introduccion/practicas/intro2sd/">práctica de generación de sitios web estáticos</a>.</li>
+  <li>Repositorios de los estudiantes: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=intro2sd&amp;type=all&amp;language=&amp;sort=" target="_blank">intro2sd</a>.</li>
+</ol>
+
+<p>Esta es la rúbrica de la práctica:</p>
 
 ",
        "categories"  : [
