@@ -11,11 +11,11 @@ task :addnewremote do
 end
 
 desc "Publicar fuentes y build"
-task :default => [ :pushhtml ] do
+task :default => [ :pushhtml, :pub2425 ] do
   # remotes: Using the git protocol
   # source   git@github.com:ULL-ESIT-DMSI/ull-esit-dmsi.github.io-source.git 
   # dmsi2425 git@github.com:ULL-ESIT-DMSI-2425/ull-esit-dmsi-2425.github.io.git
-  sh "git ci -am 2425 && git push -u source master && git push -u dmsi2425 master"
+  sh "git ci -am 2425 && git push -u source master"
 end
 
 desc "serve"
@@ -43,7 +43,7 @@ task :rawserve, [:port] => [:b] do |t, args|
   sh "npx http-server ../website -c-1 --port #{ args[:port] or Integer(1000+9000*rand())}"
 end 
 
-desc "Publicar solo fuentes en  dmsi2425"
+desc "Publicar solo fuentes en  dmsi2425 a git@github.com:ULL-ESIT-DMSI-2425/ull-esit-dmsi-2425.github.io-source.git"
 task :pub2425 do
   sh "git ci -am 2425 && git push -u dmsi2425 master"
 end
