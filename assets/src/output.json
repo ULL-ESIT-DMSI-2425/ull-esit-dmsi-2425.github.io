@@ -1,6 +1,30 @@
 
     
     {
+      "title": "Clase del Lunes 2024/10/14",
+      "date": "October 14, 2024",
+
+      "excerpt": "<p>Hoy seguiremos estudiando los conceptos para la <a href="/tema1-introduccion/practicas/intro2sd/">práctica de generación de sitios web estáticos</a>
+y de la <a href="/tema1-introduccion/practicas/jekyll-search/">práctica Jekyll Search</a>.</p>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2024/10/14/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2024/10/09",
       "date": "October 09, 2024",
 
