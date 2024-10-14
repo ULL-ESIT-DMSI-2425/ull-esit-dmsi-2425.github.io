@@ -62,3 +62,8 @@ desc  "Update teams"
 task :teams do 
   sh "scripts/get-teams.sh > _data/teams.json"
 end
+
+desc "Get pages workflows for both ULL-ESIT-DMSI/ull-esit-dmsi.github.io and ULL-ESIT-DMSI-2425/ull-esit-dmsi-2425.github.io"
+task :workflows do
+  sh "scripts/get-workflows.sh"
+end
