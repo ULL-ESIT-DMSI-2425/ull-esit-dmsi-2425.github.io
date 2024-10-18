@@ -5,18 +5,18 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>set-function-length [![Version Badge][npm-version-svg]][package-url] | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Práctica Nextra | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.2" />
-<meta property="og:title" content="set-function-length [![Version Badge][npm-version-svg]][package-url]" />
+<meta property="og:title" content="Práctica Nextra" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="set-function-length [![Version Badge][npm-version-svg]][package-url]" />
+<meta property="twitter:title" content="Práctica Nextra" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"set-function-length [![Version Badge][npm-version-svg]][package-url]","url":"/node_modules/set-function-length/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"Práctica Nextra","url":"/tema1-introduccion/practicas/nextra"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=3b4f9f457b5ac27a03d12e1f4dfcb0df003734f8">
@@ -74,48 +74,36 @@
 
             </div>
 
-            <h1 id="set-function-length-">set-function-length <sup><a href="https://npmjs.org/package/set-function-length"><img src="https://versionbadg.es/ljharb/set-function-length.svg" alt="Version Badge" /></a></sup></h1>
+            <h1 id="práctica-nextra">Práctica Nextra</h1>
 
-<p><a href="https://github.com/ljharb/set-function-length/actions"><img src="https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/ljharb/set-function-length" alt="github actions" /></a>
-<a href="https://app.codecov.io/gh/ljharb/set-function-length/"><img src="https://codecov.io/gh/ljharb/set-function-length/branch/main/graphs/badge.svg" alt="coverage" /></a>
-<a href="/node_modules/set-function-length/LICENSE"><img src="https://img.shields.io/npm/l/set-function-length.svg" alt="License" /></a>
-<a href="https://npm-stat.com/charts.html?package=set-function-length"><img src="https://img.shields.io/npm/dm/set-function-length.svg" alt="Downloads" /></a></p>
+<p><a href="https://nextra.site/docs">Nextra</a> is a framework on top of Next.js, that lets you build content focused websites. It has all the great features from Next.js, plus extra power to create Markdown-based content with ease.</p>
 
-<p><a href="https://npmjs.org/package/set-function-length"><img src="https://nodei.co/npm/set-function-length.png?downloads=true&amp;stars=true" alt="npm badge" /></a></p>
+<p>Cree un web site con nextra siguiendo los tutorial en</p>
 
-<p>Set a function’s length.</p>
-
-<p>Arguments:</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">fn</code>: the function</li>
-  <li><code class="language-plaintext highlighter-rouge">length</code>: the new length. Must be an integer between 0 and 2**32.</li>
-  <li><code class="language-plaintext highlighter-rouge">loose</code>: Optional. If true, and the length fails to be set, do not throw. Default false.</li>
+  <li><a href="https://nextra.site/docs" target="_blank">nextra.site</a>y haga un despliegue en Vercel (haga un fork del repo a su cuenta si es necesario).</li>
+  <li><a href="https://ull-pl.vercel.app/nextra-playground" target="_blank">Learning and Playing with Nextra</a></li>
 </ul>
 
-<p>Returns <code class="language-plaintext highlighter-rouge">fn</code>.</p>
+<p>Deberá leer e incluir en su repo ejemplos como se describen en las secciones</p>
+<ul>
+  <li>Bleed,</li>
+  <li>Callout,</li>
+  <li>Cards,</li>
+  <li>Code Extensions,</li>
+  <li>Expression Evaluation,</li>
+  <li>File Trees,</li>
+  <li>frontmatter,</li>
+  <li>Heroicons,</li>
+  <li>iframe,</li>
+  <li>Markdown import,</li>
+  <li>Mermaid y</li>
+  <li>Using Components  (MDX)</li>
+  <li>useConfig</li>
+</ul>
 
-<h2 id="usage">Usage</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">setFunctionLength</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">set-function-length</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">assert</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">function</span> <span class="nx">zero</span><span class="p">()</span> <span class="p">{}</span>
-<span class="kd">function</span> <span class="nx">one</span><span class="p">(</span><span class="nx">_</span><span class="p">)</span> <span class="p">{}</span>
-<span class="kd">function</span> <span class="nx">two</span><span class="p">(</span><span class="nx">_</span><span class="p">,</span> <span class="nx">__</span><span class="p">)</span> <span class="p">{}</span>
-
-<span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">zero</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">one</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">two</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-
-<span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">setFunctionLength</span><span class="p">(</span><span class="nx">zero</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="nx">zero</span><span class="p">);</span>
-<span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">setFunctionLength</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="nx">one</span><span class="p">);</span>
-<span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">setFunctionLength</span><span class="p">(</span><span class="nx">two</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="nx">two</span><span class="p">);</span>
-
-<span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">zero</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-<span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">one</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="mi">11</span><span class="p">);</span>
-<span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">two</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
-</code></pre></div></div>
-
+<p>del capítulo <a href="https://ull-pl.vercel.app/nextra-playground" target="_blank">Learning and Playing with Nextra</a>
+de los apuntes del profesor.</p>
 
 
 <!--
