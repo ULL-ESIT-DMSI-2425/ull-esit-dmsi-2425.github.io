@@ -68,6 +68,20 @@
         "url": "/2024/10/14/leccion.html"
       },
     
+      {
+        "title": "Clase del Miércoles 2024/10/16",
+        "excerpt": "Hoy seguiremos estudiando los conceptos para la práctica de generación de sitios web estáticos\ny de la práctica Jekyll Search.\n\n",
+        "content": "Hoy seguiremos estudiando los conceptos para la práctica de generación de sitios web estáticos\ny de la práctica Jekyll Search.\n\nRepositorios de los estudiantes\n\nintro2sd.\n\nRúbrica\n\nEsta es la rúbrica de la práctica:\n\n\n  Busca en todos los ficheros, no solo los  de los posts sino también los de las páginas\n  Admite expresiones regulares\n  Los resultados vayan apareciendo conforme tecleamos\n  Se muestra una lista de enlaces a los ficheros que contienen la expresión buscada y un resumen de las primeros caracteres del fichero\n  El constructor de JekyllSearch recibe en un objeto los argumentos en vez de posicionalmente\n  Se ha hecho un resumen del capítulo 2 Lifecycle types and their rationales del libro Developing Information Systems, editado by James Cadle\n  Se ha creado una rama intro2sd para señalar el punto de entrega de la anterior y se hace la entrega de esta tarea en la rama main.\n  Código de la práctica correcto y funciona\n  Informe bien elaborado\n  Kanban Board project conteniendo las incidencias de la rúbrica\n  Ha entregado el .zip en el campus con el repo\n\n\nLab jekyll-search\n\nHere is a summary of some of the concepts we will learn in this lab:\n\n\n  Advanced Liquid. More on Template sLanguage\n  Forms.\n  URL parameters.\n  Query strings.\n  Classes.\n  Promises.\n  Async-Await.\n  Browser History API.\n  Event Listeners.\n  CORS.\n  Caching.\n  Fetch\n\n\nRead carefully the lab Descripción\n\n",
+        "url": "/2024/10/16/leccion.html"
+      },
+    
+      {
+        "title": "Clase del Lunes 2024/10/21",
+        "excerpt": "Hoy seguiremos estudiando los conceptos para la práctica de generación de sitios web estáticos\ny de la práctica Jekyll Search.\n\n",
+        "content": "Hoy seguiremos estudiando los conceptos para la práctica de generación de sitios web estáticos\ny de la práctica Jekyll Search.\n\nRepositorios de los estudiantes\n\nintro2sd.\n\nRúbrica\n\nEsta es la rúbrica de la práctica:\n\n\n  Busca en todos los ficheros, no solo los  de los posts sino también los de las páginas\n  Admite expresiones regulares\n  Los resultados vayan apareciendo conforme tecleamos\n  Se muestra una lista de enlaces a los ficheros que contienen la expresión buscada y un resumen de las primeros caracteres del fichero\n  El constructor de JekyllSearch recibe en un objeto los argumentos en vez de posicionalmente\n  Se ha hecho un resumen del capítulo 2 Lifecycle types and their rationales del libro Developing Information Systems, editado by James Cadle\n  Se ha creado una rama intro2sd para señalar el punto de entrega de la anterior y se hace la entrega de esta tarea en la rama main.\n  Código de la práctica correcto y funciona\n  Informe bien elaborado\n  Kanban Board project conteniendo las incidencias de la rúbrica\n  Ha entregado el .zip en el campus con el repo\n\n\nLab jekyll-search\n\nHere is a summary of some of the concepts we will learn in this lab:\n\n\n  Advanced Liquid. More on Template sLanguage\n  Forms.\n  URL parameters.\n  Query strings.\n  Classes.\n  Promises.\n  Async-Await.\n  Browser History API.\n  Event Listeners.\n  CORS.\n  Caching.\n  Fetch\n\n\nRead carefully the lab Descripción\n\n",
+        "url": "/2024/10/21/leccion.html"
+      },
+    
   
   
   

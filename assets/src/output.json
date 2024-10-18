@@ -1,6 +1,54 @@
 
     
     {
+      "title": "Clase del Lunes 2024/10/21",
+      "date": "October 21, 2024",
+
+      "excerpt": "<p>Hoy seguiremos estudiando los conceptos para la <a href="/tema1-introduccion/practicas/intro2sd/">práctica de generación de sitios web estáticos</a>
+y de la <a href="/tema1-introduccion/practicas/jekyll-search/">práctica Jekyll Search</a>.</p>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2024/10/21/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
+      "title": "Clase del Miércoles 2024/10/16",
+      "date": "October 16, 2024",
+
+      "excerpt": "<p>Hoy seguiremos estudiando los conceptos para la <a href="/tema1-introduccion/practicas/intro2sd/">práctica de generación de sitios web estáticos</a>
+y de la <a href="/tema1-introduccion/practicas/jekyll-search/">práctica Jekyll Search</a>.</p>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2024/10/16/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Lunes 2024/10/14",
       "date": "October 14, 2024",
 
@@ -182,30 +230,6 @@ y de la <a href="/tema1-introduccion/practicas/jekyll-search/">práctica Jekyll 
       
       
       "url": "/2024/09/18/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2024/09/16",
-      "date": "September 16, 2024",
-
-      "excerpt": "<ul>
-  <li><a href="/tema0-presentacion/">Presentación de la asignatura</a></li>
-</ul>
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2024/09/16/leccion.html",
        "tags"  : [
         
         ]
