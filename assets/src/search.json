@@ -130,7 +130,7 @@
   {
     "title": "Práctica Nextra",
     "excerpt": "\n",
-    "content": "Práctica Nextra\n\nNextra is a framework on top of Next.js, that lets you build content focused websites. It has all the great features from Next.js, plus extra power to create Markdown-based content with ease.\n\nCree un web site con nextra siguiendo los tutorial en\n\n\n  nextra.sitey haga un despliegue en Vercel (haga un fork del repo a su cuenta si es necesario).\n  Learning and Playing with Nextra\n\n\nDeberá leer e incluir en su repo ejemplos como se describen en las secciones\n\n  Bleed,\n  Callout,\n  Cards,\n  Code Extensions,\n  Expression Evaluation,\n  File Trees,\n  frontmatter,\n  Heroicons,\n  iframe,\n  Markdown import,\n  Mermaid y\n  Using Components  (MDX)\n  useConfig\n\n\ndel capítulo Learning and Playing with Nextra\nde los apuntes del profesor.\n",
+    "content": "Práctica Nextra\n\nNextra is a framework on top of Next.js, that lets you build content focused websites. It has all the great features from Next.js, plus extra power to create Markdown-based content with ease.\n\nCree un web site con nextra siguiendo los tutorial en\n\n\n  nextra.site.\n  Learning and Playing with Nextra\n\n\nDeberá leer e incluir en su repo ejemplos como se describen en las secciones\n\n  Bleed,\n  Callout,\n  Cards,\n  Code Extensions,\n  Expression Evaluation,\n  File Trees,\n  frontmatter,\n  Heroicons,\n  iframe,\n  Markdown import,\n  Mermaid y\n  Using Components  (MDX)\n  useConfig\n\n\ndel capítulo Learning and Playing with Nextra\nde los apuntes del profesor.\n\nHaga un despliegue en Vercel (haga un fork del repo a su cuenta si es necesario).\n",
     "url": "/tema1-introduccion/practicas/nextra"
   },
   
