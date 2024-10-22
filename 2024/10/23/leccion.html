@@ -5,18 +5,19 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Solución | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Clase del Miércoles 2024/10/23 | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.2" />
-<meta property="og:title" content="Solución" />
+<meta property="og:title" content="Clase del Miércoles 2024/10/23" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
-<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta name="description" content="Videos de clases relacionadas" />
+<meta property="og:description" content="Videos de clases relacionadas" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-10-23T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Solución" />
+<meta property="twitter:title" content="Clase del Miércoles 2024/10/23" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"Solución","url":"/assets/temas/introduccion-a-javascript/event-loop/exercises/promises/load-script/solution.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-10-23T00:00:00+01:00","datePublished":"2024-10-23T00:00:00+01:00","description":"Videos de clases relacionadas","headline":"Clase del Miércoles 2024/10/23","mainEntityOfPage":{"@type":"WebPage","@id":"/2024/10/23/leccion.html"},"url":"/2024/10/23/leccion.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=e2d6a49766829b41baa09b5d656aa25f9954b91e">
@@ -74,52 +75,74 @@
 
             </div>
 
-            <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;script&gt;</span>
-<span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+            <h1>Clase del Miércoles 2024/10/23</h1>
 
-<span class="kd">function</span> <span class="nx">loadScript</span><span class="p">(</span><span class="nx">src</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">script</span><span class="dl">'</span><span class="p">);</span>
-    <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
+<h2 id="videos-de-clases-relacionadas">Videos de clases relacionadas</h2>
 
-    <span class="nx">script</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
-    <span class="nx">script</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">`Script load error for </span><span class="p">${</span><span class="nx">src</span><span class="p">}</span><span class="s2">`</span><span class="p">));</span>
+<h3 id="clase-del-lunes-21102024-implementing-search-in-jekyll">Clase del Lunes 21/10/2024. Implementing search in Jekyll</h3>
 
-    <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
-  <span class="p">});</span>
-<span class="p">}</span>
+<!-- Courtesy of embedresponsively.com //-->
 
-<span class="kd">let</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">loadScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js</span><span class="dl">"</span><span class="p">);</span>
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/7BX6s09gbwk" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
 
-<span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>
-  <span class="nx">script</span> <span class="o">=&gt;</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">script</span><span class="p">.</span><span class="nx">src</span><span class="p">}</span><span class="s2"> is loaded!`</span><span class="p">),</span>
-  <span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">`Error: </span><span class="p">${</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
-<span class="p">);</span>
+<h3 id="clase-del-miércoles-23102023-implementing-search-in-jekyll">Clase del Miércoles 23/10/2023. Implementing search in Jekyll</h3>
 
-<span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">script</span> <span class="o">=&gt;</span> <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Another handler...</span><span class="dl">'</span><span class="p">));</span>
-<span class="nt">&lt;/script&gt;</span>
+<!-- Courtesy of embedresponsively.com //-->
 
-</code></pre></div></div>
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/QUSE4rUhh8o?si=k6KcQ97bHme_q2DO" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<p>Hoy seguiremos estudiando los conceptos para la <a href="/tema1-introduccion/practicas/intro2sd/">práctica de generación de sitios web estáticos</a>
+y de la <a href="/tema1-introduccion/practicas/jekyll-search/">práctica Jekyll Search</a>.</p>
+
+<h2 id="repositorios-de-los-estudiantes">Repositorios de los estudiantes</h2>
+
+<p><a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=intro2sd&amp;type=all&amp;language=&amp;sort=" target="_blank">intro2sd</a>.</p>
+
+<h2 id="rúbrica">Rúbrica</h2>
+
+<p>Esta es la rúbrica de la práctica:</p>
 
 <ul>
-  <li><a href="/assets/temas/introduccion-a-javascript/event-loop/exercises/promises/load-script/index.html">Run the solution</a></li>
+  <li>Busca en todos los ficheros, no solo los  de los posts sino también los de las páginas</li>
+  <li>Admite expresiones regulares</li>
+  <li>Los resultados vayan apareciendo conforme tecleamos</li>
+  <li>Se muestra una lista de enlaces a los ficheros que contienen la expresión buscada y un resumen de las primeros caracteres del fichero</li>
+  <li>El constructor de JekyllSearch recibe en un objeto los argumentos en vez de posicionalmente</li>
+  <li>Se ha hecho un resumen del capítulo 2 Lifecycle types and their rationales del libro <em>Developing Information Systems</em>, editado by James Cadle</li>
+  <li>Se ha creado una rama <code class="language-plaintext highlighter-rouge">intro2sd</code> para señalar el punto de entrega de la anterior y se hace la entrega de esta tarea en la rama <code class="language-plaintext highlighter-rouge">main</code>.</li>
+  <li>Código de la práctica correcto y funciona</li>
+  <li>Informe bien elaborado</li>
+  <li>Kanban Board project conteniendo las incidencias de la rúbrica</li>
+  <li>Ha entregado el .zip en el campus con el repo</li>
 </ul>
 
-<!--
-## Pregunta
+<h2 id="lab-jekyll-search">Lab jekyll-search</h2>
 
-¿Que ocurre si añado el `script` a `document.head`
-  
-```js
-document.head.append(script);
-```
+<p>Here is a summary of some of the concepts we will learn in this lab:</p>
 
-solo cuando se que la promesa se ha cumplido? ¿Qué ocurre?
+<ul>
+  <li>Advanced Liquid. More on Template sLanguage</li>
+  <li>Forms.</li>
+  <li>URL parameters.</li>
+  <li>Query strings.</li>
+  <li>Classes.</li>
+  <li>Promises.</li>
+  <li>Async-Await.</li>
+  <li>Browser History API.</li>
+  <li>Event Listeners.</li>
+  <li>CORS.</li>
+  <li>Caching.</li>
+  <li>Fetch</li>
+</ul>
 
-Observación: Parece que el navegador sólo comienza la carga del script si el elemento HTML creado está vinculado al documento en el momento de la asignación `script.src = src;`
+<p>Read carefully the lab <a href="/tema1-introduccion/practicas/jekyll-search/">Descripción</a></p>
 
--->
+
+
 
 
 <!--
