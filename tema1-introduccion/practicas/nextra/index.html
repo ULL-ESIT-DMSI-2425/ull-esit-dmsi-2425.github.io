@@ -5,18 +5,18 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Descripción de la Práctica gh-cli (REST) | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Práctica Introducción a Nextra | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.2" />
-<meta property="og:title" content="Descripción de la Práctica gh-cli (REST)" />
+<meta property="og:title" content="Práctica Introducción a Nextra" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Descripción de la Práctica gh-cli (REST)" />
+<meta property="twitter:title" content="Práctica Introducción a Nextra" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"Descripción de la Práctica gh-cli (REST)","url":"/tema1-introduccion/practicas/gh-cli/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"Práctica Introducción a Nextra","url":"/tema1-introduccion/practicas/nextra/"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=a5ddbdbf838958b8b132bcca92d5afaa2f5d0c46">
@@ -74,87 +74,76 @@
 
             </div>
 
-            <h1 id="descripción-de-la-práctica-gh-cli-rest">Descripción de la Práctica gh-cli (REST)</h1>
+            <h1 id="práctica-introducción-a-nextra">Práctica Introducción a Nextra</h1>
 
-<h2 id="gh-alias">gh alias</h2>
+<p><a href="https://nextra.site/docs">Nextra</a> is a framework on top of Next.js, that lets you build content focused websites. It has all the great features from Next.js, plus extra power to create Markdown-based content with ease.</p>
 
-<h3 id="gh-create-repo">gh create-repo</h3>
-
-<p>Using <code class="language-plaintext highlighter-rouge">gh api</code> and <code class="language-plaintext highlighter-rouge">gh alias --shell</code> add to <code class="language-plaintext highlighter-rouge">gh</code> 
-an extension <code class="language-plaintext highlighter-rouge">gh create-repo</code> that creates the repo inside the given organization:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gh create-repo tuturepo ULL-ESIT-PL-2021
-$ gh repo view ULL-ESIT-PL-2021/tuturepo -w
-</code></pre></div></div>
-
-<p><img src="/assets/images/create-repo.png" alt="" /></p>
-
-<p>Use the GitHub REST API</p>
-
-<h3 id="gh-delete-repo">gh delete-repo</h3>
-
-<p>The same but with delete:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gh delete-repo tuturepo ULL-ESIT-PL-2021
-</code></pre></div></div>
-
-<p>Then, after issuing the command and refreshing the former page we get:</p>
-
-<p><img src="/assets/images/delete-repo.png" alt="" /></p>
+<p>Cree un web site con nextra siguiendo los tutorial en</p>
 
 <ul>
-  <li>GitHub API doc for <a href="https://docs.github.com/es/rest/reference/repos#delete-a-repository">Delete repository</a></li>
+  <li><a href="https://nextra.site/docs" target="_blank">nextra.site</a>.</li>
+  <li><a href="https://ull-pl.vercel.app/nextra-playground" target="_blank">Learning and Playing with Nextra</a></li>
 </ul>
 
-<h3 id="gh-org-list">gh org-list</h3>
+<p>Deberá leer e incluir en su repo ejemplos como se describen en las secciones</p>
+<ul>
+  <li>Bleed,</li>
+  <li>Callout,</li>
+  <li>Cards,</li>
+  <li>Code Extensions,</li>
+  <li>Expression Evaluation,</li>
+  <li>File Trees,</li>
+  <li>frontmatter,</li>
+  <li>Heroicons,</li>
+  <li>iframe,</li>
+  <li>Markdown import,</li>
+  <li>Mermaid y</li>
+  <li>Using Components  (MDX)</li>
+  <li>useConfig</li>
+</ul>
 
-<p>Escriba un alias que liste todas los nombres y las urls de las organizaciones a las que el usuario pertenece:</p>
+<p>del capítulo <a href="https://ull-pl.vercel.app/nextra-playground" target="_blank">Learning and Playing with Nextra</a>
+de los apuntes del profesor.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  async-await-crguezl git:(main) gh orgs-list | grep -i 'dmsi'
-ULL-ESIT-DMSI-1920
-https://api.github.com/orgs/ULL-ESIT-DMSI-1920
-ULL-ESIT-DMSI-2021
-https://api.github.com/orgs/ULL-ESIT-DMSI-2021
-ULL-ESIT-DMSI-2121
-https://api.github.com/orgs/ULL-ESIT-DMSI-2121
-</code></pre></div></div>
+<p>Haga un despliegue en Vercel (haga un fork del repo a su cuenta si es necesario).</p>
+
+<h2 id="rúbrica">Rúbrica</h2>
 
 <ul>
-  <li>Busque en la sección de la GH API <a href="https://docs.github.com/en/rest/overview/endpoints-available-for-github-apps">Endpoints available for GitHub Apps</a> cual puede serle útil</li>
-  <li>Recuerde hacer uso de <code class="language-plaintext highlighter-rouge">--paginate</code>`</li>
-  <li>Aprenda a usar <a href="/https://tema1-introduccion/jq.html">jq</a> para seleccionar los campos del JSON resultante</li>
+  <li>Contiene ejemplos de Bleed, Callout, Cards, Code Extensions, Expression Evaluation, File Trees, frontmatter, Heroicons, iframe, Markdown import, Mermaid, Using Components (MDX) y useConfig</li>
+  <li>Código de la práctica correcto y funciona</li>
+  <li>Informe bien elaborado</li>
+  <li>Kanban Board project conteniendo las incidencias de la rúbrica</li>
+  <li>Ha entregado el .zip en el campus con el repo</li>
 </ul>
 
-<h2 id="extension">Extension</h2>
+<h2 id="actividad">Actividad</h2>
 
-<p>Write and publish a gh extension using preferably Node.JS. Choose your own idea.
-Choose the functionality you want to implement.</p>
-
-<p>It may be:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">gh-repo-delete [org/repo]</code> that deletes the specified remote repo.</li>
-  <li>Another idea: <code class="language-plaintext highlighter-rouge">gh-repo-rename org/reponame newname</code> changes the name of the repo to <code class="language-plaintext highlighter-rouge">org/newname</code> . See <a href="https://docs.github.com/en/rest/reference/repos#update-a-repository">https://docs.github.com/en/rest/reference/repos#update-a-repository</a></li>
-  <li>Rewriting an existing extension in Node.JS. For example <a href="https://github.com/crguezl/gh-clone-org">crguezl/gh-clone-org</a>
-See an example of how to write a gh extension in Node.JS in <a href="https://github.com/crguezl/gh-submodule-add">crguezl/gh-submodule-add</a></li>
-</ul>
-
-<p><strong>Instructions about the  delivery</strong>:</p>
-
-<p>Create a repo for your extension in a repo <code class="language-plaintext highlighter-rouge">org/gh-my-extension-name</code>  inside the classroom organization. Add that repo as a <code class="language-plaintext highlighter-rouge">git submodule</code> to the repo associated to this lab assignment. Just leave the link to the assignment and extensions repos in the campus virtual</p>
-
-<h2 id="references">References</h2>
-
-<ul>
-  <li><a href="/tema1-introduccion/gh.html">Apuntes de gh</a></li>
-  <li>GitHub API doc for <a href="https://docs.github.com/es/rest/reference/repos#delete-a-repository">Delete repository</a></li>
-  <li>See an example of extension at <a href="https://github.com/crguezl/gh-clone-org">crguezl/gh-clone-org</a></li>
-  <li>GitHub docs for <a href="https://docs.github.com/es/github-cli/github-cli/creating-github-cli-extensions">Creating GitHub CLI extensions</a></li>
-  <li>Here is a list of repos with the topic <code class="language-plaintext highlighter-rouge">gh-extension</code>: <a href="https://github.com/topics/gh-extension">gh-extension</a> list</li>
-  <li><a href="https://docs.github.com/en/graphql/overview/explorer">GitHub GraphQL Playground</a></li>
-  <li><a href="https://www.cloudbees.com/blog/an-introduction-to-graphql-via-the-github-api">An Introduction to GraphQL via the GitHub API</a>  by Derek Haynes</li>
-</ul>
-
+<ol>
+  
+  
+  <!-- a student team --><li>
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-aaron-ramirez-valencia-alu0101438238" target="_blank">Aaron repo </a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-aaron-ramirez-valencia-alu0101438238/commits" target="_blank">Commits</a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-aaron-ramirez-valencia-alu0101438238/graphs/commit-activity" target="_blank"> Commit Activity</a> and
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-aaron-ramirez-valencia-alu0101438238/pulse" target="_blank"> Summary</a>
+        </li>
+     <!-- else is a true multiple member team-->
+  <!-- a student team --><li>
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-alejandro-melian-lemes-alu0101443126" target="_blank">Alejandro repo </a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-alejandro-melian-lemes-alu0101443126/commits" target="_blank">Commits</a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-alejandro-melian-lemes-alu0101443126/graphs/commit-activity" target="_blank"> Commit Activity</a> and
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-alejandro-melian-lemes-alu0101443126/pulse" target="_blank"> Summary</a>
+        </li>
+     <!-- else is a true multiple member team-->
+  <!-- a student team --><li>
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-casiano-rodriguez-leon-alu0100291865" target="_blank">Casiano repo </a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-casiano-rodriguez-leon-alu0100291865/commits" target="_blank">Commits</a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-casiano-rodriguez-leon-alu0100291865/graphs/commit-activity" target="_blank"> Commit Activity</a> and
+          <a href="https://github.com/ull-esit-dmsi-2425/nextra-casiano-rodriguez-leon-alu0100291865/pulse" target="_blank"> Summary</a>
+        </li>
+     <!-- else is a true multiple member team-->
+  </ol>
 
 
 <!--
