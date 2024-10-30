@@ -63,6 +63,11 @@ task :teams do
   sh "scripts/get-teams.sh > _data/teams.json"
 end
 
+desc "get workflows status of ULL-ESIT-DMSI/ull-esit-dmsi.github.io and ULL-ESIT-DMSI-2425/ull-esit-dmsi-2425.github.io"
+task :workflows do
+  sh "scripts/get-workflows.sh"
+end
+
 desc "Get pages workflows for both ULL-ESIT-DMSI/ull-esit-dmsi.github.io and ULL-ESIT-DMSI-2425/ull-esit-dmsi-2425.github.io"
 task :workflows do
   sh "scripts/get-workflows.sh"
