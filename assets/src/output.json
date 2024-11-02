@@ -1,6 +1,29 @@
 
     
     {
+      "title": "Clase del Lunes 2024/11/04",
+      "date": "November 04, 2024",
+
+      "excerpt": "<h2 id="examen-parcial">Examen parcial</h2>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2024/11/04/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del miércoles 2024/10/30",
       "date": "October 30, 2024",
 
@@ -205,29 +228,6 @@ y de la <a href="/tema1-introduccion/practicas/jekyll-search/">práctica Jekyll 
       
       
       "url": "/2024/10/02/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2024/09/30",
-      "date": "September 30, 2024",
-
-      "excerpt": "<p>Hoy seguiremos estudiando los conceptos para la <a href="/tema1-introduccion/practicas/intro2sd/">práctica de generación de sitios web estáticos</a>.</p>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2024/09/30/leccion.html",
        "tags"  : [
         
         ]
