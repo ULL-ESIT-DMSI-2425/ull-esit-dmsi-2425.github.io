@@ -110,6 +110,13 @@
         "url": "/2024/11/04/leccion.html"
       },
     
+      {
+        "title": "Clase del miércoles 2024/11/06",
+        "excerpt": "Hoy seguiremos con \nla práctica Nextra.\n\n",
+        "content": "Hoy seguiremos con \nla práctica Nextra.\n\n\n  Read carefully the lab Nextra Descripción\n  The lab at SYTWS\n  My Nextra notes\n\n\nToday we will continue from the section Quick Start from Template\n\nRepositorios de los estudiantes\n\n\n  nextra.\n\n\nRúbricas\n\n\n  Contiene ejemplos de Bleed,\n  Callout,\n  Cards,\n  Code Extensions,\n  Expression Evaluation,\n  File Trees,\n  frontmatter,\n  Heroicons,\n  iframe,\n  Markdown import,\n  Mermaid,\n  Using Components (MDX) y\n  useConfig\n  Ha hecho un despliegue en Vercel\n  Ha hecho un fork the nextra y se ha familiarizado con el concepto de monorepo\n  Código de la práctica correcto y funciona\n  Informe bien elaborado\n  Kanban Board project conteniendo las incidencias de la rúbrica\n  Ha entregado el .zip en el campus con el repo\n\n\n",
+        "url": "/2024/11/06/leccion.html"
+      },
+    
   
   
   
