@@ -5,23 +5,28 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>ECMA5 OOP | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Clase del Miércoles 2024/11/13 | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.2" />
-<meta property="og:title" content="ECMA5 OOP" />
+<meta property="og:title" content="Clase del Miércoles 2024/11/13" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
-<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta name="description" content="Hoy seguiremos con la práctica Nextra." />
+<meta property="og:description" content="Hoy seguiremos con la práctica Nextra." />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-11-13T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="ECMA5 OOP" />
+<meta property="twitter:title" content="Clase del Miércoles 2024/11/13" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"ECMA5 OOP","url":"/assets/temas/introduccion-a-javascript/oop.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-13T00:00:00+00:00","datePublished":"2024-11-13T00:00:00+00:00","description":"Hoy seguiremos con la práctica Nextra.","headline":"Clase del Miércoles 2024/11/13","mainEntityOfPage":{"@type":"WebPage","@id":"/2024/11/13/leccion.html"},"url":"/2024/11/13/leccion.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=3905425592b27799c1a0e5c80de68d4133fb2a56">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/assets/js/respond.js"></script>
+
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -36,14 +41,12 @@
     <div id="header">
         <nav>
         <ul>
-            <li class="fork"><a href="https://github.com/ULL-ESIT-DMSI/ull-esit-dmsi.github.io target="_blank">Rep</a></li>
             <li><a href="/search">Search</a></li>
-            <li><a href="/resources.html">Rec</a></li>
+            <li><a href="https://ull-pl.vercel.app/resources" target="_blank">Rec</a></li>
             <li><a href="/timetables.html">Hor</a></li>
             <li><a href="/references.html">Refs</a></li>
             <li><a href="/clases.html">Clases</a></li>
             <li><a href="/practicas.html">Prácticas </a></li> 
-            <li><a href="/temas.html">Temas</a></li>
             <li><a href="/index.html">DMSI</a></li>
             
         </ul>
@@ -59,56 +62,71 @@
                 <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
                 <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
                 <hr>
-                <span class="credits left">Organization <a href="https://github.com/ULL-ESIT-DMSI" target="_blank">DMSI org</a></span>
-                <span class="credits left"> &nbsp; Github Classroom <a href="https://classroom.github.com/classrooms/53047616-ull-esit-dmsi-1920-classroom" target="_blank">DMSI class</a></span>
-                <span class="credits left"> &nbsp; Campus Virtual <a href="https://campusingenieriaytecnologia2122.ull.es/course/view.php?id=2122090053" target="_blank">DMSI campus</a></span>
-                <span class="credits left"> &nbsp; Profesor <a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/815/crguezl/" target="_blank">Casiano</a></span>
-                <span class="credits left"> &nbsp; Chat <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+                <span class="credits left"> <a href="https://github.com/ULL-ESIT-DMSI-2425" target="_blank">GH Org</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/ULL-ESIT-DMSI" target="_blank">GH Template Org</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://classroom.github.com/classrooms/176799893-ull-esit-dmsi-2425" target="_blank">GitHub Classroom</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/discussions" target="_blank">Discussions</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://campusingenieriaytecnologia2425.ull.es/course/view.php?id=2425090032" target="_blank">Campus ULL</a></span>
+                <span class="credits left"> &nbsp; - <a href="/teams" target="_blank">Students Activity</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://meet.google.com/apb-imai-hsq" target="_blank">Google Meet</a></span>
+                <!-- https://www.ull.es/apps/guias/guias/view_guide_course/2425/139264413/3/ -->
 
             </div>
 
-            <h3 id="ecma5-oop">ECMA5 OOP</h3>
+            <h1>Clase del Miércoles 2024/11/13</h1>
 
-<h4 id="the-secret-life-of-objects">The Secret Life of Objects</h4>
-
-<ul>
-  <li><a href="https://github.com/ULL-ESIT-DSI-1617/oop-eloquentjs-example">Repo ULL-ESIT-DSI-1617/oop-eloquentjs-example</a> conteniendo el ejemplo “Laying out a table” del <em>Chapter 6: The Secret Life of Objects</em></li>
-  <li><a href="https://github.com/fhdhsni/The-Secret-Life-of-Objects">The Secret Life of Objects example explained</a></li>
-  <li><a href="https://jsfiddle.net/casiano/Mw9dW/">jsfiddle ilustrativo</a></li>
-</ul>
-
-<h4 id="project-electronic-life">Project Electronic Life</h4>
+<p>Hoy seguiremos con 
+la práctica <a href="/tema1-introduccion/practicas/nextra/">Nextra</a>.</p>
 
 <ul>
-  <li>OOP in JavaScript in ECMA5. <a href="https://eloquentjavascript.net/index.html">Eloquent JS 2nd Edition</a>: <a href="https://eloquentjavascript.net/2nd_edition/07_elife.html">Project: Electronic Life</a>
-    <ul>
-      <li><a href="https://github.com/ULL-ESIT-MII-CA-1718?utf8=%E2%9C%93&amp;q=electronic&amp;type=&amp;language=">Repos Electronic Life in ULL-ESIT-MII-CA-1718</a></li>
-      <li>Emojis
-        <ul>
-          <li><a href="https://github.com/iamcal/js-emoji">js-emoji</a></li>
-          <li><a href="https://emojipedia.org">emojipedia</a></li>
-          <li><a href="https://github.com/ULL-ESIT-MII-CA-1718/emoji-js">Ejemplo sencillo ULL-ESIT-MII-CA-1718/emoji-js</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li>Read carefully the lab Nextra <a href="/tema1-introduccion/practicas/nextra/">Descripción</a></li>
+  <li>The lab at <a href="https://ull-mii-sytws.github.io/practicas/nextra.html">SYTWS</a></li>
+  <li><a href="https://ull-mii-sytws.github.io/temas/web/nextra/">My Nextra notes</a></li>
 </ul>
 
-<h3 id="herencia">Herencia</h3>
+<p>Today we will continue from the section <a href="https://ull-mii-sytws.github.io/temas/web/nextra/first-steps.html#quick-start-from-template">Quick Start from Template</a></p>
+
+<h2 id="repositorios-de-los-estudiantes">Repositorios de los estudiantes</h2>
 
 <ul>
-  <li><a href="https://github.com/SYTW/js-inheritance-examples">Repo con ejemplos de Herencia</a></li>
-  <li><a href="https://crguezl.github.io/pl-html/node9.html">Tutorial Conversor de Temperaturas (gh-pages en GitHub)</a></li>
-  <li><a href="https://github.com/ULL-ESIT-GRADOII-PL/ull-etsii-grado-pl-1213-temperature-converter">Repo ULL-ESIT-GRADOII-PL/ull-etsii-grado-pl-1213-temperature-converter</a></li>
+  <li><a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=nextra&amp;type=all&amp;language=&amp;sort=" target="_blank">nextra</a>.</li>
 </ul>
 
-<h3 id="ecma6-oop">ECMA6 OOP</h3>
+<h2 id="rúbricas">Rúbricas</h2>
 
 <ul>
-  <li>OOP in JavaScript in Ecma6. <a href="https://eloquentjavascript.net/index.html">Eloquent JS</a>: <a href="https://eloquentjavascript.net/06_object.html">The Secret Life of Objects</a></li>
-  <li><a href="https://code.tutsplus.com/tutorials/ecmascript-6-power-tutorial-class-and-inheritance--cms-24117">ECMAScript 6 Power Tutorial: Class and Inheritance</a></li>
-  <li><a href="https://www.sitepoint.com/object-oriented-javascript-deep-dive-es6-classes/">Object-Oriented JavaScript — A Deep Dive into ES6 Classes</a></li>
+  <li>Contiene ejemplos de Bleed,</li>
+  <li>Banner,</li>
+  <li>Callout,</li>
+  <li>Cards,</li>
+  <li>Code Extensions,</li>
+  <li>Expression Evaluation,</li>
+  <li>File Trees,</li>
+  <li>frontmatter,</li>
+  <li>Heroicons,</li>
+  <li>iframe,</li>
+  <li>Markdown import,</li>
+  <li>Mermaid,</li>
+  <li>Using Components (MDX)</li>
+  <li>useState</li>
+  <li>useConfig</li>
+  <li>useSWR</li>
+  <li>useConfig</li>
+  <li>Uses <code class="language-plaintext highlighter-rouge">@</code> to import components</li>
+  <li>Uses getStaticProps to make a fetch at build time</li>
+  <li>Has a hello world  on the server side using pages/api/hello.js</li>
+  <li>Ha hecho un despliegue en Vercel</li>
+  <li>Ha hecho un fork the nextra y se ha familiarizado con el concepto de monorepo</li>
+  <li>Código de la práctica correcto y funciona</li>
+  <li>Informe bien elaborado</li>
+  <li>Kanban Board project conteniendo las incidencias de la rúbrica</li>
+  <li>Ha entregado el .zip en el campus con el repo</li>
 </ul>
+
+
+
 
 
 <!--
