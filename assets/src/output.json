@@ -1,6 +1,30 @@
 
     
     {
+      "title": "Clase del Miércoles 2024/11/20",
+      "date": "November 20, 2024",
+
+      "excerpt": "<p>Hoy seguiremos con 
+la práctica <a href="/tema1-introduccion/practicas/nextra/">Nextra</a>.</p>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2024/11/20/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Lunes 2024/11/18",
       "date": "November 18, 2024",
 
@@ -207,30 +231,6 @@ la práctica <a href="/tema1-introduccion/practicas/nextra/">Nextra</a>.</p>
       
       
       "url": "/2024/10/21/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Miércoles 2024/10/16",
-      "date": "October 16, 2024",
-
-      "excerpt": "<p>Hoy seguiremos estudiando los conceptos para la <a href="/tema1-introduccion/practicas/intro2sd/">práctica de generación de sitios web estáticos</a>
-y de la <a href="/tema1-introduccion/practicas/jekyll-search/">práctica Jekyll Search</a>.</p>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2024/10/16/leccion.html",
        "tags"  : [
         
         ]

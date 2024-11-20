@@ -5,18 +5,19 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>has-flag | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<title>Clase del Miércoles 2024/11/20 | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
 <meta name="generator" content="Jekyll v3.9.2" />
-<meta property="og:title" content="has-flag" />
+<meta property="og:title" content="Clase del Miércoles 2024/11/20" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
-<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta name="description" content="Hoy seguiremos con la práctica Nextra." />
+<meta property="og:description" content="Hoy seguiremos con la práctica Nextra." />
 <meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-11-20T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="has-flag" />
+<meta property="twitter:title" content="Clase del Miércoles 2024/11/20" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"has-flag","url":"/node_modules/has-flag/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-20T00:00:00+00:00","datePublished":"2024-11-20T00:00:00+00:00","description":"Hoy seguiremos con la práctica Nextra.","headline":"Clase del Miércoles 2024/11/20","mainEntityOfPage":{"@type":"WebPage","@id":"/2024/11/20/leccion.html"},"url":"/2024/11/20/leccion.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=8aa9aeb4b26ad6566d230d70dc86cf37a105924f">
@@ -74,89 +75,85 @@
 
             </div>
 
-            <h1 id="has-flag-">has-flag <a href="https://travis-ci.org/sindresorhus/has-flag"><img src="https://travis-ci.org/sindresorhus/has-flag.svg?branch=master" alt="Build Status" /></a></h1>
+            <h1>Clase del Miércoles 2024/11/20</h1>
 
-<blockquote>
-  <p>Check if <a href="https://nodejs.org/docs/latest/api/process.html#process_process_argv"><code class="language-plaintext highlighter-rouge">argv</code></a> has a specific flag</p>
-</blockquote>
+<p>Hoy seguiremos con 
+la práctica <a href="/tema1-introduccion/practicas/nextra/">Nextra</a>.</p>
 
-<p>Correctly stops looking after an <code class="language-plaintext highlighter-rouge">--</code> argument terminator.</p>
+<ul>
+  <li>Read carefully the lab Nextra <a href="/tema1-introduccion/practicas/nextra/">Descripción</a></li>
+  <li>The lab at <a href="https://ull-mii-sytws.github.io/practicas/nextra.html">SYTWS</a></li>
+  <li><a href="https://ull-mii-sytws.github.io/temas/web/nextra/">My Nextra notes</a></li>
+</ul>
 
-<hr />
+<p>Today we will continue from the section <a href="https://ull-mii-sytws.github.io/temas/web/nextra/first-steps.html#quick-start-from-template">Quick Start from Template</a></p>
 
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-has-flag?utm_source=npm-has-flag&amp;utm_medium=referral&amp;utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br />
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br />assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
+<h2 id="nuevos-requisitos">Nuevos Requisitos</h2>
 
-<hr />
+<p>En la rúbrica añadimos los siguientes requisitos:</p>
 
-<h2 id="install">Install</h2>
+<ul>
+  <li>useConfig</li>
+  <li>useSWR</li>
+  <li>useConfig</li>
+  <li>Uses <code class="language-plaintext highlighter-rouge">@</code> to import components</li>
+  <li>Uses <code class="language-plaintext highlighter-rouge">getStaticProps</code> to make a fetch at build time</li>
+  <li>Uses <code class="language-plaintext highlighter-rouge">useEffect</code> to make a fetch at runtime</li>
+  <li>Has a hello world  on the server side using <code class="language-plaintext highlighter-rouge">pages/api/hello.js</code></li>
+  <li>Has an example of Next.js middleware usage</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install has-flag
-</code></pre></div></div>
+<h2 id="temas">Temas</h2>
 
-<h2 id="usage">Usage</h2>
+<ul>
+  <li>https://ull-mii-sytws.github.io/temas/web/express.html#middleware</li>
+  <li>https://ull-mii-sytws.github.io/temas/web/nextra/swr/</li>
+  <li>https://ull-mii-sytws.github.io/react/intro/</li>
+  <li>https://ull-pl.vercel.app/nextra-playground/clientComponent</li>
+  <li>https://ull-mii-sytws.github.io/next-auth-getting-started/</li>
+</ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// foo.js</span>
-<span class="kd">const</span> <span class="nx">hasFlag</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">has-flag</span><span class="dl">'</span><span class="p">);</span>
+<h2 id="repositorios-de-los-estudiantes">Repositorios de los estudiantes</h2>
 
-<span class="nx">hasFlag</span><span class="p">(</span><span class="dl">'</span><span class="s1">unicorn</span><span class="dl">'</span><span class="p">);</span>
-<span class="c1">//=&gt; true</span>
+<ul>
+  <li><a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=nextra&amp;type=all&amp;language=&amp;sort=" target="_blank">nextra</a>.</li>
+</ul>
 
-<span class="nx">hasFlag</span><span class="p">(</span><span class="dl">'</span><span class="s1">--unicorn</span><span class="dl">'</span><span class="p">);</span>
-<span class="c1">//=&gt; true</span>
+<h2 id="rúbricas">Rúbricas</h2>
 
-<span class="nx">hasFlag</span><span class="p">(</span><span class="dl">'</span><span class="s1">f</span><span class="dl">'</span><span class="p">);</span>
-<span class="c1">//=&gt; true</span>
+<ul>
+  <li>Contiene ejemplos de Bleed,</li>
+  <li>Banner,</li>
+  <li>Callout,</li>
+  <li>Cards,</li>
+  <li>Code Extensions,</li>
+  <li>Expression Evaluation,</li>
+  <li>File Trees,</li>
+  <li>frontmatter,</li>
+  <li>Heroicons,</li>
+  <li>iframe,</li>
+  <li>Markdown import,</li>
+  <li>Mermaid,</li>
+  <li>Using Components (MDX)</li>
+  <li>useState</li>
+  <li>useConfig</li>
+  <li>useSWR</li>
+  <li>useConfig</li>
+  <li>Uses <code class="language-plaintext highlighter-rouge">@</code> to import components</li>
+  <li>Uses getStaticProps to make a fetch at build time</li>
+  <li>Uses useEffect to make a fetch at runtime</li>
+  <li>Has a hello world  on the server side using pages/api/hello.js</li>
+  <li>Has an example of Next.js middleware usage</li>
+  <li>Ha hecho un despliegue en Vercel</li>
+  <li>Ha hecho un fork the nextra y se ha familiarizado con el concepto de monorepo</li>
+  <li>Código de la práctica correcto y funciona</li>
+  <li>Informe bien elaborado</li>
+  <li>Kanban Board project conteniendo las incidencias de la rúbrica</li>
+  <li>Ha entregado el .zip en el campus con el repo</li>
+</ul>
 
-<span class="nx">hasFlag</span><span class="p">(</span><span class="dl">'</span><span class="s1">-f</span><span class="dl">'</span><span class="p">);</span>
-<span class="c1">//=&gt; true</span>
 
-<span class="nx">hasFlag</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo=bar</span><span class="dl">'</span><span class="p">);</span>
-<span class="c1">//=&gt; true</span>
 
-<span class="nx">hasFlag</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">);</span>
-<span class="c1">//=&gt; false</span>
-
-<span class="nx">hasFlag</span><span class="p">(</span><span class="dl">'</span><span class="s1">rainbow</span><span class="dl">'</span><span class="p">);</span>
-<span class="c1">//=&gt; false</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ node foo.js -f --unicorn --foo=bar -- --rainbow
-</code></pre></div></div>
-
-<h2 id="api">API</h2>
-
-<h3 id="hasflagflag-argv">hasFlag(flag, [argv])</h3>
-
-<p>Returns a boolean for whether the flag exists.</p>
-
-<h4 id="flag">flag</h4>
-
-<p>Type: <code class="language-plaintext highlighter-rouge">string</code></p>
-
-<p>CLI flag to look for. The <code class="language-plaintext highlighter-rouge">--</code> prefix is optional.</p>
-
-<h4 id="argv">argv</h4>
-
-<p>Type: <code class="language-plaintext highlighter-rouge">string[]</code><br />
-Default: <code class="language-plaintext highlighter-rouge">process.argv</code></p>
-
-<p>CLI arguments.</p>
-
-<h2 id="security">Security</h2>
-
-<p>To report a security vulnerability, please use the <a href="https://tidelift.com/security">Tidelift security contact</a>. Tidelift will coordinate the fix and disclosure.</p>
-
-<h2 id="license">License</h2>
-
-<p>MIT © <a href="https://sindresorhus.com">Sindre Sorhus</a></p>
 
 
 <!--
