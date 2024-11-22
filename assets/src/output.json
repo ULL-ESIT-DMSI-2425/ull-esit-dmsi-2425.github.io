@@ -1,6 +1,30 @@
 
     
     {
+      "title": "Clase del Lunes 2024/11/25",
+      "date": "November 25, 2024",
+
+      "excerpt": "<p>Hoy seguiremos con 
+la práctica <a href="/tema1-introduccion/practicas/nextra/">Nextra</a>.</p>
+
+",
+       "categories"  : [
+        
+        ],
+      
+      
+      "url": "/2024/11/25/leccion.html",
+       "tags"  : [
+        
+        ]
+      
+      
+    }
+
+    ,
+
+    
+    {
       "title": "Clase del Miércoles 2024/11/20",
       "date": "November 20, 2024",
 
@@ -203,34 +227,6 @@ la práctica <a href="/tema1-introduccion/practicas/nextra/">Nextra</a>.</p>
       
       
       "url": "/2024/10/23/leccion.html",
-       "tags"  : [
-        
-        ]
-      
-      
-    }
-
-    ,
-
-    
-    {
-      "title": "Clase del Lunes 2024/10/21",
-      "date": "October 21, 2024",
-
-      "excerpt": "
-<!-- Courtesy of embedresponsively.com //-->
-
-<div class="responsive-video-container">
-    <iframe src="https://www.youtube-nocookie.com/embed/7BX6s09gbwk" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-  </div>
-
-",
-       "categories"  : [
-        
-        ],
-      
-      
-      "url": "/2024/10/21/leccion.html",
        "tags"  : [
         
         ]

@@ -145,6 +145,13 @@
         "url": "/2024/11/20/leccion.html"
       },
     
+      {
+        "title": "Clase del Lunes 2024/11/25",
+        "excerpt": "Hoy seguiremos con \nla práctica Nextra.\n\n",
+        "content": "Hoy seguiremos con \nla práctica Nextra.\n\n\n  Read carefully the lab Nextra Descripción\n  The lab at SYTWS\n  My Nextra notes\n\n\nToday we will continue from the section Quick Start from Template\n\nNuevos Requisitos\n\nEn la rúbrica añadimos los siguientes requisitos:\n\n\n  useConfig\n  useSWR\n  useConfig\n  Uses @ to import components\n  Uses getStaticProps to make a fetch at build time\n  Uses useEffect to make a fetch at runtime\n  Has a hello world  on the server side using pages/api/hello.js\n  Has an example of Next.js middleware usage\n\n\nTemas\n\n\n  https://ull-mii-sytws.github.io/temas/web/express.html#middleware para ver middleware\n  https://ull-mii-sytws.github.io/temas/web/nextra/swr/ para ver useSWR\n  https://ull-mii-sytws.github.io/react/intro/ para ver useState y useEffect\n  https://ull-pl.vercel.app/nextra-playground/clientComponent para ver useEffect\n  https://ull-mii-sytws.github.io/next-auth-getting-started/\n\n\nRepositorios de los estudiantes\n\n\n  nextra.\n\n\nRúbricas\n\n\n  Contiene ejemplos de Bleed,\n  Banner,\n  Callout,\n  Cards,\n  Code Extensions,\n  Expression Evaluation,\n  File Trees,\n  frontmatter,\n  Heroicons,\n  iframe,\n  Markdown import,\n  Mermaid,\n  Using Components (MDX)\n  useState\n  useConfig\n  useSWR\n  useConfig\n  Uses @ to import components\n  Uses getStaticProps to make a fetch at build time\n  Uses useEffect to make a fetch at runtime\n  Has a hello world  on the server side using pages/api/hello.js\n  Has an example of Next.js middleware usage\n  Ha hecho un despliegue en Vercel\n  Ha hecho un fork the nextra y se ha familiarizado con el concepto de monorepo\n  Código de la práctica correcto y funciona\n  Informe bien elaborado\n  Kanban Board project conteniendo las incidencias de la rúbrica\n  Ha entregado el .zip en el campus con el repo\n\n\n",
+        "url": "/2024/11/25/leccion.html"
+      },
+    
   
   
   
