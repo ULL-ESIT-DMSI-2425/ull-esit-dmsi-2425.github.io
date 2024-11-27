@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Desarrollo y Mantenimiento de Sistemas Informáticos | 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"Desarrollo y Mantenimiento de Sistemas Informáticos","url":"/tema1-introduccion/practicas/nextjs-intro"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=f2bd09c41506472594bbc0082383304b1c5c8959">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="https://ull-pl.vercel.app/resources" target="_blank">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left"> <a href="https://github.com/ULL-ESIT-DMSI-2425" target="_blank">GH Org</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/ULL-ESIT-DMSI" target="_blank">GH Template Org</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://classroom.github.com/classrooms/176799893-ull-esit-dmsi-2425" target="_blank">GitHub Classroom</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/discussions" target="_blank">Discussions</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://campusingenieriaytecnologia2425.ull.es/course/view.php?id=2425090032" target="_blank">Campus ULL</a></span>
+                <span class="credits left"> &nbsp; - <a href="/teams" target="_blank">Students Activity</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://meet.google.com/apb-imai-hsq" target="_blank">Google Meet</a></span>
+                <!-- https://www.ull.es/apps/guias/guias/view_guide_course/2425/139264413/3/ -->
+
+            </div>
+
+            <ul>
+  <li><a href="#práctica-introducción-a-nextjs">Práctica Introducción a Next.js</a>
+    <ul>
+      <li><a href="#v0-answer-to-questions-about-making-a-request-to-github-from-a-nextjs-program">v0 Answer to questions about making a request to GitHub from a Next.js program</a></li>
+      <li><a href="#code-for-file-pagesuserusernametsx">Code for file <code class="language-plaintext highlighter-rouge">pages/user/[username].tsx</code></a></li>
+      <li><a href="#code-for-pagesapigithub-reposusernamets">Code for <code class="language-plaintext highlighter-rouge">pages/api/github-repos/[username].ts</code></a></li>
+      <li><a href="#code-for-pagesindextsx">Code for <code class="language-plaintext highlighter-rouge">pages/index.tsx</code></a></li>
+      <li><a href="#explanations-by-v0">Explanations by v0</a></li>
+      <li><a href="#claude-ais-answer-to-explain-getserversideprops-from-nextjs">Claude AI’s Answer to <em>Explain getserversideprops from next.js</em></a></li>
+      <li><a href="#rúbrica">Rúbrica</a></li>
+      <li><a href="#actividad">Actividad</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="práctica-introducción-a-nextjs">Práctica Introducción a Next.js</h1>
+
+<p>You must reproduce the example taught during the class <a href="/2024/11/27/leccion.html">2024-11-27</a> 
+using <a href="https://v0.dev/">v0.dev</a> and <a href="https://claude.ai">Claude AI</a>.</p>
+
+<h2 id="v0-answer-to-questions-about-making-a-request-to-github-from-a-nextjs-program">v0 Answer to questions about making a request to GitHub from a Next.js program</h2>
+
+<p><strong>Question</strong>: <em>I have a server side next.js function and I want to access the variables in the <code class="language-plaintext highlighter-rouge">path</code> of a request to GitHub REST api  like in <code class="language-plaintext highlighter-rouge">https://api.github.com/users/${username}/repos</code>?</em>1.</p>
+
+<p>Here is the answer from <a href="https://v0.dev">v0.dev</a></p>
+
+<hr />
+
+<p>I can help you with accessing variables in the path of a GitHub REST API request within a server-side Next.js function. This is a common pattern when working with dynamic API endpoints. Let’s break this down step by step:</p>
+
+<p>Here’s an example of how you can create a server-side function in Next.js that accesses the <code class="language-plaintext highlighter-rouge">username</code> variable in the path of a GitHub REST API request:</p>
+
+<p><strong>Folder Hierarchy</strong></p>
+
+<p><img src="/assets/images/nextjs/serversidefetch.png" alt="" /></p>
+
+<h2 id="code-for-file-pagesuserusernametsx">Code for file <code class="language-plaintext highlighter-rouge">pages/user/[username].tsx</code></h2>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">GetServerSideProps</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span>
+
+<span class="kr">interface</span> <span class="nx">Repo</span> <span class="p">{</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">html_url</span><span class="p">:</span> <span class="kr">string</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
+  <span class="nl">repos</span><span class="p">:</span> <span class="nx">Repo</span><span class="p">[]</span>
+  <span class="nx">username</span><span class="p">:</span> <span class="kr">string</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">getServerSideProps</span><span class="p">:</span> <span class="nx">GetServerSideProps</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">params</span><span class="p">?.</span><span class="nx">username</span> <span class="k">as</span> <span class="kr">string</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NEXT_PUBLIC_API_URL</span><span class="p">}</span><span class="s2">/api/github-repos/</span><span class="p">${</span><span class="nx">username</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Failed to fetch repos</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">const</span> <span class="na">repos</span><span class="p">:</span> <span class="nx">Repo</span><span class="p">[]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nx">repos</span><span class="p">,</span>
+        <span class="nx">username</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error in getServerSideProps:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">repos</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nx">username</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">UserRepos</span><span class="p">({</span> <span class="nx">repos</span><span class="p">,</span> <span class="nx">username</span> <span class="p">}:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"mt-4"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">className</span><span class="p">=</span><span class="s">"text-xl font-semibold mb-2"</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">username</span><span class="si">}</span>'s Repositories<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="nx">repos</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">className</span><span class="p">=</span><span class="s">"list-disc pl-5"</span><span class="p">&gt;</span>
+          <span class="si">{</span><span class="nx">repos</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">repo</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">repo</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span> <span class="na">className</span><span class="p">=</span><span class="s">"mb-1"</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="nx">repo</span><span class="p">.</span><span class="nx">html_url</span><span class="si">}</span> <span class="na">target</span><span class="p">=</span><span class="s">"_blank"</span> <span class="na">rel</span><span class="p">=</span><span class="s">"noopener noreferrer"</span> <span class="na">className</span><span class="p">=</span><span class="s">"text-blue-500 hover:underline"</span><span class="p">&gt;</span>
+                <span class="si">{</span><span class="nx">repo</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span>
+              <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">))</span><span class="si">}</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">)</span> <span class="p">:</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>No repositories found.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">)</span><span class="si">}</span>
+      <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="s">"/"</span> <span class="na">className</span><span class="p">=</span><span class="s">"mt-4 inline-block text-blue-500 hover:underline"</span><span class="p">&gt;</span>
+        Back to Home
+      <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="code-for-pagesapigithub-reposusernamets">Code for <code class="language-plaintext highlighter-rouge">pages/api/github-repos/[username].ts</code></h2>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">NextApiRequest</span><span class="p">,</span> <span class="nx">NextApiResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">handler</span><span class="p">(</span>
+  <span class="nx">req</span><span class="p">:</span> <span class="nx">NextApiRequest</span><span class="p">,</span>
+  <span class="nx">res</span><span class="p">:</span> <span class="nx">NextApiResponse</span>
+<span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">username</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">username</span> <span class="o">||</span> <span class="k">typeof</span> <span class="nx">username</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">string</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="na">error</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Username is required</span><span class="dl">'</span> <span class="p">})</span>
+  <span class="p">}</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">`https://api.github.com/users/</span><span class="p">${</span><span class="nx">username</span><span class="p">}</span><span class="s2">/repos`</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Failed to fetch repos</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">const</span> <span class="nx">repos</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span><span class="nx">repos</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error fetching repos:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="na">error</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Failed to fetch repos</span><span class="dl">'</span> <span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="code-for-pagesindextsx">Code for <code class="language-plaintext highlighter-rouge">pages/index.tsx</code></h2>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">UserRepos</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./user/[username]</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">username</span><span class="p">,</span> <span class="nx">setUsername</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">()</span>
+
+  <span class="kd">const</span> <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FormEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">username</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">`/user/</span><span class="p">${</span><span class="nx">username</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"container mx-auto p-4"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">className</span><span class="p">=</span><span class="s">"text-2xl font-bold mb-4"</span><span class="p">&gt;</span>GitHub Repository Viewer<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span><span class="nx">handleSubmit</span><span class="si">}</span> <span class="na">className</span><span class="p">=</span><span class="s">"mb-4"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span>
+          <span class="na">type</span><span class="p">=</span><span class="s">"text"</span>
+          <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">username</span><span class="si">}</span>
+          <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setUsername</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
+          <span class="na">placeholder</span><span class="p">=</span><span class="s">"Enter GitHub username"</span>
+          <span class="na">className</span><span class="p">=</span><span class="s">"border p-2 mr-2"</span>
+        <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="p">=</span><span class="s">"submit"</span> <span class="na">className</span><span class="p">=</span><span class="s">"bg-blue-500 text-white p-2 rounded"</span><span class="p">&gt;</span>
+          View Repos
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="nx">router</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">username</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nc">UserRepos</span>
+          <span class="na">repos</span><span class="p">=</span><span class="si">{</span><span class="p">[]</span><span class="si">}</span> <span class="c1">// This will be populated by getServerSideProps in the actual component</span>
+          <span class="na">username</span><span class="p">=</span><span class="si">{</span><span class="nx">router</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">username</span> <span class="k">as</span> <span class="kr">string</span><span class="si">}</span>
+        <span class="p">/&gt;</span>
+      <span class="p">)</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="explanations-by-v0">Explanations by v0</h2>
+
+<p>In this example:</p>
+
+<ol>
+  <li>We create an API route at <code class="language-plaintext highlighter-rouge">pages/api/github-repos/[username].ts</code>. This route uses the <code class="language-plaintext highlighter-rouge">username</code> from the query parameters to make a request to the GitHub API.</li>
+  <li>In the <code class="language-plaintext highlighter-rouge">pages/user/[username].tsx</code> file, we use <code class="language-plaintext highlighter-rouge">getServerSideProps</code> to fetch data server-side. This function receives the <code class="language-plaintext highlighter-rouge">context</code> object, which includes the <code class="language-plaintext highlighter-rouge">params</code> from the URL .</li>
+  <li>We extract the <code class="language-plaintext highlighter-rouge">username</code> from <code class="language-plaintext highlighter-rouge">context.params</code> and use it to make a request to our own API route.</li>
+  <li>The component then receives the fetched repos as props and renders them.</li>
+</ol>
+
+<p>To use this, you would navigate to a URL like <code class="language-plaintext highlighter-rouge">/user/octocat</code>, and it would display the repositories for the GitHub user “octocat”.</p>
+
+<p>Remember to set the <code class="language-plaintext highlighter-rouge">NEXT_PUBLIC_API_URL</code> environment variable to your application’s URL (e.g., <code class="language-plaintext highlighter-rouge">http://localhost:3000</code> for local development).</p>
+
+<p>This approach allows you to securely handle API keys (if needed) on the server side while still providing dynamic content based on the URL parameters.</p>
+
+<h2 id="claude-ais-answer-to-explain-getserversideprops-from-nextjs">Claude AI’s Answer to <em>Explain getserversideprops from next.js</em></h2>
+
+<ul>
+  <li><a href="getServerSideProps">Claude AI answer</a></li>
+</ul>
+
+<h2 id="rúbrica">Rúbrica</h2>
+
+<ul>
+  <li>Uses getServerProps to make a fetch at build time</li>
+  <li>Uses Nextjs dynamic routes</li>
+  <li>Ha hecho un despliegue en Vercel</li>
+  <li>Código de la práctica correcto y funciona</li>
+  <li>Informe bien elaborado</li>
+  <li>Kanban Board project conteniendo las incidencias de la rúbrica</li>
+  <li>Ha entregado el .zip en el campus con el repo</li>
+</ul>
+
+<h2 id="actividad">Actividad</h2>
+
+<ol>
+  
+  
+  <!-- a student team --><li>
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-aaron-ramirez-valencia-alu0101438238" target="_blank">Aaron repo </a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-aaron-ramirez-valencia-alu0101438238/commits" target="_blank">Commits</a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-aaron-ramirez-valencia-alu0101438238/graphs/commit-activity" target="_blank"> Commit Activity</a> and
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-aaron-ramirez-valencia-alu0101438238/pulse" target="_blank"> Summary</a>
+        </li>
+     <!-- else is a true multiple member team-->
+  <!-- a student team --><li>
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-alejandro-melian-lemes-alu0101443126" target="_blank">Alejandro repo </a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-alejandro-melian-lemes-alu0101443126/commits" target="_blank">Commits</a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-alejandro-melian-lemes-alu0101443126/graphs/commit-activity" target="_blank"> Commit Activity</a> and
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-alejandro-melian-lemes-alu0101443126/pulse" target="_blank"> Summary</a>
+        </li>
+     <!-- else is a true multiple member team-->
+  <!-- a student team --><li>
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-casiano-rodriguez-leon-alu0100291865" target="_blank">Casiano repo </a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-casiano-rodriguez-leon-alu0100291865/commits" target="_blank">Commits</a>, 
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-casiano-rodriguez-leon-alu0100291865/graphs/commit-activity" target="_blank"> Commit Activity</a> and
+          <a href="https://github.com/ull-esit-dmsi-2425/nextjs-intro-casiano-rodriguez-leon-alu0100291865/pulse" target="_blank"> Summary</a>
+        </li>
+     <!-- else is a true multiple member team-->
+  </ol>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol>
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/nextauth">NextAuth.js</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=nextra&type=all&language=&sort=" target="_blank">nextra</a></li>
+      <li><a href="/tema1-introduccion/practicas/nextauth#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/nextjs-intro">Introduction to Next.js with v0</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=nextjs-intro&type=all&language=&sort=" target="_blank">nextjs-intro</a></li>
+      <li><a href="/tema1-introduccion/practicas/nextjs-intro#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/nextra">Introduction to Nextra</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=nextra&type=all&language=&sort=" target="_blank">nextra</a></li>
+      <li><a href="/tema1-introduccion/practicas/nextra#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/jekyll-search">Search in Jekyll</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=jekyll-search&type=all&language=&sort=" target="_blank">jekyll-search</a></li>
+      <li><a href="/tema1-introduccion/practicas/jekyll-search#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2024/11/27/leccion.html">Clase del Miércoles 2024/11/27</a></li>
+  
+<li> <a href="/2024/11/25/leccion.html">Clase del Lunes 2024/11/25</a></li>
+  
+<li> <a href="/2024/11/20/leccion.html">Clase del Miércoles 2024/11/20</a></li>
+  
+<li> <a href="/2024/11/18/leccion.html">Clase del Lunes 2024/11/18</a></li>
+  
+<li> <a href="/2024/11/13/leccion.html">Clase del Miércoles 2024/11/13</a></li>
+  
+<li> <a href="/2024/11/11/leccion.html">Clase del lunes 2024/11/11</a></li>
+  
+<li> <a href="/2024/11/06/leccion.html">Clase del miércoles 2024/11/06</a></li>
+  
+<li> <a href="/2024/11/04/leccion.html">Clase del Lunes 2024/11/04</a></li>
+  
+<li> <a href="/2024/10/30/leccion.html">Clase del miércoles 2024/10/30</a></li>
+  
+<li> <a href="/2024/10/28/leccion.html">Clase del Lunes 2024/10/28</a></li>
+  
+<li> <a href="/2024/10/23/leccion.html">Clase del Miércoles 2024/10/23</a></li>
+  
+<li> <a href="/2024/10/21/leccion.html">Clase del Lunes 2024/10/21</a></li>
+  
+<li> <a href="/2024/10/16/leccion.html">Clase del Miércoles 2024/10/16</a></li>
+  
+<li> <a href="/2024/10/14/leccion.html">Clase del Lunes 2024/10/14</a></li>
+  
+<li> <a href="/2024/10/09/leccion.html">Clase del Miércoles 2024/10/09</a></li>
+  
+<li> <a href="/2024/10/07/leccion.html">Clase del Lunes 2024/10/07</a></li>
+  
+<li> <a href="/2024/10/02/leccion.html">Clase del Miércoles 2024/10/02</a></li>
+  
+<li> <a href="/2024/09/30/leccion.html">Clase del Lunes 2024/09/30</a></li>
+  
+<li> <a href="/2024/09/25/leccion.html">Clase del Miércoles 2024/09/25</a></li>
+  
+<li> <a href="/2024/09/23/leccion.html">Clase del Lunes 2024/09/23</a></li>
+  
+<li> <a href="/2024/09/18/leccion.html">Clase del Miércoles 2024/09/18</a></li>
+  
+<li> <a href="/2024/09/16/leccion.html">Clase del Lunes 2024/09/16</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>

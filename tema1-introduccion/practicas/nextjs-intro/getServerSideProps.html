@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Explain getserversideprops from next.js | Desarrollo y Mantenimiento de Sistemas Informáticos</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Explain getserversideprops from next.js" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:description" content="4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL" />
+<meta property="og:site_name" content="Desarrollo y Mantenimiento de Sistemas Informáticos" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Explain getserversideprops from next.js" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL","headline":"Explain getserversideprops from next.js","url":"/tema1-introduccion/practicas/nextjs-intro/getServerSideProps.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=f2bd09c41506472594bbc0082383304b1c5c8959">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/assets/js/respond.js"></script>
+
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="https://ull-pl.vercel.app/resources" target="_blank">Rec</a></li>
+            <li><a href="/timetables.html">Hor</a></li>
+            <li><a href="/references.html">Refs</a></li>
+            <li><a href="/clases.html">Clases</a></li>
+            <li><a href="/practicas.html">Prácticas </a></li> 
+            <li><a href="/index.html">DMSI</a></li>
+            
+        </ul>
+        </nav>
+    </div>
+    <!-- end header -->
+
+
+    <div class="wrapper">
+
+        <section>
+            <div id="title">
+                <h1>Desarrollo y Mantenimiento de Sistemas Informáticos</h1>
+                <p> 4º. 1er cuatrimestre. Itinerario de Sistemas de la Información. Grado en Ingeniería Informática. ULL</p>
+                <hr>
+                <span class="credits left"> <a href="https://github.com/ULL-ESIT-DMSI-2425" target="_blank">GH Org</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/ULL-ESIT-DMSI" target="_blank">GH Template Org</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://classroom.github.com/classrooms/176799893-ull-esit-dmsi-2425" target="_blank">GitHub Classroom</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/discussions" target="_blank">Discussions</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/teams" target="_blank">Teams</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://campusingenieriaytecnologia2425.ull.es/course/view.php?id=2425090032" target="_blank">Campus ULL</a></span>
+                <span class="credits left"> &nbsp; - <a href="/teams" target="_blank">Students Activity</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://mail.google.com/chat/u/1/" target="_blank">Chat</a></span>
+                <span class="credits left"> &nbsp; - <a href="https://meet.google.com/apb-imai-hsq" target="_blank">Google Meet</a></span>
+                <!-- https://www.ull.es/apps/guias/guias/view_guide_course/2425/139264413/3/ -->
+
+            </div>
+
+            <h1 id="explain-getserversideprops-from-nextjs">Explain getserversideprops from next.js</h1>
+
+<p>This reqquest was formulated to Claude AI (https://claude.ai) by the teacher (Casiano).
+Follows the answer from Claude AI:
+—</p>
+
+<p>I’ll provide a comprehensive explanation of <code class="language-plaintext highlighter-rouge">getServerSideProps</code> in Next.js:</p>
+
+<p><code class="language-plaintext highlighter-rouge">getServerSideProps</code> is a special function in Next.js that allows server-side rendering (SSR) for a page. Here’s a detailed breakdown:</p>
+
+<h3 id="what-is-getserversideprops">What is <code class="language-plaintext highlighter-rouge">getServerSideProps</code>?</h3>
+<ul>
+  <li>It runs on every request to the page</li>
+  <li>Executes on the server-side before the page is rendered</li>
+  <li>Allows you to fetch data at request time</li>
+  <li>Passes the fetched data as props to the page component</li>
+</ul>
+
+<h3 id="basic-syntax">Basic Syntax</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getServerSideProps</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Fetch data from an API or database</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/data</span><span class="dl">'</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+
+  <span class="c1">// Pass data to the page via props</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">props</span><span class="p">:</span> <span class="p">{</span> <span class="nx">data</span> <span class="p">},</span> <span class="c1">// Will be passed to the page component as props</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="context-parameter">Context Parameter</h3>
+<p>The <code class="language-plaintext highlighter-rouge">context</code> object contains:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">params</code>: Route parameters for dynamic routes</li>
+  <li><code class="language-plaintext highlighter-rouge">req</code>: HTTP request object</li>
+  <li><code class="language-plaintext highlighter-rouge">res</code>: HTTP response object</li>
+  <li><code class="language-plaintext highlighter-rouge">query</code>: Query string parameters</li>
+  <li><code class="language-plaintext highlighter-rouge">preview</code>: Boolean indicating if in preview mode</li>
+  <li><code class="language-plaintext highlighter-rouge">previewData</code>: Preview data</li>
+  <li><code class="language-plaintext highlighter-rouge">resolvedUrl</code>: Resolved URL path</li>
+</ul>
+
+<h3 id="example-with-more-complex-usage">Example with More Complex Usage</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getServerSideProps</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Conditional data fetching based on query parameters</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">query</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">`https://api.example.com/item/</span><span class="p">${</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nx">data</span><span class="p">,</span>
+        <span class="c1">// You can pass additional server-side computed values</span>
+        <span class="na">timestamp</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">()</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Handle errors</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">message</span><span class="p">:</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="key-characteristics">Key Characteristics</h3>
+<ul>
+  <li>Always runs on the server</li>
+  <li>Only runs on page-level components</li>
+  <li>Great for:
+    <ul>
+      <li>Authentication checks</li>
+      <li>Fetching data that requires server-side secrets</li>
+      <li>Dynamic server-side rendering</li>
+    </ul>
+  </li>
+  <li>Performance consideration: Slightly slower than static generation (<code class="language-plaintext highlighter-rouge">getStaticProps</code>)</li>
+</ul>
+
+<h3 id="redirects-and-404-handling">Redirects and 404 Handling</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getServerSideProps</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">checkAuthentication</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">redirect</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">destination</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/login</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">permanent</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// If resource not found</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">notFound</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// Will show 404 page</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">{</span> <span class="na">props</span><span class="p">:</span> <span class="p">{</span> <span class="cm">/* data */</span> <span class="p">}</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="performance-tips">Performance Tips</h3>
+<ul>
+  <li>Only fetch the data you need</li>
+  <li>Minimize external API calls</li>
+  <li>Use caching mechanisms</li>
+  <li>Consider using <code class="language-plaintext highlighter-rouge">getStaticProps</code> if data doesn’t change frequently</li>
+</ul>
+
+<h3 id="comparison-with-other-data-fetching-methods">Comparison with Other Data Fetching Methods</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">getServerSideProps</code>: Server-side render on every request</li>
+  <li><code class="language-plaintext highlighter-rouge">getStaticProps</code>: Generate static page at build time</li>
+  <li><code class="language-plaintext highlighter-rouge">getInitialProps</code>: Older method, less recommended now</li>
+  <li>Client-side fetching: Using <code class="language-plaintext highlighter-rouge">useEffect</code> or SWR/React Query</li>
+</ul>
+
+<p>Would you like me to elaborate on any specific aspect of <code class="language-plaintext highlighter-rouge">getServerSideProps</code>?</p>
+
+
+<!--
+            <br/>
+<hr/>
+<h2>
+    Prácticas Propuestas
+</h2>
+<ol>
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/nextauth">NextAuth.js</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=nextra&type=all&language=&sort=" target="_blank">nextra</a></li>
+      <li><a href="/tema1-introduccion/practicas/nextauth#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/nextjs-intro">Introduction to Next.js with v0</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=nextjs-intro&type=all&language=&sort=" target="_blank">nextjs-intro</a></li>
+      <li><a href="/tema1-introduccion/practicas/nextjs-intro#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/nextra">Introduction to Nextra</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=nextra&type=all&language=&sort=" target="_blank">nextra</a></li>
+      <li><a href="/tema1-introduccion/practicas/nextra#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/jekyll-search">Search in Jekyll</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=jekyll-search&type=all&language=&sort=" target="_blank">jekyll-search</a></li>
+      <li><a href="/tema1-introduccion/practicas/jekyll-search#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/intro2sd">Introduction to Systems Development</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=intro2sd&type=all&language=&sort=" target="_blank">intro2sd</a></li>
+      <li><a href="/tema1-introduccion/practicas/intro2sd#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/setup">Setting up Our Environment</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=setup&type=all&language=&sort=" target="_blank">setup</a></li>
+      <li><a href="/tema1-introduccion/practicas/setup#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema1-introduccion/practicas/markdown">Learning Markdown</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=aprender-markdown&type=all&language=&sort=" target="_blank">aprender-markdown</a></li>
+      <li><a href="/tema1-introduccion/practicas/markdown#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+  
+  <li> 
+    <a href="/tema0-presentacion/practicas/pb-gh-campus-expert">GitHub Campus Expert</a> 
+    <ol>
+      <li>Repos en GH: <a href="https://github.com/orgs/ULL-ESIT-DMSI-2425/repositories?q=github-campus-expert&type=all&language=&sort=" target="_blank">github-campus-expert</a></li>
+      <li><a href="/tema0-presentacion/practicas/pb-gh-campus-expert#rúbrica">Rúbrica</a> </li>
+    </ol>
+  </li>
+  
+
+</ol>
+
+
+
+<br/>
+<hr/>
+<h2>
+    Clases
+</h2>
+
+<ol reversed>
+  
+<li> <a href="/2024/11/27/leccion.html">Clase del Miércoles 2024/11/27</a></li>
+  
+<li> <a href="/2024/11/25/leccion.html">Clase del Lunes 2024/11/25</a></li>
+  
+<li> <a href="/2024/11/20/leccion.html">Clase del Miércoles 2024/11/20</a></li>
+  
+<li> <a href="/2024/11/18/leccion.html">Clase del Lunes 2024/11/18</a></li>
+  
+<li> <a href="/2024/11/13/leccion.html">Clase del Miércoles 2024/11/13</a></li>
+  
+<li> <a href="/2024/11/11/leccion.html">Clase del lunes 2024/11/11</a></li>
+  
+<li> <a href="/2024/11/06/leccion.html">Clase del miércoles 2024/11/06</a></li>
+  
+<li> <a href="/2024/11/04/leccion.html">Clase del Lunes 2024/11/04</a></li>
+  
+<li> <a href="/2024/10/30/leccion.html">Clase del miércoles 2024/10/30</a></li>
+  
+<li> <a href="/2024/10/28/leccion.html">Clase del Lunes 2024/10/28</a></li>
+  
+<li> <a href="/2024/10/23/leccion.html">Clase del Miércoles 2024/10/23</a></li>
+  
+<li> <a href="/2024/10/21/leccion.html">Clase del Lunes 2024/10/21</a></li>
+  
+<li> <a href="/2024/10/16/leccion.html">Clase del Miércoles 2024/10/16</a></li>
+  
+<li> <a href="/2024/10/14/leccion.html">Clase del Lunes 2024/10/14</a></li>
+  
+<li> <a href="/2024/10/09/leccion.html">Clase del Miércoles 2024/10/09</a></li>
+  
+<li> <a href="/2024/10/07/leccion.html">Clase del Lunes 2024/10/07</a></li>
+  
+<li> <a href="/2024/10/02/leccion.html">Clase del Miércoles 2024/10/02</a></li>
+  
+<li> <a href="/2024/09/30/leccion.html">Clase del Lunes 2024/09/30</a></li>
+  
+<li> <a href="/2024/09/25/leccion.html">Clase del Miércoles 2024/09/25</a></li>
+  
+<li> <a href="/2024/09/23/leccion.html">Clase del Lunes 2024/09/23</a></li>
+  
+<li> <a href="/2024/09/18/leccion.html">Clase del Miércoles 2024/09/18</a></li>
+  
+<li> <a href="/2024/09/16/leccion.html">Clase del Lunes 2024/09/16</a></li>
+  
+</ol>
+
+
+<br/>
+<hr/>
+-->
+
+</section>
+</div>
+
+    
+</body>
+
+</html>
