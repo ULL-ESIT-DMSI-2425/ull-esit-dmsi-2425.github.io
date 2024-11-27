@@ -1,8 +1,9 @@
 # Explain getserversideprops from next.js
 
-This reqquest was formulated to Claude AI (https://claude.ai) by the teacher (Casiano).
+This request was formulated to Claude AI (<https://claude.ai>) by the teacher (Casiano).
 Follows the answer from Claude AI:
----
+
+------
 
 I'll provide a comprehensive explanation of `getServerSideProps` in Next.js:
 
