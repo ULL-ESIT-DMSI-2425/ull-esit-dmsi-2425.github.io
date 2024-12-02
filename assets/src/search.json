@@ -159,6 +159,13 @@
         "url": "/2024/11/27/leccion.html"
       },
     
+      {
+        "title": "Clase del Lunes 2024/12/02",
+        "excerpt": "Nuevos Requisitos\n\n",
+        "content": "Nuevos Requisitos\n\nEn la rúbrica añadimos los siguientes requisitos:\n\n\n  useConfig\n  useSWR\n  useConfig\n  Uses @ to import components\n  Uses getStaticProps to make a fetch at build time\n  Uses useEffect to make a fetch at runtime\n  Has a hello world  on the server side using pages/api/hello.js\n  Has an example of Next.js middleware usage\n\n\nPrácticas\n\n\n  \n    Introduction to Next.js with v0\n  \n  Introduction to Nextra\n  NextAuth.js\n\n\nTemas\n\n\n  The Nextra Lab at SYTWS\n  Introduction to React: UseEffect and UseState\n  Functional Components Life Cycle and the useEffect Hook\n  Web Development with Next.js\n  Claude AI\n  v0.dev\n\n\nRepositorios de los estudiantes\n\n\n  nextjs-intro.\n  nextra.\n\n\nRúbricas\n\nNextjs-intro\n\nNextra\n\n\n  Contiene ejemplos de Bleed,\n  Banner,\n  Callout,\n  Cards,\n  Code Extensions,\n  Expression Evaluation,\n  File Trees,\n  frontmatter,\n  Heroicons,\n  iframe,\n  Markdown import,\n  Mermaid,\n  Using Components (MDX)\n  useState\n  useConfig\n  useSWR\n  useConfig\n  Uses @ to import components\n  Uses getStaticProps to make a fetch at build time\n  Uses useEffect to make a fetch at runtime\n  Has a hello world  on the server side using pages/api/hello.js\n  Has an example of Next.js middleware usage\n  Ha hecho un despliegue en Vercel\n  Ha hecho un fork the nextra y se ha familiarizado con el concepto de monorepo\n  Código de la práctica correcto y funciona\n  Informe bien elaborado\n  Kanban Board project conteniendo las incidencias de la rúbrica\n  Ha entregado el .zip en el campus con el repo\n\n\n",
+        "url": "/2024/12/02/leccion.html"
+      },
+    
   
   
   
